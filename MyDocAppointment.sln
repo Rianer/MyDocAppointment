@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocAppointment.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocAppointment.Application", "MyDocAppointment.Application\MyDocAppointment.Application.csproj", "{5819B9E6-15BC-40E6-873A-1B29BA53CFEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocAppointment.Tests", "MyDocAppointment.Tests\MyDocAppointment.Tests.csproj", "{ED7EECD5-A09E-4000-AECB-471D545F793B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5819B9E6-15BC-40E6-873A-1B29BA53CFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5819B9E6-15BC-40E6-873A-1B29BA53CFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5819B9E6-15BC-40E6-873A-1B29BA53CFEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED7EECD5-A09E-4000-AECB-471D545F793B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED7EECD5-A09E-4000-AECB-471D545F793B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED7EECD5-A09E-4000-AECB-471D545F793B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED7EECD5-A09E-4000-AECB-471D545F793B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
