@@ -17,8 +17,7 @@ namespace MyDocAppointment.Infrastructure.Configurations
             builder.Property(p => p.Gender)
                 .HasConversion(new EnumToStringConverter<PersonGender>());
             builder.Property(p => p.EmailAddress);
-            builder.HasMany(p => p.FutureAppointments).WithOne(fa =>fa.Patient);
-            //builder.HasMany(p => p.PastAppointments).WithOne(pa => pa.Patient);
+            builder.HasMany(d => d.Appointments).WithOne(a => a.Patient);
             builder.HasMany(p => p.Diagnosis);
         }
     }

@@ -5,7 +5,6 @@ namespace MyDocAppointment.API.Dtos
 {
     public class CreatePatientDto
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
 
         public string Surname { get; set; }
@@ -15,8 +14,7 @@ namespace MyDocAppointment.API.Dtos
         public PersonGender PersonGender { get; set; }
 
         public string EmailAddress { get; set; }
-        public List<Appointment> FutureAppointments { get; set; }
-        public List<Appointment> PastAppointments { get; set; } // Medical history
+        public List<Appointment> Appointments { get; set; }
         public List<Diagnosis> Diagnosis { get; set; }
     }
 }

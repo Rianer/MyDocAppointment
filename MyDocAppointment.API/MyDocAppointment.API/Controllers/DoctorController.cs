@@ -17,32 +17,48 @@ namespace MyDocAppointment.API.Controllers
         }
 
          [HttpGet]
-        public IActionResult Get() 
+        public async Task<IActionResult> Get() 
         {
-            return Ok(doctorService.GetAll());
+            var response = await doctorService.GetAll();
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return NotFound(response.Error);
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] CreateDoctorDto dto)
+        public async Task<IActionResult> Create([FromBody] CreateDoctorDto dto)
         {
             var doctor = new Doctor(dto.Name, dto.Surname, dto.Age, dto.Gender,  dto.EmailAddress, dto.Speciality, dto.Appointments);
-            doctorService.Create(doctor);
-            doctorService.SaveChanges();
+            await doctorService.Create(doctor);
+
             return Created(nameof(Get), doctor);
         }
 
         [HttpGet("{doctorId:guid}")]
-        public IActionResult GetById(Guid doctorId)
+        public async Task<IActionResult> GetById(Guid doctorId)
         {
-            return Ok(doctorService.GetById(doctorId));
+            var response =await doctorService.GetById(doctorId);
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return NotFound(response.Error);
         }
 
         [HttpDelete("{doctorId:guid}")]
-        public IActionResult Delete(Guid doctorId)
+        public async Task<IActionResult> Delete(Guid doctorId)
         {
-            return Ok(doctorService.Delete(doctorId));
+            var response = await doctorService.Delete(doctorId);
+            if (response.IsSuccess)
+            {
+                return Ok();
+            }
+
+            return NotFound(response.Error);
         }
-
-
     }
 }

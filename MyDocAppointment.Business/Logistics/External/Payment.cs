@@ -9,6 +9,7 @@ namespace MyDocAppointment.Business.Logistics.External
 {
     public class Payment
     {
+        public Guid Id { get; set; }
         public double Amount { get; private set; }
         public PaymentMethod PaymentMethod { get; private set; }
         public DateTime DueDate { get; private set; }

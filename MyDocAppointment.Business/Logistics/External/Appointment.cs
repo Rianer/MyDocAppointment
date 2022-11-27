@@ -10,7 +10,7 @@ namespace MyDocAppointment.Business.Logistics.External
 {
     public class Appointment
     {
-        public static Result<Appointment> Create(Specialization specialization, DateTime timeOfAppointment, Payment payment, string location, int patientID, int doctorID)
+        public static Result<Appointment> Create(Specialization specialization, DateTime timeOfAppointment, Payment payment, string location, Guid patientID, Guid doctorID)
         {
             // validate DoctorID and ClientID
             if (timeOfAppointment < DateTime.Now)
@@ -34,8 +34,8 @@ namespace MyDocAppointment.Business.Logistics.External
         public Guid Id { get; set; }
         public Payment Payment { get; private set; }
         public string Location { get; private set; }
-        public int PatientID { get; private set; }
-        public int DoctorID { get; private set; }
+        public Guid PatientID { get; private set; }
+        public Guid DoctorID { get; private set; }
         public Specialization Specialization { get; private set; }
         public DateTime AppointmentTime { get; private set; }
 

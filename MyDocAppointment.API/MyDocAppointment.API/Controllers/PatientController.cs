@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using MyDocAppointment.API.Dtos;
-using MyDocAppointment.Application;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Users;
 
@@ -18,34 +17,49 @@ namespace MyDocAppointment.API.Controllers
 
         
         [HttpGet]
-        public IActionResult Get() 
+        public async Task<IActionResult> Get() 
         {
-            return Ok(patientService.GetAll());
+            var response = await patientService.GetAll();
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+
+            return NotFound(response.Error);
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] CreatePatientDto dto)
+        public async Task<IActionResult> Create([FromBody] CreatePatientDto dto)
         {
             var patient = new Patient(dto.Name, dto.Surname, dto.Age, dto.PersonGender, dto.EmailAddress,
-                dto.FutureAppointments, dto.PastAppointments, dto.Diagnosis);
-            patientService.Create(patient);
-            patientService.SaveChanges();
+                dto.Appointments, dto.Diagnosis);
+            await patientService.Create(patient);
+
             return Created(nameof(Get), patient);
         }
 
         [HttpGet("{patientId:guid}")]
-        public IActionResult GetById(Guid doctorId)
+        public async Task<IActionResult> GetById(Guid doctorId)
         {
-            return Ok(patientService.GetById(doctorId));
+            var response = await patientService.GetById(doctorId);
+            if(response.IsSuccess)
+            {
+                return Ok(response);    
+            }
+
+            return NotFound(response.Error);
         }
 
         [HttpDelete("{doctorId:guid}")]
-        public IActionResult Delete(Guid doctorId)
+        public async Task<IActionResult> Delete(Guid doctorId)
         {
-            return Ok(patientService.Delete(doctorId));
+            var response = await patientService.Delete(doctorId);
+            if (response.IsSuccess)
+            {
+                return Ok();
+            }
+
+            return NotFound(response.Error);
         }
-
-
-
     }
 }

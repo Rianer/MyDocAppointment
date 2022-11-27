@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocAppointment", "MyDocAppointment\MyDocAppointment.csproj", "{85C46E9B-36B3-48F1-8233-F3F63D0596A6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocAppointment.API", "MyDocAppointment.API\MyDocAppointment.API\MyDocAppointment.API.csproj", "{1A6249EB-1AB2-4F29-8116-D16FD16A68A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocAppointment.Business", "MyDocAppointment.Business\MyDocAppointment.Business.csproj", "{6EA8053A-B471-4DA5-90CF-B88498AEC635}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85C46E9B-36B3-48F1-8233-F3F63D0596A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85C46E9B-36B3-48F1-8233-F3F63D0596A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85C46E9B-36B3-48F1-8233-F3F63D0596A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85C46E9B-36B3-48F1-8233-F3F63D0596A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A6249EB-1AB2-4F29-8116-D16FD16A68A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1A6249EB-1AB2-4F29-8116-D16FD16A68A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A6249EB-1AB2-4F29-8116-D16FD16A68A8}.Release|Any CPU.ActiveCfg = Release|Any CPU

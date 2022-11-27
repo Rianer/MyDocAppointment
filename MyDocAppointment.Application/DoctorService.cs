@@ -19,10 +19,15 @@ namespace MyDocAppointment.Application
             await _doctorsRepository.Create(doctor);
         }
 
-        public async Task Delete(Guid id)
+        public async Task<Result> Delete(Guid id)
         {
             Doctor doctor = await _doctorsRepository.GetById(id);
+            if(doctor == null)
+            {
+                return Result.Failure($"Doctor with id {id} not found.");
+            }
             await _doctorsRepository.Delete(doctor);
+            return Result.Success();
         }
 
         public async Task<Result<IEnumerable<Doctor>>> GetAll()
@@ -30,7 +35,7 @@ namespace MyDocAppointment.Application
             var doctors = await _doctorsRepository.GetAll();
             if (!doctors.Any())
             {
-                return Result<IEnumerable<Doctor>>.Failure($"Drugs not found.");
+                return Result<IEnumerable<Doctor>>.Failure($"Doctor not found.");
             }
             return Result<IEnumerable<Doctor>>.Success(doctors);
         }

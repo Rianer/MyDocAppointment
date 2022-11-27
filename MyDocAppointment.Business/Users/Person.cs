@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyDocAppointment.Business.Users
 {
-    public abstract class Person // facut clasa normala abstracta
+    public class Person // facut clasa normala abstracta
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

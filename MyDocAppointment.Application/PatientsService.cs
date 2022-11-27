@@ -1,7 +1,5 @@
 ﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
-using MyDocAppointment.Business.Logistics.External;
-using MyDocAppointment.Business.Logistics.Internal;
 using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.Application
@@ -19,10 +17,15 @@ namespace MyDocAppointment.Application
             await _patientsRepository.Create(patient);
         }
 
-        public async Task Delete(Guid id)
+        public async Task<Result> Delete(Guid id)
         {
-            Patient patient = await _patientsRepository.GetById(id);
+            var patient = await _patientsRepository.GetById(id);
+            if (patient == null)
+            {
+                return Result.Failure($"Patient with ID: {id} does not exist.");
+            }
             await _patientsRepository.Delete(patient);
+            return Result.Success();
         }
 
         public async Task<Result<IEnumerable<Patient>>> GetAll()

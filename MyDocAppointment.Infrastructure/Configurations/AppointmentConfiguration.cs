@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.EntityFrameworkCore;
-using MyDocAppointment.Business.Helpers;
-using MyDocAppointment.Business.Users;
 using MyDocAppointment.Business.Logistics.External;
 
 namespace MyDocAppointment.Infrastructure.Configurations
@@ -12,7 +9,9 @@ namespace MyDocAppointment.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<Appointment> builder)
         {
             builder.HasKey(a => a.Id);
-            builder.HasAlternateKey(a => new { a.PatientID, a.DoctorID });
+            builder.HasAlternateKey(a => new { a.DoctorID, a.PatientID });
+            builder.HasOne(a => a.Doctor).WithMany(d => d.Appointments);
+            builder.HasOne(a => a.Patient).WithMany(p => p.Appointments);
             builder.Property(a => a.Specialization);
             builder.Property(a => a.AppointmentTime);
             builder.Property(a => a.Payment);

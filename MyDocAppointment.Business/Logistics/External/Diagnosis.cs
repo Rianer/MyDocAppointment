@@ -12,19 +12,20 @@ namespace MyDocAppointment.Business.Logistics.External
     {
         public Diagnosis(string name, string description, DateTime diagnosisDate)
         {
-            this.Name = name;
-            this.Description = description;
-            this.DiagnosisDate = diagnosisDate;
-            this.Observations = new List<Tuple<DateTime, string>>();
+            Id = new Guid();
+            Name = name;
+            Description = description;
+            DiagnosisDate = diagnosisDate;
         }
 
+        public Guid Id { get; set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public DateTime DiagnosisDate { get; private set; }
         /// <summary>
         /// Medic can add comments at every check.
         /// </summary>
-        public List<Tuple<DateTime, string>> Observations { get; private set; }
+        public List<Observation> Observations { get; private set; }
         public Guid UserId { get; private set; }
 
         // Assign to user as well!!!
@@ -34,9 +35,9 @@ namespace MyDocAppointment.Business.Logistics.External
             return Result.Success();
         }
 
-        public Result AddObservation(DateTime time, string observation)
+        public Result AddObservation(DateTime date, string description)
         {
-            this.Observations.Add(new Tuple<DateTime, string>(time, observation));
+            this.Observations.Add(new Observation(date, description));
             return Result.Success();
         }
 
@@ -50,11 +51,11 @@ namespace MyDocAppointment.Business.Logistics.External
             return Result.Failure("Observation doesn't exist in diagnosis!");
         }
 
-        public Result ModifyObservation(int id, DateTime time, string observation)
+        public Result ModifyObservation(int id, DateTime date, string description)
         {
             if (this.Observations.Count > id)
             {
-                this.Observations[id] = new Tuple<DateTime, string>(time, observation);
+                this.Observations[id] = new Observation(date, description);
                 return Result.Success();
             }
             return Result.Failure("Observation doesn't exist in diagnosis!");

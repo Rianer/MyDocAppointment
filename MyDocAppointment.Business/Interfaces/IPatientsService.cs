@@ -6,7 +6,7 @@ namespace MyDocAppointment.Business.Interfaces
     public interface IPatientsService
     {
         Task Create(Patient patient);
-        Task Delete(Guid id);
+        Task<Result> Delete(Guid id);
         Task SaveChanges();
         Task<Result<IEnumerable<Patient>>> GetAll();
         Task<Result<Patient>> GetById(Guid id);

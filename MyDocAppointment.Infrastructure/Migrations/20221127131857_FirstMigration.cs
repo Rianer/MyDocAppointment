@@ -16,7 +16,7 @@ namespace MyDocAppointment.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Specialization = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Speciality = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
@@ -66,8 +66,9 @@ namespace MyDocAppointment.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Amount = table.Column<double>(type: "float", nullable: false),
                     PaymentMethod = table.Column<int>(type: "int", nullable: false),
-                    DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsPayed = table.Column<bool>(type: "bit", nullable: false)
+                    DueDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EmissionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AcquittedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -81,6 +82,8 @@ namespace MyDocAppointment.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DiagnosisDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
@@ -98,12 +101,12 @@ namespace MyDocAppointment.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Specialization = table.Column<int>(type: "int", nullable: false),
-                    TimeOfAppointment = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PaymentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PatientID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DoctorID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    DoctorID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Specialization = table.Column<int>(type: "int", nullable: false),
+                    AppointmentTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -128,6 +131,25 @@ namespace MyDocAppointment.Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Observation",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DiagnosisId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Observation", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Observation_Diagnosis_DiagnosisId",
+                        column: x => x.DiagnosisId,
+                        principalTable: "Diagnosis",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Appointment_DoctorID",
                 table: "Appointment",
@@ -147,6 +169,11 @@ namespace MyDocAppointment.Infrastructure.Migrations
                 name: "IX_Diagnosis_PatientId",
                 table: "Diagnosis",
                 column: "PatientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Observation_DiagnosisId",
+                table: "Observation",
+                column: "DiagnosisId");
         }
 
         /// <inheritdoc />
@@ -156,16 +183,19 @@ namespace MyDocAppointment.Infrastructure.Migrations
                 name: "Appointment");
 
             migrationBuilder.DropTable(
-                name: "Diagnosis");
+                name: "Drugs");
 
             migrationBuilder.DropTable(
-                name: "Drugs");
+                name: "Observation");
 
             migrationBuilder.DropTable(
                 name: "Doctors");
 
             migrationBuilder.DropTable(
                 name: "Payment");
+
+            migrationBuilder.DropTable(
+                name: "Diagnosis");
 
             migrationBuilder.DropTable(
                 name: "Patients");
