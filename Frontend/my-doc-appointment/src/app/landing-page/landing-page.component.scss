@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
-
+$accentColor1: rgb(219, 235, 250);
 :root{
    --blue:#00b8b8;
    --black:#333;
@@ -9,6 +9,7 @@
    --border:.2rem solid rgba(0,0,0,.1);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
    --accent2: #77c1f2;
+   --accent1: rgb(182, 221, 233);
 }
 
 *{
@@ -71,6 +72,7 @@ section{
 .header{
    padding:2rem;
    border-bottom: var(--border);
+   background-color: $accentColor1;
 }
 
 .header.active{
@@ -395,7 +397,8 @@ section{
    }
 
    .header .nav{
-      position: absolute;
+      // position: absolute;
+      float: right;
       top:99%; left:0; right:0;
       background-color: var(--white);
       border-top: var(--border);
