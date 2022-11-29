@@ -10,6 +10,16 @@ namespace MyDocAppointment.Business.Logistics.External
 {
     public class Appointment
     {
+        public Guid Id { get; private set; }
+        public Payment Payment { get; private set; }
+        public string Location { get; private set; }
+        public Guid PatientID { get; private set; }
+        public Guid DoctorID { get; private set; }
+        public Specialization Specialization { get; private set; }
+        public DateTime AppointmentTime { get; private set; }
+        public virtual Doctor Doctor { get; private set; }
+        public Patient Patient { get; private set; }
+
         public static Result<Appointment> Create(Specialization specialization, DateTime timeOfAppointment, Payment payment, string location, Guid patientID, Guid doctorID)
         {
             // validate DoctorID and ClientID
@@ -20,6 +30,7 @@ namespace MyDocAppointment.Business.Logistics.External
 
             var appointment = new Appointment()
             {
+                Id = Guid.NewGuid(),
                 Specialization = specialization,
                 AppointmentTime = timeOfAppointment,
                 Location = location,
@@ -30,17 +41,6 @@ namespace MyDocAppointment.Business.Logistics.External
 
             return Result<Appointment>.Success(appointment);
         }
-
-        public Guid Id { get; set; }
-        public Payment Payment { get; private set; }
-        public string Location { get; private set; }
-        public Guid PatientID { get; private set; }
-        public Guid DoctorID { get; private set; }
-        public Specialization Specialization { get; private set; }
-        public DateTime AppointmentTime { get; private set; }
-
-        public virtual Doctor Doctor { get; set; }
-        public Patient Patient { get; set; }
 
         public Result ChangeAppointmentTime(DateTime dateTime)
         {

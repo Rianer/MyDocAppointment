@@ -10,13 +10,6 @@ namespace MyDocAppointment.Business.Logistics.External
     // To implement template diagnosis for easy medical use.
     public class Diagnosis
     {
-        public Diagnosis(string name, string description, DateTime diagnosisDate)
-        {
-            Id = new Guid();
-            Name = name;
-            Description = description;
-            DiagnosisDate = diagnosisDate;
-        }
 
         public Guid Id { get; set; }
         public string Name { get; private set; }
@@ -27,6 +20,14 @@ namespace MyDocAppointment.Business.Logistics.External
         /// </summary>
         public List<Observation> Observations { get; private set; }
         public Guid UserId { get; private set; }
+
+        public Diagnosis(string name, string description, DateTime diagnosisDate)
+        {
+            Id = new Guid();
+            Name = name;
+            Description = description;
+            DiagnosisDate = diagnosisDate;
+        }
 
         // Assign to user as well!!!
         public Result AssignToUser(Guid userId)

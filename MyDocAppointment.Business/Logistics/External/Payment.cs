@@ -9,7 +9,7 @@ namespace MyDocAppointment.Business.Logistics.External
 {
     public class Payment
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         public double Amount { get; private set; }
         public PaymentMethod PaymentMethod { get; private set; }
         public DateTime DueDate { get; private set; }
@@ -31,6 +31,7 @@ namespace MyDocAppointment.Business.Logistics.External
 
             var payment = new Payment()
             {
+                Id = new Guid(),
                 Amount = amount,
                 PaymentMethod = paymentMethod,
                 EmissionDate = emissionDate,
