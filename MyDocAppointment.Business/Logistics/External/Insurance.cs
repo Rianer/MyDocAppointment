@@ -11,6 +11,16 @@ namespace MyDocAppointment.Business.Logistics.External
     // Document upload
     public class Insurance
     {
+        /// <summary>
+        /// List of discounts. 
+        /// Specialization : Discount, Percentage/Amount
+        /// </summary>
+        public Dictionary<Specialization, Tuple<float, DiscountType>> Discounts { get; private set; }
+        /// <summary>
+        /// Date up until insurance is available.
+        /// </summary>
+        public DateTime ExpirationDate { get; private set; }
+
         public Insurance(DateTime expirationDate)
         {
             this.ExpirationDate = expirationDate;
@@ -28,16 +38,6 @@ namespace MyDocAppointment.Business.Logistics.External
             this.Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>();
             this.Discounts = discounts;
         }
-
-        /// <summary>
-        /// List of discounts. 
-        /// Specialization : Discount, Percentage/Amount
-        /// </summary>
-        public Dictionary<Specialization, Tuple<float, DiscountType>> Discounts { get; private set; }
-        /// <summary>
-        /// Date up until insurance is available.
-        /// </summary>
-        public DateTime ExpirationDate { get; private set; }
 
         public Result AddDiscount(Specialization specialization, float discount, DiscountType discountType)
         {

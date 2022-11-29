@@ -1,4 +1,5 @@
 ﻿using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,6 @@ namespace MyDocAppointment.Business.Logistics.External
     // To implement template diagnosis for easy medical use.
     public class Diagnosis
     {
-        public Diagnosis(string name, string description, DateTime diagnosisDate)
-        {
-            Id = new Guid();
-            Name = name;
-            Description = description;
-            DiagnosisDate = diagnosisDate;
-        }
 
         public Guid Id { get; set; }
         public string Name { get; private set; }
@@ -28,10 +22,18 @@ namespace MyDocAppointment.Business.Logistics.External
         public List<Observation> Observations { get; private set; }
         public Guid UserId { get; private set; }
 
-        // Assign to user as well!!!
-        public Result AssignToUser(Guid userId)
+        public Diagnosis(string name, string description, DateTime diagnosisDate)
         {
-            this.UserId = userId;
+            Id = new Guid();
+            Name = name;
+            Description = description;
+            DiagnosisDate = diagnosisDate;
+        }
+
+        public Result AssignToUser(Patient patient)
+        {
+            this.UserId = patient.Id;
+            patient.Diagnosis.Add(this);
             return Result.Success();
         }
 
