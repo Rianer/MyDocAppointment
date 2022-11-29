@@ -53,14 +53,20 @@ namespace MyDocAppointment.Business.Logistics.External
             return Result.Success();
         }
 
-        public Result AssignToPatient()
+        public Result AssignToPatient(Patient patient)
         {
-            return Result.Failure("To do.");
+            this.Patient = patient;
+            this.PatientID = patient.Id;
+            patient.Appointments.Add(this);
+            return Result.Success();
         }
 
-        public Result AssignToDoctor()
+        public Result AssignToDoctor(Doctor doctor)
         {
-            return Result.Failure("To do.");
+            this.Doctor = doctor;
+            this.DoctorID = doctor.Id;
+            doctor.Appointments.Add(this);
+            return Result.Success();
         }
 
         public Result ChangeLocation(string location)

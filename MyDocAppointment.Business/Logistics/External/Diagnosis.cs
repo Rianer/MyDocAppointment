@@ -1,4 +1,5 @@
 ﻿using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,10 +30,10 @@ namespace MyDocAppointment.Business.Logistics.External
             DiagnosisDate = diagnosisDate;
         }
 
-        // Assign to user as well!!!
-        public Result AssignToUser(Guid userId)
+        public Result AssignToUser(Patient patient)
         {
-            this.UserId = userId;
+            this.UserId = patient.Id;
+            patient.Diagnosis.Add(this);
             return Result.Success();
         }
 
