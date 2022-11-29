@@ -8,7 +8,10 @@ const routes: Routes = [
   path:'services',
   component:ServicesComponent
   },
-
+  {
+    path:'',
+    component:LandingPageComponent
+  }
 ];
 
 @NgModule({
