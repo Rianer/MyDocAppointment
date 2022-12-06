@@ -1,12 +1,12 @@
 namespace MyDocAppointment.Tests.Integration
 {
 
-    public class DoctorControllerIntegrationTests
+    /*public class DoctorControllerIntegrationTests
     {
         [Fact]
         public void Test1()
         {
             
         }
-    }
+    }*/
 }
