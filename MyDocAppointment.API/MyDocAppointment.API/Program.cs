@@ -17,6 +17,15 @@ builder.Services.AddScoped<IPatientsService, PatientsService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDatabase(connectionString);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("sheltersCors", policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,7 +36,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("sheltersCors");
 app.UseAuthorization();
 
 app.MapControllers();

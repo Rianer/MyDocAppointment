@@ -11,7 +11,7 @@
             <th>Email</th>
             <th>Speciality</th>
         </tr>
-        <tr class="row" *ngFor="let doctor of doctors; let i = index;">
+        <tr class="row" *ngFor="let doctor of doctors1; let i = index;">
             <td>{{i+1}}</td>
             <td>{{doctor.name}}</td>
             <td>{{doctor.email}}</td>
@@ -19,3 +19,7 @@
         </tr>
     </table>
 </div>
+
+<div *ngIf="doctors | async; let doctors">
+    <h3> {{doctors | json}} </h3>
+  </div>

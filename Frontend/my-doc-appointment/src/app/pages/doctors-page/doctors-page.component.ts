@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-doctors-page',
   templateUrl: './doctors-page.component.html',
   styleUrls: ['./doctors-page.component.scss']
 })
-export class DoctorsPageComponent {
-  doctors = [
+export class DoctorsPageComponent implements OnInit {
+  
+  doctors1 = [
     {
       name:'Peter Parker',
       email:'p.parker@gmail.com',
@@ -18,4 +20,26 @@ export class DoctorsPageComponent {
       speciality:'Surgeon'
     },
   ];
+  data : any;
+  doctors : any;
+
+  constructor(private http: HttpClient ){
+
+  }
+
+
+  async ngOnInit() {
+    this.doctors = this.http.get('https://localhost:7288/api/Doctor');
+    this.data = await this.getDoctors();
+    
+  }
+
+  showDoctors(){
+    console.log(this.doctors);
+  }
+
+  async getDoctors(){
+    const docs = this.http.get('https://localhost:7288/api/Doctor').toPromise();
+    docs.then(value => {console.log(value)});
+  }
 }

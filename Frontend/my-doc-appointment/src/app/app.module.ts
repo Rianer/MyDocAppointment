@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { DoctorsPageComponent } from './pages/doctors-page/doctors-page.component';
 import { AppointmentPageComponent } from './pages/appointment-page/appointment-page.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { AppointmentPageComponent } from './pages/appointment-page/appointment-p
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
