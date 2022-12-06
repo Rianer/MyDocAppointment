@@ -1,9 +1,6 @@
 ﻿using MyDocAppointment.Business.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MyDocAppointment.Business.Users;
+using System.Reflection;
 
 namespace MyDocAppointment.Business.Logistics.External
 {
@@ -21,53 +18,112 @@ namespace MyDocAppointment.Business.Logistics.External
         /// </summary>
         public DateTime ExpirationDate { get; private set; }
 
-        public Insurance(DateTime expirationDate)
+        public static Result<Insurance> Create(string expirationDate)
         {
-            this.ExpirationDate = expirationDate;
-            this.Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>();
+            DateTime timeResult;
+
+            try
+            {
+                timeResult = DateTime.Parse(expirationDate);
+            }
+            catch (Exception ex)
+            {
+                return Result<Insurance>.Failure($"Invalid time format: '{expirationDate}'.\n" + ex.Message);
+            }
+
+            Insurance insurance = new()
+            {
+                ExpirationDate = timeResult,
+                Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>()
+            };
+            return Result<Insurance>.Success(insurance);
         }
 
-        /// <summary>
-        /// If we eventually have predefined insurance packets.
-        /// </summary>
-        /// <param name="expirationDate"></param>
-        /// <param name="Discounts"></param>
-        public Insurance(DateTime expirationDate, Dictionary<Specialization, Tuple<float, DiscountType>> discounts)
-        {
-            this.ExpirationDate = expirationDate;
-            this.Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>();
-            this.Discounts = discounts;
-        }
+        ///// <summary>
+        ///// If we eventually have predefined insurance packets.
+        ///// </summary>
+        ///// <param name="expirationDate"></param>
+        ///// <param name="Discounts"></param>
+        //public Insurance(string expirationDate, Dictionary<Specialization, Tuple<float, DiscountType>> discounts)
+        //{
+        //    this.ExpirationDate = expirationDate;
+        //    this.Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>();
+        //    this.Discounts = discounts;
+        //}
 
-        public Result AddDiscount(Specialization specialization, float discount, DiscountType discountType)
+        public Result AddDiscount(string specialization, float discount, string discountType)
         {
-            this.Discounts.Add(specialization, new Tuple<float, DiscountType>(discount, discountType));
+            DiscountType discountResult;
+            Specialization specializationResult;
+
+            if (!Enum.TryParse<Specialization>(specialization, out specializationResult))
+            {
+                return Result.Failure("Input specialization is invalid: " + specialization);
+            }
+
+            if (!Enum.TryParse<DiscountType>(discountType, out discountResult))
+            {
+                return Result.Failure("Input discount type is invalid: " + discountType);
+            }
+
+            Discounts.Add(specializationResult, new Tuple<float, DiscountType>(discount, discountResult));
             return Result.Success();
         }
 
-        public Result RemoveDiscount(Specialization specialization)
+        public Result RemoveDiscount(string specialization)
         {
-            if(this.Discounts.ContainsKey(specialization))
+            Specialization specializationResult;
+
+            if (!Enum.TryParse<Specialization>(specialization, out specializationResult))
             {
-                this.Discounts.Remove(specialization);
+                return Result.Failure("Input specialization is invalid: " + specialization);
+            }
+
+            if (Discounts.ContainsKey(specializationResult))
+            {
+                Discounts.Remove(specializationResult);
                 return Result.Success();
             }
             return Result.Failure("Can't remove specialization because isn't included in the insurance.");
         }
 
-        public Result ModifyDiscount(Specialization specialization, float discount, DiscountType discountType)
+        public Result ModifyDiscount(string specialization, float discount, string discountType)
         {
-            if (this.Discounts.ContainsKey(specialization))
+            DiscountType discountResult;
+            Specialization specializationResult;
+
+            if (!Enum.TryParse<Specialization>(specialization, out specializationResult))
             {
-                this.Discounts[specialization] = new Tuple<float, DiscountType>(discount, discountType);
+                return Result.Failure("Input specialization is invalid: " + specialization);
+            }
+
+            if (!Enum.TryParse<DiscountType>(discountType, out discountResult))
+            {
+                return Result.Failure("Input discount type is invalid: " + discountType);
+            }
+
+            if (this.Discounts.ContainsKey(specializationResult))
+            {
+                this.Discounts[specializationResult] = new Tuple<float, DiscountType>(discount, discountResult);
                 return Result.Success();
             }
             return Result.Failure("Can't modify specialization because isn't included in the insurance.");
         }
 
-        public Result RenewInsurance(DateTime expirationDate)
+        public Result RenewInsurance(string expirationDate)
         {
-            this.ExpirationDate = expirationDate;
+            DateTime timeResult;
+
+            try
+            {
+                timeResult = DateTime.Parse(expirationDate);
+            }
+            catch (Exception ex)
+            {
+                return Result.Failure($"Invalid time format: '{expirationDate}'.\n" + ex.Message);
+            }
+
+            ExpirationDate = timeResult;
             return Result.Success();
         }
     }

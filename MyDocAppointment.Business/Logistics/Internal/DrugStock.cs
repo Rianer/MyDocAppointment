@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyDocAppointment.Business.Logistics.Internal
+﻿namespace MyDocAppointment.Business.Logistics.Internal
 {
     // Only seen by doctors, contains a list of drugs and their count??
     public class DrugStock

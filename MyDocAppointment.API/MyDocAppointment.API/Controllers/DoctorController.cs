@@ -31,7 +31,8 @@ namespace MyDocAppointment.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateDoctorDto dto)
         {
-            var doctor = Doctor.Create(dto.Name, dto.Surname, dto.Age, dto.Gender, dto.EmailAddress, dto.PhoneNumber, dto.HomeAddress, dto.Speciality);
+            var doctor = Doctor.Create(dto.Name, dto.Surname, dto.Age, dto.Gender, 
+                dto.EmailAddress, dto.PhoneNumber, dto.HomeAddress, dto.Speciality);
             await doctorService.Create(doctor.Entity);
 
             return Created(nameof(Get), doctor);

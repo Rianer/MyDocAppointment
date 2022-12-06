@@ -1,9 +1,7 @@
 ﻿using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Users;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace MyDocAppointment.Business.Logistics.External
 {
@@ -15,50 +13,91 @@ namespace MyDocAppointment.Business.Logistics.External
         public DateTime DueDate { get; private set; }
         public DateTime EmissionDate { get; private set; }
         public DateTime AcquittedDate { get; private set; }
-        public bool IsAcquitted { get { return (AcquittedDate != new DateTime()); } }
+        public bool IsAcquitted { get { return (AcquittedDate != DateTime.MinValue); } }
 
-        public static Result<Payment> Create(double amount, PaymentMethod paymentMethod, DateTime emissionDate, DateTime dueDate)
+        public static Result<Payment> Create(double amount, string paymentMethod,
+            string emissionDate, string dueDate)
         {
-            if(amount < 0)
+            DateTime dueDateResult;
+            DateTime emissionDateResult;
+            PaymentMethod paymentResult;
+
+            try
+            {
+                dueDateResult = DateTime.Parse(dueDate);
+                emissionDateResult = DateTime.Parse(emissionDate);
+                if (dueDateResult < emissionDateResult)
+                {
+                    return Result<Payment>.Failure($"Due date '{dueDate}' is before emission date '{emissionDate}'.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result<Payment>.Failure($"Invalid time format: '{dueDate}/{emissionDate}'.\n" + ex.Message);
+            }
+
+            if (amount < 0)
             {
                 return Result<Payment>.Failure($"Payment amount is negative: '{amount}'.");
             }
 
-            if(dueDate < emissionDate)
+            if (!Enum.TryParse<PaymentMethod>(paymentMethod, out paymentResult))
             {
-                return Result<Payment>.Failure($"Due date '{dueDate}' is before emission date '{emissionDate}'.");
+                return Result<Payment>.Failure("Input payment method is invalid: " + paymentMethod);
             }
 
             var payment = new Payment()
             {
                 Id = new Guid(),
                 Amount = amount,
-                PaymentMethod = paymentMethod,
-                EmissionDate = emissionDate,
-                DueDate = dueDate
+                PaymentMethod = paymentResult,
+                EmissionDate = emissionDateResult,
+                DueDate = dueDateResult,
+                AcquittedDate = DateTime.MinValue
             };
 
             return Result<Payment>.Success(payment);
         }
 
-        public Result ChangeDueDate(DateTime dateTime)
+        public Result ChangeDueDate(string dateTime)
         {
-            if (dateTime < this.EmissionDate)
+            DateTime timeResult;
+
+            try
             {
-                return Result.Failure($"Can't set the due date '{dateTime}' before the emission date '{this.EmissionDate}'!");
+                timeResult = DateTime.Parse(dateTime);
+                if (timeResult < this.EmissionDate)
+                {
+                    return Result.Failure($"Can't set the due date '{dateTime}' before the emission date '{this.EmissionDate}'!");
+                }
             }
-            this.DueDate = dateTime;
+            catch (Exception ex)
+            {
+                return Result.Failure($"Invalid time format: '{dateTime}'.\n" + ex.Message);
+            }
+
+            this.DueDate = timeResult;
             return Result.Success();
         }
 
-        public Result SetAcquittedDate(DateTime dateTime)
+        public Result SetAcquittedDate(string dateTime)
         {
-            if (dateTime < this.EmissionDate)
+            DateTime timeResult;
+
+            try
             {
-                return Result.Failure($"Can't set the acquitted date '{dateTime}' before the emission date '{this.EmissionDate}'!");
+                timeResult = DateTime.Parse(dateTime);
+                if (timeResult < this.EmissionDate)
+                {
+                    return Result.Failure($"Can't set the acquitted date '{dateTime}' before the emission date '{this.EmissionDate}'!");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Failure($"Invalid time format: '{dateTime}'.\n" + ex.Message);
             }
 
-            this.AcquittedDate = dateTime;
+            this.AcquittedDate = timeResult;
             return Result.Success();
         }
 

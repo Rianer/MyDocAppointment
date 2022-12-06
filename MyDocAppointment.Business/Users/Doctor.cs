@@ -23,11 +23,12 @@ namespace MyDocAppointment.Business.Users
 
             if (!Enum.TryParse<Specialization>(specialization, out specializationResult))
             {
-                return Result<Doctor>.Failure("Input specialization is invalid: " + specializationResult);
+                return Result<Doctor>.Failure("Input specialization is invalid: " + specialization);
             }
 
             Doctor doctor = new()
             {
+                Id = new Guid(),
                 Name = name,
                 Surname = surname,
                 Age = age,
@@ -47,11 +48,9 @@ namespace MyDocAppointment.Business.Users
             {
                 return Result.Failure("Input not null appointment!");
             }
-            else
-            {
-                Appointments.Add(appointment);
-                return Result.Success();
-            }
+
+            Appointments.Add(appointment);
+            return Result.Success();
         }
     }
 }

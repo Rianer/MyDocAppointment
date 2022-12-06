@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyDocAppointment.Business.Helpers;
+﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Logistics.External;
 
 namespace MyDocAppointment.Business.Users
@@ -28,6 +23,7 @@ namespace MyDocAppointment.Business.Users
 
             Patient patient = new()
             {
+                Id = new Guid(),
                 Name = name,
                 Surname = surname,
                 Age = age,
@@ -47,11 +43,9 @@ namespace MyDocAppointment.Business.Users
             {
                 return Result.Failure("Input not null appointment!");
             }
-            else
-            {
-                Appointments.Add(appointment);
-                return Result.Success();
-            }
+            
+            Appointments.Add(appointment);
+            return Result.Success();
         }
 
         public Result AddDiagnosis(Diagnosis diagnosis)
@@ -60,11 +54,9 @@ namespace MyDocAppointment.Business.Users
             {
                 return Result.Failure("Input not null diagnosis!");
             }
-            else
-            {
-                Diagnosis.Add(diagnosis);
-                return Result.Success();
-            }
+            
+            Diagnosis.Add(diagnosis);
+            return Result.Success();
         }
 
         public Result AssignInsurance(Insurance insurance)
@@ -73,11 +65,9 @@ namespace MyDocAppointment.Business.Users
             {
                 return Result.Failure("Input not null insurance!");
             }
-            else
-            {
-                Insurance = insurance;
-                return Result.Success();
-            }
+            
+            Insurance = insurance;
+            return Result.Success();
         }
     }
 }

@@ -1,6 +1,3 @@
-using MyDocAppointment.Business.Helpers;
-using MyDocAppointment.Business.Logistics.External;
-
 namespace MyDocAppointment.API.Dtos
 {
     public class CreatePatientDto
