@@ -1,1 +1,21 @@
-<p>doctors-page works!</p>
+<div class="info-box">
+    <div class="title">Our Doctors</div>
+    <div class="info-content">Here you can check all our doctors and their specialities</div>
+</div>
+
+<div class="content-wrapper">
+    <table class="info-table">
+        <tr class="row-header">
+            <th>#</th>
+            <th>Doctor</th>
+            <th>Email</th>
+            <th>Speciality</th>
+        </tr>
+        <tr class="row" *ngFor="let doctor of doctors; let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{doctor.name}}</td>
+            <td>{{doctor.email}}</td>
+            <td>{{doctor.speciality}}</td>
+        </tr>
+    </table>
+</div>
