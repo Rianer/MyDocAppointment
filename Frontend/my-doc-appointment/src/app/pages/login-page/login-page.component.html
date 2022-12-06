@@ -1,0 +1,55 @@
+<section class="login">
+</section>
+<!-- signin -->
+<div class="center" *ngIf="loginForm">
+  <h1>Sign In</h1>
+  <form [formGroup]="signInForm" (ngSubmit)="signInSubmit()">
+    <div class="txt_field">
+      <input formControlName="email" type="text" required>
+      <span></span>
+      <label>E-mail</label>
+    </div>
+    <div class="txt_field">
+      <input formControlName="password" type="password" required>
+      <span></span>
+      <label>Password</label>
+    </div>
+    <div class="pass">Forgot Password?</div>
+    <button class="submit" type="submit">Login</button>
+    <div class="signup_link">
+      Not a member? <a (click)="cycleForm()">Sign Up</a>
+    </div>
+  </form>
+</div>
+
+<!-- signup -->
+<div class="center signup" *ngIf="!loginForm">
+  <h1>Sign Up</h1>
+  <form [formGroup]="signUpForm" (ngSubmit)="signUpSubmit()">
+    <div class="txt_field">
+      <input formControlName="email" type="text" required>
+      <span></span>
+      <label>E-mail</label>
+    </div>
+    <div class="txt_field">
+      <input formControlName="name" type="text" required>
+      <span></span>
+      <label>Full Name</label>
+    </div>
+    <div class="date">
+      <label>Birth Date</label>
+      <input formControlName="birthdate" type="date" required>
+    </div>
+    <div class="txt_field">
+      <input formControlName="password" type="password" required>
+      <span></span>
+      <label>Password</label>
+    </div>
+    <div class="pass">Forgot Password?</div>
+    <input type="submit" value="Login">
+    <div class="signup_link">
+      Already a member? <a (click)="cycleForm()">Sign In</a>
+    </div>
+  </form>
+</div>
+
