@@ -1,7 +1,4 @@
 ﻿using MyDocAppointment.Business.Helpers;
-using MyDocAppointment.Business.Users;
-using System;
-using System.Reflection;
 
 namespace MyDocAppointment.Business.Logistics.External
 {
@@ -66,9 +63,9 @@ namespace MyDocAppointment.Business.Logistics.External
             try
             {
                 timeResult = DateTime.Parse(dateTime);
-                if (timeResult < this.EmissionDate)
+                if (timeResult <  EmissionDate)
                 {
-                    return Result.Failure($"Can't set the due date '{dateTime}' before the emission date '{this.EmissionDate}'!");
+                    return Result.Failure($"Can't set the due date '{dateTime}' before the emission date '{ EmissionDate}'!");
                 }
             }
             catch (Exception ex)
@@ -76,7 +73,7 @@ namespace MyDocAppointment.Business.Logistics.External
                 return Result.Failure($"Invalid time format: '{dateTime}'.\n" + ex.Message);
             }
 
-            this.DueDate = timeResult;
+             DueDate = timeResult;
             return Result.Success();
         }
 
@@ -87,9 +84,9 @@ namespace MyDocAppointment.Business.Logistics.External
             try
             {
                 timeResult = DateTime.Parse(dateTime);
-                if (timeResult < this.EmissionDate)
+                if (timeResult <  EmissionDate)
                 {
-                    return Result.Failure($"Can't set the acquitted date '{dateTime}' before the emission date '{this.EmissionDate}'!");
+                    return Result.Failure($"Can't set the acquitted date '{dateTime}' before the emission date '{ EmissionDate}'!");
                 }
             }
             catch (Exception ex)
@@ -97,7 +94,7 @@ namespace MyDocAppointment.Business.Logistics.External
                 return Result.Failure($"Invalid time format: '{dateTime}'.\n" + ex.Message);
             }
 
-            this.AcquittedDate = timeResult;
+             AcquittedDate = timeResult;
             return Result.Success();
         }
 
@@ -108,7 +105,7 @@ namespace MyDocAppointment.Business.Logistics.External
                 return Result.Failure($"Payment amount is negative: '{amount}'.");
             }
 
-            this.Amount = amount;
+             Amount = amount;
             return Result.Success();
         }
     }

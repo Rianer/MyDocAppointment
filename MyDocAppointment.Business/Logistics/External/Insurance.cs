@@ -1,6 +1,4 @@
 ﻿using MyDocAppointment.Business.Helpers;
-using MyDocAppointment.Business.Users;
-using System.Reflection;
 
 namespace MyDocAppointment.Business.Logistics.External
 {
@@ -46,9 +44,9 @@ namespace MyDocAppointment.Business.Logistics.External
         ///// <param name="Discounts"></param>
         //public Insurance(string expirationDate, Dictionary<Specialization, Tuple<float, DiscountType>> discounts)
         //{
-        //    this.ExpirationDate = expirationDate;
-        //    this.Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>();
-        //    this.Discounts = discounts;
+        //     ExpirationDate = expirationDate;
+        //     Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>();
+        //     Discounts = discounts;
         //}
 
         public Result AddDiscount(string specialization, float discount, string discountType)
@@ -102,9 +100,9 @@ namespace MyDocAppointment.Business.Logistics.External
                 return Result.Failure("Input discount type is invalid: " + discountType);
             }
 
-            if (this.Discounts.ContainsKey(specializationResult))
+            if ( Discounts.ContainsKey(specializationResult))
             {
-                this.Discounts[specializationResult] = new Tuple<float, DiscountType>(discount, discountResult);
+                 Discounts[specializationResult] = new Tuple<float, DiscountType>(discount, discountResult);
                 return Result.Success();
             }
             return Result.Failure("Can't modify specialization because isn't included in the insurance.");

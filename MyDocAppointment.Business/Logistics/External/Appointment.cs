@@ -12,8 +12,8 @@ namespace MyDocAppointment.Business.Logistics.External
         public Guid DoctorID { get; private set; }
         public Specialization Specialization { get; private set; }
         public DateTime AppointmentTime { get; private set; }
-        //public virtual Doctor Doctor { get; private set; }
-        //public virtual Patient Patient { get; private set; }
+        public virtual Doctor Doctor { get; private set; }
+        public virtual Patient Patient { get; private set; }
 
         public static Result<Appointment> Create(string specialization, 
             string timeOfAppointment, string location)
@@ -66,29 +66,34 @@ namespace MyDocAppointment.Business.Logistics.External
                 return Result.Failure($"Invalid time format: '{dateTime}'.\n" + ex.Message);
             }
 
-            this.AppointmentTime = timeResult;
+            AppointmentTime = timeResult;
             return Result.Success();
         }
 
         public Result AssignPatient(Patient patient)
         {
-            //this.Patient = patient;
-            this.PatientID = patient.Id;
+            if(patient == null)
+            {
+                return Result.Failure("Input not null patient!");
+            }
+
+            Patient = patient;
+            PatientID = patient.Id;
             patient.AddAppointment(this);
             return Result.Success();
         }
 
         public Result AssignDoctor(Doctor doctor)
         {
-            //this.Doctor = doctor;
-            this.DoctorID = doctor.Id;
+            Doctor = doctor;
+            DoctorID = doctor.Id;
             doctor.AddAppointment(this);
             return Result.Success();
         }
 
         public Result ChangeLocation(string location)
         {
-            this.Location = location;
+            Location = location;
             return Result.Success();
         }
 
@@ -99,7 +104,7 @@ namespace MyDocAppointment.Business.Logistics.External
                 return Result.Failure("Input not null payment!");
             }
             
-            this.Payment = payment;
+            Payment = payment;
             return Result.Success();
         }
     }

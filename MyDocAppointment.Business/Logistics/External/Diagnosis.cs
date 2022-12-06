@@ -46,9 +46,9 @@ namespace MyDocAppointment.Business.Logistics.External
 
         public Result DeleteObservation(int id)
         {
-            if(this.Observations.Count > id)
+            if( Observations.Count > id)
             {
-                this.Observations.RemoveAt(id);
+                 Observations.RemoveAt(id);
                 return Result.Success();
             }
             return Result.Failure("Observation doesn't exist in diagnosis!");
@@ -56,9 +56,9 @@ namespace MyDocAppointment.Business.Logistics.External
 
         public Result ModifyObservation(int id, string date, string description)
         {
-            if (this.Observations.Count > id)
+            if ( Observations.Count > id)
             {
-                this.Observations[id] = Observation.Create(date, description).Entity;
+                 Observations[id] = Observation.Create(date, description).Entity;
                 return Result.Success();
             }
             return Result.Failure("Observation doesn't exist in diagnosis!");
