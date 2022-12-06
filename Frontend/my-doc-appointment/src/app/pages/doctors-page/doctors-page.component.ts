@@ -30,7 +30,12 @@ export class DoctorsPageComponent implements OnInit {
 
   async ngOnInit() {
     this.doctors = this.http.get('https://localhost:7288/api/Doctor');
-    this.data = await this.getDoctors();
+    this.data = this.http.get('https://localhost:7288/api/Doctor').subscribe({
+      next: (doc) => {
+        this.data = doc;
+      }
+    });
+    console.log(this.data);
     
   }
 
