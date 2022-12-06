@@ -1,4 +1,4 @@
-﻿using MyDocAppointment.Business.Helpers;
+﻿/*using MyDocAppointment.Business.Helpers;
 
 namespace MyDocAppointment.Business.Logistics.External
 {
@@ -10,7 +10,7 @@ namespace MyDocAppointment.Business.Logistics.External
         /// List of discounts. 
         /// Specialization : Discount, Percentage/Amount
         /// </summary>
-        public Dictionary<Specialization, Tuple<float, DiscountType>> Discounts { get; private set; }
+        //public Dictionary<Specialization, Tuple<float, DiscountType>> Discounts { get; private set; }
         /// <summary>
         /// Date up until insurance is available.
         /// </summary>
@@ -32,7 +32,7 @@ namespace MyDocAppointment.Business.Logistics.External
             Insurance insurance = new()
             {
                 ExpirationDate = timeResult,
-                Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>()
+                //Discounts = new Dictionary<Specialization, Tuple<float, DiscountType>>()
             };
             return Result<Insurance>.Success(insurance);
         }
@@ -64,7 +64,7 @@ namespace MyDocAppointment.Business.Logistics.External
                 return Result.Failure("Input discount type is invalid: " + discountType);
             }
 
-            Discounts.Add(specializationResult, new Tuple<float, DiscountType>(discount, discountResult));
+            //Discounts.Add(specializationResult, new Tuple<float, DiscountType>(discount, discountResult));
             return Result.Success();
         }
 
@@ -126,3 +126,4 @@ namespace MyDocAppointment.Business.Logistics.External
         }
     }
 }
+*/
