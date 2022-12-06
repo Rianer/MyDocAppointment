@@ -7,7 +7,7 @@ namespace MyDocAppointment.Business.Users
     {
         public List<Appointment> Appointments { get; private set; }
         public List<Diagnosis> Diagnosis { get; private set; }
-        public Insurance Insurance { get; private set; }
+        //public Insurance Insurance { get; private set; }
 
         //public Patient() { }
 
@@ -59,7 +59,7 @@ namespace MyDocAppointment.Business.Users
             return Result.Success();
         }
 
-        public Result AssignInsurance(Insurance insurance)
+        /*public Result AssignInsurance(Insurance insurance)
         {
             if (insurance == null)
             {
@@ -68,6 +68,6 @@ namespace MyDocAppointment.Business.Users
             
             Insurance = insurance;
             return Result.Success();
-        }
+        }*/
     }
 }
