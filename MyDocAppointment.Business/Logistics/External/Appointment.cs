@@ -1,10 +1,5 @@
 ﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Users;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyDocAppointment.Business.Logistics.External
 {
@@ -18,60 +13,98 @@ namespace MyDocAppointment.Business.Logistics.External
         public Specialization Specialization { get; private set; }
         public DateTime AppointmentTime { get; private set; }
         public virtual Doctor Doctor { get; private set; }
-        public Patient Patient { get; private set; }
+        public virtual Patient Patient { get; private set; }
 
-        public static Result<Appointment> Create(Specialization specialization, DateTime timeOfAppointment, Payment payment, string location, Guid patientID, Guid doctorID)
+        public static Result<Appointment> Create(string specialization, 
+            string timeOfAppointment, string location)
         {
-            // validate DoctorID and ClientID
-            if (timeOfAppointment < DateTime.Now)
+            Specialization specializationResult;
+            DateTime timeResult;
+
+            if (!Enum.TryParse<Specialization>(specialization, out specializationResult))
             {
-                return Result<Appointment>.Failure($"Can't set appointment in the past: '{timeOfAppointment}'.");
+                return Result<Appointment>.Failure("Input specialization is invalid: " + specializationResult);
             }
 
-            var appointment = new Appointment()
+            try
+            {
+                timeResult = DateTime.Parse(timeOfAppointment);
+                if (timeResult < DateTime.Now)
+                {
+                    return Result<Appointment>.Failure($"Can't set appointment in the past: '{timeResult}'.");
+                }
+            }
+            catch(Exception ex)
+            {
+                return Result<Appointment>.Failure($"Invalid time format: '{timeOfAppointment}'.\n" + ex.Message);
+            }
+
+            Appointment appointment = new()
             {
                 Id = Guid.NewGuid(),
-                Specialization = specialization,
-                AppointmentTime = timeOfAppointment,
-                Location = location,
-                PatientID = patientID,
-                DoctorID = doctorID,
-                Payment = payment
+                Specialization = specializationResult,
+                AppointmentTime = timeResult,
+                Location = location
             };
-
             return Result<Appointment>.Success(appointment);
         }
 
-        public Result ChangeAppointmentTime(DateTime dateTime)
+        public Result ChangeAppointmentTime(string dateTime)
         {
-            if (dateTime < DateTime.Now)
+            DateTime timeResult;
+
+            try
             {
-                return Result.Failure($"Can't set appointment in the past: '{dateTime}'.");
+                timeResult = DateTime.Parse(dateTime);
+                if (timeResult < DateTime.Now)
+                {
+                    return Result.Failure($"Can't set appointment in the past: '{timeResult}'.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Failure($"Invalid time format: '{dateTime}'.\n" + ex.Message);
             }
 
-            this.AppointmentTime = dateTime;
+            AppointmentTime = timeResult;
             return Result.Success();
         }
 
-        public Result AssignToPatient(Patient patient)
+        public Result AssignPatient(Patient patient)
         {
-            this.Patient = patient;
-            this.PatientID = patient.Id;
-            patient.Appointments.Add(this);
+            if(patient == null)
+            {
+                return Result.Failure("Input not null patient!");
+            }
+
+            Patient = patient;
+            PatientID = patient.Id;
+            patient.AddAppointment(this);
             return Result.Success();
         }
 
-        public Result AssignToDoctor(Doctor doctor)
+        public Result AssignDoctor(Doctor doctor)
         {
-            this.Doctor = doctor;
-            this.DoctorID = doctor.Id;
-            doctor.Appointments.Add(this);
+            Doctor = doctor;
+            DoctorID = doctor.Id;
+            doctor.AddAppointment(this);
             return Result.Success();
         }
 
         public Result ChangeLocation(string location)
         {
-            this.Location = location;
+            Location = location;
+            return Result.Success();
+        }
+
+        public Result AssignPayment(Payment payment)
+        {
+            if(payment == null)
+            {
+                return Result.Failure("Input not null payment!");
+            }
+            
+            Payment = payment;
             return Result.Success();
         }
     }

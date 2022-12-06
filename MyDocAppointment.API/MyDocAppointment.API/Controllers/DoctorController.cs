@@ -16,8 +16,8 @@ namespace MyDocAppointment.API.Controllers
             this.doctorService = doctorService;
         }
 
-         [HttpGet]
-        public async Task<IActionResult> Get() 
+        [HttpGet]
+        public async Task<IActionResult> Get()
         {
             var response = await doctorService.GetAll();
             if (response.IsSuccess)
@@ -31,8 +31,9 @@ namespace MyDocAppointment.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateDoctorDto dto)
         {
-            var doctor = new Doctor(dto.Name, dto.Surname, dto.Age, dto.Gender,  dto.EmailAddress, dto.Speciality, dto.Appointments);
-            await doctorService.Create(doctor);
+            var doctor = Doctor.Create(dto.Name, dto.Surname, dto.Age, dto.Gender, 
+                dto.EmailAddress, dto.PhoneNumber, dto.HomeAddress, dto.Speciality);
+            await doctorService.Create(doctor.Entity);
 
             return Created(nameof(Get), doctor);
         }
@@ -40,7 +41,7 @@ namespace MyDocAppointment.API.Controllers
         [HttpGet("{doctorId:guid}")]
         public async Task<IActionResult> GetById(Guid doctorId)
         {
-            var response =await doctorService.GetById(doctorId);
+            var response = await doctorService.GetById(doctorId);
             if (response.IsSuccess)
             {
                 return Ok(response);

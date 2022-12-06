@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyDocAppointment.Business.Helpers;
 
 namespace MyDocAppointment.Business.Logistics.External
 {
@@ -13,11 +9,26 @@ namespace MyDocAppointment.Business.Logistics.External
         public DateTime Date { get; private set; }
         public string Description { get; private set; }
 
-        public Observation(DateTime date, string description)
+        public static Result<Observation> Create(string date, string description)
         {
-            Id = new Guid();
-            Date = date;
-            Description = description;
+            DateTime timeResult;
+
+            try
+            {
+                timeResult = DateTime.Parse(date);
+            }
+            catch (Exception ex)
+            {
+                return Result<Observation>.Failure($"Invalid time format: '{date}'.\n" + ex.Message);
+            }
+
+            Observation observation = new()
+            {
+                Id = new Guid(),
+                Date = timeResult,
+                Description = description
+            };
+            return Result<Observation>.Success(observation);
         }
     }
 }
