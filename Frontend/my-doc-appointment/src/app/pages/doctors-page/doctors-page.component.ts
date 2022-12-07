@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ServerResponse } from 'src/app/models/server-response.model';
+import { Doctor } from 'src/app/models/doctor.model';
 
 @Component({
   selector: 'app-doctors-page',
@@ -8,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DoctorsPageComponent implements OnInit {
   
+
   doctors1 = [
     {
       name:'Peter Parker',
@@ -28,15 +31,8 @@ export class DoctorsPageComponent implements OnInit {
   }
 
 
-  async ngOnInit() {
-    this.doctors = this.http.get('https://localhost:7288/api/Doctor');
-    this.data = this.http.get('https://localhost:7288/api/Doctor').subscribe({
-      next: (doc) => {
-        this.data = doc;
-      }
-    });
-    console.log(this.data);
-    
+  ngOnInit() {
+    this.getDoctors();
   }
 
   showDoctors(){
@@ -44,7 +40,12 @@ export class DoctorsPageComponent implements OnInit {
   }
 
   async getDoctors(){
-    const docs = this.http.get('https://localhost:7288/api/Doctor').toPromise();
-    docs.then(value => {console.log(value)});
+    const docs = await this.http.get<ServerResponse<Doctor>>('https://localhost:7288/api/Doctor').subscribe(response => {
+      console.log(response);
+      this.doctors = response.entity;
+      console.log(this.doctors);
+    });
+    // this.doctors = docs;
+    // console.log(this.doctors);
   }
 }
