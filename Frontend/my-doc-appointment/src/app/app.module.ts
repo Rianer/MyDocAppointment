@@ -11,6 +11,7 @@ import { ServicesPageComponent } from './pages/services-page/services-page.compo
 import { DoctorsPageComponent } from './pages/doctors-page/doctors-page.component';
 import { AppointmentPageComponent } from './pages/appointment-page/appointment-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewInstanceComponent } from './new-instance/new-instance.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginPageComponent,
     ServicesPageComponent,
     DoctorsPageComponent,
-    AppointmentPageComponent
+    AppointmentPageComponent,
+    NewInstanceComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,6 @@ export class Doctor{
     id: string;
     name: string;
     phoneNumber: string;
-    speciality: 0;
+    speciality: number;
     surname: string;
 }

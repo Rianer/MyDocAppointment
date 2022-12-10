@@ -23,7 +23,6 @@
 .row{
     background-color: $secondaryColor;
     color: $plainColor;
-    cursor: pointer;
 }
 
 .row td{
@@ -32,8 +31,12 @@
     transition: 300ms ease;
 }
 
-.row:hover td{
-    color: $contrastColor;
+.table-content{
+    transition: 300ms ease;
+}
+
+.row:hover .table-content{
+    color: $accentColor;
 }
 
 
@@ -58,4 +61,8 @@
 .info-content{
     font-size: 1.2rem;
     color: $backgroundColor;
+}
+
+tr>.activation-cell{
+    padding: 0.1rem;
 }
