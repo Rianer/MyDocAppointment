@@ -22,8 +22,6 @@
             Price = newPrice;
         }
 
-        
-
         public void ChangeCategory(string newCategory){
             Category = newCategory;
         }

@@ -1,64 +1,65 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.Internal;
 using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PatientController : ControllerBase
+    public class DrugController : ControllerBase
     {
-        private readonly IPatientsService patientService;
+        private readonly IDrugsService _drugService;
         private readonly IMapper _mapper;
 
-        public PatientController(IPatientsService patientService, IMapper mapper)
+        public DrugController(IDrugsService drugService, IMapper mapper)
         {
-            this.patientService = patientService;
+            _drugService = drugService;
             _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var response = await patientService.GetAll();
+            var response = await _drugService.GetAll();
             if (!response.IsSuccess)
             {
                 return NotFound(response.Error);
             }
 
-            var models = _mapper.Map<IEnumerable<PatientDto>>(response.Entity);
+            var models = _mapper.Map<IEnumerable<DrugDto>>(response.Entity);
             return Ok(models);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreatePatientDto dto)
+        public async Task<IActionResult> Create([FromBody] CreateDrugDto dto)
         {
-            var patient = _mapper.Map<Patient>(dto);
-            await patientService.Create(patient);
+            var drug = _mapper.Map<Drug>(dto);
+            await _drugService.Create(drug);
 
             return Created(nameof(Get), dto);
         }
 
-        [HttpGet("{patientId:guid}")]
-        public async Task<IActionResult> GetById(Guid patientId)
+        [HttpGet("{drugId:guid}")]
+        public async Task<IActionResult> GetById(Guid drugId)
         {
-            var response = await patientService.GetById(patientId);
+            var response = await _drugService.GetById(drugId);
             if (!response.IsSuccess)
             {
                 return NotFound(response.Error);
             }
 
-            var model = _mapper.Map<PatientDto>(response.Entity);
+            var model = _mapper.Map<DrugDto>(response.Entity);
             return Ok(model);
-
         }
 
-        [HttpDelete("{doctorId:guid}")]
-        public async Task<IActionResult> Delete(Guid doctorId)
+        [HttpDelete("{drugId:guid}")]
+        public async Task<IActionResult> Delete(Guid drugId)
         {
-            var response = await patientService.Delete(doctorId);
+            var response = await _drugService.Delete(drugId);
             if (response.IsSuccess)
             {
                 return Ok();

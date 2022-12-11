@@ -7,10 +7,12 @@ using MyDocAppointment.API.Controllers;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Infrastructure;
 using System.Net.Http.Json;
+using System.Net.Http;
 using System.Diagnostics.CodeAnalysis;
 
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace MyDocAppointment.IntegrationTests
 {
@@ -22,32 +24,17 @@ namespace MyDocAppointment.IntegrationTests
         public async void WhenCreatePatient_ThenShouldReturnCreated()
         {
         //Arange
-        var patientDto = new CreatePatientDto
-            {
-                Name = "Ion",
-                Surname = "Ion",
-                Age = 30,
-                Gender = "Male",
-                EmailAddress = "ion@gmail.com",
-                PhoneNumber = "0777777777",
-                HomeAddress = "Iasi"
-
-        };
+        var patientDto = GetPatientDto();
 
             //Act
 
             var patientResponse = await HttpClient.PostAsJsonAsync(ApiUrl, patientDto);
             var getPatientResult = await HttpClient.GetAsync(ApiUrl);
+            var status = ((int)patientResponse.StatusCode);
 
             //Assert
             patientResponse.EnsureSuccessStatusCode();
-            Assert.IsType<CreatedResult>(patientResponse);
-
-
-            getPatientResult.EnsureSuccessStatusCode();
-            var patients = await getPatientResult.Content.ReadFromJsonAsync<List<CreatePatientDto>>();
-            Assert.IsType<NotNullAttribute>(patients);
-
+            Assert.Equal(201, status);
         }
 
         [Fact]
@@ -57,6 +44,33 @@ namespace MyDocAppointment.IntegrationTests
             var response = await HttpClient.GetAsync(ApiUrl);
             //Assert
             response.EnsureSuccessStatusCode();
+        }
+
+        [Fact]
+        public async Task Index_WhenCalled_ReturnsApplicationForm()
+        {
+            var response = await HttpClient.GetAsync(ApiUrl);
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+            Assert.Contains("Ion", responseString);
+            Assert.Contains("Evelin", responseString);
+        }
+
+        private CreatePatientDto GetPatientDto()
+        {
+            var patientDto = new CreatePatientDto
+            {
+                Name = "Evelin",
+                Surname = "Evelin",
+                Age = 30,
+                Gender = "Female",
+                EmailAddress = "evelin@gmail.com",
+                PhoneNumber = "0777777777",
+                HomeAddress = "Iasi"
+
+            };
+
+            return patientDto;
         }
     }
 }
