@@ -9,6 +9,7 @@ namespace MyDocAppointment.API.Mapping
         public InternalProfile()
         {
             CreateMap<Drug, DrugDto>().ReverseMap();
+            CreateMap<CreateDrugDto, Drug>();
             CreateMap<DrugStock, DrugStockDto>().ReverseMap();
         }
     }

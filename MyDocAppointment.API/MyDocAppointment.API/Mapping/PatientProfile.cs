@@ -8,7 +8,7 @@ namespace MyDocAppointment.API.Mapping
     {
         public PatientProfile()
         {
-            CreateMap<Patient, PatientDto>();
+            CreateMap<Patient, PatientDto>().ReverseMap();
             CreateMap<CreatePatientDto, Patient>();
         }
     }

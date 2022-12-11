@@ -1,6 +1,7 @@
 ﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Users;
+using System.Numerics;
 
 namespace MyDocAppointment.Application
 {
@@ -51,6 +52,29 @@ namespace MyDocAppointment.Application
         public async Task SaveChanges()
         {
             await _doctorsRepository.SaveChanges();
+        }
+
+        public async Task<Result<Doctor>> Update(Doctor updateDoctor, Guid doctorId)
+        {
+            var currentDoctor = await _doctorsRepository.GetById(doctorId);
+            if (currentDoctor == null)
+            {
+                return Result<Doctor>.Failure($"Doctor with ID: {doctorId} does not exist.");
+
+            }
+
+            currentDoctor.Name = updateDoctor.Name;
+            currentDoctor.Surname = updateDoctor.Surname;
+            currentDoctor.Age = updateDoctor.Age;
+            currentDoctor.Gender = updateDoctor.Gender;
+            currentDoctor.EmailAddress = updateDoctor.EmailAddress;
+            currentDoctor.PhoneNumber = updateDoctor.PhoneNumber;
+            currentDoctor.HomeAddress = updateDoctor.HomeAddress;
+            currentDoctor.Speciality = updateDoctor.Speciality;
+
+            await _doctorsRepository.SaveChanges();
+
+            return Result<Doctor>.Success(currentDoctor);
         }
     }
 }

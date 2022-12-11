@@ -10,18 +10,18 @@ namespace MyDocAppointment.API.Controllers
     [ApiController]
     public class DoctorController : ControllerBase
     {
-        private readonly IDoctorsService doctorService;
+        private readonly IDoctorsService _doctorService;
         private readonly IMapper _mapper;
         public DoctorController(IDoctorsService doctorService, IMapper mapper)
         {
-            this.doctorService = doctorService;
+            _doctorService = doctorService;
             _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var response = await doctorService.GetAll();
+            var response = await _doctorService.GetAll();
 
             if (!response.IsSuccess)
             {
@@ -37,7 +37,7 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreateDoctorDto dto)
         {
             var doctor = _mapper.Map<Doctor>(dto);
-            await doctorService.Create(doctor);
+            await _doctorService.Create(doctor);
 
             return Created(nameof(Get), dto);
         }
@@ -45,26 +45,41 @@ namespace MyDocAppointment.API.Controllers
         [HttpGet("{doctorId:guid}")]
         public async Task<IActionResult> GetById(Guid doctorId)
         {
-            var response = await doctorService.GetById(doctorId);
+            var response = await _doctorService.GetById(doctorId);
             if (response.IsSuccess)
             {
                 return NotFound(response.Error);
             }
 
             var model = _mapper.Map<DoctorDto>(response.Entity);
-            return Ok(response);
+            return Ok(model);
         }
 
         [HttpDelete("{doctorId:guid}")]
         public async Task<IActionResult> Delete(Guid doctorId)
         {
-            var response = await doctorService.Delete(doctorId);
+            var response = await _doctorService.Delete(doctorId);
             if (response.IsSuccess)
             {
                 return Ok();
             }
 
             return NotFound(response.Error);
+        }
+
+        [HttpPut("{doctorId:guid}")]
+        public async Task<ActionResult<DoctorDto>> Update([FromBody] DoctorDto dto, Guid doctorId)
+        {
+            var doctor = _mapper.Map<Doctor>(dto);
+            var response = await _doctorService.Update(doctor, doctorId);
+
+            if (!response.IsSuccess)
+            { 
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map<DoctorDto>(response.Entity);
+            return Ok(model);
         }
     }
 }

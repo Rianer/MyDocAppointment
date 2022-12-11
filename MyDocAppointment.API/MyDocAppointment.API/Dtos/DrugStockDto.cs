@@ -2,9 +2,9 @@
 {
     public class DrugStockDto
     {
-        public string DrugName { private set; get; }
-        public Guid DrugId { private set; get; }
-        public int Quantity { private set; get; }
-        public bool IsRestricted { private set; get; }
+        public string DrugName { get; set; }
+        public Guid DrugId { get; set; }
+        public int Quantity { get; set; }
+        public bool IsRestricted { get; set; }
     }
 }

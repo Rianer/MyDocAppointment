@@ -1,6 +1,7 @@
 ﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.Internal;
+using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.Application
 {
@@ -33,9 +34,9 @@ namespace MyDocAppointment.Application
             var drugs = await _drugsRepository.GetAll();
             if (!drugs.Any())
             {
-                return Result<IEnumerable<drug>>.Failure($"drug not found.");
+                return Result<IEnumerable<Drug>>.Failure($"drug not found.");
             }
-            return Result<IEnumerable<drug>>.Success(drugs);
+            return Result<IEnumerable<Drug>>.Success(drugs);
         }
 
         public async Task<Result<Drug>> GetById(Guid id)
@@ -43,14 +44,33 @@ namespace MyDocAppointment.Application
             var drug = await _drugsRepository.GetById(id);
             if(drug == null)
             {
-                return Result<drug>.Failure($"drug with ID: {id} does not exist.");
+                return Result<Drug>.Failure($"drug with ID: {id} does not exist.");
             }
-            return Result<drug>.Success(drug);
+            return Result<Drug>.Success(drug);
         }
 
         public async Task SaveChanges()
         {
             await _drugsRepository.SaveChanges();
+        }
+
+        public async Task<Result<Drug>> Update(Drug updateDrug, Guid drugId)
+        {
+            var currentDrug = await _drugsRepository.GetById(drugId);
+            if (currentDrug == null)
+            {
+                return Result<Drug>.Failure($"Drug with ID: {drugId} does not exist.");
+
+            }
+
+            currentDrug.Name = updateDrug.Name;
+            currentDrug.Vendor = updateDrug.Vendor;
+            currentDrug.Category = updateDrug.Category;
+            currentDrug.Price = updateDrug.Price;
+
+            await _drugsRepository.SaveChanges();
+
+            return Result<Drug>.Success(currentDrug);
         }
     }
 }

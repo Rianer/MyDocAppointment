@@ -1,7 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Application;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.Internal;
 using MyDocAppointment.Business.Users;
@@ -66,6 +66,21 @@ namespace MyDocAppointment.API.Controllers
             }
 
             return NotFound(response.Error);
+        }
+
+        [HttpPut("{drugId:guid}")]
+        public async Task<ActionResult<DrugDto>> Update([FromBody] DrugDto dto, Guid drugId)
+        {
+            var drug = _mapper.Map<Drug>(dto);
+            var response = await _drugService.Update(drug, drugId);
+
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map<DrugDto>(response.Entity);
+            return Ok(model);
         }
     }
 }

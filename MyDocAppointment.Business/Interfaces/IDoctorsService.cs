@@ -10,5 +10,6 @@ namespace MyDocAppointment.Business.Interfaces
         Task SaveChanges();
         Task<Result<IEnumerable<Doctor>>> GetAll();
         Task<Result<Doctor>> GetById(Guid id);
+        Task<Result<Doctor>> Update(Doctor doctor, Guid doctorId);
     }
 }

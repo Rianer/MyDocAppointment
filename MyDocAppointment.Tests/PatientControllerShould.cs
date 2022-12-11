@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using MyDocAppointment.API.Controllers;
 using MyDocAppointment.API.Dtos;
@@ -20,6 +21,7 @@ namespace MyDocAppointment.Tests
             idOk = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
             idNotFound = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa5");
             var patientsServiceMock = new Mock<IPatientsService>();
+            var mapperMock = new Mock<IMapper>();
             patientsServiceMock.Setup(r => r.GetById(idOk))
                 .ReturnsAsync(GetTestPatients());
             patientsServiceMock.Setup(r => r.GetById(idNotFound))
@@ -28,7 +30,7 @@ namespace MyDocAppointment.Tests
                 .Returns(Task.CompletedTask);
             patientsServiceMock.Setup(r => r.Delete(It.IsAny<Guid>()))
                  .Returns(SuccessResult());
-            controller = new PatientController(patientsServiceMock.Object);
+            controller = new PatientController(patientsServiceMock.Object,mapperMock.Object);
         }
 
         [Fact]
