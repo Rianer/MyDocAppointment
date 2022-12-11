@@ -46,7 +46,7 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> GetById(Guid doctorId)
         {
             var response = await _doctorService.GetById(doctorId);
-            if (response.IsSuccess)
+            if (!response.IsSuccess)
             {
                 return NotFound(response.Error);
             }
@@ -68,7 +68,7 @@ namespace MyDocAppointment.API.Controllers
         }
 
         [HttpPut("{doctorId:guid}")]
-        public async Task<ActionResult<DoctorDto>> Update([FromBody] DoctorDto dto, Guid doctorId)
+        public async Task<IActionResult> Update([FromBody] DoctorDto dto, Guid doctorId)
         {
             var doctor = _mapper.Map<Doctor>(dto);
             var response = await _doctorService.Update(doctor, doctorId);

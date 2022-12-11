@@ -70,7 +70,7 @@ namespace MyDocAppointment.API.Controllers
         }
 
         [HttpPut("{patientId:guid}")]
-        public async Task<ActionResult<PatientDto>> Update([FromBody] PatientDto dto, Guid patientId)
+        public async Task<IActionResult> Update([FromBody] PatientDto dto, Guid patientId)
         {
             var patient = _mapper.Map<Patient>(dto);
             var response = await _patientService.Update(patient, patientId);

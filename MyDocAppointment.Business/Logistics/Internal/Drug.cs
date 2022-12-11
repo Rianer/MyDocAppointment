@@ -2,15 +2,6 @@
 {
     public class Drug
     {
-        public Drug(string name, string vendor, string category, decimal price)
-        {
-            Id = Guid.NewGuid();
-            Name = name;
-            Vendor = vendor;
-            Category = category;
-            Price = price;
-        }
-
         public Guid Id { get; set;}
         public string Name { get; set;}
         public string Vendor { get; set;}
