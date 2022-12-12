@@ -10,10 +10,10 @@
             Quantity = quantity;
             IsRestricted = isRestricted;
         }
-        public Guid Id {private set; get;}
-        public Drug Item {private set; get;}
-        public int Quantity {private set; get;}
-        public bool IsRestricted {private set; get;}
+        public Guid Id { get; set;}
+        public Drug Item { get; set; }
+        public int Quantity { get; set; }
+        public bool IsRestricted { get; set; }
 
         public void SwitchRestriction(){
             IsRestricted = !IsRestricted;

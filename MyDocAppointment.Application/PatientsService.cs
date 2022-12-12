@@ -52,5 +52,26 @@ namespace MyDocAppointment.Application
         {
             await _patientsRepository.SaveChanges();
         }
+
+        public async Task<Result<Patient>> Update(Patient updatePatient, Guid patientId)
+        {
+            var currentPatient = await _patientsRepository.GetById(patientId);
+            if (currentPatient == null)
+            {
+                return Result<Patient>.Failure($"Patient with ID: {patientId} does not exist.");
+            }
+
+            currentPatient.Name = updatePatient.Name;
+            currentPatient.Surname = updatePatient.Surname;
+            currentPatient.Age = updatePatient.Age;
+            currentPatient.Gender = updatePatient.Gender;
+            currentPatient.EmailAddress = updatePatient.EmailAddress;
+            currentPatient.PhoneNumber = updatePatient.PhoneNumber;
+            currentPatient.HomeAddress = updatePatient.HomeAddress;
+
+            await _patientsRepository.SaveChanges();
+
+            return Result<Patient>.Success(currentPatient);
+        }
     }
 }

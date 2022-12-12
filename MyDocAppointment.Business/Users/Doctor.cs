@@ -5,8 +5,8 @@ namespace MyDocAppointment.Business.Users
 {
     public class Doctor : Person
     {
-        public Specialization Speciality { get; private set; }
-        public List<Appointment> Appointments { get; private set; }
+        public Specialization Speciality { get; set; }
+        public List<Appointment> Appointments { get; set; }
 
         //public Doctor() { }
 

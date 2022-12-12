@@ -1,46 +1,47 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using MyDocAppointment.API.Controllers;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
-using MyDocAppointment.Business.Users;
+using MyDocAppointment.Business.Logistics.Internal;
 using Xunit;
 
 namespace MyDocAppointment.Tests
 {
-    public class PatientControllerShould
+    public class DrugControllerShould
     {
-        PatientController controller;
+        DrugController controller;
         Guid idOk;
         Guid idNotFound;
-        public PatientControllerShould()
+        public DrugControllerShould()
         {
             // Arrange
             idOk = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
             idNotFound = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa5");
-            var patientsServiceMock = new Mock<IPatientsService>();
+            var drugsServiceMock = new Mock<IDrugsService>();
             var mapperMock = new Mock<IMapper>();
-            patientsServiceMock.Setup(r => r.GetById(idOk))
-                .ReturnsAsync(GetTestPatients());
-            patientsServiceMock.Setup(r => r.GetById(idNotFound))
+            drugsServiceMock.Setup(r => r.GetById(idOk))
+                .ReturnsAsync(GetTestDrug());
+            drugsServiceMock.Setup(r => r.GetById(idNotFound))
                 .Returns(FailureResult(idNotFound));
-            patientsServiceMock.Setup(r => r.Create(It.IsAny<Patient>()))
+            drugsServiceMock.Setup(r => r.Create(It.IsAny<Drug>()))
                 .Returns(Task.CompletedTask);
-            patientsServiceMock.Setup(r => r.Delete(idOk))
+            drugsServiceMock.Setup(r => r.Delete(idOk))
                  .Returns(SuccessResult());
-            patientsServiceMock.Setup(r => r.Delete(idNotFound))
+            drugsServiceMock.Setup(r => r.Delete(idNotFound))
                  .Returns(FailResult(idNotFound));
-            patientsServiceMock.Setup(r => r.Update(It.IsAny<Patient>(), idOk))
-                .ReturnsAsync(GetTestPatient());
-            patientsServiceMock.Setup(r => r.Update(It.IsAny<Patient>(), idNotFound))
+            drugsServiceMock.Setup(r => r.Update(It.IsAny<Drug>(), idOk))
+                 .ReturnsAsync(GetTestDrug());
+            drugsServiceMock.Setup(r => r.Update(It.IsAny<Drug>(), idNotFound))
                  .Returns(FailureResult(idNotFound));
-            controller = new PatientController(patientsServiceMock.Object,mapperMock.Object);
+            controller = new DrugController(drugsServiceMock.Object, mapperMock.Object);
         }
 
         [Fact]
-        public async Task GetById_ReturnsOk_WhenThePatientWithSpecifiedIdIsFound()
+        public async Task GetById_ReturnsOk_WhenThedrugWithSpecifiedIdIsFound()
         {
             //Act
             var response = await controller.GetById(idOk);
@@ -49,7 +50,7 @@ namespace MyDocAppointment.Tests
             Assert.IsType<OkObjectResult>(response);
         }
         [Fact]
-        public async Task GetById_ReturnsNotFound_WhenThePatientWithSpecifiedIdIsNotFound()
+        public async Task GetById_ReturnsNotFound_WhenThedrugWithSpecifiedIdIsNotFound()
         {
             //Act
             var response = await controller.GetById(idNotFound);
@@ -62,14 +63,14 @@ namespace MyDocAppointment.Tests
         public async Task Create_ReturnsCreatedResult()
         {
             //Act
-            var response = await controller.Create(GetCreatePatientDto());
+            var response = await controller.Create(GetCreateDrugDto());
 
             // Assert
             Assert.IsType<CreatedResult>(response);
         }
 
         [Fact]
-        public async Task Delete_ReturnsOk_WhenThePatientWithSpecifiedIdIsFound()
+        public async Task Delete_ReturnsOk_WhenThedrugWithSpecifiedIdIsFound()
         {
             //Act
             var response = await controller.Delete(idOk);
@@ -92,7 +93,7 @@ namespace MyDocAppointment.Tests
         public async Task Update_ReturnsOk_WhenThedrugWithSpecifiedIdIsFound()
         {
             //Act
-            var response = await controller.Update(GetPatientDto(), idOk);
+            var response = await controller.Update(GetDrugDto(), idOk);
 
             // Assert
             Assert.IsType<OkObjectResult>(response);
@@ -102,74 +103,65 @@ namespace MyDocAppointment.Tests
         public async Task Update_ReturnsNotFound_WhenThedrugWithSpecifiedIdIsFound()
         {
             //Act
-            var response = await controller.Update(GetPatientDto(), idNotFound);
+            var response = await controller.Update(GetDrugDto(), idNotFound);
 
             // Assert
             Assert.IsType<NotFoundObjectResult>(response);
         }
 
-        private CreatePatientDto GetCreatePatientDto()
+        private CreateDrugDto GetCreateDrugDto()
         {
 
-            var patient = new CreatePatientDto();
-            return patient;
+            var drug = new CreateDrugDto();
+            return drug;
 
         }
-        private Result<Patient> GetTestPatients()
+        private Result<Drug> GetTestDrugs()
         {
-            var patient = new Patient();
-            return Result<Patient>.Success(patient);
+            var drug = new Drug();
+            return Result<Drug>.Success(drug);
+        }
+
+        private Result<Drug> GetTestDrug()
+        {
+            var drug = GetDrug();
+            return Result<Drug>.Success(drug);
         }
         private async Task<Result> SuccessResult()
         {
             return Result.Success();
         }
-
         private async Task<Result> FailResult(Guid id)
         {
             return Result.Failure($"Patient with ID: {id} does not exist.");
         }
-
-        private async Task<Result<Patient>> FailureResult(Guid id)
+        private async Task<Result<Drug>> FailureResult(Guid id)
         {
-            return Result<Patient>.Failure($"Patient with ID: {id} does not exist.");
+            return Result<Drug>.Failure($"Drug with ID: {id} does not exist.");
         }
 
-        private PatientDto GetPatientDto()
+        private Drug GetDrug()
         {
-            var dto = new PatientDto()
+            return new Drug()
+                { 
+                Id = idOk,
+                Vendor = "vendor",
+                Name = "Name",
+                Category = "Category",
+                Price = (decimal)12.4
+                };
+        }
+
+        private DrugDto GetDrugDto()
+        {
+            return new DrugDto()
             {
                 Id = idOk,
-                Name = "Mark",
-                Surname = "Mark",
-                Age = 30,
-                Gender = "Other",
-                EmailAddress = "mark@gmail.com",
-                PhoneNumber = "0777666655",
-                HomeAddress = "Iasi",
+                Name = "Name",
+                Vendor = "vendor",
+                Category = "Category",
+                Price = (decimal)12.4
             };
-            return dto;
-        }
-
-        private Patient GetPatient()
-        {
-            return new Patient()
-            {
-                Id = idOk,
-                Name = "Mark",
-                Surname = "Mark",
-                Age = 30,
-                Gender = PersonGender.Other,
-                EmailAddress = "mark@gmail.com",
-                PhoneNumber = "0777666655",
-                HomeAddress = "Iasi",
-            };
-        }
-
-        private Result<Patient> GetTestPatient()
-        {
-            var patient = GetPatient();
-            return Result<Patient>.Success(patient);
         }
     }
 }
