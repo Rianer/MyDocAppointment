@@ -12,6 +12,7 @@ import { DoctorsPageComponent } from './pages/doctors-page/doctors-page.componen
 import { AppointmentPageComponent } from './pages/appointment-page/appointment-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewInstanceComponent } from './new-instance/new-instance.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NewInstanceComponent } from './new-instance/new-instance.component';
     DoctorsPageComponent,
     AppointmentPageComponent,
     NewInstanceComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,

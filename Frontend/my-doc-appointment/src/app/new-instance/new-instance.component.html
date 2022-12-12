@@ -2,15 +2,15 @@
 
 
 <div *ngIf="screenVisible" (click)="toggleScreen($event)" class="overlay">
-    <div class="info-screen" *ngIf="doctor != null && !insertForm">
+    <div class="info-screen details-screen" *ngIf="doctor != null && !insertForm">
         <div class="info-section">
             <h1 class="title">{{doctor.name + ' ' + doctor.surname}}</h1>
         </div>
         <div class="info-section">
             <ul class="info-list">
-                <li> <span class="label-txt">Speciality:</span> {{doctor.speciality}}</li>
-                <li> <span class="label-txt">Age:</span> {{doctor.age}}</li>
-                <li> <span class="label-txt">Gender:</span> {{doctor.gender}}</li>
+                <li> <span class="label-txt">Speciality:</span>{{doctor.speciality}}</li>
+                <li> <span class="label-txt">Age:</span>{{doctor.age}}</li>
+                <li> <span class="label-txt">Gender:</span>{{doctor.gender}}</li>
                 <li> <span class="label-txt">Phone Number:</span> <span class="contact">{{doctor.phoneNumber}}</span></li>
                 <li> <span class="label-txt">Email:</span> <span class="contact">{{doctor.emailAddress}}</span></li>
             </ul>
@@ -43,7 +43,7 @@
             <h1 class="title">Add a new doctor</h1>
         </div>
         <div class="form-section">
-            <form class="form-screen" [formGroup]="newDoctorForm" (ngSubmit)="createDoctor()">
+            <form class="form-view" [formGroup]="newDoctorForm" (ngSubmit)="createDoctor()">
             
                 <div class="txt-field">
                     <label class="field-label">Name:</label>

@@ -26,9 +26,7 @@ export class DoctorsPageComponent implements OnInit {
   data : any;
   doctors : any;
 
-  constructor(private http: HttpClient ){
-
-  }
+  constructor(private http: HttpClient ){}
 
 
   ngOnInit() {
@@ -42,7 +40,7 @@ export class DoctorsPageComponent implements OnInit {
   async getDoctors(){
     const docs = await this.http.get<ServerResponse<Doctor>>('https://localhost:7288/api/Doctor').subscribe(response => {
       console.log(response);
-      this.doctors = response.entity;
+      this.doctors = response;
       console.log(this.doctors);
     });
     // this.doctors = docs;
