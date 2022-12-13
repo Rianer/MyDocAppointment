@@ -45,11 +45,12 @@
                 input[type="text"]{
                     background: none;
                     border: none;
-                    border-bottom: 2px solid rgba(0,0,0,0);
+                    border-bottom: 2px solid $accentColor;
                     transition: 300ms ease;
                     font-size: 1.2rem;
                     color: $plainColor;
                     transition: 300ms ease;
+                    
                 }
         
                 input[type="text"]::placeholder{
