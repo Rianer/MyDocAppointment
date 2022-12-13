@@ -21,11 +21,10 @@ namespace MyDocAppointment.IntegrationTests
         [Fact]
         public async void WhenCreateDoctor_ThenShouldReturnCreated()
         {
-             //Arange
+            //Arange
             var doctorDto = getDoctorDto();
 
             //Act
-
             var doctorResponse = await HttpClient.PostAsJsonAsync(ApiUrl, doctorDto);
             var getDoctorgResult = await HttpClient.GetAsync(ApiUrl);
             var status = ((int)doctorResponse.StatusCode);
@@ -53,6 +52,28 @@ namespace MyDocAppointment.IntegrationTests
             Assert.Contains("Ion", responseString);
             Assert.Contains("Mark", responseString);
         }
+
+        [Fact]
+        public async Task Create_WhenCalled_ReturnsCreateForm()
+        {
+            var response = await HttpClient.GetAsync(ApiUrl);
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            Assert.Contains("Please provide a new doctor data", responseString);
+        }
+
+        [Fact]
+        public async Task DefaultRoute_ReturnsNothing()
+        {
+            var response = await HttpClient.GetAsync("");
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal("", responseString);
+        }
+
+
         private CreateDoctorDto getDoctorDto()
         {
             var doctorDto = new CreateDoctorDto

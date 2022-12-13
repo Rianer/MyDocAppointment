@@ -13,7 +13,7 @@ namespace MyDocAppointment.IntegrationTests
 
         protected HttpClient HttpClient { get; private set; }
 
-        private AppDbContext databaseContext;
+        private AppDbContext databaseContext;   
 
         protected BaseIntegrationTests()
         {

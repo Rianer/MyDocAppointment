@@ -29,7 +29,7 @@ namespace MyDocAppointment.Infrastructure.Repositories
         public async Task<Doctor> GetById(Guid id)
         {
             var doctor = await _appDbContext.Doctors.FirstOrDefaultAsync(d => d.Id == id);
-
+            
             return doctor;
         }
 

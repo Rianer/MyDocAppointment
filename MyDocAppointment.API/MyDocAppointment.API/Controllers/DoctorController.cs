@@ -29,7 +29,7 @@ namespace MyDocAppointment.API.Controllers
             }
 
             var models = _mapper.Map<IEnumerable<DoctorDto>>(response.Entity);
-
+            
             return Ok(models);
         }
 

@@ -14,7 +14,7 @@ namespace MyDocAppointment.Tests
     public class DoctorControllerShould
     {
         DoctorController controller;
-        Guid idOk;
+        Guid idOk;  
         Guid idNotFound;
         public DoctorControllerShould()
         {
@@ -59,7 +59,7 @@ namespace MyDocAppointment.Tests
             // Assert
             Assert.IsType<NotFoundObjectResult>(response);
         }
-
+        
         [Fact]
         public async Task Create_ReturnsCreatedResult()
         {
@@ -137,7 +137,8 @@ namespace MyDocAppointment.Tests
 
         private DoctorDto GetDoctorDto()
         {
-            var dto = new DoctorDto(){
+            var dto = new DoctorDto()
+            {
                 Id = idOk,
                 Name = "Mark",
                 Surname = "Mark",
@@ -147,7 +148,7 @@ namespace MyDocAppointment.Tests
                 PhoneNumber = "0777666655",
                 HomeAddress = "Iasi",
                 Speciality = "Cardiology"
-             };
+            };
             return dto;
         }
 
