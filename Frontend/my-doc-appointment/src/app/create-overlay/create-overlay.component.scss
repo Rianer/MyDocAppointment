@@ -1,0 +1,123 @@
+@import '../../utilities/variables.scss';
+
+.overlay{
+    z-index: 120;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .form-panel{
+        display: flex;
+        width: 50vw;
+        min-width: 500px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $backgroundColor;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        color: $plainColor;
+        font-size: 1.2rem;
+
+        form{
+            min-width: 500px;
+
+            .txt-field{
+                display: flex;
+                justify-content: center;
+
+                label{
+                    display: flex;
+                    float: left;
+                    margin-right: 0.5rem;
+                    color: $accentColor;
+                    font-weight: 600;
+                    letter-spacing: 0.05rem;
+                }
+    
+                input[type="text"]{
+                    background: none;
+                    border: none;
+                    border-bottom: 2px solid rgba(0,0,0,0);
+                    transition: 300ms ease;
+                    font-size: 1.2rem;
+                    color: $plainColor;
+                    transition: 300ms ease;
+                }
+        
+                input[type="text"]::placeholder{
+                    color: $contrastColor;
+                }
+
+                input[type="date"]{
+                    margin-top: 0.3rem;
+                    margin-bottom: 0.3rem;
+                    padding: 0.4rem;
+                    font-size: 16px;
+                    background-color: $backgroundColor;
+                    color: $accentColor;
+                    transition: 300ms;
+                    border: 3px solid $accentColor;
+                    font-family: 'Lato', sans-serif;
+                }
+                  
+                input[type="date"]::-webkit-calendar-picker-indicator{
+                    background-color: $accentColor;
+                }
+                  
+                input[type="date"]:focus,
+                input[type="date"]:hover{
+                    border: 3px solid $contrastColor;
+                }
+
+                select{
+                    margin-top: 0.3rem;
+                    margin-bottom: 0.3rem;
+                    padding: 0.4rem;
+                    font-size: 16px;
+                    background-color: $backgroundColor;
+                    color: $accentColor;
+                    transition: 300ms;
+                    text-transform: uppercase;
+                    border: 3px solid $accentColor;
+                    font-family: 'Lato', sans-serif;
+                  }
+                  
+                select:hover,
+                select:focus{
+                    border: 3px solid $contrastColor;
+                }
+
+                input[type="submit"]{
+                    padding: 0.5rem 0.8rem;
+                    font-size: 18px;
+                    font-weight: 700;
+                    letter-spacing: 0.05rem;
+                    align-self: center;
+                    margin-top: 1rem;
+                    background-color: $accentColor;
+                    color: $backgroundColor;
+                    transition: $transitionSpeed;
+                    cursor: pointer;
+                    border: none;
+                }
+                  
+                input[type="submit"]:hover{
+                    background-color: $contrastColor;
+                    color: $plainColor;
+                }
+            }
+
+            .txt-field:hover input[type="text"]{
+                border-bottom: 2px solid $contrastColor;
+            }
+        }
+    }
+}

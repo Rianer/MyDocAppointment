@@ -13,6 +13,8 @@ import { AppointmentPageComponent } from './pages/appointment-page/appointment-p
 import { HttpClientModule } from '@angular/common/http';
 import { NewInstanceComponent } from './new-instance/new-instance.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { DetailsOverlayComponent } from './details-overlay/details-overlay.component';
+import { CreateOverlayComponent } from './create-overlay/create-overlay.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
     AppointmentPageComponent,
     NewInstanceComponent,
     AdminPageComponent,
+    DetailsOverlayComponent,
+    CreateOverlayComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,11 @@
+<app-details-overlay [currentDoctor]="displayedDoctor"></app-details-overlay>
+<app-create-overlay></app-create-overlay>
 <div class="main-content">
     <div class="main-grid-container">
         <div class="card-wide card-mid">
             <div class="admin-container">
                 <div class="picture-container">
-                    <img src="../../../assets/img/profileImg.png">
+                    <img src="../../../assets/img/doctorDefaultImg.jpg">
                 </div>
                 <div class="info-container">
                     <ul>
@@ -28,20 +30,30 @@
                 <div class="controls-container">
                     <button>Log Out</button>
                     <button>Save Changes</button>
-                    <button>Revert Changes</button>
+                    <button>Show Patients</button>
                 </div>
             </div>
         </div>
         <div class="card-extra-tall">
             <div class="doctors-container overflowable">
                 <div class="doctor-card" *ngFor="let doctor of allDoctors">
-                    <img src="../../../assets/img/profileImg.png">
+                    <img src="../../../assets/img/doctorDefaultImg.jpg">
                     <div class="content">
                         <div class="title">{{doctor.surname + ' ' + doctor.name}}</div>
-                        <button *ngIf="!isTheSameDoctor(doctor, currentDoctor)">More</button>
+                        <button *ngIf="!isTheSameDoctor(doctor, currentDoctor) " (click)="showOverlay(doctor)">
+                            More
+                        </button>
                     </div>
                 </div>
-                
+                <div class="doctor-card">
+                    <img src="../../../assets/img/profileImg.png">
+                    <div class="content">
+                        <div class="title">New Doctor</div>
+                        <button (click)="createDoctor()">
+                            Add
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card-extra-tall">
