@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\DoctorControllerShould.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+using MyDocAppointment.API.Controllers;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Users;
+using Xunit;
+
+namespace MyDocAppointment.Tests
+{
+    public class DoctorControllerShould
+    {
+        DoctorController controller;
+        Guid idOk;
+        Guid idNotFound;
+        public DoctorControllerShould()
+        {
+            // Arrange
+            idOk = new Guid(&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;);
+            idNotFound = new Guid(&quot;3fa85f64-5717-4562-b3fc-2c963f66afa5&quot;);
+            var doctorsServiceMock = new Mock&lt;IDoctorsService&gt;();
+            var mapperMock = new Mock&lt;IMapper&gt;();
+            doctorsServiceMock.Setup(r =&gt; r.GetById(idOk))
+                .ReturnsAsync(GetTestDoctors());
+            doctorsServiceMock.Setup(r =&gt; r.GetById(idNotFound))
+                .Returns(FailureResult(idNotFound));
+            doctorsServiceMock.Setup(r =&gt; r.Create(It.IsAny&lt;Doctor&gt;()))
+                .Returns(Task.CompletedTask);
+            doctorsServiceMock.Setup(r =&gt; r.Delete(idOk))
+                 .Returns(SuccessResult());
+            doctorsServiceMock.Setup(r =&gt; r.Delete(idNotFound))
+                 .Returns(FailResult(idNotFound));
+            doctorsServiceMock.Setup(r =&gt; r.Update(It.IsAny&lt;Doctor&gt;(), idOk))
+                 .ReturnsAsync(GetTestDoctor());
+            doctorsServiceMock.Setup(r =&gt; r.Update(It.IsAny&lt;Doctor&gt;(), idNotFound))
+                 .Returns(FailureResult(idNotFound));
+            controller = new DoctorController(doctorsServiceMock.Object, mapperMock.Object);
+        }
+
+        [Fact]
+        public async Task GetById_ReturnsOk_WhenTheDoctorWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.GetById(idOk);
+
+            // Assert
+            Assert.IsType&lt;OkObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task GetById_ReturnsNotFound_WhenTheDoctorWithSpecifiedIdIsNotFound()
+        {
+            //Act
+            var response = await controller.GetById(idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Create_ReturnsCreatedResult()
+        {
+            //Act
+            var response = await controller.Create(GetCreateDoctorDto());
+
+            // Assert
+            Assert.IsType&lt;CreatedResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsOk_WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Delete(idOk);
+
+            // Assert
+            Assert.IsType&lt;OkResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsNotFound__WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Delete(idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsOk_WhenThedrugWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Update(GetDoctorDto(), idOk);
+
+            // Assert
+            Assert.IsType&lt;OkObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsNotFound_WhenThedrugWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Update(GetDoctorDto(), idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        private CreateDoctorDto GetCreateDoctorDto()
+        {
+
+            var doctor = new CreateDoctorDto();
+            return doctor;
+
+        }
+        private Result&lt;Doctor&gt; GetTestDoctors()
+        {
+            var doctor = new Doctor();
+            return Result&lt;Doctor&gt;.Success(doctor);
+        }
+        private async Task&lt;Result&gt; SuccessResult()
+        {
+            return Result.Success();
+        }
+        private async Task&lt;Result&gt; FailResult(Guid id)
+        {
+            return Result.Failure($&quot;Doctor with ID: {id} does not exist.&quot;);
+        }
+        private async Task&lt;Result&lt;Doctor&gt;&gt; FailureResult(Guid id)
+        {
+            return Result&lt;Doctor&gt;.Failure($&quot;Patient with ID: {id} does not exist.&quot;);
+        }
+
+        private DoctorDto GetDoctorDto()
+        {
+            var dto = new DoctorDto(){
+                Id = idOk,
+                Name = &quot;Mark&quot;,
+                Surname = &quot;Mark&quot;,
+                Age = 30,
+                Gender = &quot;Other&quot;,
+                EmailAddress = &quot;mark@gmail.com&quot;,
+                PhoneNumber = &quot;0777666655&quot;,
+                HomeAddress = &quot;Iasi&quot;,
+                Speciality = &quot;Cardiology&quot;
+             };
+            return dto;
+        }
+
+        private Doctor GetDoctor()
+        {
+            return new Doctor()
+            {
+                Id = idOk,
+                Name = &quot;Mark&quot;,
+                Surname = &quot;Mark&quot;,
+                Age = 30,
+                Gender = PersonGender.Other,
+                EmailAddress = &quot;mark@gmail.com&quot;,
+                PhoneNumber = &quot;0777666655&quot;,
+                HomeAddress = &quot;Iasi&quot;,
+                Speciality = Specialization.Cardiology
+            };
+        }
+
+        private Result&lt;Doctor&gt; GetTestDoctor()
+        {
+            var doctor = GetDoctor();
+            return Result&lt;Doctor&gt;.Success(doctor);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[18,9,18,40,1],[19,9,19,10,1],[21,13,21,69,1],[22,13,22,75,1],[23,13,23,66,1],[24,13,24,50,1],[25,13,26,49,1],[27,13,28,53,1],[29,13,30,46,1],[31,13,32,44,1],[33,13,34,51,1],[35,13,36,49,1],[37,13,38,54,1],[39,13,39,93,1],[40,9,40,10,1],[44,9,44,10,1],[46,13,46,59,1],[49,13,49,53,1],[50,9,50,10,1],[54,9,54,10,1],[56,13,56,65,1],[59,13,59,59,1],[60,9,60,10,1],[64,9,64,10,1],[66,13,66,74,1],[69,13,69,52,1],[70,9,70,10,1],[74,9,74,10,1],[76,13,76,58,1],[79,13,79,47,1],[80,9,80,10,1],[84,9,84,10,1],[86,13,86,64,1],[89,13,89,59,1],[90,9,90,10,1],[94,9,94,10,1],[96,13,96,74,1],[99,13,99,53,1],[100,9,100,10,1],[104,9,104,10,1],[106,13,106,80,1],[109,13,109,59,1],[110,9,110,10,1],[113,9,113,10,1],[115,13,115,48,1],[116,13,116,27,1],[118,9,118,10,1],[120,9,120,10,1],[121,13,121,39,1],[122,13,122,51,1],[123,9,123,10,1],[125,9,125,10,1],[126,13,126,37,1],[127,9,127,10,1],[129,9,129,10,1],[130,13,130,76,1],[131,9,131,10,1],[133,9,133,10,1],[134,13,134,85,1],[135,9,135,10,1],[138,9,138,10,1],[139,13,149,16,1],[150,13,150,24,1],[151,9,151,10,1],[154,9,154,10,1],[155,13,166,15,1],[167,9,167,10,1],[170,9,170,10,1],[171,13,171,38,1],[172,13,172,51,1],[173,9,173,10,1]]);
+    </script>
+  </body>
+</html>

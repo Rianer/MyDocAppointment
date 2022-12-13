@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Cabinet.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+namespace MyDocAppointment.Business.Logistics.Internal
+{
+    public class Cabinet
+    {
+
+        public Cabinet(List&lt;DrugStock&gt; stock)
+        {
+            Id = Guid.NewGuid();
+            Inventory = stock;
+            TotalAmmount = 0;
+            Inventory.ForEach(i =&gt; {
+                TotalAmmount += i.Quantity;
+            });
+        }
+        private Guid id;
+        private List&lt;DrugStock&gt; inventory;
+        private int totalAmmount;
+
+        public Guid Id { get =&gt; id; set =&gt; id = value; }
+        public List&lt;DrugStock&gt; Inventory { get =&gt; inventory; set =&gt; inventory = value; }
+        public int TotalAmmount { get =&gt; totalAmmount; set =&gt; totalAmmount = value; }
+
+        public void RemoveFromInventory(DrugStock drugStock){
+            int index = Inventory.FindIndex(i =&gt; i.Id == drugStock.Id);
+            if(index == -1){
+                return;
+            }
+            TotalAmmount -= Inventory[index].Quantity;
+            Inventory.RemoveAt(index);
+        }
+
+        public void RemoveFromInventory(Guid id){
+            int index = Inventory.FindIndex(i =&gt; i.Id == id);
+            if(index == -1){
+                return;
+            }
+            TotalAmmount -= Inventory[index].Quantity;
+            Inventory.RemoveAt(index);
+        }
+
+        public void AddStock(DrugStock drugStock){
+            Inventory.Add(drugStock);
+            TotalAmmount += drugStock.Quantity;
+        }
+
+
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[6,9,6,46,0],[7,9,7,10,0],[8,13,8,33,0],[9,13,9,31,0],[10,13,10,30,0],[11,13,11,36,0],[11,36,11,37,0],[11,37,12,17,0],[12,17,12,44,0],[12,44,13,13,0],[13,13,13,14,0],[13,14,13,16,0],[14,9,14,10,0],[19,33,19,35,0],[19,44,19,54,0],[20,51,20,60,0],[20,69,20,86,0],[21,42,21,54,0],[21,63,21,83,0],[23,61,23,62,0],[24,13,24,50,0],[24,50,24,70,0],[24,70,24,72,0],[25,13,25,28,0],[25,28,25,29,0],[26,17,26,24,0],[28,13,28,55,0],[29,13,29,39,0],[30,9,30,10,0],[32,49,32,50,0],[33,13,33,50,0],[33,50,33,60,0],[33,60,33,62,0],[34,13,34,28,0],[34,28,34,29,0],[35,17,35,24,0],[37,13,37,55,0],[38,13,38,39,0],[39,9,39,10,0],[41,50,41,51,0],[42,13,42,38,0],[43,13,43,48,0],[44,9,44,10,0]]);
+    </script>
+  </body>
+</html>

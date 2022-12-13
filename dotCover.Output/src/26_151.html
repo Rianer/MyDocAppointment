@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Doctor.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Logistics.External;
+
+namespace MyDocAppointment.Business.Users
+{
+    public class Doctor : Person
+    {
+        public Specialization Speciality { get; set; }
+        public List&lt;Appointment&gt;? Appointments { get; set; }
+
+        public static Result&lt;Doctor&gt; Create(string name, string surname, int age, string gender,
+            string emailAddress, string phoneNumber, string homeAddress, string specialization)
+        {
+            PersonGender genderResult;
+            Specialization specializationResult;
+
+            if (!Enum.TryParse&lt;PersonGender&gt;(gender, out genderResult))
+            {
+                return Result&lt;Doctor&gt;.Failure(&quot;Input gender is invalid: &quot; + gender);
+            }
+
+            if (!Enum.TryParse&lt;Specialization&gt;(specialization, out specializationResult))
+            {
+                return Result&lt;Doctor&gt;.Failure(&quot;Input specialization is invalid: &quot; + specialization);
+            }
+
+            Doctor doctor = new()
+            {
+                Id = Guid.NewGuid(),
+                Name = name,
+                Surname = surname,
+                Age = age,
+                Gender = genderResult,
+                EmailAddress = emailAddress,
+                PhoneNumber = phoneNumber,
+                HomeAddress = homeAddress,
+                Speciality = specializationResult,
+                Appointments = new List&lt;Appointment&gt;()
+            };
+            return Result&lt;Doctor&gt;.Success(doctor);
+        }
+
+        public Result AddAppointment(Appointment appointment)
+        {
+            if (appointment == null)
+            {
+                return Result.Failure(&quot;Input not null appointment!&quot;);
+            }
+
+            if (Appointments == null)
+            {
+                return Result.Failure(&quot;List is null!&quot;);
+            }
+
+            Appointments.Add(appointment);
+            return Result.Success();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[8,44,8,48,0],[8,49,8,53,1],[9,50,9,54,0],[9,55,9,59,0],[13,9,13,10,0],[17,13,17,72,0],[18,13,18,14,0],[19,17,19,85,0],[22,13,22,90,0],[23,13,23,14,0],[24,17,24,101,0],[27,13,39,15,0],[40,13,40,51,0],[41,9,41,10,0],[44,9,44,10,0],[45,13,45,37,0],[46,13,46,14,0],[47,17,47,70,0],[50,13,50,38,0],[51,13,51,14,0],[52,17,52,56,0],[55,13,55,43,0],[56,13,56,37,0],[57,9,57,10,0]]);
+    </script>
+  </body>
+</html>

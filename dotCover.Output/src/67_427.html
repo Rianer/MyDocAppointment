@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\PatientControllerShould.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+using MyDocAppointment.API.Controllers;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Users;
+using Xunit;
+
+namespace MyDocAppointment.Tests
+{
+    public class PatientControllerShould
+    {
+        PatientController controller;
+        Guid idOk;
+        Guid idNotFound;
+        public PatientControllerShould()
+        {
+            // Arrange
+            idOk = new Guid(&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;);
+            idNotFound = new Guid(&quot;3fa85f64-5717-4562-b3fc-2c963f66afa5&quot;);
+            var patientsServiceMock = new Mock&lt;IPatientsService&gt;();
+            var mapperMock = new Mock&lt;IMapper&gt;();
+            patientsServiceMock.Setup(r =&gt; r.GetById(idOk))
+                .ReturnsAsync(GetTestPatients());
+            patientsServiceMock.Setup(r =&gt; r.GetById(idNotFound))
+                .Returns(FailureResult(idNotFound));
+            patientsServiceMock.Setup(r =&gt; r.Create(It.IsAny&lt;Patient&gt;()))
+                .Returns(Task.CompletedTask);
+            patientsServiceMock.Setup(r =&gt; r.Delete(idOk))
+                 .Returns(SuccessResult());
+            patientsServiceMock.Setup(r =&gt; r.Delete(idNotFound))
+                 .Returns(FailResult(idNotFound));
+            patientsServiceMock.Setup(r =&gt; r.Update(It.IsAny&lt;Patient&gt;(), idOk))
+                .ReturnsAsync(GetTestPatient());
+            patientsServiceMock.Setup(r =&gt; r.Update(It.IsAny&lt;Patient&gt;(), idNotFound))
+                 .Returns(FailureResult(idNotFound));
+            controller = new PatientController(patientsServiceMock.Object,mapperMock.Object);
+        }
+
+        [Fact]
+        public async Task GetById_ReturnsOk_WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.GetById(idOk);
+
+            // Assert
+            Assert.IsType&lt;OkObjectResult&gt;(response);
+        }
+        [Fact]
+        public async Task GetById_ReturnsNotFound_WhenThePatientWithSpecifiedIdIsNotFound()
+        {
+            //Act
+            var response = await controller.GetById(idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Create_ReturnsCreatedResult()
+        {
+            //Act
+            var response = await controller.Create(GetCreatePatientDto());
+
+            // Assert
+            Assert.IsType&lt;CreatedResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsOk_WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Delete(idOk);
+
+            // Assert
+            Assert.IsType&lt;OkResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsNotFound__WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Delete(idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsOk_WhenThedrugWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Update(GetPatientDto(), idOk);
+
+            // Assert
+            Assert.IsType&lt;OkObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsNotFound_WhenThedrugWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Update(GetPatientDto(), idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        private CreatePatientDto GetCreatePatientDto()
+        {
+
+            var patient = new CreatePatientDto();
+            return patient;
+
+        }
+        private Result&lt;Patient&gt; GetTestPatients()
+        {
+            var patient = new Patient();
+            return Result&lt;Patient&gt;.Success(patient);
+        }
+        private async Task&lt;Result&gt; SuccessResult()
+        {
+            return Result.Success();
+        }
+
+        private async Task&lt;Result&gt; FailResult(Guid id)
+        {
+            return Result.Failure($&quot;Patient with ID: {id} does not exist.&quot;);
+        }
+
+        private async Task&lt;Result&lt;Patient&gt;&gt; FailureResult(Guid id)
+        {
+            return Result&lt;Patient&gt;.Failure($&quot;Patient with ID: {id} does not exist.&quot;);
+        }
+
+        private PatientDto GetPatientDto()
+        {
+            var dto = new PatientDto()
+            {
+                Id = idOk,
+                Name = &quot;Mark&quot;,
+                Surname = &quot;Mark&quot;,
+                Age = 30,
+                Gender = &quot;Other&quot;,
+                EmailAddress = &quot;mark@gmail.com&quot;,
+                PhoneNumber = &quot;0777666655&quot;,
+                HomeAddress = &quot;Iasi&quot;,
+            };
+            return dto;
+        }
+
+        private Patient GetPatient()
+        {
+            return new Patient()
+            {
+                Id = idOk,
+                Name = &quot;Mark&quot;,
+                Surname = &quot;Mark&quot;,
+                Age = 30,
+                Gender = PersonGender.Other,
+                EmailAddress = &quot;mark@gmail.com&quot;,
+                PhoneNumber = &quot;0777666655&quot;,
+                HomeAddress = &quot;Iasi&quot;,
+            };
+        }
+
+        private Result&lt;Patient&gt; GetTestPatient()
+        {
+            var patient = GetPatient();
+            return Result&lt;Patient&gt;.Success(patient);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[18,9,18,41,1],[19,9,19,10,1],[21,13,21,69,1],[22,13,22,75,1],[23,13,23,68,1],[24,13,24,50,1],[25,13,26,50,1],[27,13,28,53,1],[29,13,30,46,1],[31,13,32,44,1],[33,13,34,51,1],[35,13,36,49,1],[37,13,38,54,1],[39,13,39,94,1],[40,9,40,10,1],[44,9,44,10,1],[46,13,46,59,1],[49,13,49,53,1],[50,9,50,10,1],[53,9,53,10,1],[55,13,55,65,1],[58,13,58,59,1],[59,9,59,10,1],[63,9,63,10,1],[65,13,65,75,1],[68,13,68,52,1],[69,9,69,10,1],[73,9,73,10,1],[75,13,75,58,1],[78,13,78,47,1],[79,9,79,10,1],[83,9,83,10,1],[85,13,85,64,1],[88,13,88,59,1],[89,9,89,10,1],[93,9,93,10,1],[95,13,95,75,1],[98,13,98,53,1],[99,9,99,10,1],[103,9,103,10,1],[105,13,105,81,1],[108,13,108,59,1],[109,9,109,10,1],[112,9,112,10,1],[114,13,114,50,1],[115,13,115,28,1],[117,9,117,10,1],[119,9,119,10,1],[120,13,120,41,1],[121,13,121,53,1],[122,9,122,10,1],[124,9,124,10,1],[125,13,125,37,1],[126,9,126,10,1],[129,9,129,10,1],[130,13,130,77,1],[131,9,131,10,1],[134,9,134,10,1],[135,13,135,86,1],[136,9,136,10,1],[139,9,139,10,1],[140,13,150,15,1],[151,13,151,24,1],[152,9,152,10,1],[155,9,155,10,1],[156,13,166,15,1],[167,9,167,10,1],[170,9,170,10,1],[171,13,171,40,1],[172,13,172,53,1],[173,9,173,10,1]]);
+    </script>
+  </body>
+</html>

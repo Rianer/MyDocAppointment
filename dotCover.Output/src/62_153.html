@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\PatientConfiguration.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.Infrastructure.Configurations
+{
+    internal class PatientConfiguration : IEntityTypeConfiguration&lt;Patient&gt;
+    {
+        public void Configure(EntityTypeBuilder&lt;Patient&gt; builder)
+        {
+            builder.HasKey(p =&gt; p.Id);
+            builder.Property(p =&gt; p.Name);
+            builder.Property(p =&gt; p.Surname);
+            builder.Property(p =&gt; p.Age);
+            builder.Property(p =&gt; p.Gender)
+                .HasConversion(new EnumToStringConverter&lt;PersonGender&gt;());
+            builder.Property(p =&gt; p.EmailAddress);
+            builder.HasMany(d =&gt; d.Appointments).WithOne(a =&gt; a.Patient);
+            builder.HasMany(p =&gt; p.Diagnosis);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,10,1],[13,13,13,39,1],[14,13,14,43,1],[15,13,15,46,1],[16,13,16,42,1],[17,13,18,75,1],[19,13,19,51,1],[20,13,20,74,1],[21,13,21,47,1],[22,9,22,10,1]]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Infrastructure;
+using MyDocAppointment.API.Controllers;
+
+namespace MyDocAppointment.IntegrationTests
+{
+    public class BaseIntegrationTests
+    {
+        private DbContextOptions&lt;AppDbContext&gt; options = new DbContextOptionsBuilder&lt;AppDbContext&gt;()
+                .UseSqlite(&quot;Data Source = MyTests.db&quot;).Options;
+
+        protected HttpClient HttpClient { get; private set; }
+
+        private AppDbContext databaseContext;
+
+        protected BaseIntegrationTests()
+        {
+            var application = new WebApplicationFactory&lt;DoctorController&gt;()
+                .WithWebHostBuilder(builder =&gt; { });
+            HttpClient = application.CreateClient();
+            databaseContext = new AppDbContext(options);
+            // CleanDatabases();
+        }
+
+        protected void CleanDatabases()
+        {
+            databaseContext.Doctors.RemoveRange(databaseContext.Doctors.ToList());
+            databaseContext.Patients.RemoveRange(databaseContext.Patients.ToList());
+            databaseContext.SaveChanges();
+            databaseContext.Database.EnsureDeleted();
+        }
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,9,11,64,1],[13,43,13,47,1],[13,48,13,60,1],[17,9,17,41,1],[18,9,18,10,1],[19,13,20,48,1],[20,48,20,49,1],[20,49,20,50,1],[20,50,20,51,1],[20,51,20,53,1],[21,13,21,53,1],[22,13,22,57,1],[24,9,24,10,1],[27,9,27,10,0],[28,13,28,83,0],[29,13,29,85,0],[30,13,30,43,0],[31,13,31,54,0],[32,9,32,10,0]]);
+    </script>
+  </body>
+</html>

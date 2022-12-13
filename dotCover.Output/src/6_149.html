@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.API\MyDocAppointment.API\Program.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.IdentityModel.Tokens;
+using MyDocAppointment.Application;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Infrastructure.Configurations;
+using MyDocAppointment.Infrastructure.Repositories;
+using System.Reflection;
+
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString(&quot;MyDocAppointment&quot;);
+if(connectionString == null)
+{
+    throw new ArgumentNullException(&quot;Connection string null or empty!&quot;);
+}
+// Add services to the container.
+
+builder.Services.AddControllers();
+
+builder.Services.AddScoped&lt;IDrugsRepository, DrugsRepository&gt;();
+builder.Services.AddScoped&lt;IDoctorsRepository, DoctorsRepository&gt;();
+builder.Services.AddScoped&lt;IPatientsRepository, PatientsRepository&gt;();
+builder.Services.AddScoped&lt;IAppointmentsRepository, AppointmentsRepository&gt;();
+
+
+builder.Services.AddScoped&lt;IDoctorsService, DoctorsService&gt;();
+builder.Services.AddScoped&lt;IPatientsService, PatientsService&gt;();
+builder.Services.AddScoped&lt;IDrugsService, DrugsService&gt;();
+builder.Services.AddScoped&lt;IAppointmentsService, AppointmentsService&gt;();
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDatabase(connectionString);
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+builder.Services.AddCors(options =&gt;
+{
+    options.AddPolicy(&quot;sheltersCors&quot;, policy =&gt;
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.UseCors(&quot;sheltersCors&quot;);
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[8,1,8,50,1],[9,1,9,86,1],[10,1,10,29,1],[11,1,11,2,0],[12,5,12,73,0],[16,1,16,35,1],[18,1,18,65,1],[19,1,19,69,1],[20,1,20,71,1],[21,1,21,79,1],[24,1,24,63,1],[25,1,25,65,1],[26,1,26,59,1],[27,1,27,73,1],[30,1,30,44,1],[31,1,31,34,1],[32,1,32,48,1],[33,1,33,65,1],[35,1,36,1,1],[36,1,36,2,1],[36,2,37,5,1],[37,5,38,5,1],[38,5,38,6,1],[38,6,39,9,1],[39,9,39,67,1],[39,67,40,5,1],[40,5,40,6,1],[40,6,40,8,1],[40,8,41,1,1],[41,1,41,2,1],[41,2,41,4,1],[43,1,43,27,1],[46,1,46,37,1],[47,1,47,2,1],[48,5,48,22,1],[49,5,49,24,1],[50,1,50,2,1],[52,1,52,27,1],[53,1,53,29,1],[54,1,54,24,1],[56,1,56,22,1],[58,1,58,11,1]]);
+    </script>
+  </body>
+</html>

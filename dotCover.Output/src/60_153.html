@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\DrugConfiguration.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Business.Logistics.Internal;
+
+namespace MyDocAppointment.Infrastructure.Configurations
+{
+    internal class DrugConfiguration : IEntityTypeConfiguration&lt;Drug&gt;
+    {
+        public void Configure(EntityTypeBuilder&lt;Drug&gt; builder)
+        {
+            builder.HasKey(d =&gt; d.Id);
+            builder.Property(d =&gt; d.Name);
+            builder.Property(d =&gt; d.Vendor);
+            builder.Property(d =&gt; d.Category);
+            builder.Property(d =&gt; d.Price);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,9,10,10,1],[11,13,11,39,1],[12,13,12,43,1],[13,13,13,45,1],[14,13,14,47,1],[15,13,15,44,1],[16,9,16,10,1]]);
+    </script>
+  </body>
+</html>

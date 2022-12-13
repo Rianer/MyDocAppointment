@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.API\MyDocAppointment.API\Mapping\InternalProfile.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Business.Logistics.Internal;
+
+namespace MyDocAppointment.API.Mapping
+{
+    public class InternalProfile : Profile
+    {
+        public InternalProfile()
+        {
+            CreateMap&lt;Drug, DrugDto&gt;().ReverseMap();
+            CreateMap&lt;CreateDrugDto, Drug&gt;();
+            CreateMap&lt;DrugStock, DrugStockDto&gt;().ReverseMap();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[9,9,9,33,1],[10,9,10,10,1],[11,13,11,53,1],[12,13,12,46,1],[13,13,13,63,1],[14,9,14,10,1]]);
+    </script>
+  </body>
+</html>

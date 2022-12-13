@@ -5,56 +5,50 @@
     {
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
-        "version": "4.3.0.0",
-        "fileVersion": "4.3.0-3.22470.13 (80a8ce8d)",
-        "semanticVersion": "4.3.0",
+        "version": "4.4.0.0",
+        "fileVersion": "4.4.0-4.22520.11 (9e075f03)",
+        "semanticVersion": "4.4.0",
         "language": "en-US"
       },
       "results": [
         {
-          "ruleId": "CS9057",
+          "ruleId": "S2699",
           "level": "warning",
-          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\Microsoft.Interop.JavaScript.JSImportGenerator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "message": "Add at least one assertion to this test case.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 27,
+                  "endLine": 28,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
           "properties": {
             "warningLevel": 1
           }
         },
         {
-          "ruleId": "CS9057",
+          "ruleId": "S2699",
           "level": "warning",
-          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\Microsoft.Interop.LibraryImportGenerator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS9057",
-          "level": "warning",
-          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\System.Text.Json.SourceGeneration.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS9057",
-          "level": "warning",
-          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\System.Text.RegularExpressions.Generator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS9057",
-          "level": "warning",
-          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.AspNetCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\Microsoft.AspNetCore.App.Analyzers.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS9057",
-          "level": "warning",
-          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.AspNetCore.App.Ref\\7.0.0\\analyzers\\dotnet\\roslyn4.4\\cs\\Microsoft.Extensions.Logging.Generators.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "message": "Add at least one assertion to this test case.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 27,
+                  "endLine": 26,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
           "properties": {
             "warningLevel": 1
           }
@@ -102,18 +96,18 @@
           }
         },
         {
-          "ruleId": "S2699",
-          "level": "warning",
-          "message": "Add at least one assertion to this test case.",
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'GetDrugDto' does not access instance data and can be marked as static",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
                 "region": {
-                  "startLine": 28,
-                  "startColumn": 27,
-                  "endLine": 28,
-                  "endColumn": 51
+                  "startLine": 43,
+                  "startColumn": 31,
+                  "endLine": 43,
+                  "endColumn": 41
                 }
               }
             }
@@ -184,48 +178,6 @@
           "properties": {
             "warningLevel": 1
           }
-        },
-        {
-          "ruleId": "S2699",
-          "level": "warning",
-          "message": "Add at least one assertion to this test case.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
-                "region": {
-                  "startLine": 26,
-                  "startColumn": 27,
-                  "endLine": 26,
-                  "endColumn": 51
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1822",
-          "level": "note",
-          "message": "Member 'GetDrugDto' does not access instance data and can be marked as static",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
-                "region": {
-                  "startLine": 43,
-                  "startColumn": 31,
-                  "endLine": 43,
-                  "endColumn": 41
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
         }
       ],
       "rules": {
@@ -242,20 +194,6 @@
               "PortedFromFxCop",
               "Telemetry",
               "EnabledRuleInAggressiveMode"
-            ]
-          }
-        },
-        "CS9057": {
-          "id": "CS9057",
-          "shortDescription": "The analyzer assembly references a newer version of the compiler than the currently running version.",
-          "defaultLevel": "warning",
-          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS9057)",
-          "properties": {
-            "category": "Compiler",
-            "isEnabledByDefault": true,
-            "tags": [
-              "Compiler",
-              "Telemetry"
             ]
           }
         },

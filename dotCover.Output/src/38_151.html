@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\ResultOfEntity.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+namespace MyDocAppointment.Business.Helpers
+{
+    public class Result&lt;TEntity&gt;
+    {
+        public TEntity? Entity { get; set; }
+
+        public string Error { get; private set; } = string.Empty;
+        public bool IsSuccess { get; private set; }
+        public bool IsFailure { get; private set; }
+
+        public static Result&lt;TEntity&gt; Success(TEntity entity)
+        {
+            return new Result&lt;TEntity&gt;
+            {
+                Entity = entity,
+                IsSuccess = true
+            };
+        }
+
+        public static Result&lt;TEntity&gt; Failure(string error)
+        {
+            return new Result&lt;TEntity&gt;
+            {
+                Error = error,
+                IsFailure = true
+            };
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[5,34,5,38,1],[5,39,5,43,1],[7,31,7,35,1],[7,36,7,48,1],[7,53,7,65,1],[8,33,8,37,1],[8,38,8,50,1],[9,33,9,37,0],[9,38,9,50,1],[12,9,12,10,1],[13,13,17,15,1],[18,9,18,10,1],[21,9,21,10,1],[22,13,26,15,1],[27,9,27,10,1]]);
+    </script>
+  </body>
+</html>
