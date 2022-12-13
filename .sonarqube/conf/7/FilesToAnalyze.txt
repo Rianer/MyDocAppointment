@@ -1,0 +1,4 @@
+﻿C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Application\AppointmentsService.cs
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Application\DoctorService.cs
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Application\DrugsService.cs
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Application\PatientsService.cs

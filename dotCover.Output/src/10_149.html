@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.API\MyDocAppointment.API\Mapping\PatientProfile.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.API.Mapping
+{
+    public class PatientProfile : Profile
+    {
+        public PatientProfile()
+        {
+            CreateMap&lt;Patient, PatientDto&gt;().ReverseMap();
+            CreateMap&lt;CreatePatientDto, Patient&gt;();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[9,9,9,32,1],[10,9,10,10,1],[11,13,11,59,1],[12,13,12,52,1],[13,9,13,10,1]]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+﻿C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\AppointmentControllerTests.cs
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\DrugsControllerTests.cs
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\PatientsControllerTests.cs
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\Usings.cs
+C:\Users\Ovidiu\.nuget\packages\microsoft.net.test.sdk\17.4.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\Ovidiu\.nuget\packages\microsoft.testplatform.testhost\17.4.0\build\netcoreapp3.1\x64\testhost.exe
+C:\Users\Ovidiu\.nuget\packages\microsoft.testplatform.testhost\17.4.0\build\netcoreapp3.1\x64\testhost.dll
+C:\Users\Ovidiu\.nuget\packages\xunit.runner.visualstudio\2.4.5\build\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Ovidiu\.nuget\packages\xunit.runner.visualstudio\2.4.5\build\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Ovidiu\.nuget\packages\xunit.runner.visualstudio\2.4.5\build\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\TestResults\702da5b2-0d04-4385-a895-28ba8fa71ffc\Ovidiu_DESKTOP-KOFRT4R_2022-12-13.07_07_56.coverage

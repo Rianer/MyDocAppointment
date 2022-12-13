@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Migrations\20221212205434_AddAppointmentToDB.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace MyDocAppointment.Infrastructure.Migrations
+{
+    /// &lt;inheritdoc /&gt;
+    public partial class AddAppointmentToDB : Migration
+    {
+        /// &lt;inheritdoc /&gt;
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: &quot;FK_Appointment_Doctors_DoctorID&quot;,
+                table: &quot;Appointment&quot;);
+
+            migrationBuilder.DropForeignKey(
+                name: &quot;FK_Appointment_Patients_PatientID&quot;,
+                table: &quot;Appointment&quot;);
+
+            migrationBuilder.DropForeignKey(
+                name: &quot;FK_Appointment_Payment_PaymentId&quot;,
+                table: &quot;Appointment&quot;);
+
+            migrationBuilder.DropPrimaryKey(
+                name: &quot;PK_Appointment&quot;,
+                table: &quot;Appointment&quot;);
+
+            migrationBuilder.RenameTable(
+                name: &quot;Appointment&quot;,
+                newName: &quot;Appointments&quot;);
+
+            migrationBuilder.RenameIndex(
+                name: &quot;IX_Appointment_PaymentId&quot;,
+                table: &quot;Appointments&quot;,
+                newName: &quot;IX_Appointments_PaymentId&quot;);
+
+            migrationBuilder.RenameIndex(
+                name: &quot;IX_Appointment_PatientID&quot;,
+                table: &quot;Appointments&quot;,
+                newName: &quot;IX_Appointments_PatientID&quot;);
+
+            migrationBuilder.RenameIndex(
+                name: &quot;IX_Appointment_DoctorID&quot;,
+                table: &quot;Appointments&quot;,
+                newName: &quot;IX_Appointments_DoctorID&quot;);
+
+            migrationBuilder.AddPrimaryKey(
+                name: &quot;PK_Appointments&quot;,
+                table: &quot;Appointments&quot;,
+                columns: new[] { &quot;Id&quot;, &quot;DoctorID&quot;, &quot;PatientID&quot; });
+
+            migrationBuilder.AddForeignKey(
+                name: &quot;FK_Appointments_Doctors_DoctorID&quot;,
+                table: &quot;Appointments&quot;,
+                column: &quot;DoctorID&quot;,
+                principalTable: &quot;Doctors&quot;,
+                principalColumn: &quot;Id&quot;,
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: &quot;FK_Appointments_Patients_PatientID&quot;,
+                table: &quot;Appointments&quot;,
+                column: &quot;PatientID&quot;,
+                principalTable: &quot;Patients&quot;,
+                principalColumn: &quot;Id&quot;,
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: &quot;FK_Appointments_Payment_PaymentId&quot;,
+                table: &quot;Appointments&quot;,
+                column: &quot;PaymentId&quot;,
+                principalTable: &quot;Payment&quot;,
+                principalColumn: &quot;Id&quot;,
+                onDelete: ReferentialAction.Cascade);
+        }
+
+        /// &lt;inheritdoc /&gt;
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: &quot;FK_Appointments_Doctors_DoctorID&quot;,
+                table: &quot;Appointments&quot;);
+
+            migrationBuilder.DropForeignKey(
+                name: &quot;FK_Appointments_Patients_PatientID&quot;,
+                table: &quot;Appointments&quot;);
+
+            migrationBuilder.DropForeignKey(
+                name: &quot;FK_Appointments_Payment_PaymentId&quot;,
+                table: &quot;Appointments&quot;);
+
+            migrationBuilder.DropPrimaryKey(
+                name: &quot;PK_Appointments&quot;,
+                table: &quot;Appointments&quot;);
+
+            migrationBuilder.RenameTable(
+                name: &quot;Appointments&quot;,
+                newName: &quot;Appointment&quot;);
+
+            migrationBuilder.RenameIndex(
+                name: &quot;IX_Appointments_PaymentId&quot;,
+                table: &quot;Appointment&quot;,
+                newName: &quot;IX_Appointment_PaymentId&quot;);
+
+            migrationBuilder.RenameIndex(
+                name: &quot;IX_Appointments_PatientID&quot;,
+                table: &quot;Appointment&quot;,
+                newName: &quot;IX_Appointment_PatientID&quot;);
+
+            migrationBuilder.RenameIndex(
+                name: &quot;IX_Appointments_DoctorID&quot;,
+                table: &quot;Appointment&quot;,
+                newName: &quot;IX_Appointment_DoctorID&quot;);
+
+            migrationBuilder.AddPrimaryKey(
+                name: &quot;PK_Appointment&quot;,
+                table: &quot;Appointment&quot;,
+                column: &quot;Id&quot;);
+
+            migrationBuilder.AddForeignKey(
+                name: &quot;FK_Appointment_Doctors_DoctorID&quot;,
+                table: &quot;Appointment&quot;,
+                column: &quot;DoctorID&quot;,
+                principalTable: &quot;Doctors&quot;,
+                principalColumn: &quot;Id&quot;,
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: &quot;FK_Appointment_Patients_PatientID&quot;,
+                table: &quot;Appointment&quot;,
+                column: &quot;PatientID&quot;,
+                principalTable: &quot;Patients&quot;,
+                principalColumn: &quot;Id&quot;,
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: &quot;FK_Appointment_Payment_PaymentId&quot;,
+                table: &quot;Appointment&quot;,
+                column: &quot;PaymentId&quot;,
+                principalTable: &quot;Payment&quot;,
+                principalColumn: &quot;Id&quot;,
+                onDelete: ReferentialAction.Cascade);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,10,0],[13,13,15,39,0],[17,13,19,39,0],[21,13,23,39,0],[25,13,27,39,0],[29,13,31,42,0],[33,13,36,55,0],[38,13,41,55,0],[43,13,46,54,0],[48,13,51,67,0],[53,13,59,54,0],[61,13,67,54,0],[69,13,75,54,0],[76,9,76,10,0],[80,9,80,10,0],[81,13,83,40,0],[85,13,87,40,0],[89,13,91,40,0],[93,13,95,40,0],[97,13,99,41,0],[101,13,104,54,0],[106,13,109,54,0],[111,13,114,53,0],[116,13,119,31,0],[121,13,127,54,0],[129,13,135,54,0],[137,13,143,54,0],[144,9,144,10,0]]);
+    </script>
+  </body>
+</html>

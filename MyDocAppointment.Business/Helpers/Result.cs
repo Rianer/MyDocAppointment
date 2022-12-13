@@ -2,7 +2,7 @@ namespace MyDocAppointment.Business.Helpers
 {
     public class Result
     {
-        public string Error { get; private set; }
+        public string Error { get; private set; } = string.Empty;
         public bool IsSuccess { get; private set; }
         public bool IsFailure { get; private set; }
 

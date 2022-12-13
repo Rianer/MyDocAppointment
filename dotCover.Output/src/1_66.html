@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\AppointmentControllerTests.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MyDocAppointment.API.Dtos;
+using System.Net.Http.Json;
+
+namespace MyDocAppointment.IntegrationTests
+{
+    public class AppointmentsControllerTests : BaseIntegrationTests
+    {
+        private const string ApiUrl = &quot;api/appointment&quot;;
+
+        [Fact]
+        public async void WhenCreateAppointment_ThenShouldReturnCreated()
+        {
+        //Arange
+        var AppointmentDto = GetAppointmentDto();
+
+            //Act
+
+            var AppointmentResponse = await HttpClient.PostAsJsonAsync(ApiUrl, AppointmentDto);
+            var getAppointmentResult = await HttpClient.GetAsync(ApiUrl);
+            var status = ((int)AppointmentResponse.StatusCode);
+
+            //Assert
+            AppointmentResponse.EnsureSuccessStatusCode();
+            Assert.Equal(201, status);
+        }
+
+        [Fact]
+        public async Task Get_WhenCalled_ReturnsOk()
+        {
+            //Act
+            var response = await HttpClient.GetAsync(ApiUrl);
+            //Assert
+            response.EnsureSuccessStatusCode();
+        }
+
+        [Fact]
+        public async Task Index_WhenCalled_ReturnsApplicationForm()
+        {
+            var response = await HttpClient.GetAsync(ApiUrl);
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+            Assert.Contains(&quot;Iasi&quot;, responseString);
+        }
+
+        private CreateAppointmentDto GetAppointmentDto()
+        {
+            var AppointmentDto = new CreateAppointmentDto
+            {
+                Location = &quot;Iasi&quot;,
+                PatientID = &quot;8a1dd56e-3714-47ff-74bb-08dad798785d&quot;,
+                DoctorID = &quot;74a67233-cd3d-4b6a-3af0-08dad791cf86&quot;,
+                Specialization = &quot;Cardiology&quot;,
+                AppointmentTime = &quot;03 March 2016 06:30&quot;,
+                Payment = new CreatePaymentDto()
+                {
+                    PaymentMethod = &quot;Card&quot;,
+                    Amount = 400
+                }
+            };
+
+            return AppointmentDto;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,10,1],[14,9,14,50,1],[18,13,18,96,1],[19,13,19,74,1],[20,13,20,64,1],[23,13,23,59,1],[24,13,24,39,0],[25,9,25,10,0],[29,9,29,10,1],[31,13,31,62,1],[33,13,33,48,1],[34,9,34,10,0],[38,9,38,10,1],[39,13,39,62,1],[40,13,40,48,1],[41,13,41,77,0],[42,13,42,53,0],[43,9,43,10,0],[46,9,46,10,1],[47,13,59,15,1],[61,13,61,35,1],[62,9,62,10,1]]);
+    </script>
+  </body>
+</html>

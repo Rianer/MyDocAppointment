@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MyDocAppointment.API.Dtos;
+using System.Net.Http.Json;
+
+namespace MyDocAppointment.IntegrationTests
+{
+    public class DoctorsControllerTests : BaseIntegrationTests
+    {
+        private const string ApiUrl = &quot;api/doctor&quot;;
+
+        [Fact]
+        public async void WhenCreateDoctor_ThenShouldReturnCreated()
+        {
+             //Arange
+            var doctorDto = getDoctorDto();
+
+            //Act
+
+            var doctorResponse = await HttpClient.PostAsJsonAsync(ApiUrl, doctorDto);
+            var getDoctorgResult = await HttpClient.GetAsync(ApiUrl);
+            var status = ((int)doctorResponse.StatusCode);
+
+            //Assert
+            doctorResponse.EnsureSuccessStatusCode();
+            Assert.Equal(201, status);
+        }
+
+        [Fact]
+        public async Task Get_WhenCalled_ReturnsOk()
+        {
+            //Act
+            var response = await HttpClient.GetAsync(ApiUrl);
+            //Assert
+            response.EnsureSuccessStatusCode();
+        }
+
+        [Fact]
+        public async Task Index_WhenCalled_ReturnsApplicationForm()
+        {
+            var response = await HttpClient.GetAsync(ApiUrl);
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+            Assert.Contains(&quot;Ion&quot;, responseString);
+            Assert.Contains(&quot;Mark&quot;, responseString);
+        }
+        private CreateDoctorDto getDoctorDto()
+        {
+            var doctorDto = new CreateDoctorDto
+            {
+                Name = &quot;Stan&quot;,
+                Surname = &quot;Mark&quot;,
+                Age = 30,
+                Gender = &quot;Male&quot;,
+                EmailAddress = &quot;ion@gmail.com&quot;,
+                PhoneNumber = &quot;0777777777&quot;,
+                HomeAddress = &quot;Iasi&quot;,
+                Speciality = &quot;Cardiology&quot;
+
+            };
+
+            return doctorDto;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,10,1],[14,13,14,44,1],[18,13,18,86,1],[19,13,19,70,1],[20,13,20,59,1],[23,13,23,54,1],[24,13,24,39,0],[25,9,25,10,0],[29,9,29,10,1],[31,13,31,62,1],[33,13,33,48,1],[34,9,34,10,0],[38,9,38,10,1],[39,13,39,62,1],[40,13,40,48,1],[41,13,41,77,0],[42,13,42,52,0],[43,13,43,53,0],[44,9,44,10,0],[46,9,46,10,1],[47,13,58,15,1],[60,13,60,30,1],[61,9,61,10,1]]);
+    </script>
+  </body>
+</html>

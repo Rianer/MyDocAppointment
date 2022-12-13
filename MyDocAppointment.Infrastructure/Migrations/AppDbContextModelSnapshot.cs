@@ -25,29 +25,29 @@ namespace MyDocAppointment.Infrastructure.Migrations
             modelBuilder.Entity("MyDocAppointment.Business.Logistics.External.Appointment", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DoctorID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PatientID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("AppointmentTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("DoctorID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PatientID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("PaymentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Specialization")
-                        .HasColumnType("int");
+                    b.Property<string>("Specialization")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id", "DoctorID", "PatientID");
 
                     b.HasIndex("DoctorID");
 
@@ -55,7 +55,7 @@ namespace MyDocAppointment.Infrastructure.Migrations
 
                     b.HasIndex("PaymentId");
 
-                    b.ToTable("Appointment");
+                    b.ToTable("Appointments");
                 });
 
             modelBuilder.Entity("MyDocAppointment.Business.Logistics.External.Diagnosis", b =>
@@ -126,12 +126,13 @@ namespace MyDocAppointment.Infrastructure.Migrations
                     b.Property<DateTime>("EmissionDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PaymentMethod")
-                        .HasColumnType("int");
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payment");
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.Drug", b =>

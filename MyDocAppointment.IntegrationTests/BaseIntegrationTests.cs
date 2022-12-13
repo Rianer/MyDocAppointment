@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using MyDocAppointment.Infrastructure;
 using MyDocAppointment.API.Controllers;
-using MyDocAppointment.API.Dtos;
 
 namespace MyDocAppointment.IntegrationTests
 {

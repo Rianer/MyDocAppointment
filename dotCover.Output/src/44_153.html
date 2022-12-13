@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Repositories\AppointmentsRepository.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.External;
+using MyDocAppointment.Business.Users;
+namespace MyDocAppointment.Infrastructure.Repositories
+{
+    public class AppointmentsRepository : IAppointmentsRepository
+    {
+        private readonly AppDbContext _appDbContext;
+        public AppointmentsRepository(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
+
+        public async Task Create(Appointment appointment)
+        {
+            _appDbContext.Appointments.Add(appointment);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task Delete(Appointment appointment)
+        {
+            _appDbContext.Appointments.Remove(appointment);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task&lt;IEnumerable&lt;Appointment&gt;&gt; GetAll() =&gt; await _appDbContext.Appointments.Include(a =&gt; a.Doctor).Include(a =&gt; a.Payment).ToListAsync();
+
+        public async Task&lt;Appointment?&gt; GetById(Guid id)
+        {
+            var appointment = await _appDbContext.Appointments.FirstOrDefaultAsync(d =&gt; d.Id == id);
+
+            return appointment;
+        }
+
+        public async Task SaveChanges()
+        {
+            await _appDbContext.SaveChangesAsync();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,9,10,65,1],[11,9,11,10,1],[12,13,12,42,1],[13,9,13,10,1],[16,9,16,10,1],[17,13,17,57,1],[18,13,18,52,1],[19,9,19,10,0],[22,9,22,10,0],[23,13,23,60,0],[24,13,24,52,0],[25,9,25,10,0],[27,65,27,158,1],[30,9,30,10,0],[31,13,31,101,0],[33,13,33,32,0],[34,9,34,10,0],[37,9,37,10,0],[38,13,38,52,0],[39,9,39,10,0]]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.API\MyDocAppointment.API\Controllers\PatientController.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Application;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.Internal;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.API.Controllers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class PatientController : ControllerBase
+    {
+        private readonly IPatientsService _patientService;
+        private readonly IMapper _mapper;
+
+        public PatientController(IPatientsService patientService, IMapper mapper)
+        {
+            _patientService = patientService;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task&lt;IActionResult&gt; Get()
+        {
+            var response = await _patientService.GetAll();
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var models = _mapper.Map&lt;IEnumerable&lt;PatientDto&gt;&gt;(response.Entity);
+            return Ok(models);
+        }
+
+        [HttpPost]
+        public async Task&lt;IActionResult&gt; Create([FromBody] CreatePatientDto dto)
+        {
+            var patient = _mapper.Map&lt;Patient&gt;(dto);
+            await _patientService.Create(patient);
+
+            return Created(nameof(Get), dto);
+        }
+
+        [HttpGet(&quot;{patientId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; GetById(Guid patientId)
+        {
+            var response = await _patientService.GetById(patientId);
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map&lt;PatientDto&gt;(response.Entity);
+            return Ok(model);
+
+        }
+
+        [HttpDelete(&quot;{patientId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; Delete(Guid patientId)
+        {
+            var response = await _patientService.Delete(patientId);
+            if (response.IsSuccess)
+            {
+                return Ok();
+            }
+
+            return NotFound(response.Error);
+        }
+
+        [HttpPut(&quot;{patientId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; Update([FromBody] PatientDto dto, Guid patientId)
+        {
+            var patient = _mapper.Map&lt;Patient&gt;(dto);
+            var response = await _patientService.Update(patient, patientId);
+
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map&lt;PatientDto&gt;(response.Entity);
+            return Ok(model);
+        }
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[18,9,18,82,1],[19,9,19,10,1],[20,13,20,46,1],[21,13,21,30,1],[22,9,22,10,1],[26,9,26,10,1],[27,13,27,59,1],[28,13,28,37,0],[29,13,29,14,0],[30,17,30,49,0],[33,13,33,80,0],[34,13,34,31,0],[35,9,35,10,0],[39,9,39,10,1],[40,13,40,53,1],[41,13,41,51,1],[43,13,43,46,1],[44,9,44,10,1],[48,9,48,10,1],[49,13,49,69,1],[50,13,50,37,1],[51,13,51,14,1],[52,17,52,49,1],[55,13,55,66,1],[56,13,56,30,1],[58,9,58,10,1],[62,9,62,10,1],[63,13,63,68,1],[64,13,64,36,1],[65,13,65,14,1],[66,17,66,29,1],[69,13,69,45,1],[70,9,70,10,1],[74,9,74,10,1],[75,13,75,53,1],[76,13,76,77,1],[78,13,78,37,1],[79,13,79,14,1],[80,17,80,49,1],[83,13,83,66,1],[84,13,84,30,1],[85,9,85,10,1]]);
+    </script>
+  </body>
+</html>

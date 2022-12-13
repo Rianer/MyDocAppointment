@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\DrugsControllerTests.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MyDocAppointment.API.Dtos;
+using System.Net.Http.Json;
+
+namespace MyDocAppointment.IntegrationTests
+{
+    public class DrugsControllerTests : BaseIntegrationTests
+    {
+        private const string ApiUrl = &quot;api/drug&quot;;
+
+        [Fact]
+        public async void WhenCreatedrug_ThenShouldReturnCreated()
+        {
+            //Arange
+            var drugDto = GetDrugDto();
+
+            //Act
+            var drugResponse = await HttpClient.PostAsJsonAsync(ApiUrl, drugDto);
+            var status = ((int)drugResponse.StatusCode);
+
+            //Assert
+            drugResponse.EnsureSuccessStatusCode();
+            Assert.Equal(201, status);
+        }
+
+        [Fact]
+        public async Task Get_WhenCalled_ReturnsOk()
+        {
+            //Act
+            var response = await HttpClient.GetAsync(ApiUrl);
+            //Assert
+            response.EnsureSuccessStatusCode();
+        }
+
+        [Fact]
+        public async Task Index_WhenCalled_ReturnsApplicationForm()
+        {
+            var response = await HttpClient.GetAsync(ApiUrl);
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+            Assert.Contains(&quot;Name&quot;, responseString);
+        }
+
+        private CreateDrugDto GetDrugDto()
+        {
+            var drugDto = new CreateDrugDto
+            {
+                Name = &quot;Name&quot;,
+                Vendor = &quot;Vendor&quot;,
+                Category = &quot;Category&quot;,
+                Price = (decimal)12.4
+            };
+
+            return drugDto;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,10,1],[14,13,14,40,1],[17,13,17,82,1],[18,13,18,57,1],[21,13,21,52,1],[22,13,22,39,0],[23,9,23,10,0],[27,9,27,10,1],[29,13,29,62,1],[31,13,31,48,1],[32,9,32,10,0],[36,9,36,10,1],[37,13,37,62,1],[38,13,38,48,1],[39,13,39,77,0],[40,13,40,53,0],[41,9,41,10,0],[44,9,44,10,1],[45,13,51,15,1],[53,13,53,28,1],[54,9,54,10,1]]);
+    </script>
+  </body>
+</html>
