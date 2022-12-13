@@ -1,0 +1,270 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.3.0.0",
+        "fileVersion": "4.3.0-3.22470.13 (80a8ce8d)",
+        "semanticVersion": "4.3.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\Microsoft.Interop.JavaScript.JSImportGenerator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\Microsoft.Interop.LibraryImportGenerator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\System.Text.Json.SourceGeneration.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\System.Text.RegularExpressions.Generator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.AspNetCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\Microsoft.AspNetCore.App.Analyzers.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.AspNetCore.App.Ref\\7.0.0\\analyzers\\dotnet\\roslyn4.4\\cs\\Microsoft.Extensions.Logging.Generators.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.API/MyDocAppointment.API/Mapping/ExternalProfile.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 43,
+                  "endLine": 16,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.API/MyDocAppointment.API/Mapping/ExternalProfile.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 43,
+                  "endLine": 18,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.API/MyDocAppointment.API/Mapping/ExternalProfile.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 43,
+                  "endLine": 20,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3928",
+          "level": "warning",
+          "message": "The parameter name 'Connection string null or empty!' is not declared in the argument list.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.API/MyDocAppointment.API/Program.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 11,
+                  "endLine": 12,
+                  "endColumn": 72
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S5122",
+          "level": "warning",
+          "message": "Make sure this permissive CORS policy is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.API/MyDocAppointment.API/Program.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 9,
+                  "endLine": 39,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2208",
+          "level": "note",
+          "message": "Method <Main>$ passes 'Connection string null or empty!' as the paramName argument to a ArgumentNullException constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.API/MyDocAppointment.API/Program.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 11,
+                  "endLine": 12,
+                  "endColumn": 72
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA2208": {
+          "id": "CA2208",
+          "shortDescription": "Instantiate argument exceptions correctly",
+          "fullDescription": "A call is made to the default (parameterless) constructor of an exception type that is or derives from ArgumentException, or an incorrect string argument is passed to a parameterized constructor of an exception type that is or derives from ArgumentException.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2208",
+          "properties": {
+            "category": "Usage",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Dereference of a possibly null reference.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS9057": {
+          "id": "CS9057",
+          "shortDescription": "The analyzer assembly references a newer version of the compiler than the currently running version.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS9057)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S3928": {
+          "id": "S3928",
+          "shortDescription": "Parameter names used into ArgumentException constructors should match an existing one ",
+          "fullDescription": "Some constructors of the ArgumentException, ArgumentNullException, ArgumentOutOfRangeException and DuplicateWaitObjectException classes must be fed with a valid parameter name. This rule raises an issue in two cases:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3928",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S5122": {
+          "id": "S5122",
+          "shortDescription": "Having a permissive Cross-Origin Resource Sharing policy is security-sensitive",
+          "fullDescription": "Having a permissive Cross-Origin Resource Sharing policy is security-sensitive. It has led in the past to the following vulnerabilities:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-5122",
+          "properties": {
+            "category": "Minor Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

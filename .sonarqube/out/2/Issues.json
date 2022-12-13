@@ -1,0 +1,417 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.3.0.0",
+        "fileVersion": "4.3.0-3.22470.13 (80a8ce8d)",
+        "semanticVersion": "4.3.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\Microsoft.Interop.JavaScript.JSImportGenerator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\Microsoft.Interop.LibraryImportGenerator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\System.Text.Json.SourceGeneration.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS9057",
+          "level": "warning",
+          "message": "The analyzer assembly 'C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Ref\\7.0.0\\analyzers\\dotnet\\cs\\System.Text.RegularExpressions.Generator.dll' references version '4.4.0.0' of the compiler, which is newer than the currently running version '4.3.0.0'.",
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Drugs' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 16,
+                  "endLine": 11,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 28,
+                  "endLine": 12,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Doctors' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 16,
+                  "endLine": 11,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 30,
+                  "endLine": 13,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Patients' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 16,
+                  "endLine": 11,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 31,
+                  "endLine": 14,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Appointments' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 16,
+                  "endLine": 11,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 35,
+                  "endLine": 15,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Payments' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 16,
+                  "endLine": 11,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 31,
+                  "endLine": 16,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possible null reference return.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/Repositories/PatientsRepository.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 20,
+                  "endLine": 32,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'pacient' to 'patient' to match the interface declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/Repositories/PatientsRepository.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 42,
+                  "endLine": 14,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'pacient' to 'patient' to match the interface declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/Repositories/PatientsRepository.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 42,
+                  "endLine": 20,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4581",
+          "level": "warning",
+          "message": "Use 'Guid.NewGuid()' or 'Guid.Empty' or add arguments to this GUID instantiation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/Migrations/20221206132131_AddSomeColumns.cs",
+                "region": {
+                  "startLine": 105,
+                  "startColumn": 31,
+                  "endLine": 105,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4581",
+          "level": "warning",
+          "message": "Use 'Guid.NewGuid()' or 'Guid.Empty' or add arguments to this GUID instantiation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/Migrations/20221206132131_AddSomeColumns.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 31,
+                  "endLine": 55,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CS8603": {
+          "id": "CS8603",
+          "shortDescription": "Possible null reference return.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8603)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS9057": {
+          "id": "CS9057",
+          "shortDescription": "The analyzer assembly references a newer version of the compiler than the currently running version.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS9057)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S4581": {
+          "id": "S4581",
+          "shortDescription": "\"new Guid()\" should not be used",
+          "fullDescription": "When the syntax new Guid() (i.e. parameterless instantiation) is used, it must be that one of three things is wanted:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4581",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S927": {
+          "id": "S927",
+          "shortDescription": "Parameter names should match base declaration and other partial definitions",
+          "fullDescription": "The name of a parameter in an externally visible. This rule raises an issue when method override does not match the name of the parameter in the base declaration of the method, or the name of the parameter in the interface declaration of the method or the name of any other partial definition.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-927",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

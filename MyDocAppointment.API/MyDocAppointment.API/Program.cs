@@ -1,3 +1,4 @@
+using Microsoft.IdentityModel.Tokens;
 using MyDocAppointment.Application;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Infrastructure.Configurations;
@@ -6,6 +7,10 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("MyDocAppointment");
+if(connectionString == null)
+{
+    throw new ArgumentNullException("Connection string null or empty!");
+}
 // Add services to the container.
 
 builder.Services.AddControllers();

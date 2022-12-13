@@ -11,21 +11,21 @@ namespace MyDocAppointment.Infrastructure.Repositories
             _appDbContext = appDbContext;
         }
 
-        public async Task Create(Patient pacient)
+        public async Task Create(Patient patient)
         {
-            _appDbContext.Patients.Add(pacient);
+            _appDbContext.Patients.Add(patient);
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task Delete(Patient pacient)
+        public async Task Delete(Patient patient)
         {
-            _appDbContext.Patients.Remove(pacient);
+            _appDbContext.Patients.Remove(patient);
             await _appDbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Patient>> GetAll() => await _appDbContext.Patients.ToListAsync();
 
-        public async Task<Patient> GetById(Guid id)
+        public async Task<Patient?> GetById(Guid id)
         {
             var pacient = await _appDbContext.Patients.FirstOrDefaultAsync(d => d.Id == id);
 

@@ -14,7 +14,6 @@ namespace MyDocAppointment.Infrastructure.Repositories
 
         public async Task Create(Appointment appointment)
         {
-            //var doc = await _appDbContext.Doctors.FindAsync(appointment.DoctorID);
             _appDbContext.Appointments.Add(appointment);
             await _appDbContext.SaveChangesAsync();
         }
@@ -27,7 +26,7 @@ namespace MyDocAppointment.Infrastructure.Repositories
 
         public async Task<IEnumerable<Appointment>> GetAll() => await _appDbContext.Appointments.Include(a => a.Doctor).Include(a => a.Payment).ToListAsync();
 
-        public async Task<Appointment> GetById(Guid id)
+        public async Task<Appointment?> GetById(Guid id)
         {
             var appointment = await _appDbContext.Appointments.FirstOrDefaultAsync(d => d.Id == id);
 

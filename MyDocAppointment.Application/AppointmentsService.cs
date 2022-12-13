@@ -17,6 +17,7 @@ namespace MyDocAppointment.Application
         public async Task Create(Appointment appointment)
         {
             appointment.Id= Guid.NewGuid();
+            appointment.Payment = new Payment();
             appointment.Payment.Id = Guid.NewGuid();
             appointment.Payment.DueDate = DateTime.Now;
             appointment.Payment.AcquittedDate = DateTime.Now;
@@ -61,18 +62,18 @@ namespace MyDocAppointment.Application
             await _appointmentsRepository.SaveChanges();
         }
 
-        public async Task<Result<Appointment>> Update(Appointment updateAppointment, Guid appointmentId)
+        public async Task<Result<Appointment>> Update(Appointment appointment, Guid id)
         {
-            var currentAppointment = await _appointmentsRepository.GetById(appointmentId);
+            var currentAppointment = await _appointmentsRepository.GetById(id);
             if (currentAppointment == null)
             {
-                return Result<Appointment>.Failure($"appointment with ID: {appointmentId} does not exist.");
+                return Result<Appointment>.Failure($"appointment with ID: {id} does not exist.");
 
             }
 
-            currentAppointment.Location = updateAppointment.Location;
-            currentAppointment.Specialization = updateAppointment.Specialization;
-            currentAppointment.AppointmentTime = updateAppointment.AppointmentTime;
+            currentAppointment.Location = appointment.Location;
+            currentAppointment.Specialization = appointment.Specialization;
+            currentAppointment.AppointmentTime = appointment.AppointmentTime;
 
             await _appointmentsRepository.SaveChanges();
 

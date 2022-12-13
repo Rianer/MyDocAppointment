@@ -28,7 +28,7 @@
         }
 
         public bool TakeItems(int quantity){
-            if(!IsRestricted & Quantity >= quantity){
+            if(!IsRestricted && Quantity >= quantity){
                 Quantity -= quantity;
                 return true;
             }

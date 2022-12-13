@@ -4,7 +4,7 @@
     {
         public Guid Id { get; set; }
         public double Amount { get; set; }
-        public string PaymentMethod { get; set; }
+        public string PaymentMethod { get; set; } = string.Empty;
         public DateTime DueDate { get; set; }
         public DateTime EmissionDate { get; set; }
         public DateTime AcquittedDate { get; set; }

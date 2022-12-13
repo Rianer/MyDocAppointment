@@ -1,0 +1,9 @@
+q
+hC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\AppointmentControllerShould.csutf-8l
+cC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\DoctorControllerShould.csutf-8j
+aC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\DrugControllerShould.csutf-8m
+dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\PatientControllerShould.csutf-8~
+sC:\Users\Ovidiu\.nuget\packages\microsoft.net.test.sdk\17.4.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.csutf-8è
+ÉC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\obj\Debug\net7.0\MyDocAppointment.Tests.GlobalUsings.g.csutf-8ï
+âC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.csutf-8ç
+ÅC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Tests\obj\Debug\net7.0\MyDocAppointment.Tests.AssemblyInfo.csutf-8

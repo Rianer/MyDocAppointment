@@ -9,6 +9,6 @@ namespace MyDocAppointment.Business.Interfaces
         Task Delete(Doctor doctor);
         Task SaveChanges();
         Task<IEnumerable<Doctor>> GetAll();
-        Task<Doctor> GetById(Guid id);
+        Task<Doctor?> GetById(Guid id);
     }
 }
