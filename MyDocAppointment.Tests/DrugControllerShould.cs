@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using MyDocAppointment.API.Controllers;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.External;
 using MyDocAppointment.Business.Logistics.Internal;
 using Xunit;
 
@@ -22,6 +25,9 @@ namespace MyDocAppointment.Tests
             idNotFound = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa5");
             var drugsServiceMock = new Mock<IDrugsService>();
             var mapperMock = new Mock<IMapper>();
+            Mock<IValidator<Drug>> validatorMock = new Mock<IValidator<Drug>>(MockBehavior.Strict);
+            validatorMock.Setup(validator => validator.ValidateAsync(It.IsAny<Drug>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new ValidationResult());
             drugsServiceMock.Setup(r => r.GetById(idOk))
                 .ReturnsAsync(GetTestDrug());
             drugsServiceMock.Setup(r => r.GetById(idNotFound))
@@ -36,7 +42,7 @@ namespace MyDocAppointment.Tests
                  .ReturnsAsync(GetTestDrug());
             drugsServiceMock.Setup(r => r.Update(It.IsAny<Drug>(), idNotFound))
                  .Returns(FailureResult(idNotFound));
-            controller = new DrugController(drugsServiceMock.Object, mapperMock.Object);
+            controller = new DrugController(drugsServiceMock.Object, mapperMock.Object, validatorMock.Object);
         }
 
         [Fact]

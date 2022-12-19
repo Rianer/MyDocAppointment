@@ -14,6 +14,7 @@ namespace MyDocAppointment.Infrastructure
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<DrugStock> DrugStocks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,6 +23,8 @@ namespace MyDocAppointment.Infrastructure
             modelBuilder.ApplyConfiguration(new DrugConfiguration());
             modelBuilder.ApplyConfiguration(new AppointmentConfiguration());
             modelBuilder.ApplyConfiguration(new PaymentConfiguration());
+            modelBuilder.ApplyConfiguration(new DrugStockConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }

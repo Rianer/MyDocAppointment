@@ -3,6 +3,7 @@
     // Only seen by doctors, contains a list of drugs and their count??
     public class DrugStock
     {
+        public DrugStock() { }
         public DrugStock(Drug item, int quantity, bool isRestricted)
         {
             Id = Guid.NewGuid();
@@ -11,7 +12,7 @@
             IsRestricted = isRestricted;
         }
         public Guid Id { get; set;}
-        public Drug Item { get; set; }
+        public virtual Drug Item { get; set; }
         public int Quantity { get; set; }
         public bool IsRestricted { get; set; }
 

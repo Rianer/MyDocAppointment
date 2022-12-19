@@ -18,6 +18,13 @@ namespace MyDocAppointment.Infrastructure.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
+        public async Task<Doctor> AddAsync(Doctor doctor)
+        {
+            _appDbContext.Doctors.Add(doctor);
+            await _appDbContext.SaveChangesAsync();
+            return doctor;
+        }
+
         public async Task Delete(Doctor doctor)
         {
             _appDbContext.Doctors.Remove(doctor);

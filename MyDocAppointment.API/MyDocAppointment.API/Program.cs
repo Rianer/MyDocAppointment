@@ -1,6 +1,11 @@
+using FluentValidation;
 using Microsoft.IdentityModel.Tokens;
+using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Application;
 using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.External;
+using MyDocAppointment.Business.Logistics.Internal;
+using MyDocAppointment.Business.Users;
 using MyDocAppointment.Infrastructure.Configurations;
 using MyDocAppointment.Infrastructure.Repositories;
 using System.Reflection;
@@ -15,10 +20,16 @@ if(connectionString == null)
 
 builder.Services.AddControllers();
 
+//builder.Services.AddScoped<IValidator<Doctor>, DoctorValidator>();
+builder.Services.AddScoped<IValidator<Patient>, PatientValidator>();
+builder.Services.AddScoped<IValidator<Drug>, DrugValidator>();
+builder.Services.AddScoped<IValidator<Appointment>, AppointmentValidator>();
+
 builder.Services.AddScoped<IDrugsRepository, DrugsRepository>();
 builder.Services.AddScoped<IDoctorsRepository, DoctorsRepository>();
 builder.Services.AddScoped<IPatientsRepository, PatientsRepository>();
 builder.Services.AddScoped<IAppointmentsRepository, AppointmentsRepository>();
+builder.Services.AddScoped<IDrugStocksRepository, DrugStocksRepository>();
 
 
 builder.Services.AddScoped<IDoctorsService, DoctorsService>();
@@ -31,6 +42,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDatabase(connectionString);
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddApplicationServices();
 
 builder.Services.AddCors(options =>
 {

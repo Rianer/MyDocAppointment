@@ -1,8 +1,10 @@
-namespace MyDocAppointment.API.Dtos
+﻿using MediatR;
+using MyDocAppointment.Application.Response;
+
+namespace MyDocAppointment.Application.Commands
 {
-    public class PatientDto
+    public class CreateDoctorCommand : IRequest<DoctorResponse>
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public int Age { get; set; }
@@ -10,5 +12,6 @@ namespace MyDocAppointment.API.Dtos
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
         public string HomeAddress { get; set; }
+        public string Speciality { get; set; }
     }
 }

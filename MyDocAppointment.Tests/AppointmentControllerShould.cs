@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using MyDocAppointment.API.Controllers;
@@ -7,6 +8,8 @@ using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.External;
 using Xunit;
+using FluentValidation.Results;
+using Azure.Core;
 
 namespace MyDocAppointment.Tests
 {
@@ -21,7 +24,11 @@ namespace MyDocAppointment.Tests
             idOk = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
             idNotFound = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa5");
             var appointmentsServiceMock = new Mock<IAppointmentsService>();
-            var mapperMock = new Mock<IMapper>();
+            var mapperMock = new Mock<IMapper>();          
+            mapperMock.Setup(m=> m.Map<Appointment>(It.IsAny<AppointmentDto>())).Returns(GetAppointment());
+            Mock<IValidator<Appointment>> validatorMock = new Mock<IValidator<Appointment>>(MockBehavior.Strict);
+            validatorMock.Setup(validator => validator.ValidateAsync(It.IsAny<Appointment>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new ValidationResult());
             appointmentsServiceMock.Setup(r => r.GetById(idOk))
                 .ReturnsAsync(GetTestAppointments());
             appointmentsServiceMock.Setup(r => r.GetById(idNotFound))
@@ -36,7 +43,7 @@ namespace MyDocAppointment.Tests
                  .ReturnsAsync(GetTestAppointment());
             appointmentsServiceMock.Setup(r => r.Update(It.IsAny<Appointment>(), idNotFound))
                  .Returns(FailureResult(idNotFound));
-            controller = new AppointmentController(appointmentsServiceMock.Object, mapperMock.Object);
+            controller = new AppointmentController(appointmentsServiceMock.Object, mapperMock.Object, validatorMock.Object);
         }
 
         [Fact]
@@ -177,6 +184,12 @@ namespace MyDocAppointment.Tests
         {
             var Appointment = GetAppointment();
             return Result<Appointment>.Success(Appointment);
+        }
+
+        private ValidationResult OkValidationResult()
+        {
+            ValidationResult val = new ValidationResult();
+            return val;
         }
     }
 }

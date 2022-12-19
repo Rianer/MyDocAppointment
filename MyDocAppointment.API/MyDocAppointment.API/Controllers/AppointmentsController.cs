@@ -1,4 +1,7 @@
 using AutoMapper;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Interfaces;
@@ -12,8 +15,11 @@ namespace MyDocAppointment.API.Controllers
     {
         private readonly IAppointmentsService _appointmentService;
         private readonly IMapper _mapper;
-        public AppointmentController(IAppointmentsService appointmentService, IMapper mapper)
+        private IValidator<Appointment> _validator;
+
+        public AppointmentController(IAppointmentsService appointmentService, IMapper mapper, IValidator<Appointment> validator)
         {
+            _validator = validator;
             _appointmentService = appointmentService;
             _mapper = mapper;
         }
@@ -71,6 +77,16 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Update([FromBody] AppointmentDto dto, Guid appointmentId)
         {
             var appointment = _mapper.Map<Appointment>(dto);
+
+            ValidationResult result = await _validator.ValidateAsync(appointment);
+
+            if (!result.IsValid)
+            {
+                result.AddToModelState(this.ModelState);
+
+                return BadRequest(appointment);
+            }
+
             var response = await _appointmentService.Update(appointment, appointmentId);
 
             if (!response.IsSuccess)

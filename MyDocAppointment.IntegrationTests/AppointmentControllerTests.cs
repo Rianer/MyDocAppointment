@@ -48,7 +48,7 @@ namespace MyDocAppointment.IntegrationTests
             {
                 Location = "Iasi",
                 PatientID = "8a1dd56e-3714-47ff-74bb-08dad798785d",
-                DoctorID = "74a67233-cd3d-4b6a-3af0-08dad791cf86",
+                DoctorID = "b0d5bf1a-828d-4950-19cd-08dad7987905",
                 Specialization = "Cardiology",
                 AppointmentTime = "03 March 2016 06:30",
                 Payment = new CreatePaymentDto()
