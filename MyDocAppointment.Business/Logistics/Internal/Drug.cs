@@ -20,15 +20,4 @@ namespace MyDocAppointment.Business.Logistics.Internal
             Category = newCategory;
         }
     }
-
-    public class DrugValidator : AbstractValidator<Drug>
-    {
-        public DrugValidator()
-        {
-            RuleFor(x => x.Name).Length(0, 30);
-            RuleFor(x => x.Vendor).Length(0, 30);
-            RuleFor(x => x.Price).NotEmpty();
-            RuleFor(x => x.Category).Length(0, 20);
-        }
-    }
 }

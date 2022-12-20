@@ -1,7 +1,4 @@
 using AutoMapper;
-using FluentValidation;
-using FluentValidation.AspNetCore;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Interfaces;
@@ -15,13 +12,11 @@ namespace MyDocAppointment.API.Controllers
     {
         private readonly IDrugsService _drugService;
         private readonly IMapper _mapper;
-        private IValidator<Drug> _validator;
 
-        public DrugController(IDrugsService drugService, IMapper mapper, IValidator<Drug> validator)
+        public DrugController(IDrugsService drugService, IMapper mapper)
         {
             _drugService = drugService;
             _mapper = mapper;
-            _validator = validator;
         }
 
         [HttpGet]
@@ -41,15 +36,6 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreateDrugDto dto)
         {
             var drug = _mapper.Map<Drug>(dto);
-
-            ValidationResult result = await _validator.ValidateAsync(drug);
-
-            if (!result.IsValid)
-            {
-                result.AddToModelState(this.ModelState);
-
-                return BadRequest(drug);
-            }
 
             await _drugService.Create(drug);
 
@@ -86,14 +72,6 @@ namespace MyDocAppointment.API.Controllers
         {
             var drug = _mapper.Map<Drug>(dto);
 
-            ValidationResult result = await _validator.ValidateAsync(drug);
-
-            if (!result.IsValid)
-            {
-                result.AddToModelState(this.ModelState);
-
-                return BadRequest("All fields from drug are required" + drug);
-            }
             var response = await _drugService.Update(drug, drugId);
 
             if (!response.IsSuccess)

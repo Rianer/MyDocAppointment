@@ -15,8 +15,6 @@ namespace MyDocAppointment.Application
         public static IServiceCollection AddApplicationServices
             (this IServiceCollection services)
         {
-            services.AddScoped<IValidator<Drug>, DrugValidator>();
-            services.AddFluentValidationAutoValidation();
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddScoped<IDoctorsService, DoctorsService>();
             services.AddScoped<IPatientsService, PatientsService>();
