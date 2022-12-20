@@ -1,0 +1,236 @@
+@import '../../utilities/variables.scss';
+
+
+.toggle-btn{
+    padding: 0;
+    margin: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    padding: 0.6rem;
+    transition: 300ms ease;
+    cursor: pointer;
+}
+
+.info-screen{
+    background-color: white;
+    padding: 2rem;
+    min-width: 380px;
+    margin: 0 auto 0 auto;
+}
+
+.overlay{
+    z-index: 120;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.info-section{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.title{
+    font-size: 1.4rem;
+    color: $contrastColor;
+}
+
+.info-list{
+    padding: 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    list-style-type: none;
+    text-align: center;
+}
+
+.info-list li{
+    cursor: pointer;
+    transition: 250ms ease;
+}
+
+.open-btn{
+    background: none;
+    border: none;
+    color: $plainColor;
+}
+
+.open-btn:hover{
+    background-color: $contrastColor;
+}
+
+.close-btn{
+    border: none;
+    background-color: $backgroundColor;
+    color: $plainColor;
+}
+
+.close-btn:hover{
+    background-color: $mainColor;
+}
+
+.contact{
+    letter-spacing: 0.1rem;
+}
+
+.label-txt{
+    font-weight: bold;
+    color: $mainColor;
+}
+
+// Details
+
+.details-screen{
+  background-color: $backgroundColor;
+  width: 400px;
+
+  .info-list{
+    color: $plainColor;
+  }
+
+  .info-list li:hover{
+    color: $accentColor;
+  }
+
+  .label-txt{
+    color: $accentColor;
+    margin-right: 8px;
+  }
+
+  .title{
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 3px solid $contrastColor;
+  }
+}
+
+// Form
+
+.form-section{
+    display: block;
+    text-align: center;
+    width: 60%;
+    min-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.txt-field{
+    display: flex;
+    flex-direction: column;
+}
+  
+.field-label{
+  display: flex;
+  float: left;
+  margin-right: 0.5rem;
+  color: $accentColor;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+.txt-field input[type="text"]{
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  padding: 0.4rem;
+  font-size: 16px;
+  background-color: $backgroundColor;
+  color: $accentColor;
+  transition: 300ms;
+  border: 3px solid $accentColor;
+  font-weight: 500;
+  font-family: 'Lato', sans-serif;
+
+}
+  
+.txt-field input[type="text"]::placeholder{
+  color: $plainColor;
+  font-weight: 500;
+  // padding-left: 0.5rem;
+  transition: 300ms;
+}
+
+.txt-field input[type="text"]:focus,
+.txt-field input[type="text"]:hover{
+  // background-color: $accentColor;
+  // color: $secondaryColor;
+  border: 3px solid $contrastColor;
+}
+
+.txt-field input[type="text"]:focus::placeholder,
+.txt-field input[type="text"]:hover::placeholder{
+  // color: $backgroundColor;
+  color: $accentColor;
+}
+
+.txt-field input[type="date"]{
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  padding: 0.4rem;
+  font-size: 16px;
+  background-color: $backgroundColor;
+  color: $accentColor;
+  transition: 300ms;
+  border: 3px solid $accentColor;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.txt-field input[type="date"]::-webkit-calendar-picker-indicator{
+  background-color: $accentColor;
+}
+
+.txt-field input[type="date"]:focus,
+.txt-field input[type="date"]:hover{
+  border: 3px solid $contrastColor;
+}
+
+.txt-field select{
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  padding: 0.4rem;
+  font-size: 16px;
+  background-color: $backgroundColor;
+  color: $accentColor;
+  transition: 300ms;
+  text-transform: uppercase;
+  border: 3px solid $accentColor;
+  font-family: 'Lato', sans-serif;
+}
+
+.txt-field select:hover,
+.txt-field select:focus{
+  border: 3px solid $contrastColor;
+}
+
+input[type="submit"]{
+  padding: 0.5rem 0.8rem;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  align-self: center;
+  margin-top: 1rem;
+  background-color: $accentColor;
+  color: $backgroundColor;
+  transition: $transitionSpeed;
+  cursor: pointer;
+  border: none;
+}
+
+input[type="submit"]:hover{
+  background-color: $contrastColor;
+  color: $plainColor;
+}
+
+.form-screen{
+  border-radius: 0px;
+  background-color: $backgroundColor;
+  width: 40%;
+}

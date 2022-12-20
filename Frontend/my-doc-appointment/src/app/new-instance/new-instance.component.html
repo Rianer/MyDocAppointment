@@ -1,0 +1,94 @@
+<button class="toggle-btn open-btn" (click)="toggleScreen($event)">{{buttonInfo}}</button>
+
+
+<div *ngIf="screenVisible" (click)="toggleScreen($event)" class="overlay">
+    <div class="info-screen details-screen" *ngIf="doctor != null && !insertForm">
+        <div class="info-section">
+            <h1 class="title">{{doctor.name + ' ' + doctor.surname}}</h1>
+        </div>
+        <div class="info-section">
+            <ul class="info-list">
+                <li> <span class="label-txt">Speciality:</span>{{doctor.speciality}}</li>
+                <li> <span class="label-txt">Age:</span>{{doctor.age}}</li>
+                <li> <span class="label-txt">Gender:</span>{{doctor.gender}}</li>
+                <li> <span class="label-txt">Phone Number:</span> <span class="contact">{{doctor.phoneNumber}}</span></li>
+                <li> <span class="label-txt">Email:</span> <span class="contact">{{doctor.emailAddress}}</span></li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <button class="toggle-btn close-btn" (click)="toggleScreen('force-toggle')">Close</button>
+        </div>
+    </div>
+    <!-- Needs to be changed according to service DTO -->
+    <div class="info-screen" *ngIf="service != null && !insertForm">
+        <div class="info-section">
+            <h1 class="title">{{service.name + ' ' + service.surname}}</h1>
+        </div>
+        <div class="info-section">
+            <ul class="info-list">
+                <li> <span class="label-txt">Speciality:</span> {{service.speciality}}</li>
+                <li> <span class="label-txt">Age:</span> {{service.age}}</li>
+                <li> <span class="label-txt">Gender:</span> {{service.gender}}</li>
+                <li> <span class="label-txt">Phone:</span> <span class="contact">{{service.phoneNumber}}</span></li>
+                <li> <span class="label-txt">Email:</span> <span class="contact">{{service.emailAddress}}</span></li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <button class="toggle-btn close-btn" (click)="toggleScreen('force-toggle')">Close</button>
+        </div>
+    </div>
+
+    <div class="info-screen form-screen" *ngIf="doctor != null && insertForm">
+        <div class="info-section">
+            <h1 class="title">Add a new doctor</h1>
+        </div>
+        <div class="form-section">
+            <form class="form-view" [formGroup]="newDoctorForm" (ngSubmit)="createDoctor()">
+            
+                <div class="txt-field">
+                    <label class="field-label">Name:</label>
+                    <input formControlName="name" type="text">
+                </div>
+                <div class="txt-field">
+                    <label class="field-label">Surname:</label>
+                    <input formControlName="surname" type="text">
+                </div>
+                <div class="txt-field">
+                    <label class="field-label">Age:</label>
+                    <input formControlName="age" type="text">
+                </div>
+                <div class="txt-field">
+                    <label class="field-label">Email Address:</label>
+                    <input formControlName="emailAddress" type="text">
+                </div>
+                <div class="txt-field">
+                    <label class="field-label">Phone Number:</label>
+                    <input formControlName="phoneNumber" type="text">
+                </div>
+                <div class="txt-field">
+                    <label class="field-label">Home Address:</label>
+                    <input formControlName="homeAddress" type="text">
+                </div>
+                <div class="txt-field">
+                    <label class="field-label">Speciality:</label>
+                    <select formControlName="speciality" >
+                    </select>
+                </div>
+                <div class="txt-field">
+                    <label class="field-label">Gender:</label>
+                    <select formControlName="gender" >
+                    </select>
+                </div>
+                <div class="txt-field">
+                    <input type="submit" value="Add Doctor">
+                </div>
+              </form>
+        </div>
+    </div>
+
+    <div class="edit-screen" *ngIf="doctor != null">
+        
+    </div>
+</div>
+
+
