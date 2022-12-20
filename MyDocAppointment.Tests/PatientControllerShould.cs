@@ -27,9 +27,6 @@ namespace MyDocAppointment.Tests
             var mapperMock = new Mock<IMapper>();
             mapperMock.Setup(m => m.Map<Patient>(It.IsAny<CreatePatientDto>())).Returns(GetPatient());
             mapperMock.Setup(m => m.Map<Patient>(It.IsAny<PatientDto>())).Returns(GetPatient());
-            Mock<IValidator<Patient>> validatorMock = new Mock<IValidator<Patient>>(MockBehavior.Strict);
-            validatorMock.Setup(validator => validator.ValidateAsync(It.IsAny<Patient>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new ValidationResult());
             patientsServiceMock.Setup(r => r.GetById(idOk))
                 .ReturnsAsync(GetTestPatients());
             patientsServiceMock.Setup(r => r.GetById(idNotFound))
@@ -44,7 +41,7 @@ namespace MyDocAppointment.Tests
                 .ReturnsAsync(GetTestPatient());
             patientsServiceMock.Setup(r => r.Update(It.IsAny<Patient>(), idNotFound))
                  .Returns(FailureResult(idNotFound));
-            controller = new PatientController(patientsServiceMock.Object,mapperMock.Object, validatorMock.Object);
+            controller = new PatientController(patientsServiceMock.Object,mapperMock.Object);
         }
 
         [Fact]

@@ -24,11 +24,19 @@ namespace MyDocAppointment.Infrastructure.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Appointment>> GetAll() => await _appDbContext.Appointments.Include(a => a.Doctor).Include(a => a.Payment).ToListAsync();
+        public async Task<IEnumerable<Appointment>> GetAll() => await _appDbContext.Appointments
+                                                    .Include(a => a.Doctor)
+                                                    .Include(a => a.Patient)
+                                                    .Include(a => a.Payment)
+                                                    .ToListAsync();
 
         public async Task<Appointment?> GetById(Guid id)
         {
-            var appointment = await _appDbContext.Appointments.FirstOrDefaultAsync(d => d.Id == id);
+            var appointment = await _appDbContext.Appointments
+                .Include(a => a.Doctor)
+                .Include(a => a.Patient)
+                .Include(a => a.Payment)
+                .FirstOrDefaultAsync(d => d.Id == id);
 
             return appointment;
         }

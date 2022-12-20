@@ -26,9 +26,6 @@ namespace MyDocAppointment.Tests
             var appointmentsServiceMock = new Mock<IAppointmentsService>();
             var mapperMock = new Mock<IMapper>();          
             mapperMock.Setup(m=> m.Map<Appointment>(It.IsAny<AppointmentDto>())).Returns(GetAppointment());
-            Mock<IValidator<Appointment>> validatorMock = new Mock<IValidator<Appointment>>(MockBehavior.Strict);
-            validatorMock.Setup(validator => validator.ValidateAsync(It.IsAny<Appointment>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new ValidationResult());
             appointmentsServiceMock.Setup(r => r.GetById(idOk))
                 .ReturnsAsync(GetTestAppointments());
             appointmentsServiceMock.Setup(r => r.GetById(idNotFound))
@@ -43,7 +40,7 @@ namespace MyDocAppointment.Tests
                  .ReturnsAsync(GetTestAppointment());
             appointmentsServiceMock.Setup(r => r.Update(It.IsAny<Appointment>(), idNotFound))
                  .Returns(FailureResult(idNotFound));
-            controller = new AppointmentController(appointmentsServiceMock.Object, mapperMock.Object, validatorMock.Object);
+            controller = new AppointmentController(appointmentsServiceMock.Object, mapperMock.Object);
         }
 
         [Fact]

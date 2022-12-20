@@ -67,17 +67,4 @@ namespace MyDocAppointment.Business.Users
             return Result.Success();
         }
     }
-
-    public class PatientValidator : AbstractValidator<Patient>
-    {
-        public PatientValidator()
-        {
-            RuleFor(x => x.Name).Length(0, 30);
-            RuleFor(x => x.Surname).Length(0, 30);
-            RuleFor(x => x.EmailAddress).EmailAddress();
-            RuleFor(x => x.Age).NotEmpty();
-            RuleFor(x => x.PhoneNumber).Length(10);
-            RuleFor(x => x.HomeAddress).Length(0, 50);
-        }
-    }
 }

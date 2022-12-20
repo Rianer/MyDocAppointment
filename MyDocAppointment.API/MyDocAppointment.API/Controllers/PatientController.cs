@@ -15,13 +15,11 @@ namespace MyDocAppointment.API.Controllers
     {
         private readonly IPatientsService _patientService;
         private readonly IMapper _mapper;
-        private IValidator<Patient> _validator;
 
-        public PatientController(IPatientsService patientService, IMapper mapper, IValidator<Patient> validator)
+        public PatientController(IPatientsService patientService, IMapper mapper)
         {
             _patientService = patientService;
             _mapper = mapper;
-            _validator = validator;
         }
 
         [HttpGet]
@@ -41,15 +39,6 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreatePatientDto dto)
         {
             var patient = _mapper.Map<Patient>(dto);
-
-            ValidationResult result = await _validator.ValidateAsync(patient);
-
-            if (!result.IsValid)
-            {
-                result.AddToModelState(this.ModelState);
-
-                return BadRequest(patient);
-            }
 
             await _patientService.Create(patient);
 
@@ -86,15 +75,6 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Update([FromBody] PatientDto dto, Guid patientId)
         {
             var patient = _mapper.Map<Patient>(dto);
-
-            ValidationResult result = await _validator.ValidateAsync(patient);
-
-            if (!result.IsValid)
-            {
-                result.AddToModelState(this.ModelState);
-
-                return BadRequest(patient);
-            }
 
             var response = await _patientService.Update(patient, patientId);
 
