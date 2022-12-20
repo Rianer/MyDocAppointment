@@ -8,18 +8,18 @@ namespace MyDocAppointment.API.Controllers
 {
 <<<<<<< Updated upstream
     [Route("api/v{version:apiVersion}/[controller]")]
-    [ApiVersion("1.0")]
-=======
->>>>>>> Stashed changes
+    [ApiVersion("2.0")]
     [ApiController]
+=======
+    [ApiController] 
     [Route("api/v{version:apiVersion}/[controller]")]
-    [ApiVersion("1.0")]
-    // [Route("api/[controller]")]
-    public class DoctorController : ControllerBase
+    [ApiVersion("2.0")]
+>>>>>>> Stashed changes
+    public class DoctorControllerV2 : ControllerBase
     {
         private readonly IDoctorsService _doctorService;
         private readonly IMapper _mapper;
-        public DoctorController(IDoctorsService doctorService, IMapper mapper)
+        public DoctorControllerV2(IDoctorsService doctorService, IMapper mapper)
         {
             _doctorService = doctorService;
             _mapper = mapper;
@@ -35,9 +35,17 @@ namespace MyDocAppointment.API.Controllers
                 return NotFound(response.Error);
             }
 
-            var models = _mapper.Map<IEnumerable<DoctorDto>>(response.Entity);
+<<<<<<< Updated upstream
+            var doctorsYoungerThan45 = _mapper.Map<IEnumerable<DoctorDto>>(response.Entity.Where(x => x.Age <= 45));
+             
+            return Ok(doctorsYoungerThan45);
+=======
+            var doctorsYoungerThan45 = response.Entity.Where(x => x.Age < 45);
+            var models = _mapper.Map<IEnumerable<DoctorDto>>(doctorsYoungerThan45);
+
             
             return Ok(models);
+>>>>>>> Stashed changes
         }
 
         [HttpPost]
