@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.API\MyDocAppointment.API\Controllers\DoctorController.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Application.Commands;
+using MyDocAppointment.Application.Queries;
+using MyDocAppointment.Application.Response;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.API.Controllers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class DoctorController : ControllerBase
+    {
+        private readonly IMediator _mediator;
+        private readonly IDoctorsService _doctorService;
+        private readonly IMapper _mapper;
+        public DoctorController(IDoctorsService doctorService, IMapper mapper, IMediator mediator)
+        {
+            _doctorService = doctorService;
+            _mapper = mapper;
+            _mediator = mediator;
+        }
+
+        [HttpPost]
+        public async Task&lt;IActionResult&gt;
+           Create([FromBody] CreateDoctorCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task&lt;List&lt;DoctorResponse&gt;&gt; Get()
+        {
+            return await _mediator.Send(new GetAllDoctorsQuery());
+        }
+
+        [HttpGet(&quot;{doctorId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; GetById(Guid doctorId)
+        {
+            var response = await _doctorService.GetById(doctorId);
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map&lt;DoctorDto&gt;(response.Entity);
+            return Ok(model);
+        }
+
+        [HttpDelete(&quot;{doctorId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; Delete(Guid doctorId)
+        {
+            var response = await _doctorService.Delete(doctorId);
+            if (response.IsSuccess)
+            {
+                return Ok();
+            }
+
+            return NotFound(response.Error);
+        }
+
+        [HttpPut(&quot;{doctorId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; Update([FromBody] DoctorDto dto, Guid doctorId)
+        {
+            var doctor = _mapper.Map&lt;Doctor&gt;(dto);
+
+            var response = await _doctorService.Update(doctor, doctorId);
+
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map&lt;DoctorDto&gt;(response.Entity);
+            return Ok(model);
+        }
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[20,9,20,99,1],[21,9,21,10,1],[22,13,22,44,1],[23,13,23,30,1],[24,13,24,34,1],[25,9,25,10,1],[30,9,30,10,1],[31,13,31,56,1],[32,13,32,31,1],[33,9,33,10,1],[37,9,37,10,1],[38,13,38,67,1],[39,9,39,10,0],[43,9,43,10,1],[44,13,44,67,1],[45,13,45,37,1],[46,13,46,14,1],[47,17,47,49,1],[50,13,50,65,1],[51,13,51,30,1],[52,9,52,10,1],[56,9,56,10,1],[57,13,57,66,1],[58,13,58,36,1],[59,13,59,14,1],[60,17,60,29,1],[63,13,63,45,1],[64,9,64,10,1],[68,9,68,10,1],[69,13,69,51,1],[71,13,71,74,1],[73,13,73,37,1],[74,13,74,14,1],[75,17,75,49,1],[78,13,78,65,1],[79,13,79,30,1],[80,9,80,10,1]]);
+    </script>
+  </body>
+</html>

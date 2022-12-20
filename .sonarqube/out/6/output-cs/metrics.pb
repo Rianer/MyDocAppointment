@@ -1,53 +1,59 @@
-p
-dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\DiscountType.csrq
-eC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\PaymentMethod.csrq
-dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\PersonGender.csr		à
-^C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\Result.cs 8r	
-Çí
-fC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\ResultOfEntity.cs 
+c
+WF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\DiscountType.csrd
+XF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\PaymentMethod.csrd
+WF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\PersonGender.csr		{
+QF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\Result.cs 8r	
+ÇÖ
+YF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\ResultOfEntity.cs 
 8
-r	Çr
-fC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\Specialization.csrÑ
-rC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IAppointmentsRepository.csr	
-Ñ
-oC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IAppointmentsService.csr	
-Ä
-mC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDoctorsRepository.csr	
-~
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDoctorsService.csr	
-}
-kC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDrugsRepository.csr	
-}
-hC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDrugsService.csr	
-Ä
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IPatientsRepository.csr	
-
-kC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IPatientsService.csr	
-ç
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Appointment.cs 8r	
-Ç
-¯
-lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Diagnosis.cs 8jr[	
+r	Çe
+YF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\Specialization.csrw
+eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IAppointmentsRepository.csr	
+w
+bF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IAppointmentsService.csr	
+t
+`F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDoctorsRepository.csr	
+q
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDoctorsService.csr	
+p
+^F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugsRepository.csr	
+p
+[F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugsService.csr	
+s
+cF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugStocksRepository.csr
+	
+s
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IPatientsRepository.csr	
+r
+^F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IPatientsService.csr	
+Ç
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Appointment.cs 8r	
+ÇÎ
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Diagnosis.cs 8jr[	
  !"#$&()*+,./012345689:;<=>?@BCDEFGIJKLNOPQRSUVWXZ[\^_`abcdefhijkx	Ç
-$*+0235:<=?DFIJKPRUWZ`dh°
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Observation.cs 8r	
+$*+0235:<=?DFIJKPRUWZ`dhî
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Observation.cs 8r	
  !"xÇ
-Å
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Payment.cs 8r	
-µ
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Cabinet.cs 
+t
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Payment.cs 8r	
+®
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Cabinet.cs 
 8r)	
  !"#$%&')*+,/0xÇ	
-!"#%&*+å
-gC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Drug.cs 8r	Ç¨
-lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\DrugStock.cs 8jr!	
- !"#$%&xÇ	
- !#ó
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Storage.cs 8r	
+!"#%&*+Ç
+ZF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Drug.cs 8r	
+Ç	
+†
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\DrugStock.cs 8jr"	
+ !"#$%&'xÇ	
+ !"$ä
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Storage.cs 8r	
 Ç	
-¨
-\C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Doctor.cs 8
-r3	 !"#$%&'()+,-./02345789:;xÇ(-/2478π
-]C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Patient.cs 8r;	 !"#%&'()*,-./12356789:<=>?ABCDExÇ"'),.1279<>AB}
-\C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Person.cs 8r	
+†
+OF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Doctor.cs 8
+r4	
+ !"#$%&'()*,-./01345689:;<xÇ).03589≠
+PF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Patient.cs 8r<	
+ !"#$&'()*+-./02346789:;=>?@BCDEFxÇ#(*-/238:=?BCp
+OF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Person.cs 8r	
 Ç	

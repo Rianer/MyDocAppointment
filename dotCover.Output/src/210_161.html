@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugStocksRepository.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.Internal;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.Infrastructure.Repositories
+{
+    public class DrugStocksRepository : IDrugStocksRepository
+    {
+        private readonly AppDbContext _appDbContext;
+        public DrugStocksRepository(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
+
+        public async Task&lt;Drug&gt; GetDrug(Guid drugId)
+        {
+            var drug = await _appDbContext.Drugs.FirstOrDefaultAsync(d =&gt; d.Id == drugId);
+            return drug;
+        }
+        public async Task&lt;DrugStock&gt; AddAsync(DrugStock drugStock)
+        {
+            _appDbContext.DrugStocks.Add(drugStock);
+            await _appDbContext.SaveChangesAsync();
+            return drugStock;
+        }
+
+        public async Task&lt;IEnumerable&lt;DrugStock&gt;&gt; GetAll() =&gt; await _appDbContext.DrugStocks.Include(ds =&gt; ds.Item).ToListAsync();
+
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[11,9,11,63,0],[12,9,12,10,0],[13,13,13,42,0],[14,9,14,10,0],[17,9,17,10,0],[18,13,18,91,0],[19,13,19,25,0],[20,9,20,10,0],[22,9,22,10,0],[23,13,23,53,0],[24,13,24,52,0],[25,13,25,30,0],[26,9,26,10,0],[28,63,28,130,0]]);
+    </script>
+  </body>
+</html>

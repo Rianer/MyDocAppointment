@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DoctorsRepository.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.Infrastructure.Repositories
+{
+    public class DoctorsRepository : IDoctorsRepository
+    {
+        private readonly AppDbContext _appDbContext;
+        public DoctorsRepository(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
+
+        public async Task Create(Doctor doctor)
+        {
+            _appDbContext.Doctors.Add(doctor);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task&lt;Doctor&gt; AddAsync(Doctor doctor)
+        {
+            _appDbContext.Doctors.Add(doctor);
+            await _appDbContext.SaveChangesAsync();
+            return doctor;
+        }
+
+        public async Task Delete(Doctor doctor)
+        {
+            _appDbContext.Doctors.Remove(doctor);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task&lt;IEnumerable&lt;Doctor&gt;&gt; GetAll() =&gt; await _appDbContext.Doctors.ToListAsync();
+
+        public async Task&lt;Doctor?&gt; GetById(Guid id)
+        {
+            var doctor = await _appDbContext.Doctors.FirstOrDefaultAsync(d =&gt; d.Id == id);
+            
+            return doctor;
+        }
+
+        public async Task SaveChanges()
+        {
+            await _appDbContext.SaveChangesAsync();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,9,10,60,1],[11,9,11,10,1],[12,13,12,42,1],[13,9,13,10,1],[16,9,16,10,0],[17,13,17,47,0],[18,13,18,52,0],[19,9,19,10,0],[22,9,22,10,1],[23,13,23,47,1],[24,13,24,52,1],[25,13,25,27,0],[26,9,26,10,0],[29,9,29,10,0],[30,13,30,50,0],[31,13,31,52,0],[32,9,32,10,0],[34,60,34,101,1],[37,9,37,10,0],[38,13,38,91,0],[40,13,40,27,0],[41,9,41,10,0],[44,9,44,10,0],[45,13,45,52,0],[46,9,46,10,0]]);
+    </script>
+  </body>
+</html>

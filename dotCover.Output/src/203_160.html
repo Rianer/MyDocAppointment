@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Commands\CreateDrugStockCommand.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MediatR;
+using MyDocAppointment.Application.Response;
+
+namespace MyDocAppointment.Application.Commands
+{
+    public class CreateDrugStockCommand : IRequest&lt;DrugStockResponse&gt;
+    {
+        public Guid DrugId { get; set; }
+        public string? DrugName { get; set; }
+        public int Quantity { get; set; }
+        public bool IsRestricted { get; set; }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[8,30,8,34,0],[8,35,8,39,0],[9,35,9,39,0],[9,40,9,44,0],[10,31,10,35,0],[10,36,10,40,0],[11,36,11,40,0],[11,41,11,45,0]]);
+    </script>
+  </body>
+</html>

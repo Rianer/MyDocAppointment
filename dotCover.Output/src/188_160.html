@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\AppointmentsService.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.External;
+using MyDocAppointment.Business.Users;
+using System.Numerics;
+
+namespace MyDocAppointment.Application
+{
+    public class AppointmentsService : IAppointmentsService
+    {
+        private readonly IAppointmentsRepository _appointmentsRepository;
+        public AppointmentsService(IAppointmentsRepository appointmentsRepository)
+        {
+            _appointmentsRepository = appointmentsRepository;
+        }
+
+        public async Task Create(Appointment appointment)
+        {
+            appointment.Id= Guid.NewGuid();
+            appointment.Payment = new Payment();
+            appointment.Payment.Id = Guid.NewGuid();
+            appointment.Payment.DueDate = DateTime.Now;
+            appointment.Payment.AcquittedDate = DateTime.Now;
+            appointment.Payment.EmissionDate = DateTime.Now;
+
+            await _appointmentsRepository.Create(appointment);
+        }
+
+        public async Task&lt;Result&gt; Delete(Guid id)
+        {
+            Appointment appointment = await _appointmentsRepository.GetById(id);
+            if(appointment == null)
+            {
+                return Result.Failure($&quot;appointment with id {id} not found.&quot;);
+            }
+            await _appointmentsRepository.Delete(appointment);
+            return Result.Success();
+        }
+
+        public async Task&lt;Result&lt;IEnumerable&lt;Appointment&gt;&gt;&gt; GetAll()
+        {
+            var appointments = await _appointmentsRepository.GetAll();
+            if (!appointments.Any())
+            {
+                return Result&lt;IEnumerable&lt;Appointment&gt;&gt;.Failure($&quot;appointment not found.&quot;);
+            }
+            return Result&lt;IEnumerable&lt;Appointment&gt;&gt;.Success(appointments);
+        }
+
+        public async Task&lt;Result&lt;Appointment&gt;&gt; GetById(Guid id)
+        {
+            var appointment = await _appointmentsRepository.GetById(id);
+            if(appointment == null)
+            {
+                return Result&lt;Appointment&gt;.Failure($&quot;appointment with ID: {id} does not exist.&quot;);
+            }
+            return Result&lt;Appointment&gt;.Success(appointment);
+        }
+
+        public async Task SaveChanges()
+        {
+            await _appointmentsRepository.SaveChanges();
+        }
+
+        public async Task&lt;Result&lt;Appointment&gt;&gt; Update(Appointment appointment, Guid id)
+        {
+            var currentAppointment = await _appointmentsRepository.GetById(id);
+            if (currentAppointment == null)
+            {
+                return Result&lt;Appointment&gt;.Failure($&quot;appointment with ID: {id} does not exist.&quot;);
+
+            }
+
+            currentAppointment.Location = appointment.Location;
+            currentAppointment.Specialization = appointment.Specialization;
+            currentAppointment.AppointmentTime = appointment.AppointmentTime;
+
+            await _appointmentsRepository.SaveChanges();
+
+            return Result&lt;Appointment&gt;.Success(currentAppointment);
+        }
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,83,1],[13,9,13,10,1],[14,13,14,62,1],[15,9,15,10,1],[18,9,18,10,1],[19,13,19,44,1],[20,13,20,49,1],[21,13,21,53,1],[22,13,22,56,1],[23,13,23,62,1],[24,13,24,61,1],[26,13,26,63,1],[27,9,27,10,0],[30,9,30,10,0],[31,13,31,81,0],[32,13,32,36,0],[33,13,33,14,0],[34,17,34,79,0],[36,13,36,63,0],[37,13,37,37,0],[38,9,38,10,0],[41,9,41,10,1],[42,13,42,71,1],[43,13,43,37,0],[44,13,44,14,0],[45,17,45,92,0],[47,13,47,75,0],[48,9,48,10,0],[51,9,51,10,0],[52,13,52,73,0],[53,13,53,36,0],[54,13,54,14,0],[55,17,55,98,0],[57,13,57,61,0],[58,9,58,10,0],[61,9,61,10,0],[62,13,62,57,0],[63,9,63,10,0],[66,9,66,10,0],[67,13,67,80,0],[68,13,68,44,0],[69,13,69,14,0],[70,17,70,98,0],[74,13,74,64,0],[75,13,75,76,0],[76,13,76,78,0],[78,13,78,57,0],[80,13,80,68,0],[81,9,81,10,0]]);
+    </script>
+  </body>
+</html>

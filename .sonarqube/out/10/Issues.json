@@ -18,7 +18,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
                 "region": {
                   "startLine": 28,
                   "startColumn": 27,
@@ -39,74 +39,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
                 "region": {
-                  "startLine": 28,
+                  "startLine": 27,
                   "startColumn": 27,
-                  "endLine": 28,
-                  "endColumn": 51
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1822",
-          "level": "note",
-          "message": "Member 'GetAppointmentDto' does not access instance data and can be marked as static",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
-                "region": {
-                  "startLine": 45,
-                  "startColumn": 38,
-                  "endLine": 45,
-                  "endColumn": 55
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1822",
-          "level": "note",
-          "message": "Member 'GetPatientDto' does not access instance data and can be marked as static",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
-                "region": {
-                  "startLine": 46,
-                  "startColumn": 34,
-                  "endLine": 46,
-                  "endColumn": 47
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2699",
-          "level": "warning",
-          "message": "Add at least one assertion to this test case.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
-                "region": {
-                  "startLine": 28,
-                  "startColumn": 27,
-                  "endLine": 28,
+                  "endLine": 27,
                   "endColumn": 51
                 }
               }
@@ -123,11 +60,32 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
                 "region": {
                   "startLine": 26,
                   "startColumn": 27,
                   "endLine": 26,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2699",
+          "level": "warning",
+          "message": "Add at least one assertion to this test case.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 27,
+                  "endLine": 28,
                   "endColumn": 51
                 }
               }
@@ -144,7 +102,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
                 "region": {
                   "startLine": 43,
                   "startColumn": 31,
@@ -161,16 +119,58 @@
         {
           "ruleId": "CA1822",
           "level": "note",
+          "message": "Member 'GetAppointmentDto' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 38,
+                  "endLine": 45,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
           "message": "Member 'getDoctorDto' does not access instance data and can be marked as static",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
                 "region": {
-                  "startLine": 45,
+                  "startLine": 65,
                   "startColumn": 33,
-                  "endLine": 45,
+                  "endLine": 65,
                   "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'GetPatientDto' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
+                "region": {
+                  "startLine": 46,
+                  "startColumn": 34,
+                  "endLine": 46,
+                  "endColumn": 47
                 }
               }
             }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221206132131_AddSomeColumns.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace MyDocAppointment.Infrastructure.Migrations
+{
+    /// &lt;inheritdoc /&gt;
+    public partial class AddSomeColumns : Migration
+    {
+        /// &lt;inheritdoc /&gt;
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: &quot;FK_Diagnosis_Patients_PatientId&quot;,
+                table: &quot;Diagnosis&quot;);
+
+            migrationBuilder.DropColumn(
+                name: &quot;UserId&quot;,
+                table: &quot;Diagnosis&quot;);
+
+            migrationBuilder.AddColumn&lt;string&gt;(
+                name: &quot;HomeAddress&quot;,
+                table: &quot;Patients&quot;,
+                type: &quot;nvarchar(max)&quot;,
+                nullable: false,
+                defaultValue: &quot;&quot;);
+
+            migrationBuilder.AddColumn&lt;string&gt;(
+                name: &quot;PhoneNumber&quot;,
+                table: &quot;Patients&quot;,
+                type: &quot;nvarchar(max)&quot;,
+                nullable: false,
+                defaultValue: &quot;&quot;);
+
+            migrationBuilder.AddColumn&lt;string&gt;(
+                name: &quot;HomeAddress&quot;,
+                table: &quot;Doctors&quot;,
+                type: &quot;nvarchar(max)&quot;,
+                nullable: false,
+                defaultValue: &quot;&quot;);
+
+            migrationBuilder.AddColumn&lt;string&gt;(
+                name: &quot;PhoneNumber&quot;,
+                table: &quot;Doctors&quot;,
+                type: &quot;nvarchar(max)&quot;,
+                nullable: false,
+                defaultValue: &quot;&quot;);
+
+            migrationBuilder.AlterColumn&lt;Guid&gt;(
+                name: &quot;PatientId&quot;,
+                table: &quot;Diagnosis&quot;,
+                type: &quot;uniqueidentifier&quot;,
+                nullable: false,
+                defaultValue: new Guid(&quot;00000000-0000-0000-0000-000000000000&quot;),
+                oldClrType: typeof(Guid),
+                oldType: &quot;uniqueidentifier&quot;,
+                oldNullable: true);
+
+            migrationBuilder.AddForeignKey(
+                name: &quot;FK_Diagnosis_Patients_PatientId&quot;,
+                table: &quot;Diagnosis&quot;,
+                column: &quot;PatientId&quot;,
+                principalTable: &quot;Patients&quot;,
+                principalColumn: &quot;Id&quot;,
+                onDelete: ReferentialAction.Cascade);
+        }
+
+        /// &lt;inheritdoc /&gt;
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: &quot;FK_Diagnosis_Patients_PatientId&quot;,
+                table: &quot;Diagnosis&quot;);
+
+            migrationBuilder.DropColumn(
+                name: &quot;HomeAddress&quot;,
+                table: &quot;Patients&quot;);
+
+            migrationBuilder.DropColumn(
+                name: &quot;PhoneNumber&quot;,
+                table: &quot;Patients&quot;);
+
+            migrationBuilder.DropColumn(
+                name: &quot;HomeAddress&quot;,
+                table: &quot;Doctors&quot;);
+
+            migrationBuilder.DropColumn(
+                name: &quot;PhoneNumber&quot;,
+                table: &quot;Doctors&quot;);
+
+            migrationBuilder.AlterColumn&lt;Guid&gt;(
+                name: &quot;PatientId&quot;,
+                table: &quot;Diagnosis&quot;,
+                type: &quot;uniqueidentifier&quot;,
+                nullable: true,
+                oldClrType: typeof(Guid),
+                oldType: &quot;uniqueidentifier&quot;);
+
+            migrationBuilder.AddColumn&lt;Guid&gt;(
+                name: &quot;UserId&quot;,
+                table: &quot;Diagnosis&quot;,
+                type: &quot;uniqueidentifier&quot;,
+                nullable: false,
+                defaultValue: new Guid(&quot;00000000-0000-0000-0000-000000000000&quot;));
+
+            migrationBuilder.AddForeignKey(
+                name: &quot;FK_Diagnosis_Patients_PatientId&quot;,
+                table: &quot;Diagnosis&quot;,
+                column: &quot;PatientId&quot;,
+                principalTable: &quot;Patients&quot;,
+                principalColumn: &quot;Id&quot;);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[13,9,13,10,0],[14,13,16,37,0],[18,13,20,37,0],[22,13,27,35,0],[29,13,34,35,0],[36,13,41,35,0],[43,13,48,35,0],[50,13,58,36,0],[60,13,66,54,0],[67,9,67,10,0],[71,9,71,10,0],[72,13,74,37,0],[76,13,78,36,0],[80,13,82,36,0],[84,13,86,35,0],[88,13,90,35,0],[92,13,98,46,0],[100,13,105,81,0],[107,13,112,40,0],[113,9,113,10,0]]);
+    </script>
+  </body>
+</html>

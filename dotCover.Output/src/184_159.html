@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\Result.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+namespace MyDocAppointment.Business.Helpers
+{
+    public class Result
+    {
+        public string Error { get; private set; } = string.Empty;
+        public bool IsSuccess { get; private set; }
+        public bool IsFailure { get; private set; }
+
+        public static Result Success()
+        {
+            return new Result
+            {
+                IsSuccess = true
+            };
+        }
+
+        public static Result Failure(string error)
+        {
+            return new Result
+            {
+                Error = error,
+                IsFailure = true
+            };
+        }
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[5,31,5,35,1],[5,36,5,48,1],[5,53,5,65,1],[6,33,6,37,1],[6,38,6,50,1],[7,33,7,37,0],[7,38,7,50,1],[10,9,10,10,1],[11,13,14,15,1],[15,9,15,10,1],[18,9,18,10,1],[19,13,23,15,1],[24,9,24,10,1]]);
+    </script>
+  </body>
+</html>

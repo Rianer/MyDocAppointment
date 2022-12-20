@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Commands\CreateDrugStockCommandValidator.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using FluentValidation;
+using MyDocAppointment.Business.Users;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyDocAppointment.Application.Commands
+{
+    public class CreateDrugStockCommandValidator : AbstractValidator&lt;CreateDrugStockCommand&gt;
+    {
+        public CreateDrugStockCommandValidator()
+        {
+            RuleFor(x =&gt; x.DrugId).NotNull();
+            RuleFor(x =&gt; x.DrugName).Length(0, 30);
+            RuleFor(x =&gt; x.Quantity).InclusiveBetween(1, 100);
+            RuleFor(x =&gt; x.IsRestricted).NotNull();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[13,9,13,49,0],[14,9,14,10,0],[15,13,15,46,0],[16,13,16,52,0],[17,13,17,63,0],[18,13,18,52,0],[19,9,19,10,0]]);
+    </script>
+  </body>
+</html>

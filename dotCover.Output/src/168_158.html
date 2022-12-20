@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.API\MyDocAppointment.API\Controllers\AppointmentsController.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.External;
+
+namespace MyDocAppointment.API.Controllers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class AppointmentController : ControllerBase
+    {
+        private readonly IAppointmentsService _appointmentService;
+        private readonly IMapper _mapper;
+        public AppointmentController(IAppointmentsService appointmentService, IMapper mapper)
+        {
+            _appointmentService = appointmentService;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task&lt;IActionResult&gt; Get()
+        {
+            var response = await _appointmentService.GetAll();
+
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var models = _mapper.Map&lt;IEnumerable&lt;AppointmentDto&gt;&gt;(response.Entity);
+
+            return Ok(models);
+        }
+
+        [HttpPost]
+        public async Task&lt;IActionResult&gt; Create([FromBody] CreateAppointmentDto dto)
+        {
+            var appointment = _mapper.Map&lt;Appointment&gt;(dto);
+            await _appointmentService.Create(appointment);
+
+            return Created(nameof(Get), dto);
+        }
+
+        [HttpGet(&quot;{appointmentId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; GetById(Guid appointmentId)
+        {
+            var response = await _appointmentService.GetById(appointmentId);
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map&lt;AppointmentDto&gt;(response.Entity);
+            return Ok(model);
+        }
+
+        [HttpDelete(&quot;{appointmentId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; Delete(Guid appointmentId)
+        {
+            var response = await _appointmentService.Delete(appointmentId);
+            if (response.IsSuccess)
+            {
+                return Ok();
+            }
+
+            return NotFound(response.Error);
+        }
+
+        [HttpPut(&quot;{appointmentId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; Update([FromBody] AppointmentDto dto, Guid appointmentId)
+        {
+            var appointment = _mapper.Map&lt;Appointment&gt;(dto);
+
+            var response = await _appointmentService.Update(appointment, appointmentId);
+
+            if (!response.IsSuccess)
+            { 
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map&lt;AppointmentDto&gt;(response.Entity);
+            return Ok(model);
+        }
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[16,9,16,94,1],[17,9,17,10,1],[18,13,18,54,1],[19,13,19,30,1],[20,9,20,10,1],[24,9,24,10,1],[25,13,25,63,1],[27,13,27,37,0],[28,13,28,14,0],[29,17,29,49,0],[32,13,32,84,0],[34,13,34,31,0],[35,9,35,10,0],[39,9,39,10,1],[40,13,40,61,1],[41,13,41,59,1],[43,13,43,46,1],[44,9,44,10,1],[48,9,48,10,1],[49,13,49,77,1],[50,13,50,37,1],[51,13,51,14,1],[52,17,52,49,1],[55,13,55,70,1],[56,13,56,30,1],[57,9,57,10,1],[61,9,61,10,1],[62,13,62,76,1],[63,13,63,36,1],[64,13,64,14,1],[65,17,65,29,1],[68,13,68,45,1],[69,9,69,10,1],[73,9,73,10,1],[74,13,74,61,1],[76,13,76,89,1],[78,13,78,37,1],[79,13,79,14,1],[80,17,80,49,1],[83,13,83,70,1],[84,13,84,30,1],[85,9,85,10,1]]);
+    </script>
+  </body>
+</html>

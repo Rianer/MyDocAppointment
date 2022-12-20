@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugsRepository.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.Internal;
+
+namespace MyDocAppointment.Infrastructure.Repositories
+{
+    public class DrugsRepository : IDrugsRepository
+    {
+        private readonly AppDbContext _appDbContext;
+        public DrugsRepository(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
+
+        public async Task Create(Drug drug)
+        {
+            _appDbContext.Drugs.Add(drug);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task Delete(Drug drug)
+        {
+            _appDbContext.Drugs.Remove(drug);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task&lt;IEnumerable&lt;Drug&gt;&gt; GetAll() =&gt; await _appDbContext.Drugs.ToListAsync();
+       
+        public async Task&lt;Drug?&gt; GetById(Guid id)
+        {
+            var drug = await _appDbContext.Drugs.FirstOrDefaultAsync(d =&gt; d.Id == id);
+
+            return drug;
+        }
+
+        public async Task SaveChanges()
+        {
+            await _appDbContext.SaveChangesAsync();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,9,10,58,1],[11,9,11,10,1],[12,13,12,42,1],[13,9,13,10,1],[16,9,16,10,1],[17,13,17,43,1],[18,13,18,52,1],[19,9,19,10,1],[22,9,22,10,0],[23,13,23,46,0],[24,13,24,52,0],[25,9,25,10,0],[27,58,27,97,1],[30,9,30,10,0],[31,13,31,87,0],[33,13,33,25,0],[34,9,34,10,0],[37,9,37,10,0],[38,13,38,52,0],[39,9,39,10,0]]);
+    </script>
+  </body>
+</html>

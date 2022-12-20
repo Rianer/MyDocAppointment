@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\PatientsService.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.Application
+{
+    public class PatientsService : IPatientsService
+    {
+        private readonly IPatientsRepository _patientsRepository;
+        public PatientsService(IPatientsRepository patientsRepository)
+        {
+            _patientsRepository = patientsRepository;
+        }
+
+        public async Task Create(Patient patient)
+        {
+            await _patientsRepository.Create(patient);
+        }
+
+        public async Task&lt;Result&gt; Delete(Guid id)
+        {
+            var patient = await _patientsRepository.GetById(id);
+            if (patient == null)
+            {
+                return Result.Failure($&quot;Patient with ID: {id} does not exist.&quot;);
+            }
+            await _patientsRepository.Delete(patient);
+            return Result.Success();
+        }
+
+        public async Task&lt;Result&lt;IEnumerable&lt;Patient&gt;&gt;&gt; GetAll()
+        {
+            var patients = await _patientsRepository.GetAll();
+            if (!patients.Any())
+            {
+                return Result&lt;IEnumerable&lt;Patient&gt;&gt;.Failure($&quot;Drugs not found.&quot;);
+            }
+            return Result&lt;IEnumerable&lt;Patient&gt;&gt;.Success(patients);
+        }
+
+        public async Task&lt;Result&lt;Patient&gt;&gt; GetById(Guid id)
+        {
+            var patient = await _patientsRepository.GetById(id);
+            if(patient == null)
+            {
+                return Result&lt;Patient&gt;.Failure($&quot;Patient with ID: {id} does not exist.&quot;);
+            }
+            return Result&lt;Patient&gt;.Success(patient);
+        }
+
+        public async Task SaveChanges()
+        {
+            await _patientsRepository.SaveChanges();
+        }
+
+        public async Task&lt;Result&lt;Patient&gt;&gt; Update(Patient patient, Guid patientId)
+        {
+            var currentPatient = await _patientsRepository.GetById(patientId);
+            if (currentPatient == null)
+            {
+                return Result&lt;Patient&gt;.Failure($&quot;Patient with ID: {patientId} does not exist.&quot;);
+            }
+
+            currentPatient.Name = patient.Name;
+            currentPatient.Surname = patient.Surname;
+            currentPatient.Age = patient.Age;
+            currentPatient.Gender = patient.Gender;
+            currentPatient.EmailAddress = patient.EmailAddress;
+            currentPatient.PhoneNumber = patient.PhoneNumber;
+            currentPatient.HomeAddress = patient.HomeAddress;
+
+            await _patientsRepository.SaveChanges();
+
+            return Result&lt;Patient&gt;.Success(currentPatient);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,9,10,71,1],[11,9,11,10,1],[12,13,12,54,1],[13,9,13,10,1],[16,9,16,10,1],[17,13,17,55,1],[18,9,18,10,0],[21,9,21,10,0],[22,13,22,65,0],[23,13,23,33,0],[24,13,24,14,0],[25,17,25,81,0],[27,13,27,55,0],[28,13,28,37,0],[29,9,29,10,0],[32,9,32,10,1],[33,13,33,63,1],[34,13,34,33,0],[35,13,35,14,0],[36,17,36,82,0],[38,13,38,67,0],[39,9,39,10,0],[42,9,42,10,0],[43,13,43,65,0],[44,13,44,32,0],[45,13,45,14,0],[46,17,46,90,0],[48,13,48,53,0],[49,9,49,10,0],[52,9,52,10,0],[53,13,53,53,0],[54,9,54,10,0],[57,9,57,10,0],[58,13,58,79,0],[59,13,59,40,0],[60,13,60,14,0],[61,17,61,97,0],[64,13,64,48,0],[65,13,65,54,0],[66,13,66,46,0],[67,13,67,52,0],[68,13,68,64,0],[69,13,69,62,0],[70,13,70,62,0],[72,13,72,53,0],[74,13,74,60,0],[75,9,75,10,0]]);
+    </script>
+  </body>
+</html>
