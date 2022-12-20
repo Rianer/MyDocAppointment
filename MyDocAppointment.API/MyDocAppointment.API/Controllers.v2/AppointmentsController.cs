@@ -5,11 +5,11 @@ using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.External;
 
-namespace MyDocAppointment.API.Controllers
+namespace MyDocAppointment.API.Controllers.v2
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     public class AppointmentController : ControllerBase
     {
         private readonly IAppointmentsService _appointmentService;
@@ -19,7 +19,8 @@ namespace MyDocAppointment.API.Controllers
             _appointmentService = appointmentService;
             _mapper = mapper;
         }
-        [MapToApiVersion("1.0")]
+
+        [MapToApiVersion("2.0")]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -35,7 +36,7 @@ namespace MyDocAppointment.API.Controllers
             return Ok(models);
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateAppointmentDto dto)
         {
@@ -45,7 +46,7 @@ namespace MyDocAppointment.API.Controllers
             return Created(nameof(Get), dto);
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpGet("{appointmentId:guid}")]
         public async Task<IActionResult> GetById(Guid appointmentId)
         {
@@ -59,7 +60,7 @@ namespace MyDocAppointment.API.Controllers
             return Ok(model);
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpDelete("{appointmentId:guid}")]
         public async Task<IActionResult> Delete(Guid appointmentId)
         {
@@ -72,7 +73,7 @@ namespace MyDocAppointment.API.Controllers
             return NotFound(response.Error);
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpPut("{appointmentId:guid}")]
         public async Task<IActionResult> Update([FromBody] AppointmentDto dto, Guid appointmentId)
         {

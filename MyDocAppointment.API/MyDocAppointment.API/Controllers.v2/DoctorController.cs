@@ -8,11 +8,11 @@ using MyDocAppointment.Application.Response;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Users;
 
-namespace MyDocAppointment.API.Controllers
+namespace MyDocAppointment.API.Controllers.v2
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     public class DoctorController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -24,7 +24,8 @@ namespace MyDocAppointment.API.Controllers
             _mapper = mapper;
             _mediator = mediator;
         }
-        [MapToApiVersion("1.0")]
+
+        [MapToApiVersion("2.0")]
         [HttpPost]
         public async Task<IActionResult>
            Create([FromBody] CreateDoctorCommand command)
@@ -33,14 +34,14 @@ namespace MyDocAppointment.API.Controllers
             return Ok(result);
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpGet]
         public async Task<List<DoctorResponse>> Get()
         {
             return await _mediator.Send(new GetAllDoctorsQuery());
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpGet("{doctorId:guid}")]
         public async Task<IActionResult> GetById(Guid doctorId)
         {
@@ -54,7 +55,7 @@ namespace MyDocAppointment.API.Controllers
             return Ok(model);
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpDelete("{doctorId:guid}")]
         public async Task<IActionResult> Delete(Guid doctorId)
         {
@@ -67,7 +68,7 @@ namespace MyDocAppointment.API.Controllers
             return NotFound(response.Error);
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpPut("{doctorId:guid}")]
         public async Task<IActionResult> Update([FromBody] DoctorDto dto, Guid doctorId)
         {

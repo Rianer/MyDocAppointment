@@ -4,11 +4,11 @@ using MyDocAppointment.Application.Commands;
 using MyDocAppointment.Application.Queries;
 using MyDocAppointment.Application.Response;
 
-namespace MyDocAppointment.API.Controllers
+namespace MyDocAppointment.API.Controllers.v2
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     public class DrugStockController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -17,7 +17,7 @@ namespace MyDocAppointment.API.Controllers
             _mediator = mediator;
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpPost]
         public async Task<IActionResult>
            Create([FromBody] CreateDrugStockCommand command)
@@ -26,7 +26,7 @@ namespace MyDocAppointment.API.Controllers
             return Ok(result);
         }
 
-        [MapToApiVersion("1.0")]
+        [MapToApiVersion("2.0")]
         [HttpGet]
         public async Task<List<DrugStockResponse>> Get()
         {
