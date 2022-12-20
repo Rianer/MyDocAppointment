@@ -9,5 +9,4 @@ export class OverlayToggleService {
   buttonClicked(n : number){
     this.clickedEvent.emit(n);
   }
-  constructor() { }
 }

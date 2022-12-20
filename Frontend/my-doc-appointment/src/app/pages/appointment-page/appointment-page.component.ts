@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -51,8 +51,7 @@ export class AppointmentPageComponent implements OnInit {
 
 
 
-  constructor (private fg : FormBuilder){
-  }
+  constructor (private fg : FormBuilder){}
 
 
   ngOnInit(){

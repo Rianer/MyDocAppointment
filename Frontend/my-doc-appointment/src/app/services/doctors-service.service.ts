@@ -13,9 +13,8 @@ export class DoctorsServiceService {
   constructor(private http: HttpClient) {}
 
   async getAllDoctors(doctors:any){
-    const docs = await this.http.get<ServerResponse<Doctor>>('https://localhost:7288/api/Doctor').subscribe(response => {
+    this.http.get<ServerResponse<Doctor>>('https://localhost:7288/api/Doctor').subscribe(response => {
       console.log(response);
-      doctors = response;
       return response;
     });
   }

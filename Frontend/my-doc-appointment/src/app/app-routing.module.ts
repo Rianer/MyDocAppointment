@@ -22,7 +22,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export var Components = [
+export let Components = [
   LandingPageComponent, 
   LoginPageComponent, 
   ServicesPageComponent, 

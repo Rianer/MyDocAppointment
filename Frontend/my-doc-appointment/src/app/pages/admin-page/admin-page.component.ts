@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Doctor } from 'src/app/models/doctor.model';
 import { ServerResponse } from 'src/app/models/server-response.model';
@@ -15,22 +15,22 @@ export class AdminPageComponent implements OnInit {
   allDoctors : any;
   currentDoctor : any;
   displayedDoctor : any;
+  
   constructor(private http: HttpClient, private overlayToggle : OverlayToggleService){}
 
   async ngOnInit() {
-    // await this.getCurrentDoctor();
     await this.getDoctors();
   }
   
   async getCurrentDoctor(){ //Get a specific doctor, yet to be implemented
-    const doc = await this.http.get<ServerResponse<Doctor>>('https://localhost:7288/api/Doctor/40613a52-0d39-4c6c-b79f-08dad85a62f9').subscribe(response => {
+    this.http.get<ServerResponse<Doctor>>('https://localhost:7288/api/Doctor/40613a52-0d39-4c6c-b79f-08dad85a62f9').subscribe(response => {
       this.currentDoctor = response;
       console.log(this.currentDoctor);
     });
   }
 
   async getDoctors(){
-    const docs = await this.http.get<ServerResponse<Doctor>>('https://localhost:7288/api/Doctor').subscribe(response => {
+    this.http.get<ServerResponse<Doctor>>('https://localhost:7288/api/Doctor').subscribe(response => {
       this.allDoctors = response;
       this.currentDoctor = this.allDoctors[0];
     });

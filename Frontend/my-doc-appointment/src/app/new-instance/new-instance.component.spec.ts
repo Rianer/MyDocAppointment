@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { NewInstanceComponent } from './new-instance.component';
 
@@ -8,6 +10,10 @@ describe('NewInstanceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+      ],
       declarations: [ NewInstanceComponent ]
     })
     .compileComponents();
