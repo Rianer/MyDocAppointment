@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using MyDocAppointment.Infrastructure;
 using MyDocAppointment.API.Controllers;
-using MyDocAppointment.API.Dtos;
 
 namespace MyDocAppointment.IntegrationTests
 {
@@ -13,7 +12,7 @@ namespace MyDocAppointment.IntegrationTests
 
         protected HttpClient HttpClient { get; private set; }
 
-        private AppDbContext databaseContext;
+        private AppDbContext databaseContext;   
 
         protected BaseIntegrationTests()
         {

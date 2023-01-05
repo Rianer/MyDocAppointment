@@ -6,8 +6,15 @@ using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.API.Controllers
 {
-    [Route("api/[controller]")]
+<<<<<<< Updated upstream
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
+=======
+>>>>>>> Stashed changes
     [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
+    // [Route("api/[controller]")]
     public class DoctorController : ControllerBase
     {
         private readonly IDoctorsService _doctorService;
@@ -29,7 +36,7 @@ namespace MyDocAppointment.API.Controllers
             }
 
             var models = _mapper.Map<IEnumerable<DoctorDto>>(response.Entity);
-
+            
             return Ok(models);
         }
 

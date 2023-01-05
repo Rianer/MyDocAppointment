@@ -13,6 +13,7 @@ namespace MyDocAppointment.Infrastructure.Configurations
             builder.Property(d => d.Vendor);
             builder.Property(d => d.Category);
             builder.Property(d => d.Price);
+            builder.HasMany(d => d.DrugStocks).WithOne(ds => ds.Item);
         }
     }
 }

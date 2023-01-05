@@ -1,4 +1,5 @@
-﻿using MyDocAppointment.Business.Helpers;
+﻿using FluentValidation;
+using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Logistics.External;
 
 namespace MyDocAppointment.Business.Users
@@ -6,9 +7,7 @@ namespace MyDocAppointment.Business.Users
     public class Doctor : Person
     {
         public Specialization Speciality { get; set; }
-        public List<Appointment> Appointments { get; set; }
-
-        //public Doctor() { }
+        public List<Appointment>? Appointments { get; set; }
 
         public static Result<Doctor> Create(string name, string surname, int age, string gender,
             string emailAddress, string phoneNumber, string homeAddress, string specialization)
@@ -28,7 +27,7 @@ namespace MyDocAppointment.Business.Users
 
             Doctor doctor = new()
             {
-                Id = new Guid(),
+                Id = Guid.NewGuid(),
                 Name = name,
                 Surname = surname,
                 Age = age,
@@ -47,6 +46,11 @@ namespace MyDocAppointment.Business.Users
             if (appointment == null)
             {
                 return Result.Failure("Input not null appointment!");
+            }
+
+            if (Appointments == null)
+            {
+                return Result.Failure("List is null!");
             }
 
             Appointments.Add(appointment);
