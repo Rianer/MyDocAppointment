@@ -1,9 +1,15 @@
-$mainColor: #249CFF;
+$mainColor: #228fe9e3;
 $secondaryColor: #0A2D40;
 $accentColor: #93F5FF;
-$secondAccentColor: #1745FF;
 $reserveColor: #15AEE8;
 $backgroundColor: #23232e;
-$transitionSpeed: 600ms;
+$transitionSpeed: 400ms;
 $contrastColor: #d92662;
 $plainColor: #edf6f7;
+$disabledColor: #969aa2;
+$shadowLightGrey: #e1e5ee;
+$shadowDarkGrey: #b2b4b98f;
+$backgroundLightGrey: #f4f6fb;
+$darkGrey: #696969;
+$lightGradientBackground: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.0));
+$darkGradientBackground: linear-gradient(135deg, rgba(173, 187, 199, 0.3), rgba(192, 192, 192, 0.1));

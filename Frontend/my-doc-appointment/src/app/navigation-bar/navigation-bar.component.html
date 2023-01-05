@@ -2,7 +2,7 @@
   <ul class="navbar-nav">
 
     <li class="logo">
-      <a href="#" class="nav-link logo-link">
+      <a href="#" [ngClass]="{'selected':selectedLink=='/'}" class="nav-link logo-link">
         <span class="link-text logo-text">DocPoint</span>
         <div class="icon-wrapper">
           <i class="fas fa-book-medical"></i>
@@ -11,7 +11,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="doctors" class="nav-link">
+      <a href="doctors" [ngClass]="{'selected':selectedLink=='/doctors'}" class="nav-link">
         <div class="icon-wrapper">
           <i class="fas fa-user-md"></i>
         </div>
@@ -20,7 +20,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="store" class="nav-link">
+      <a href="store" [ngClass]="{'selected':selectedLink=='/store'}" class="nav-link">
         <div class="icon-wrapper">
           <i class="fas fa-medkit"></i>
         </div>
@@ -29,7 +29,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="appointment" class="nav-link">
+      <a href="appointment" [ngClass]="{'selected':selectedLink=='/appointment'}" class="nav-link">
         <div class="icon-wrapper">
           <i class="fas fa-calendar-alt"></i>
         </div>
@@ -38,7 +38,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="admin" class="nav-link">
+      <a href="admin" [ngClass]="{'selected':selectedLink == '/admin'}" class="nav-link">
         <div class="icon-wrapper">
           <i class="fas fa-file-medical-alt"></i>
         </div>
@@ -47,7 +47,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="login" class="nav-link">
+      <a href="login" [ngClass]="{'selected':selectedLink=='/login'}" class="nav-link">
         <div class="icon-wrapper">
           <i class="fas fa-user-circle"></i>
         </div>

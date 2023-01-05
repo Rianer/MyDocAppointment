@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
@@ -15,6 +15,7 @@ import { NewInstanceComponent } from './new-instance/new-instance.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { DetailsOverlayComponent } from './details-overlay/details-overlay.component';
 import { CreateOverlayComponent } from './create-overlay/create-overlay.component';
+import { DoctorsTableComponent } from './tables/doctors-table/doctors-table.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CreateOverlayComponent } from './create-overlay/create-overlay.componen
     AdminPageComponent,
     DetailsOverlayComponent,
     CreateOverlayComponent,
+    DoctorsTableComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,65 +1,83 @@
-<app-details-overlay [currentDoctor]="displayedDoctor"></app-details-overlay>
-<app-create-overlay></app-create-overlay>
-<div class="main-content">
-    <div class="main-grid-container">
-        <div class="card-wide card-mid">
-            <div class="admin-container">
-                <div class="picture-container">
-                    <img src="../../../assets/img/doctorDefaultImg.jpg">
+<section class="personal-info">
+    <div class="account-controls">
+        <div class="account-img">
+            <div class="img-container">
+                <img src="../../../assets/img/doctorDefaultImg.jpg" 
+                (click)="toggleImageMenu()" 
+                [ngClass]="{'clicked': showImageMenu}">
+            </div>
+            <ul *ngIf="showImageMenu" >
+                <li>Edit</li>
+                <li>Log Out</li>
+            </ul>
+        </div>
+        <div class="details-toggle" (click)="toggleDetails()">
+            My Information
+        </div>
+    </div>
+
+    <div class="details" *ngIf="showDetails">
+        <div class="column">
+            <div class="container labels">
+                <label class="row">Name:</label>
+                <label class="row">Surname:</label>
+                <label class="row">Age:</label>
+            </div>
+            <div class="container values">
+                <div class="row">
+                    <input type="text" placeholder="Placeholder">
+                    <i class="far fa-edit"></i>
                 </div>
-                <div class="info-container">
-                    <ul>
-                        <li>
-                            <label>Name: </label>
-                            <input type="text" [placeholder]="currentDoctor.name">
-                        </li>
-                        <li>
-                            <label>Surname: </label>
-                            <input type="text" [placeholder]="currentDoctor.surname">
-                        </li>
-                        <li>
-                            <label>Email: </label>
-                            <input type="text" [placeholder]="currentDoctor.emailAddress">
-                        </li>
-                        <li>
-                            <label>Address: </label>
-                            <input type="text" [placeholder]="currentDoctor.homeAddress">
-                        </li>
-                    </ul>
+                <div class="row">
+                    <input type="text" placeholder="Placeholder">
+                    <i class="far fa-edit"></i>
                 </div>
-                <div class="controls-container">
-                    <button>Log Out</button>
-                    <button>Save Changes</button>
-                    <button>Show Patients</button>
+                <div class="row">
+                    <input type="number" placeholder="22">
+                    <i class="far fa-edit"></i>
                 </div>
             </div>
         </div>
-        <div class="card-extra-tall">
-            <div class="doctors-container overflowable">
-                <div class="doctor-card" *ngFor="let doctor of allDoctors">
-                    <img src="../../../assets/img/doctorDefaultImg.jpg">
-                    <div class="content">
-                        <div class="title">{{doctor.surname + ' ' + doctor.name}}</div>
-                        <button *ngIf="!isTheSameDoctor(doctor, currentDoctor) " (click)="showOverlay(doctor)">
-                            More
-                        </button>
-                    </div>
+        <div class="column"> 
+            <div class="container labels">
+                <label class="row">Email:</label>
+                <label class="row">Address:</label>
+                <label class="row">Speciality:</label>
+            </div>
+            <div class="container values">
+                <div class="row">
+                    <input type="text" placeholder="Placeholder">
+                    <i class="far fa-edit"></i>
                 </div>
-                <div class="doctor-card">
-                    <img src="../../../assets/img/profileImg.png">
-                    <div class="content">
-                        <div class="title">New Doctor</div>
-                        <button (click)="createDoctor()">
-                            Add
-                        </button>
-                    </div>
+                <div class="row">
+                    <input type="text" placeholder="Placeholder">
+                    <i class="far fa-edit"></i>
+                </div>
+                <div class="row">
+                    <input type="text" placeholder="Placeholder">
+                    <i class="far fa-edit"></i>
                 </div>
             </div>
         </div>
-        <div class="card-extra-tall">
-            <div class="drugs-container overflowable">
-                Drug list here
+        <div class="column">
+            <div class="container">
+                <div class="control">
+                    <button class="enabled" (click)="updateDetails()">Save</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="dash">
+    <div class="content">
+        <div class="tabs">
+            <div class="tab active">Doctors</div>
+            <div class="tab">Drugs</div>
+            <div class="tab">Appointments</div>
+        </div>
+        <div class="tables">
+            <doctors-table></doctors-table>
+        </div>
+    </div>
+</section>
