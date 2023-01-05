@@ -1,5 +1,3 @@
-using MediatR;
-
 namespace MyDocAppointment.API.Dtos
 {
     public class CreateDoctorDto

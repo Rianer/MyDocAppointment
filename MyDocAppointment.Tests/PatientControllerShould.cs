@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using MyDocAppointment.API.Controllers;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
-using MyDocAppointment.Business.Logistics.External;
 using MyDocAppointment.Business.Users;
 using Xunit;
 
@@ -25,8 +22,6 @@ namespace MyDocAppointment.Tests
             idNotFound = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa5");
             var patientsServiceMock = new Mock<IPatientsService>();
             var mapperMock = new Mock<IMapper>();
-            mapperMock.Setup(m => m.Map<Patient>(It.IsAny<CreatePatientDto>())).Returns(GetPatient());
-            mapperMock.Setup(m => m.Map<Patient>(It.IsAny<PatientDto>())).Returns(GetPatient());
             patientsServiceMock.Setup(r => r.GetById(idOk))
                 .ReturnsAsync(GetTestPatients());
             patientsServiceMock.Setup(r => r.GetById(idNotFound))
@@ -116,17 +111,9 @@ namespace MyDocAppointment.Tests
         private CreatePatientDto GetCreatePatientDto()
         {
 
-            var dto = new CreatePatientDto()
-            {
-                Name = "Mark",
-                Surname = "Mark",
-                Age = 30,
-                Gender = "Other",
-                EmailAddress = "mark@gmail.com",
-                PhoneNumber = "0777666655",
-                HomeAddress = "Iasi",
-            };
-            return dto;
+            var patient = new CreatePatientDto();
+            return patient;
+
         }
         private Result<Patient> GetTestPatients()
         {

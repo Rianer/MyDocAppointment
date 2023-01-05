@@ -1,5 +1,3 @@
-using MyDocAppointment.Business.Helpers;
-
 namespace MyDocAppointment.Business.Logistics.Internal
 {
     public class Storage
@@ -12,9 +10,8 @@ namespace MyDocAppointment.Business.Logistics.Internal
         public Guid Id { private set; get; }
         public List<Cabinet> Cabinets { private set; get; }
 
-        public Result AddCabinet(Cabinet cabinet){
-            Cabinets.Add(cabinet);
-            return Result.Success();
+        public void AddCabinet(Cabinet cabinet){
+            Cabinets.Append(cabinet);
         } 
 
         public void RemoveCabinet(Cabinet cabinet){

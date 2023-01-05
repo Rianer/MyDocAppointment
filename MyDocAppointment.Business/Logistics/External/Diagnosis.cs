@@ -7,10 +7,10 @@ namespace MyDocAppointment.Business.Logistics.External
     public class Diagnosis
     {
         public Guid Id { get; set; }
-        public string Name { get; private set; } = string.Empty;
-        public string Description { get; private set; } = string.Empty;
+        public string Name { get; private set; }
+        public string Description { get; private set; }
         public DateTime DiagnosisDate { get; private set; }
-        public List<Observation>? Observations { get; private set; } = new List<Observation>();
+        public List<Observation> Observations { get; private set; }
         public Guid PatientId { get; private set; }
 
         public static Result<Diagnosis> Create(string name, string description, string diagnosisDate)
@@ -28,10 +28,11 @@ namespace MyDocAppointment.Business.Logistics.External
 
             Diagnosis diagnosis = new()
             {
-                Id = Guid.NewGuid(),
+                Id = new Guid(),
                 Name = name,
                 Description = description,
-                DiagnosisDate = timeResult
+                DiagnosisDate = timeResult,
+                Observations= new List<Observation>()
             };
             return Result<Diagnosis>.Success(diagnosis);
 
@@ -75,7 +76,7 @@ namespace MyDocAppointment.Business.Logistics.External
             return Result.Success();
         }
 
-        public Result Modify(string? name = null, string? description = null, string? diagnosisDate = null)
+        public Result Modify(string name = null, string description = null, string diagnosisDate = null)
         {
             if(name != null)
             {

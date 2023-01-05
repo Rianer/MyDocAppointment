@@ -9,7 +9,7 @@ namespace MyDocAppointment.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<DrugStock> builder)
         {
             builder.HasKey(d => d.Id);
-            builder.HasOne(d => d.Item).WithMany(d => d.DrugStocks);
+            builder.Property(d => d.Item);
             builder.Property(d => d.Quantity);
             builder.Property(d => d.IsRestricted);
         }

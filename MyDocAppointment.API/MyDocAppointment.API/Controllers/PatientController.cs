@@ -1,10 +1,9 @@
 using AutoMapper;
-using FluentValidation;
-using FluentValidation.AspNetCore;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Application;
 using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.Internal;
 using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.API.Controllers
@@ -39,7 +38,6 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreatePatientDto dto)
         {
             var patient = _mapper.Map<Patient>(dto);
-
             await _patientService.Create(patient);
 
             return Created(nameof(Get), dto);
@@ -75,7 +73,6 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Update([FromBody] PatientDto dto, Guid patientId)
         {
             var patient = _mapper.Map<Patient>(dto);
-
             var response = await _patientService.Update(patient, patientId);
 
             if (!response.IsSuccess)

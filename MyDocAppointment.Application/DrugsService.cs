@@ -54,7 +54,7 @@ namespace MyDocAppointment.Application
             await _drugsRepository.SaveChanges();
         }
 
-        public async Task<Result<Drug>> Update(Drug drug, Guid drugId)
+        public async Task<Result<Drug>> Update(Drug updateDrug, Guid drugId)
         {
             var currentDrug = await _drugsRepository.GetById(drugId);
             if (currentDrug == null)
@@ -63,10 +63,10 @@ namespace MyDocAppointment.Application
 
             }
 
-            currentDrug.Name = drug.Name;
-            currentDrug.Vendor = drug.Vendor;
-            currentDrug.Category = drug.Category;
-            currentDrug.Price = drug.Price;
+            currentDrug.Name = updateDrug.Name;
+            currentDrug.Vendor = updateDrug.Vendor;
+            currentDrug.Category = updateDrug.Category;
+            currentDrug.Price = updateDrug.Price;
 
             await _drugsRepository.SaveChanges();
 

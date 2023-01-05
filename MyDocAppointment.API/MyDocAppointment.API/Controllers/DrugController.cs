@@ -1,8 +1,10 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Application;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.Internal;
+using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.API.Controllers
 {
@@ -36,7 +38,6 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreateDrugDto dto)
         {
             var drug = _mapper.Map<Drug>(dto);
-
             await _drugService.Create(drug);
 
             return Created(nameof(Get), dto);
@@ -71,7 +72,6 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Update([FromBody] DrugDto dto, Guid drugId)
         {
             var drug = _mapper.Map<Drug>(dto);
-
             var response = await _drugService.Update(drug, drugId);
 
             if (!response.IsSuccess)

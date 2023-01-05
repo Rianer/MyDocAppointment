@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocAppointment.Applicatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocAppointment.Tests", "MyDocAppointment.Tests\MyDocAppointment.Tests.csproj", "{ED7EECD5-A09E-4000-AECB-471D545F793B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDocAppointment.IntegrationTests", "MyDocAppointment.IntegrationTests\MyDocAppointment.IntegrationTests.csproj", "{679BD12C-D190-4D79-9EF8-AEB0FB1F30E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDocAppointment.IntegrationTests", "MyDocAppointment.IntegrationTests\MyDocAppointment.IntegrationTests.csproj", "{679BD12C-D190-4D79-9EF8-AEB0FB1F30E4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1A6249EB-1AB2-4F29-8116-D16FD16A68A8} = {1A6249EB-1AB2-4F29-8116-D16FD16A68A8}
 	EndProjectSection

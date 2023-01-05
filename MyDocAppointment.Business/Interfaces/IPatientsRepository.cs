@@ -8,6 +8,6 @@ namespace MyDocAppointment.Business.Interfaces
         Task Delete(Patient patient);
         Task SaveChanges();
         Task<IEnumerable<Patient>> GetAll();
-        Task<Patient?> GetById(Guid id);
+        Task<Patient> GetById(Guid id);
     }
 }

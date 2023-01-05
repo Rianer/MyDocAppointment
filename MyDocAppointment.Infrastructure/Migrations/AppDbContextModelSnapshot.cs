@@ -25,29 +25,29 @@ namespace MyDocAppointment.Infrastructure.Migrations
             modelBuilder.Entity("MyDocAppointment.Business.Logistics.External.Appointment", b =>
                 {
                     b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("DoctorID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("PatientID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("AppointmentTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("DoctorID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("PaymentId")
+                    b.Property<Guid>("PatientID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Specialization")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("PaymentId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("Id", "DoctorID", "PatientID");
+                    b.Property<int>("Specialization")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("DoctorID");
 
@@ -55,7 +55,7 @@ namespace MyDocAppointment.Infrastructure.Migrations
 
                     b.HasIndex("PaymentId");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Appointment");
                 });
 
             modelBuilder.Entity("MyDocAppointment.Business.Logistics.External.Diagnosis", b =>
@@ -126,13 +126,12 @@ namespace MyDocAppointment.Infrastructure.Migrations
                     b.Property<DateTime>("EmissionDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PaymentMethod")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PaymentMethod")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payment");
                 });
 
             modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.Drug", b =>
@@ -159,28 +158,6 @@ namespace MyDocAppointment.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Drugs");
-                });
-
-            modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.DrugStock", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsRestricted")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("ItemId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ItemId");
-
-                    b.ToTable("DrugStocks");
                 });
 
             modelBuilder.Entity("MyDocAppointment.Business.Users.Doctor", b =>
@@ -279,7 +256,9 @@ namespace MyDocAppointment.Infrastructure.Migrations
 
                     b.HasOne("MyDocAppointment.Business.Logistics.External.Payment", "Payment")
                         .WithMany()
-                        .HasForeignKey("PaymentId");
+                        .HasForeignKey("PaymentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Doctor");
 
@@ -304,25 +283,9 @@ namespace MyDocAppointment.Infrastructure.Migrations
                         .HasForeignKey("DiagnosisId");
                 });
 
-            modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.DrugStock", b =>
-                {
-                    b.HasOne("MyDocAppointment.Business.Logistics.Internal.Drug", "Item")
-                        .WithMany("DrugStocks")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Item");
-                });
-
             modelBuilder.Entity("MyDocAppointment.Business.Logistics.External.Diagnosis", b =>
                 {
                     b.Navigation("Observations");
-                });
-
-            modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.Drug", b =>
-                {
-                    b.Navigation("DrugStocks");
                 });
 
             modelBuilder.Entity("MyDocAppointment.Business.Users.Doctor", b =>

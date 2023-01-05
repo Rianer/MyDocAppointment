@@ -12,13 +12,9 @@ namespace MyDocAppointment.Business.Logistics.Internal
                 TotalAmmount += i.Quantity;
             });
         }
-        private Guid id;
-        private List<DrugStock> inventory;
-        private int totalAmmount;
-
-        public Guid Id { get => id; set => id = value; }
-        public List<DrugStock> Inventory { get => inventory; set => inventory = value; }
-        public int TotalAmmount { get => totalAmmount; set => totalAmmount = value; }
+        public Guid Id;
+        public List<DrugStock> Inventory;
+        public int TotalAmmount;
 
         public void RemoveFromInventory(DrugStock drugStock){
             int index = Inventory.FindIndex(i => i.Id == drugStock.Id);
@@ -39,7 +35,7 @@ namespace MyDocAppointment.Business.Logistics.Internal
         }
 
         public void AddStock(DrugStock drugStock){
-            Inventory.Add(drugStock);
+            Inventory.Append(drugStock);
             TotalAmmount += drugStock.Quantity;
         }
 

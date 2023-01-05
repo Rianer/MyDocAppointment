@@ -1,13 +1,15 @@
-﻿using FluentValidation;
-using MyDocAppointment.Business.Helpers;
+﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Logistics.External;
 
 namespace MyDocAppointment.Business.Users
 {
     public class Patient : Person
     {
-        public List<Appointment>? Appointments { get; private set; }
-        public List<Diagnosis>? Diagnosis { get; private set; }
+        public List<Appointment> Appointments { get; private set; }
+        public List<Diagnosis> Diagnosis { get; private set; }
+        //public Insurance Insurance { get; private set; }
+
+        //public Patient() { }
 
         public static Result<Patient> Create(string name, string surname, int age, string gender,
             string emailAddress, string phoneNumber, string homeAddress)
@@ -21,7 +23,7 @@ namespace MyDocAppointment.Business.Users
 
             Patient patient = new()
             {
-                Id = Guid.NewGuid(),
+                Id = new Guid(),
                 Name = name,
                 Surname = surname,
                 Age = age,
@@ -41,11 +43,6 @@ namespace MyDocAppointment.Business.Users
             {
                 return Result.Failure("Input not null appointment!");
             }
-
-            if(Appointments == null)
-            {
-                return Result.Failure("List is null!");
-            }
             
             Appointments.Add(appointment);
             return Result.Success();
@@ -57,14 +54,20 @@ namespace MyDocAppointment.Business.Users
             {
                 return Result.Failure("Input not null diagnosis!");
             }
-
-            if (Diagnosis == null)
-            {
-                return Result.Failure("List is null!");
-            }
-
+            
             Diagnosis.Add(diagnosis);
             return Result.Success();
         }
+
+        /*public Result AssignInsurance(Insurance insurance)
+        {
+            if (insurance == null)
+            {
+                return Result.Failure("Input not null insurance!");
+            }
+            
+            Insurance = insurance;
+            return Result.Success();
+        }*/
     }
 }

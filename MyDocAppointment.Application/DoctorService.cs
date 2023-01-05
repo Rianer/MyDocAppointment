@@ -54,7 +54,7 @@ namespace MyDocAppointment.Application
             await _doctorsRepository.SaveChanges();
         }
 
-        public async Task<Result<Doctor>> Update(Doctor doctor, Guid doctorId)
+        public async Task<Result<Doctor>> Update(Doctor updateDoctor, Guid doctorId)
         {
             var currentDoctor = await _doctorsRepository.GetById(doctorId);
             if (currentDoctor == null)
@@ -63,14 +63,14 @@ namespace MyDocAppointment.Application
 
             }
 
-            currentDoctor.Name = doctor.Name;
-            currentDoctor.Surname = doctor.Surname;
-            currentDoctor.Age = doctor.Age;
-            currentDoctor.Gender = doctor.Gender;
-            currentDoctor.EmailAddress = doctor.EmailAddress;
-            currentDoctor.PhoneNumber = doctor.PhoneNumber;
-            currentDoctor.HomeAddress = doctor.HomeAddress;
-            currentDoctor.Speciality = doctor.Speciality;
+            currentDoctor.Name = updateDoctor.Name;
+            currentDoctor.Surname = updateDoctor.Surname;
+            currentDoctor.Age = updateDoctor.Age;
+            currentDoctor.Gender = updateDoctor.Gender;
+            currentDoctor.EmailAddress = updateDoctor.EmailAddress;
+            currentDoctor.PhoneNumber = updateDoctor.PhoneNumber;
+            currentDoctor.HomeAddress = updateDoctor.HomeAddress;
+            currentDoctor.Speciality = updateDoctor.Speciality;
 
             await _doctorsRepository.SaveChanges();
 

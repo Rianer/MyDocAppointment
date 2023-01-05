@@ -7,7 +7,7 @@ namespace MyDocAppointment.Business.Logistics.External
 
         public Guid Id { get; private set; }
         public DateTime Date { get; private set; }
-        public string Description { get; private set; } = string.Empty;
+        public string Description { get; private set; }
 
         public static Result<Observation> Create(string date, string description)
         {
@@ -24,7 +24,7 @@ namespace MyDocAppointment.Business.Logistics.External
 
             Observation observation = new()
             {
-                Id = Guid.NewGuid(),
+                Id = new Guid(),
                 Date = timeResult,
                 Description = description
             };

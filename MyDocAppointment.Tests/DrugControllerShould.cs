@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using MyDocAppointment.API.Controllers;
@@ -45,7 +46,7 @@ namespace MyDocAppointment.Tests
             //Act
             var response = await controller.GetById(idOk);
 
-            // Assert       
+            // Assert
             Assert.IsType<OkObjectResult>(response);
         }
         [Fact]
