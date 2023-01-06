@@ -6,112 +6,40 @@
             <th>Speciality</th>
             <th>Email</th>
             <th>Phone Number</th>
-            <th class="add-instance"><i class="fas fa-user-plus"></i></th>
+            <th *ngIf="isAdminPage" class="add-instance"><i class="fas fa-user-plus" (click)="openCreateSidebar()"></i></th>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let doctor of doctorsList">
                 <td>
                     <div class="img-container">
                         <img src="../../../assets/img/doctorDefaultImg.jpg">
                     </div>
                 </td>
-                <td>Steven Strange</td>
-                <td>Surgeon</td>
-                <td>steven.strange@marvel.com</td>
-                <td>+00-111-22-333</td>
-                <td class="edit"><i class="fas fa-user-edit" (click)="openSidebarMenu()"></i></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="img-container">
-                        <img src="../../../assets/img/doctorDefaultImg.jpg">
-                    </div>
-                </td>
-                <td>Steven Strange</td>
-                <td>Surgeon</td>
-                <td>steven.strange@marvel.com</td>
-                <td>+00-111-22-333</td>
-                <td class="edit"><i class="fas fa-user-edit" (click)="openSidebarMenu()"></i></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="img-container">
-                        <img src="../../../assets/img/doctorDefaultImg.jpg">
-                    </div>
-                </td>
-                <td>Steven Strange</td>
-                <td>Surgeon</td>
-                <td>steven.strange@marvel.com</td>
-                <td>+00-111-22-333</td>
-                <td class="edit"><i class="fas fa-user-edit" (click)="openSidebarMenu()"></i></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="img-container">
-                        <img src="../../../assets/img/doctorDefaultImg.jpg">
-                    </div>
-                </td>
-                <td>Steven Strange</td>
-                <td>Surgeon</td>
-                <td>steven.strange@marvel.com</td>
-                <td>+00-111-22-333</td>
-                <td class="edit"><i class="fas fa-user-edit" (click)="openSidebarMenu()"></i></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="img-container">
-                        <img src="../../../assets/img/doctorDefaultImg.jpg">
-                    </div>
-                </td>
-                <td>Steven Strange</td>
-                <td>Surgeon</td>
-                <td>steven.strange@marvel.com</td>
-                <td>+00-111-22-333</td>
-                <td class="edit"><i class="fas fa-user-edit" (click)="openSidebarMenu()"></i></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="img-container">
-                        <img src="../../../assets/img/doctorDefaultImg.jpg">
-                    </div>
-                </td>
-                <td>Steven Strange</td>
-                <td>Surgeon</td>
-                <td>steven.strange@marvel.com</td>
-                <td>+00-111-22-333</td>
-                <td class="edit"><i class="fas fa-user-edit" (click)="openSidebarMenu()"></i></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="img-container">
-                        <img src="../../../assets/img/doctorDefaultImg.jpg">
-                    </div>
-                </td>
-                <td>Steven Strange</td>
-                <td>Surgeon</td>
-                <td>steven.strange@marvel.com</td>
-                <td>+00-111-22-333</td>
-                <td class="edit"><i class="fas fa-user-edit" (click)="openSidebarMenu()"></i></td>
+                <td>{{doctor.name + ' ' + doctor.surname}}</td>
+                <td>{{doctor.speciality}}</td>
+                <td>{{doctor.emailAddress}}</td>
+                <td>{{doctor.phoneNumber}}</td>
+                <td *ngIf="isAdminPage" class="edit"><i class="fas fa-user-edit" (click)="openSidebarDetails(doctor)"></i></td>
             </tr>
         </tbody>
     </table>
 </div>
 
 
-<section class="sidebar-menu" *ngIf="showSidebarMenu" (click)="clickedWhiteSpace($event)">
+<section class="sidebar-menu" *ngIf="showSidebarDetails" (click)="clickedWhiteSpace($event)">
     <div class="doctor-info">
         <div class="title">
             <div>
-                <h2>Name Surname</h2>
-                <p>Speciality</p>
+                <h2>{{currentDoctor.name + ' ' + currentDoctor.surname}}</h2>
+                <p>{{currentDoctor.speciality}}</p>
             </div>
             <div>
                 <img src="../../../assets/img/doctorDefaultImg.jpg">
             </div>
         </div>
         <div class="controls">
-            <button class="update" (click)="toggleSidebarMenu()">Update</button>
-            <button class="delete" (click)="toggleSidebarMenu()">Delete</button>
+            <button class="update" (click)="applyDoctorUpdate()">Update</button>
+            <button class="delete" (click)="deleteDoctor()">Delete</button>
         </div>
         <div class="form">
             <div class="form-col labels">
@@ -133,30 +61,104 @@
             </div>
             <div class="form-col values">
                 <div class="row">
-                    <input placeholder="Strange">
+                    <input [placeholder]="currentDoctor.name" [(ngModel)]="updateDoctorForm.name">
                 </div>
                 <div class="row">
-                    <input placeholder="Stever">
+                    <input [placeholder]="currentDoctor.surname" [(ngModel)]="updateDoctorForm.surname">
                 </div>
                 <div class="row">
-                    <input placeholder="steven.strange@marvel.com">
+                    <input [placeholder]="currentDoctor.emailAddress" [(ngModel)]="updateDoctorForm.emailAddress">
                 </div>
                 <div class="row">
-                    <input placeholder="New York">
+                    <input [placeholder]="currentDoctor.homeAddress" [(ngModel)]="updateDoctorForm.homeAddress">
                 </div>
                 <div class="row">
-                    <input placeholder="+00-111-22-333">
+                    <input [placeholder]="currentDoctor.phoneNumber" [(ngModel)]="updateDoctorForm.phoneNumber">
                 </div>
             </div>
         </div>
         <div class="speciality-selector">
             <label>Speciality:</label>
-            <select>
+            <select  [(ngModel)]="updateDoctorForm.speciality">
                 <option>Surgeon</option>
             </select>
         </div>
         <div class="close">
-            <button (click)="toggleSidebarMenu()">Close</button>
+            <button (click)="closeSidebarDetails()">Close</button>
+        </div>
+    </div>
+</section>
+
+<section class="sidebar-menu" *ngIf="showSidebarCreate" (click)="clickedWhiteSpace($event)">
+    <div class="doctor-info">
+        <div class="title">
+            <div>
+                <h2>New Doctor</h2>
+            </div>
+            <div>
+                <img src="../../../assets/img/doctorDefaultImg.jpg">
+            </div>
+        </div>
+        <div class="create">
+            <button [ngClass]="{'disabled' : !this.createDoctorForm.isComplete()}" (click)="createDoctor()">Create</button>
+        </div>
+        <div class="form">
+            <div class="form-col labels">
+                <div class="row">
+                    <label>Name:</label>
+                </div>
+                <div class="row">
+                    <label>Surname:</label>
+                </div>
+                <div class="row">
+                    <label>Age:</label>
+                </div>
+                <div class="row">
+                    <label>Email:</label>
+                </div>
+                <div class="row">
+                    <label>Address:</label>
+                </div>
+                <div class="row">
+                    <label>Phone:</label>
+                </div>
+                
+            </div>
+            <div class="form-col values">
+                <div class="row">
+                    <input placeholder="Name..." [(ngModel)]="createDoctorForm.name">
+                </div>
+                <div class="row">
+                    <input placeholder="Surname..." [(ngModel)]="createDoctorForm.surname">
+                </div>
+                <div class="row">
+                    <input placeholder="0" type="number" [(ngModel)]="createDoctorForm.age">
+                </div>
+                <div class="row">
+                    <input placeholder="Email Address..." [(ngModel)]="createDoctorForm.emailAddress">
+                </div>
+                <div class="row">
+                    <input placeholder="Home Address..." [(ngModel)]="createDoctorForm.homeAddress">
+                </div>
+                <div class="row">
+                    <input placeholder="Phone Number..." [(ngModel)]="createDoctorForm.phoneNumber">
+                </div>
+            </div>
+        </div>
+        <div class="speciality-selector">
+            <label>Speciality:</label>
+            <select [(ngModel)]="createDoctorForm.speciality">
+                <option>Cardiology</option>
+            </select>
+            <label>Gender:</label>
+            <select [(ngModel)]="createDoctorForm.gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="close">
+            <button (click)="closeCreateSidebar()">Close</button>
         </div>
     </div>
 </section>

@@ -244,6 +244,39 @@
                 border: none;
             }
         }
+        .create{
+            display: flex;
+            justify-content: center;
+
+            button{
+                font-size: 1.2rem;
+                padding: 1rem;
+                width: 100%;
+                background: none;
+                border: none;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                font-weight: 600;
+                color: $darkGrey;
+                cursor: pointer;
+                transition: 200ms;
+            }
+
+            button:hover{
+                color: $plainColor;
+                background-color: $contrastColor;
+            }
+
+            .disabled{
+                color: $shadowDarkGrey;
+            }
+
+            .disabled:hover{
+                color: $shadowDarkGrey;
+                background-color: transparent;
+                cursor: default;
+            }
+        }
         .close{
             margin-top: auto;
             display: flex;

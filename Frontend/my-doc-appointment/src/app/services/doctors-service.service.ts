@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ServerResponse } from '../models/server-response.model';
-import { Doctor } from '../models/doctor.model';
+import { Doctor, NewDoctor, UpdatedDoctor } from '../models/doctor.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,20 +14,26 @@ export class DoctorsServiceService {
   constructor(private http: HttpClient) {}
 
   
-  getAllDoctors() : Observable<ServerResponse<Doctor>>{
-    return this.http.get<ServerResponse<Doctor>>(this.ROOT_URL);
+  getAllDoctors() : Observable<Doctor[]>{
+    return this.http.get<Doctor[]>(this.ROOT_URL);
   }
 
-  getDoctorById(id : string) : Observable<ServerResponse<Doctor>>{
+  getDoctorById(id : string) : Observable<Doctor>{
     const url = this.ROOT_URL + '/' + id;
-    return this.http.get<ServerResponse<Doctor>>(url);
+    return this.http.get<Doctor>(url);
   }
 
-  createDoctor(doctor : Doctor){
+  createDoctor(doctor : NewDoctor){
     return this.http.post(this.ROOT_URL, doctor);
   }
 
   deleteDoctor(id : string){
-    return this.http.delete(this.ROOT_URL);
+    const url = this.ROOT_URL + '/' + id;
+    return this.http.delete(url);
+  }
+
+  updateDoctor(id : string, doctor : UpdatedDoctor){
+    const url = this.ROOT_URL + '/' + id;
+    return this.http.put(url, doctor);
   }
 }

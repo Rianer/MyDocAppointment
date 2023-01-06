@@ -1,156 +1,136 @@
 @import '../../../utilities/variables.scss';
 
-.grid-item{
-  background-color: $backgroundColor;
+.appointment-container{
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: $plainColor;
-  font-size: 1.2rem;
-  transition: $transitionSpeed;
-}
+  padding-top: 4rem;
 
-.grid-item:hover{
-  background-color: $secondaryColor;
-}
+  .content-container{
+    min-width: 900px;
+    max-width: 1200px;
+    width: 60%;
+    background: $lightGradientBackground;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
 
-.content-wrapper{
-  min-width: 300px;
-  min-height: 200px;
-}
+    .control-field{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      background-color: $backgroundColor;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
 
-.txt-field{
-  display: flex;
-  flex-direction: column;
-}
+      p{
+        margin: 0;
+        margin-right: 1rem;
+        text-transform: uppercase;
+        font-weight: bolder;
+        color: $accentColor;
+        letter-spacing: 0.06rem;
+        font-size: 1.2rem;
+        padding: 0;
+        cursor: pointer;
+        transition: 200ms;
 
-.field-label{
-  margin-right: 0.5rem;
-  color: $accentColor;
-  font-weight: 600;
-  letter-spacing: 0.05rem;
-}
+        i{
+          margin-right: 8px;
+        }
+      }
 
-.txt-field input[type="text"]{
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
-  padding: 0.4rem;
-  font-size: 16px;
-  background-color: $backgroundColor;
-  color: $accentColor;
-  transition: 300ms;
-  border: 3px solid $accentColor;
-  font-weight: 500;
-  font-family: 'Lato', sans-serif;
+      p:hover{
+        color: $contrastColor;
+      }
+    }
 
-}
+    .history{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-.txt-field input[type="text"]::placeholder{
-  color: $plainColor;
-  font-weight: 500;
-  // padding-left: 0.5rem;
-  transition: 300ms;
-}
+      .appointment{
+        width: 100%;
+        display: flex;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        transition: 200ms;
 
-.txt-field input[type="text"]:focus,
-.txt-field input[type="text"]:hover{
-  // background-color: $accentColor;
-  // color: $secondaryColor;
-  border: 3px solid $contrastColor;
-}
+        .element{
+          text-align: center;
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
 
-.txt-field input[type="text"]:focus::placeholder,
-.txt-field input[type="text"]:hover::placeholder{
-  // color: $backgroundColor;
-  color: $accentColor;
-}
+        .text{
+          color: $secondaryColor;
+          transition: 200ms;
+        }
 
-.txt-field input[type="date"]{
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
-  padding: 0.4rem;
-  font-size: 16px;
-  background-color: $backgroundColor;
-  color: $accentColor;
-  transition: 300ms;
-  border: 3px solid $accentColor;
-  font-family: 'Lato', sans-serif;
+        .status{
+          width: 15%;
+          font-size: 1.4rem;
+        }
 
-}
+        .date{
+          width: 35%;
+          letter-spacing: 0.1rem;
+        }
 
-.txt-field input[type="date"]::-webkit-calendar-picker-indicator{
-  background-color: $accentColor;
-}
+        .doctor{
+          cursor: pointer;
+          width: 35%;
+        }
 
-.txt-field input[type="date"]:focus,
-.txt-field input[type="date"]:hover{
-  border: 3px solid $contrastColor;
-}
+        .cancel{
+          color: $darkGrey;
+          cursor: pointer;
+          width: 15%;
+          font-size: 1.4rem;
+        }
 
-.txt-field select{
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
-  padding: 0.4rem;
-  font-size: 16px;
-  background-color: $backgroundColor;
-  color: $accentColor;
-  transition: 300ms;
-  text-transform: uppercase;
-  border: 3px solid $accentColor;
-  font-family: 'Lato', sans-serif;
-}
+        .cancel:hover{
+          color: $redError;
+        }
 
-.txt-field select:hover,
-.txt-field select:focus{
-  border: 3px solid $contrastColor;
-}
+        .details{
+          color: $darkGrey;
+          cursor: pointer;
+          width: 15%;
+          font-size: 1.4rem;
+        }
 
-.grid-container{
-  display: grid;
-  gap: 1rem;
+        .details:hover{
+          color: $contrastColor;
+        }
 
-  grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
-  grid-auto-rows: minmax(700px, auto);
-}
+        .complete{
+          color: $greenComplete;
+        }
 
-input[type="submit"]{
-  padding: 0.5rem 0.8rem;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.05rem;
-  align-self: center;
-  margin-top: 1rem;
-  background-color: $accentColor;
-  color: $backgroundColor;
-  transition: $transitionSpeed;
-  cursor: pointer;
-  border: none;
-}
+        .canceled{
+          color: $redError;
+        }
 
-input[type="submit"]:hover{
-  background-color: $contrastColor;
-  color: $plainColor;
-}
+        .pending{
+          color: $darkGrey;
+        }
+      }
 
-.info-box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 2rem;
-}
+      .appointment:hover{
+        box-shadow: 0px 3px 3px $shadowDarkGrey;
 
-.title{
-  font-size: 3rem;
-  color: $mainColor;
-  font-weight: bold;
-  letter-spacing: 0.08rem;
-  padding: 0.3rem 0rem;
-  border-bottom: 5px solid $mainColor;
-  margin-bottom: 2rem;
-}
+        .text{
+          color: $mainColor;
+        }
 
-.info-content{
-  font-size: 1.2rem;
-  color: $backgroundColor;
+        .doctor{
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+  }
 }

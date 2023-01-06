@@ -15,7 +15,9 @@
             My Information
         </div>
     </div>
+</section>
 
+<section class="details-container">
     <div class="details" *ngIf="showDetails">
         <div class="column">
             <div class="container labels">
@@ -69,6 +71,7 @@
     </div>
 </section>
 
+
 <section class="dash">
     <div class="content">
         <div class="tabs">
@@ -77,7 +80,7 @@
             <div class="tab">Appointments</div>
         </div>
         <div class="tables">
-            <doctors-table></doctors-table>
+            <doctors-table [isAdminPage]="true"></doctors-table>
         </div>
     </div>
 </section>

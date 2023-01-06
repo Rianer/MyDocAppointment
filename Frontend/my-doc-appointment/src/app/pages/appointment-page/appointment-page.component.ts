@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Appointment } from 'src/app/models/appointment.model';
 
 
 @Component({
@@ -8,71 +9,34 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./appointment-page.component.scss']
 })
 export class AppointmentPageComponent implements OnInit {
-  isLogged = false;
-  newAppointmentForm : FormGroup;
-  userInfo = {
-    name: 'John Doe',
-    birthdate: '20-10-1990'
+
+  appointmentHistory : Appointment[];
+
+  ngOnInit(): void {
+    this.appointmentHistory = [
+      {
+        status : 'pending',
+        doctor : 'Steven Strange',
+        date : '21/01/2023',
+        result : '',
+        price : ''
+      },
+      {
+        status : 'canceled',
+        doctor : 'Steven Strange',
+        date : '03/01/2023',
+        result : '',
+        price : ''
+      },
+      {
+        status : 'complete',
+        doctor : 'Steven Strange',
+        date : '14/12/2022',
+        result : 'Further investigation required',
+        price : '120'
+      },
+    ]
   }
-
-  doctorList = [
-    {
-      name: 'John Doe',
-      speciality: 'Therapist'
-    },
-    {
-      name: 'Steven Strange',
-      speciality: 'Surgeon'
-    },
-    {
-      name: 'Bruce Banner',
-      speciality: 'Physician'
-    },
-  ]
-
-  serviceList = [
-    {
-      name: 'medical analysis',
-      price: '100'
-    },
-    {
-      name: 'bandage appliance',
-      price: '50'
-    },
-    {
-      name: 'ocular inspection',
-      price: '200'
-    },
-    {
-      name: 'surgery',
-      price: '500'
-    }
-  ]
-
-
-
-  constructor (private fg : FormBuilder){}
-
-
-  ngOnInit(){
-    this.newAppointmentForm = this.fg.group({
-      name:'',
-      birthdate:'',
-      service:'',
-      doctor: '',
-      date:''
-    });
-    this.newAppointmentForm.valueChanges.subscribe();
-  }
-
-  makeAppointment(){
-    if(this.isLogged){
-      this.newAppointmentForm.value.name = this.userInfo.name;
-      this.newAppointmentForm.value.birthdate = this.userInfo.birthdate;
-    }
-    console.log(this.newAppointmentForm.value);
-  }
-
 
 
 }

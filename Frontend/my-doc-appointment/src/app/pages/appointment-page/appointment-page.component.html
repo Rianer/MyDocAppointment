@@ -1,52 +1,33 @@
+<section class="appointment-container">
+  <div class="content-container">
+    <div class="control-field">
+      <p><i class="fas fa-calendar-plus"></i>New Appointment</p>
+    </div>
+    <div class="history">
 
-<div class="info-box">
-  <div class="title">Make An Appointment</div>
-  <div class="info-content">Here you can make an appointment or check your past appointments</div>
-</div>
+      <div class="appointment" *ngFor="let appointment of appointmentHistory">
+        <div class="status element" 
+              [ngClass]="{
+                'pending' : appointment.status === 'pending', 
+                'canceled' : appointment.status === 'canceled', 
+                'complete' : appointment.status === 'complete' }">
+          <i *ngIf="appointment.status === 'pending'" class="fas fa-history"></i>
+          <i *ngIf="appointment.status === 'canceled'" class="fas fa-ban"></i>
+          <i *ngIf="appointment.status === 'complete'" class="fas fa-check-circle"></i>
 
-<div class="grid-container">
-  <div class="grid-item appointemnt-data">
-    <div class="content-wrapper">
-      <form [formGroup]="newAppointmentForm" (ngSubmit)="makeAppointment()">
-        <div class="user-data" *ngIf="isLogged">
-          <div class="data-field"><span class="field-label">Name:</span> {{userInfo.name}}</div>
-          <div class="data-field"><span class="field-label">Birthdate:</span> {{userInfo.birthdate}}</div>
         </div>
-        <div class="newuser-data" *ngIf="!isLogged">
-          <div class="txt-field">
-            <label class="field-label">Name:</label>
-            <input formControlName="name" type="text" placeholder="Your name...">
-          </div>
-          <div class="txt-field">
-            <label class="field-label">Birthdate:</label>
-            <input formControlName="birthdate" type="date">
-          </div>
+        <div class="date element text">
+          {{appointment.date}}
         </div>
-        <div class="txt-field">
-          <label class="field-label">Service:</label>
-          <select formControlName="service">
-            <option *ngFor="let service of serviceList" [ngValue]="service">{{service.name}}</option>
-          </select>
+        <div class="doctor element text">
+          {{appointment.doctor}}
         </div>
-        <div class="txt-field">
-          <label class="field-label">Doctor:</label>
-          <select formControlName="doctor" >
-            <option *ngFor="let doctor of doctorList" [ngValue]="doctor">{{doctor.name}}</option>
-          </select>
+        <div class="element" [ngClass]="{'cancel' : appointment.status === 'pending', 'details' : appointment.status !== 'pending'}">
+          <i *ngIf="appointment.status === 'pending'" class="fas fa-times-circle"></i>
+          <i *ngIf="appointment.status !== 'pending'" class="fas fa-chevron-down"></i>
         </div>
-        <div class="txt-field">
-          <label class="field-label">Date:</label>
-          <input formControlName="date" type="date">
-        </div>
-        <div class="txt-field">
-          <input type="submit" value="Make Appoitment">
-        </div>
-      </form>
+      </div>
     </div>
   </div>
-  <div class="grid-item appointment-history">
-    <div class="content-wrapper">
-      <p>History Here</p>
-    </div>
-  </div>
-</div>
+</section>
+
