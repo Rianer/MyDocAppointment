@@ -1,52 +1,41 @@
 using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Application.Commands;
+using MyDocAppointment.Application.Queries;
+using MyDocAppointment.Application.Response;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.API.Controllers
 {
-<<<<<<< Updated upstream
-    [Route("api/v{version:apiVersion}/[controller]")]
-    [ApiVersion("1.0")]
-=======
->>>>>>> Stashed changes
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("api/v{version:apiVersion}/[controller]")]
-    [ApiVersion("1.0")]
-    // [Route("api/[controller]")]
     public class DoctorController : ControllerBase
     {
+        private readonly IMediator _mediator;
         private readonly IDoctorsService _doctorService;
         private readonly IMapper _mapper;
-        public DoctorController(IDoctorsService doctorService, IMapper mapper)
+        public DoctorController(IDoctorsService doctorService, IMapper mapper, IMediator mediator)
         {
             _doctorService = doctorService;
             _mapper = mapper;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var response = await _doctorService.GetAll();
-
-            if (!response.IsSuccess)
-            {
-                return NotFound(response.Error);
-            }
-
-            var models = _mapper.Map<IEnumerable<DoctorDto>>(response.Entity);
-            
-            return Ok(models);
+            _mediator = mediator;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateDoctorDto dto)
+        public async Task<IActionResult>
+           Create([FromBody] CreateDoctorCommand command)
         {
-            var doctor = _mapper.Map<Doctor>(dto);
-            await _doctorService.Create(doctor);
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
 
-            return Created(nameof(Get), dto);
+        [HttpGet]
+        public async Task<List<DoctorResponse>> Get()
+        {
+            return await _mediator.Send(new GetAllDoctorsQuery());
         }
 
         [HttpGet("{doctorId:guid}")]
@@ -78,10 +67,11 @@ namespace MyDocAppointment.API.Controllers
         public async Task<IActionResult> Update([FromBody] DoctorDto dto, Guid doctorId)
         {
             var doctor = _mapper.Map<Doctor>(dto);
+
             var response = await _doctorService.Update(doctor, doctorId);
 
             if (!response.IsSuccess)
-            { 
+            {
                 return NotFound(response.Error);
             }
 
