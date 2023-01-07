@@ -3,6 +3,7 @@ using MyDocAppointment.Application.Commands;
 using MyDocAppointment.Application.Mappers;
 using MyDocAppointment.Application.Response;
 using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.Internal;
 
 namespace MyDocAppointment.API.Handlers
 {
