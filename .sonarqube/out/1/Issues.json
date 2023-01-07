@@ -21,7 +21,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 11,
                   "startColumn": 16,
@@ -34,7 +34,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 12,
                   "startColumn": 28,
@@ -58,7 +58,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 11,
                   "startColumn": 16,
@@ -71,7 +71,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 13,
                   "startColumn": 30,
@@ -95,7 +95,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 11,
                   "startColumn": 16,
@@ -108,7 +108,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 14,
                   "startColumn": 31,
@@ -132,7 +132,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 11,
                   "startColumn": 16,
@@ -145,7 +145,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 15,
                   "startColumn": 35,
@@ -169,7 +169,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 11,
                   "startColumn": 16,
@@ -182,12 +182,91 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
                 "region": {
                   "startLine": 16,
                   "startColumn": 31,
                   "endLine": 16,
                   "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'DrugStocks' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 16,
+                  "endLine": 11,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/AppDbContext.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 33,
+                  "endLine": 17,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possible null reference return.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/Repositories/DrugStocksRepository.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 20,
+                  "endLine": 19,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S927",
+          "level": "warning",
+          "message": "Rename parameter 'drugStock' to 'doctor' to match the interface declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/Repositories/DrugStocksRepository.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 57,
+                  "endLine": 21,
+                  "endColumn": 66
                 }
               }
             }
@@ -203,7 +282,28 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/Migrations/20221206132131_AddSomeColumns.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/Migrations/20221219221533_AddDrugStocksTable.cs",
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 31,
+                  "endLine": 74,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4581",
+          "level": "warning",
+          "message": "Use 'Guid.NewGuid()' or 'Guid.Empty' or add arguments to this GUID instantiation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/Migrations/20221206132131_AddSomeColumns.cs",
                 "region": {
                   "startLine": 105,
                   "startColumn": 31,
@@ -224,7 +324,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Infrastructure/Migrations/20221206132131_AddSomeColumns.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Infrastructure/Migrations/20221206132131_AddSomeColumns.cs",
                 "region": {
                   "startLine": 55,
                   "startColumn": 31,
@@ -240,6 +340,20 @@
         }
       ],
       "rules": {
+        "CS8603": {
+          "id": "CS8603",
+          "shortDescription": "Possible null reference return.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8603)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
         "CS8618": {
           "id": "CS8618",
           "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.",
@@ -262,6 +376,23 @@
           "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4581",
           "properties": {
             "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S927": {
+          "id": "S927",
+          "shortDescription": "Parameter names should match base declaration and other partial definitions",
+          "fullDescription": "The name of a parameter in an externally visible. This rule raises an issue when method override does not match the name of the parameter in the base declaration of the method, or the name of the parameter in the interface declaration of the method or the name of any other partial definition.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-927",
+          "properties": {
+            "category": "Critical Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",

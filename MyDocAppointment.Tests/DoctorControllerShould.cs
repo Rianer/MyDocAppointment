@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using FluentValidation;
-using FluentValidation.Results;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;

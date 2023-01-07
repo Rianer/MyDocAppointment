@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.Internal;
-using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.Infrastructure.Repositories
 {

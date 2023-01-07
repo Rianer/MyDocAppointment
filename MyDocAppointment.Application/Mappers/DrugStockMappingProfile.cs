@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using MyDocAppointment.Application.Commands;
 using MyDocAppointment.Application.Response;
-using MyDocAppointment.Business.Logistics.Internal;
-using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.Application.Mappers
 {

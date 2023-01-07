@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMappingProfile.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using MyDocAppointment.Application.Commands;
+using MyDocAppointment.Application.Response;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.Application.Mappers
+{
+    public class DoctorMappingProfile : Profile
+    {
+        public DoctorMappingProfile()
+        {
+            CreateMap&lt;Doctor, DoctorResponse&gt;().ReverseMap();
+            CreateMap&lt;Doctor, CreateDoctorCommand&gt;().ReverseMap();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,9,10,38,1],[11,9,11,10,1],[12,13,12,62,1],[13,13,13,67,1],[14,9,14,10,1]]);
+    </script>
+  </body>
+</html>

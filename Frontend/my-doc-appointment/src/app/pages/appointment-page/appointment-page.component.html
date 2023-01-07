@@ -1,0 +1,52 @@
+
+<div class="info-box">
+  <div class="title">Make An Appointment</div>
+  <div class="info-content">Here you can make an appointment or check your past appointments</div>
+</div>
+
+<div class="grid-container">
+  <div class="grid-item appointemnt-data">
+    <div class="content-wrapper">
+      <form [formGroup]="newAppointmentForm" (ngSubmit)="makeAppointment()">
+        <div class="user-data" *ngIf="isLogged">
+          <div class="data-field"><span class="field-label">Name:</span> {{userInfo.name}}</div>
+          <div class="data-field"><span class="field-label">Birthdate:</span> {{userInfo.birthdate}}</div>
+        </div>
+        <div class="newuser-data" *ngIf="!isLogged">
+          <div class="txt-field">
+            <label class="field-label">Name:</label>
+            <input formControlName="name" type="text" placeholder="Your name...">
+          </div>
+          <div class="txt-field">
+            <label class="field-label">Birthdate:</label>
+            <input formControlName="birthdate" type="date">
+          </div>
+        </div>
+        <div class="txt-field">
+          <label class="field-label">Service:</label>
+          <select formControlName="service">
+            <option *ngFor="let service of serviceList" [ngValue]="service">{{service.name}}</option>
+          </select>
+        </div>
+        <div class="txt-field">
+          <label class="field-label">Doctor:</label>
+          <select formControlName="doctor" >
+            <option *ngFor="let doctor of doctorList" [ngValue]="doctor">{{doctor.name}}</option>
+          </select>
+        </div>
+        <div class="txt-field">
+          <label class="field-label">Date:</label>
+          <input formControlName="date" type="date">
+        </div>
+        <div class="txt-field">
+          <input type="submit" value="Make Appoitment">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="grid-item appointment-history">
+    <div class="content-wrapper">
+      <p>History Here</p>
+    </div>
+  </div>
+</div>

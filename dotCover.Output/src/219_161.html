@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212213456_AddPaymentToDB.Designer.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+// &lt;auto-generated /&gt;
+using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using MyDocAppointment.Infrastructure;
+
+#nullable disable
+
+namespace MyDocAppointment.Infrastructure.Migrations
+{
+    [DbContext(typeof(AppDbContext))]
+    [Migration(&quot;20221212213456_AddPaymentToDB&quot;)]
+    partial class AddPaymentToDB
+    {
+        /// &lt;inheritdoc /&gt;
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        {
+#pragma warning disable 612, 618
+            modelBuilder
+                .HasAnnotation(&quot;ProductVersion&quot;, &quot;7.0.0&quot;)
+                .HasAnnotation(&quot;Relational:MaxIdentifierLength&quot;, 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.External.Appointment&quot;, b =&gt;
+                {
+                    b.Property&lt;Guid&gt;(&quot;Id&quot;)
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;Guid&gt;(&quot;DoctorID&quot;)
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;Guid&gt;(&quot;PatientID&quot;)
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;DateTime&gt;(&quot;AppointmentTime&quot;)
+                        .HasColumnType(&quot;datetime2&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Location&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;Guid&gt;(&quot;PaymentId&quot;)
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Specialization&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.HasKey(&quot;Id&quot;, &quot;DoctorID&quot;, &quot;PatientID&quot;);
+
+                    b.HasIndex(&quot;DoctorID&quot;);
+
+                    b.HasIndex(&quot;PatientID&quot;);
+
+                    b.HasIndex(&quot;PaymentId&quot;);
+
+                    b.ToTable(&quot;Appointments&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.External.Diagnosis&quot;, b =&gt;
+                {
+                    b.Property&lt;Guid&gt;(&quot;Id&quot;)
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Description&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;DateTime&gt;(&quot;DiagnosisDate&quot;)
+                        .HasColumnType(&quot;datetime2&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Name&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;Guid&gt;(&quot;PatientId&quot;)
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.HasKey(&quot;Id&quot;);
+
+                    b.HasIndex(&quot;PatientId&quot;);
+
+                    b.ToTable(&quot;Diagnosis&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.External.Observation&quot;, b =&gt;
+                {
+                    b.Property&lt;Guid&gt;(&quot;Id&quot;)
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;DateTime&gt;(&quot;Date&quot;)
+                        .HasColumnType(&quot;datetime2&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Description&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;Guid?&gt;(&quot;DiagnosisId&quot;)
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.HasKey(&quot;Id&quot;);
+
+                    b.HasIndex(&quot;DiagnosisId&quot;);
+
+                    b.ToTable(&quot;Observation&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.External.Payment&quot;, b =&gt;
+                {
+                    b.Property&lt;Guid&gt;(&quot;Id&quot;)
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;DateTime&gt;(&quot;AcquittedDate&quot;)
+                        .HasColumnType(&quot;datetime2&quot;);
+
+                    b.Property&lt;double&gt;(&quot;Amount&quot;)
+                        .HasColumnType(&quot;float&quot;);
+
+                    b.Property&lt;DateTime&gt;(&quot;DueDate&quot;)
+                        .HasColumnType(&quot;datetime2&quot;);
+
+                    b.Property&lt;DateTime&gt;(&quot;EmissionDate&quot;)
+                        .HasColumnType(&quot;datetime2&quot;);
+
+                    b.Property&lt;string&gt;(&quot;PaymentMethod&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.HasKey(&quot;Id&quot;);
+
+                    b.ToTable(&quot;Payments&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.Internal.Drug&quot;, b =&gt;
+                {
+                    b.Property&lt;Guid&gt;(&quot;Id&quot;)
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Category&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Name&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;decimal&gt;(&quot;Price&quot;)
+                        .HasColumnType(&quot;decimal(18,2)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Vendor&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.HasKey(&quot;Id&quot;);
+
+                    b.ToTable(&quot;Drugs&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Users.Doctor&quot;, b =&gt;
+                {
+                    b.Property&lt;Guid&gt;(&quot;Id&quot;)
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;int&gt;(&quot;Age&quot;)
+                        .HasColumnType(&quot;int&quot;);
+
+                    b.Property&lt;string&gt;(&quot;EmailAddress&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Gender&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;HomeAddress&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Name&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;PhoneNumber&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Speciality&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Surname&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.HasKey(&quot;Id&quot;);
+
+                    b.ToTable(&quot;Doctors&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Users.Patient&quot;, b =&gt;
+                {
+                    b.Property&lt;Guid&gt;(&quot;Id&quot;)
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType(&quot;uniqueidentifier&quot;);
+
+                    b.Property&lt;int&gt;(&quot;Age&quot;)
+                        .HasColumnType(&quot;int&quot;);
+
+                    b.Property&lt;string&gt;(&quot;EmailAddress&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Gender&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;HomeAddress&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Name&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;PhoneNumber&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.Property&lt;string&gt;(&quot;Surname&quot;)
+                        .IsRequired()
+                        .HasColumnType(&quot;nvarchar(max)&quot;);
+
+                    b.HasKey(&quot;Id&quot;);
+
+                    b.ToTable(&quot;Patients&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.External.Appointment&quot;, b =&gt;
+                {
+                    b.HasOne(&quot;MyDocAppointment.Business.Users.Doctor&quot;, &quot;Doctor&quot;)
+                        .WithMany(&quot;Appointments&quot;)
+                        .HasForeignKey(&quot;DoctorID&quot;)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne(&quot;MyDocAppointment.Business.Users.Patient&quot;, &quot;Patient&quot;)
+                        .WithMany(&quot;Appointments&quot;)
+                        .HasForeignKey(&quot;PatientID&quot;)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne(&quot;MyDocAppointment.Business.Logistics.External.Payment&quot;, &quot;Payment&quot;)
+                        .WithMany()
+                        .HasForeignKey(&quot;PaymentId&quot;)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation(&quot;Doctor&quot;);
+
+                    b.Navigation(&quot;Patient&quot;);
+
+                    b.Navigation(&quot;Payment&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.External.Diagnosis&quot;, b =&gt;
+                {
+                    b.HasOne(&quot;MyDocAppointment.Business.Users.Patient&quot;, null)
+                        .WithMany(&quot;Diagnosis&quot;)
+                        .HasForeignKey(&quot;PatientId&quot;)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.External.Observation&quot;, b =&gt;
+                {
+                    b.HasOne(&quot;MyDocAppointment.Business.Logistics.External.Diagnosis&quot;, null)
+                        .WithMany(&quot;Observations&quot;)
+                        .HasForeignKey(&quot;DiagnosisId&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Logistics.External.Diagnosis&quot;, b =&gt;
+                {
+                    b.Navigation(&quot;Observations&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Users.Doctor&quot;, b =&gt;
+                {
+                    b.Navigation(&quot;Appointments&quot;);
+                });
+
+            modelBuilder.Entity(&quot;MyDocAppointment.Business.Users.Patient&quot;, b =&gt;
+                {
+                    b.Navigation(&quot;Appointments&quot;);
+
+                    b.Navigation(&quot;Diagnosis&quot;);
+                });
+#pragma warning restore 612, 618
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[20,9,20,10,0],[22,13,24,71,0],[26,13,26,78,0],[28,13,29,17,0],[29,17,29,18,0],[29,18,30,21,0],[30,21,31,60,0],[31,60,33,21,0],[33,21,34,60,0],[34,60,36,21,0],[36,21,37,60,0],[37,60,39,21,0],[39,21,40,53,0],[40,53,42,21,0],[42,21,44,57,0],[44,57,46,21,0],[46,21,47,60,0],[47,60,49,21,0],[49,21,51,57,0],[51,57,53,21,0],[53,21,53,61,0],[53,61,55,21,0],[55,21,55,44,0],[55,44,57,21,0],[57,21,57,45,0],[57,45,59,21,0],[59,21,59,45,0],[59,45,61,21,0],[61,21,61,47,0],[61,47,62,17,0],[62,17,62,18,0],[62,18,62,20,0],[64,13,65,17,0],[65,17,65,18,0],[65,18,66,21,0],[66,21,68,60,0],[68,60,70,21,0],[70,21,72,57,0],[72,57,74,21,0],[74,21,75,53,0],[75,53,77,21,0],[77,21,79,57,0],[79,57,81,21,0],[81,21,82,60,0],[82,60,84,21,0],[84,21,84,36,0],[84,36,86,21,0],[86,21,86,45,0],[86,45,88,21,0],[88,21,88,44,0],[88,44,89,17,0],[89,17,89,18,0],[89,18,89,20,0],[91,13,92,17,0],[92,17,92,18,0],[92,18,93,21,0],[93,21,95,60,0],[95,60,97,21,0],[97,21,98,53,0],[98,53,100,21,0],[100,21,102,57,0],[102,57,104,21,0],[104,21,105,60,0],[105,60,107,21,0],[107,21,107,36,0],[107,36,109,21,0],[109,21,109,47,0],[109,47,111,21,0],[111,21,111,46,0],[111,46,112,17,0],[112,17,112,18,0],[112,18,112,20,0],[114,13,115,17,0],[115,17,115,18,0],[115,18,116,21,0],[116,21,118,60,0],[118,60,120,21,0],[120,21,121,53,0],[121,53,123,21,0],[123,21,124,49,0],[124,49,126,21,0],[126,21,127,53,0],[127,53,129,21,0],[129,21,130,53,0],[130,53,132,21,0],[132,21,134,57,0],[134,57,136,21,0],[136,21,136,36,0],[136,36,138,21,0],[138,21,138,43,0],[138,43,139,17,0],[139,17,139,18,0],[139,18,139,20,0],[141,13,142,17,0],[142,17,142,18,0],[142,18,143,21,0],[143,21,145,60,0],[145,60,147,21,0],[147,21,149,57,0],[149,57,151,21,0],[151,21,153,57,0],[153,57,155,21,0],[155,21,156,57,0],[156,57,158,21,0],[158,21,160,57,0],[160,57,162,21,0],[162,21,162,36,0],[162,36,164,21,0],[164,21,164,40,0],[164,40,165,17,0],[165,17,165,18,0],[165,18,165,20,0],[167,13,168,17,0],[168,17,168,18,0],[168,18,169,21,0],[169,21,171,60,0],[171,60,173,21,0],[173,21,174,47,0],[174,47,176,21,0],[176,21,178,57,0],[178,57,180,21,0],[180,21,182,57,0],[182,57,184,21,0],[184,21,186,57,0],[186,57,188,21,0],[188,21,190,57,0],[190,57,192,21,0],[192,21,194,57,0],[194,57,196,21,0],[196,21,198,57,0],[198,57,200,21,0],[200,21,202,57,0],[202,57,204,21,0],[204,21,204,36,0],[204,36,206,21,0],[206,21,206,42,0],[206,42,207,17,0],[207,17,207,18,0],[207,18,207,20,0],[209,13,210,17,0],[210,17,210,18,0],[210,18,211,21,0],[211,21,213,60,0],[213,60,215,21,0],[215,21,216,47,0],[216,47,218,21,0],[218,21,220,57,0],[220,57,222,21,0],[222,21,224,57,0],[224,57,226,21,0],[226,21,228,57,0],[228,57,230,21,0],[230,21,232,57,0],[232,57,234,21,0],[234,21,236,57,0],[236,57,238,21,0],[238,21,240,57,0],[240,57,242,21,0],[242,21,242,36,0],[242,36,244,21,0],[244,21,244,43,0],[244,43,245,17,0],[245,17,245,18,0],[245,18,245,20,0],[247,13,248,17,0],[248,17,248,18,0],[248,18,249,21,0],[249,21,253,39,0],[253,39,255,21,0],[255,21,259,39,0],[259,39,261,21,0],[261,21,265,39,0],[265,39,267,21,0],[267,21,267,44,0],[267,44,269,21,0],[269,21,269,45,0],[269,45,271,21,0],[271,21,271,45,0],[271,45,272,17,0],[272,17,272,18,0],[272,18,272,20,0],[274,13,275,17,0],[275,17,275,18,0],[275,18,276,21,0],[276,21,280,39,0],[280,39,281,17,0],[281,17,281,18,0],[281,18,281,20,0],[283,13,284,17,0],[284,17,284,18,0],[284,18,285,21,0],[285,21,287,55,0],[287,55,288,17,0],[288,17,288,18,0],[288,18,288,20,0],[290,13,291,17,0],[291,17,291,18,0],[291,18,292,21,0],[292,21,292,50,0],[292,50,293,17,0],[293,17,293,18,0],[293,18,293,20,0],[295,13,296,17,0],[296,17,296,18,0],[296,18,297,21,0],[297,21,297,50,0],[297,50,298,17,0],[298,17,298,18,0],[298,18,298,20,0],[300,13,301,17,0],[301,17,301,18,0],[301,18,302,21,0],[302,21,302,50,0],[302,50,304,21,0],[304,21,304,47,0],[304,47,305,17,0],[305,17,305,18,0],[305,18,305,20,0],[307,9,307,10,0]]);
+    </script>
+  </body>
+</html>

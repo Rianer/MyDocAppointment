@@ -1,14 +1,14 @@
-r
-dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\DiscountType.cs
+e
+WF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\DiscountType.cs
 
- s
-eC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\PaymentMethod.cs
+ f
+XF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\PaymentMethod.cs
 
- r
-dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\PersonGender.cs
+ e
+WF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\PersonGender.cs
 
- „
-^C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\Result.cs2
+ ÷
+QF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\Result.cs2
  		    
   
   
@@ -17,8 +17,8 @@ dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\He
 		 $
 
  $
-, 1 €
-fC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\ResultOfEntity.cs2
+, 1 ó
+YF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\ResultOfEntity.cs2
      F
    $. 5 % $ %
   
@@ -30,11 +30,11 @@ fC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\He
 6 < 
 
 & -
-5 : t
-fC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\Specialization.cs
+5 : g
+YF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\Specialization.cs
 
- à
-rC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IAppointmentsRepository.cs
+ Ó
+eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IAppointmentsRepository.cs
 
  ,
 
@@ -54,8 +54,8 @@ rC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\In
 
  "
 
-( *
-oC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IAppointmentsService.cs
+( *ô
+bF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IAppointmentsService.cs
 
  )
 
@@ -83,8 +83,8 @@ oC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\In
 
 5 @
 
-G IÛ
-mC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDoctorsRepository.cs
+G Iæ
+`F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDoctorsRepository.cs
 
  '
 
@@ -92,20 +92,26 @@ mC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\In
 
  !
 
-		 
+		 
 
-		 !
+		% +
 
 
 
- 
+ 
 
-" (
+
+
+ !
 
- 
+ 
 
-# %ü
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDoctorsService.cs
+" (
+
+ 
+
+# %ï
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDoctorsService.cs
 
  $
 
@@ -131,8 +137,8 @@ jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\In
 
 + 1
 
-8 @Ù
-kC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDrugsRepository.cs
+8 @Ì
+^F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugsRepository.cs
 
  %
 
@@ -152,8 +158,8 @@ kC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\In
 
  
 
-! #ú
-hC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDrugsService.cs
+! #í
+[F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugsService.cs
 
  "
 
@@ -181,8 +187,21 @@ hC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\In
 
 ' +
 
-2 8Ü
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IPatientsRepository.cs
+2 8­
+cF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugStocksRepository.cs
+
+ *
+
+  
+
++ 1
+
+% +
+
+		 
+
+		  &Ï
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IPatientsRepository.cs
 
  (
 
@@ -202,8 +221,8 @@ nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\In
 
  
 
-$ &ý
-kC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IPatientsService.cs
+$ &ð
+^F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IPatientsService.cs
 
  %
 
@@ -229,31 +248,31 @@ kC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\In
 
 - 4
 
-; Dè
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Appointment.cs
+; DÛ
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Appointment.cs
 
- 
-
- 
-
-		 
+ 
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- ,
+ 
 
- '
+ 
 
- %
+ ,
 
-  'î
-lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Diagnosis.cs2
+ '
+
+ %
+
+  'á
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Diagnosis.cs2
   & ' $$ #
 		  
 
@@ -290,8 +309,8 @@ lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Lo
 NN% )PP RR 
 NN: EUU WW )(
 NNV cZZ ``0 =ddC P
-\\ #`` Þ
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Observation.cs2
+\\ #`` Ñ
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Observation.cs2
   ( )  %
   
 		  
@@ -303,8 +322,8 @@ nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Lo
 8 <, 0L P
 E P )
    !
- #/ :À
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Payment.cs
+ #/ :³
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Payment.cs
 
  
 
@@ -320,8 +339,8 @@ jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Lo
 
  $
 
- %®
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Cabinet.cs
+ %¡
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Cabinet.cs
 
  
 ' ,		 
@@ -346,50 +365,54 @@ jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Lo
 !!, -!!1 2
 
 )) 
-))' 0** #++ %‰
-gC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Drug.cs
+))' 0** #++ %ˆ
+ZF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Drug.cs
 
- 
+ 
 
- 
+ 
 
- 
+		 
 
- 
-  
-		  
+
+
+ 
+  
+  
 
- 
-( 0 
+' 1
 
- "
-* 5 "Ö
-lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\DrugStock.cs
+ 
+( 0 
+
+ "
+* 5 "É
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\DrugStock.cs
 
  
- "		 
-( 0
+ "
 
- 
-7 C '
-  
- 		  2
- 
+ 
+( 0 
+7 C '
+ 		 
+  
 
-    (   2
-     ( 
+  2
+       (!! 2
+     (   
 
- %
+ %
 
- 
-$ + 
+ 
+$ + 
 
- &
-+ 3  
+ &
++ 3  
 
- 
-" *, 4   $ê
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Storage.cs
+ 
+" *  , 4!! $Ý
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Storage.cs
 
  
 % -
@@ -409,49 +432,53 @@ jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Lo
 
  !
 ' ), .
-  $ %®
-\C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Doctor.cs<
-  # $ $ ((  
- (%% (
-		" .&& 22 77 
+  $ %¡
+OF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Doctor.cs<
+  # $ $ ))  
+		 (&& (
+
+
+" .'' 33 88 
 
-% +
-3 7 
-@ G !
-M P   
-Y _- 3L R
- "" +
-( 3## )
-< G$$ )
-P ^/ =T b
- %9 E!! %
- /C W%% 1
- ((* 0
+% +
+3 7 
+@ G   !
+M P!! 
+Y _- 3L R
+ ## +
+( 3$$ )
+< G%% )
+P ^/ =T b
+ %9 E"" %
+ /C W&& 1
+ ))* 0
 
-++ $
-++1 <-- 77 (¥
-]C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Patient.cs2
-  $ % "" !(
-" . ,, 11 (
-		  )   << AA 
+,, $
+,,1 <.. 88 (˜
+PF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Patient.cs2
+  $ % ## !(
+		" .   -- 22 (
+
+
+  )!! == BB 
 
-& ,
-4 8 
-A H !
-N Q 
-Z `- 3M S
-  +
-( 3 )
-< G )
- %9 E %
- ""+ 2
+& ,
+4 8 
+A H !
+N Q 
+Z `- 3M S
+  +
+( 3 )
+< G )
+ %9 E %
+ ##+ 2
 
-%% $
-%%1 <'' 11 (
+&& $
+&&1 <(( 22 (
 
-55 "
-55- 677 AA #Ê
-\C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Person.cs
+66 "
+66- 688 BB #½
+OF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Person.cs
 
   
 

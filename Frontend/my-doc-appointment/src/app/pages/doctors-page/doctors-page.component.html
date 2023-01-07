@@ -1,0 +1,23 @@
+<div class="info-box">
+    <div class="title">Our Doctors</div>
+    <div class="info-content">Here you can check all our doctors and their specialities</div>
+</div>
+
+<div class="content-wrapper">
+    <table class="info-table">
+        <tr class="row-header">
+            <th>#</th>
+            <th>Doctor</th>
+            <th>Email</th>
+            <th>Speciality</th>
+            <th>Details</th>
+        </tr>
+        <tr class="row" *ngFor="let doctor of doctors; let i = index;">
+            <td><div class="table-content">{{i+1}}</div></td>
+            <td><div class="table-content">{{doctor.name + ' ' + doctor.surname}}</div></td>
+            <td><div class="table-content">{{doctor.emailAddress}}</div></td>
+            <td><div class="table-content">{{doctor.speciality}}</div></td>
+            <td class="activation-cell"><new-instance buttonInfo='Show Details' [insertForm]="false" [doctor]="doctor"></new-instance></td>
+        </tr>
+    </table>
+</div>

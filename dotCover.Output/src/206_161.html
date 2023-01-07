@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\ConfigureServices.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Infrastructure.Repositories;
+
+namespace MyDocAppointment.Infrastructure
+{
+    public static class ConfigureServices
+    {
+        public static IServiceCollection AddInfrastrutureServices
+            (this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddScoped&lt;IDoctorsRepository, DoctorsRepository&gt;();
+            services.AddScoped&lt;IDrugsRepository, DrugsRepository&gt;();
+            services.AddScoped&lt;IDoctorsRepository, DoctorsRepository&gt;();
+            services.AddScoped&lt;IPatientsRepository, PatientsRepository&gt;();
+            services.AddScoped&lt;IAppointmentsRepository, AppointmentsRepository&gt;();
+            services.AddScoped&lt;IDrugStocksRepository, DrugStocksRepository&gt;();
+            services.
+                AddDbContext&lt;AppDbContext&gt;
+                (m =&gt; m.UseSqlServer(
+                    configuration.GetConnectionString(&quot;MyDocAppointment&quot;)),
+                    ServiceLifetime.Singleton);
+            return services;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[13,9,13,10,1],[14,13,14,73,1],[15,13,15,69,1],[16,13,16,73,1],[17,13,17,75,1],[18,13,18,83,1],[19,13,19,79,1],[20,13,22,23,1],[22,23,23,75,1],[23,75,24,48,1],[25,13,25,29,1],[26,9,26,10,1]]);
+    </script>
+  </body>
+</html>

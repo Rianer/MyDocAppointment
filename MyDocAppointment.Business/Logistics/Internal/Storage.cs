@@ -1,29 +1,44 @@
 using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Interfaces;
 
 namespace MyDocAppointment.Business.Logistics.Internal
 {
     public class Storage
     {
-        public Storage(List<Cabinet> cabinets)
+        public Guid Id { get; set; }
+        public List<DrugEntry>? Inventory { get; private set; }
+
+        public static Result<Storage> Create()
         {
-            Id = Guid.NewGuid();
-            Cabinets = cabinets;
-        }
-        public Guid Id { private set; get; }
-        public List<Cabinet> Cabinets { private set; get; }
+            Storage storage = new Storage()
+            {
+                Id = Guid.NewGuid(),
+                Inventory = new List<DrugEntry>()
+            };
 
-        public Result AddCabinet(Cabinet cabinet){
-            Cabinets.Add(cabinet);
+            return Result<Storage>.Success(storage);
+        }
+
+        public Result RemoveEntry(Guid drugId){
+            int index = Inventory.FindIndex(i => i.Drug.Id == drugId);
+            if(index == -1){
+                return Result.Failure("Drug not found in storage!");
+            }
+
+            Inventory.RemoveAt(index);
             return Result.Success();
-        } 
-
-        public void RemoveCabinet(Cabinet cabinet){
-            Cabinets.RemoveAll(c => c.Id == cabinet.Id);
         }
 
-        public void RemoveCabinet(Guid id){
-            Cabinets.RemoveAll(c => c.Id == id);
-        }
+        public Result AddEntry(Drug drug, int quantity, DateTime expirationDate){
+            var result = DrugEntry.Create(drug, quantity, expirationDate);
 
+            if(result.IsFailure == true)
+            {
+                return Result.Failure(result.Error);
+            }
+
+            Inventory.Add(result.Entity);
+            return Result.Success();
+        }
     }
 }

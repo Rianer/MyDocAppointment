@@ -1,0 +1,46 @@
+<div class="overlay" *ngIf="showOverlay" (click)="closeOverlay($event)">
+    <div class="form-panel">
+        <form [formGroup]="newDoctorForm" (ngSubmit)="createDoctor()">
+            
+            <div class="txt-field">
+                <label class="field-label">Name:</label>
+                <input formControlName="name" type="text">
+            </div>
+            <div class="txt-field">
+                <label class="field-label">Surname:</label>
+                <input formControlName="surname" type="text">
+            </div>
+            <div class="txt-field">
+                <label class="field-label">Age:</label>
+                <input formControlName="age" type="text">
+            </div>
+            <div class="txt-field">
+                <label class="field-label">Email Address:</label>
+                <input formControlName="emailAddress" type="text">
+            </div>
+            <div class="txt-field">
+                <label class="field-label">Phone Number:</label>
+                <input formControlName="phoneNumber" type="text">
+            </div>
+            <div class="txt-field">
+                <label class="field-label">Home Address:</label>
+                <input formControlName="homeAddress" type="text">
+            </div>
+            <div class="txt-field">
+                <label class="field-label">Speciality:</label>
+                <select formControlName="speciality" >
+                    <option *ngFor="let spec of specialities" [ngValue]="spec">{{spec}}</option>
+                </select>
+            </div>
+            <div class="txt-field">
+                <label class="field-label">Gender:</label>
+                <select formControlName="gender" >
+                    <option *ngFor="let g of gender" [ngValue]="g">{{g}}</option>
+                </select>
+            </div>
+            <div class="txt-field">
+                <input type="submit" value="Add Doctor">
+            </div>
+          </form>
+    </div>
+</div>

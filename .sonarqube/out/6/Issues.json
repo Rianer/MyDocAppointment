@@ -12,13 +12,115 @@
       },
       "results": [
         {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Item' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/DrugStock.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 16,
+                  "endLine": 6,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/DrugStock.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 29,
+                  "endLine": 15,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field 'inventory' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 16,
+                  "endLine": 6,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 33,
+                  "endLine": 16,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'DrugStocks' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Drug.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 40,
+                  "endLine": 13,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Drug.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 40,
+                  "endLine": 13,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "CS8602",
           "level": "warning",
           "message": "Dereference of a possibly null reference.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 42,
                   "startColumn": 13,
@@ -39,7 +141,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 42,
                   "startColumn": 30,
@@ -60,7 +162,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 48,
                   "startColumn": 17,
@@ -81,7 +183,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 58,
                   "startColumn": 18,
@@ -102,46 +204,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 60,
                   "startColumn": 37,
                   "endLine": 60,
                   "endColumn": 81
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
-          "message": "Non-nullable field 'inventory' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
-                "region": {
-                  "startLine": 6,
-                  "startColumn": 16,
-                  "endLine": 6,
-                  "endColumn": 23
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 33,
-                  "endLine": 16,
-                  "endColumn": 42
                 }
               }
             }
@@ -157,7 +225,28 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 21,
+                  "endLine": 19,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
                 "region": {
                   "startLine": 20,
                   "startColumn": 32,
@@ -178,33 +267,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
                 "region": {
                   "startLine": 21,
                   "startColumn": 20,
                   "endLine": 21,
                   "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 21,
-                  "endLine": 19,
-                  "endColumn": 23
                 }
               }
             }
@@ -220,11 +288,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/Ovidiu/source/repos/MyDocAppointmentRight/MyDocAppointment.Business/Users/Doctor.cs",
+                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Users/Doctor.cs",
                 "region": {
-                  "startLine": 11,
+                  "startLine": 12,
                   "startColumn": 44,
-                  "endLine": 12,
+                  "endLine": 13,
                   "endColumn": 96
                 }
               }

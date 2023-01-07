@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugStockConfiguration.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Business.Logistics.Internal;
+
+namespace MyDocAppointment.Infrastructure.Configurations
+{
+    internal class DrugStockConfiguration : IEntityTypeConfiguration&lt;DrugStock&gt;
+    {
+        public void Configure(EntityTypeBuilder&lt;DrugStock&gt; builder)
+        {
+            builder.HasKey(d =&gt; d.Id);
+            builder.HasOne(d =&gt; d.Item).WithMany(d =&gt; d.DrugStocks);
+            builder.Property(d =&gt; d.Quantity);
+            builder.Property(d =&gt; d.IsRestricted);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,9,10,10,1],[11,13,11,39,1],[12,13,12,69,1],[13,13,13,47,1],[14,13,14,51,1],[15,9,15,10,1]]);
+    </script>
+  </body>
+</html>

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
 using MyDocAppointment.Application.Commands;
 using MyDocAppointment.Application.Mappers;
 using MyDocAppointment.Application.Response;

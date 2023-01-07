@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221127131857_FirstMigration.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace MyDocAppointment.Infrastructure.Migrations
+{
+    /// &lt;inheritdoc /&gt;
+    public partial class FirstMigration : Migration
+    {
+        /// &lt;inheritdoc /&gt;
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: &quot;Doctors&quot;,
+                columns: table =&gt; new
+                {
+                    Id = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    Speciality = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Name = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Surname = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Age = table.Column&lt;int&gt;(type: &quot;int&quot;, nullable: false),
+                    Gender = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    EmailAddress = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false)
+                },
+                constraints: table =&gt;
+                {
+                    table.PrimaryKey(&quot;PK_Doctors&quot;, x =&gt; x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: &quot;Drugs&quot;,
+                columns: table =&gt; new
+                {
+                    Id = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    Name = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Vendor = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Category = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Price = table.Column&lt;decimal&gt;(type: &quot;decimal(18,2)&quot;, nullable: false)
+                },
+                constraints: table =&gt;
+                {
+                    table.PrimaryKey(&quot;PK_Drugs&quot;, x =&gt; x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: &quot;Patients&quot;,
+                columns: table =&gt; new
+                {
+                    Id = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    Name = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Surname = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Age = table.Column&lt;int&gt;(type: &quot;int&quot;, nullable: false),
+                    Gender = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    EmailAddress = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false)
+                },
+                constraints: table =&gt;
+                {
+                    table.PrimaryKey(&quot;PK_Patients&quot;, x =&gt; x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: &quot;Payment&quot;,
+                columns: table =&gt; new
+                {
+                    Id = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    Amount = table.Column&lt;double&gt;(type: &quot;float&quot;, nullable: false),
+                    PaymentMethod = table.Column&lt;int&gt;(type: &quot;int&quot;, nullable: false),
+                    DueDate = table.Column&lt;DateTime&gt;(type: &quot;datetime2&quot;, nullable: false),
+                    EmissionDate = table.Column&lt;DateTime&gt;(type: &quot;datetime2&quot;, nullable: false),
+                    AcquittedDate = table.Column&lt;DateTime&gt;(type: &quot;datetime2&quot;, nullable: false)
+                },
+                constraints: table =&gt;
+                {
+                    table.PrimaryKey(&quot;PK_Payment&quot;, x =&gt; x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: &quot;Diagnosis&quot;,
+                columns: table =&gt; new
+                {
+                    Id = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    Name = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    Description = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    DiagnosisDate = table.Column&lt;DateTime&gt;(type: &quot;datetime2&quot;, nullable: false),
+                    UserId = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    PatientId = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: true)
+                },
+                constraints: table =&gt;
+                {
+                    table.PrimaryKey(&quot;PK_Diagnosis&quot;, x =&gt; x.Id);
+                    table.ForeignKey(
+                        name: &quot;FK_Diagnosis_Patients_PatientId&quot;,
+                        column: x =&gt; x.PatientId,
+                        principalTable: &quot;Patients&quot;,
+                        principalColumn: &quot;Id&quot;);
+                });
+
+            migrationBuilder.CreateTable(
+                name: &quot;Appointment&quot;,
+                columns: table =&gt; new
+                {
+                    Id = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    PaymentId = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    Location = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    PatientID = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    DoctorID = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    Specialization = table.Column&lt;int&gt;(type: &quot;int&quot;, nullable: false),
+                    AppointmentTime = table.Column&lt;DateTime&gt;(type: &quot;datetime2&quot;, nullable: false)
+                },
+                constraints: table =&gt;
+                {
+                    table.PrimaryKey(&quot;PK_Appointment&quot;, x =&gt; x.Id);
+                    table.ForeignKey(
+                        name: &quot;FK_Appointment_Doctors_DoctorID&quot;,
+                        column: x =&gt; x.DoctorID,
+                        principalTable: &quot;Doctors&quot;,
+                        principalColumn: &quot;Id&quot;,
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: &quot;FK_Appointment_Patients_PatientID&quot;,
+                        column: x =&gt; x.PatientID,
+                        principalTable: &quot;Patients&quot;,
+                        principalColumn: &quot;Id&quot;,
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: &quot;FK_Appointment_Payment_PaymentId&quot;,
+                        column: x =&gt; x.PaymentId,
+                        principalTable: &quot;Payment&quot;,
+                        principalColumn: &quot;Id&quot;,
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: &quot;Observation&quot;,
+                columns: table =&gt; new
+                {
+                    Id = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: false),
+                    Date = table.Column&lt;DateTime&gt;(type: &quot;datetime2&quot;, nullable: false),
+                    Description = table.Column&lt;string&gt;(type: &quot;nvarchar(max)&quot;, nullable: false),
+                    DiagnosisId = table.Column&lt;Guid&gt;(type: &quot;uniqueidentifier&quot;, nullable: true)
+                },
+                constraints: table =&gt;
+                {
+                    table.PrimaryKey(&quot;PK_Observation&quot;, x =&gt; x.Id);
+                    table.ForeignKey(
+                        name: &quot;FK_Observation_Diagnosis_DiagnosisId&quot;,
+                        column: x =&gt; x.DiagnosisId,
+                        principalTable: &quot;Diagnosis&quot;,
+                        principalColumn: &quot;Id&quot;);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: &quot;IX_Appointment_DoctorID&quot;,
+                table: &quot;Appointment&quot;,
+                column: &quot;DoctorID&quot;);
+
+            migrationBuilder.CreateIndex(
+                name: &quot;IX_Appointment_PatientID&quot;,
+                table: &quot;Appointment&quot;,
+                column: &quot;PatientID&quot;);
+
+            migrationBuilder.CreateIndex(
+                name: &quot;IX_Appointment_PaymentId&quot;,
+                table: &quot;Appointment&quot;,
+                column: &quot;PaymentId&quot;);
+
+            migrationBuilder.CreateIndex(
+                name: &quot;IX_Diagnosis_PatientId&quot;,
+                table: &quot;Diagnosis&quot;,
+                column: &quot;PatientId&quot;);
+
+            migrationBuilder.CreateIndex(
+                name: &quot;IX_Observation_DiagnosisId&quot;,
+                table: &quot;Observation&quot;,
+                column: &quot;DiagnosisId&quot;);
+        }
+
+        /// &lt;inheritdoc /&gt;
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: &quot;Appointment&quot;);
+
+            migrationBuilder.DropTable(
+                name: &quot;Drugs&quot;);
+
+            migrationBuilder.DropTable(
+                name: &quot;Observation&quot;);
+
+            migrationBuilder.DropTable(
+                name: &quot;Doctors&quot;);
+
+            migrationBuilder.DropTable(
+                name: &quot;Payment&quot;);
+
+            migrationBuilder.DropTable(
+                name: &quot;Diagnosis&quot;);
+
+            migrationBuilder.DropTable(
+                name: &quot;Patients&quot;);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,10,0],[13,13,15,35,0],[15,35,24,18,0],[24,18,26,17,0],[26,17,26,18,0],[26,18,27,21,0],[27,21,27,63,0],[27,63,28,17,0],[28,17,28,18,0],[28,18,28,20,0],[30,13,32,35,0],[32,35,39,18,0],[39,18,41,17,0],[41,17,41,18,0],[41,18,42,21,0],[42,21,42,61,0],[42,61,43,17,0],[43,17,43,18,0],[43,18,43,20,0],[45,13,47,35,0],[47,35,55,18,0],[55,18,57,17,0],[57,17,57,18,0],[57,18,58,21,0],[58,21,58,64,0],[58,64,59,17,0],[59,17,59,18,0],[59,18,59,20,0],[61,13,63,35,0],[63,35,71,18,0],[71,18,73,17,0],[73,17,73,18,0],[73,18,74,21,0],[74,21,74,63,0],[74,63,75,17,0],[75,17,75,18,0],[75,18,75,20,0],[77,13,79,35,0],[79,35,87,18,0],[87,18,89,17,0],[89,17,89,18,0],[89,18,90,21,0],[90,21,90,65,0],[90,65,91,21,0],[91,21,95,48,0],[95,48,96,17,0],[96,17,96,18,0],[96,18,96,20,0],[98,13,100,35,0],[100,35,109,18,0],[109,18,111,17,0],[111,17,111,18,0],[111,18,112,21,0],[112,21,112,67,0],[112,67,113,21,0],[113,21,118,62,0],[118,62,119,21,0],[119,21,124,62,0],[124,62,125,21,0],[125,21,130,62,0],[130,62,131,17,0],[131,17,131,18,0],[131,18,131,20,0],[133,13,135,35,0],[135,35,141,18,0],[141,18,143,17,0],[143,17,143,18,0],[143,18,144,21,0],[144,21,144,67,0],[144,67,145,21,0],[145,21,149,48,0],[149,48,150,17,0],[150,17,150,18,0],[150,18,150,20,0],[152,13,155,37,0],[157,13,160,38,0],[162,13,165,38,0],[167,13,170,38,0],[172,13,175,40,0],[176,9,176,10,0],[180,9,180,10,0],[181,13,182,38,0],[184,13,185,32,0],[187,13,188,38,0],[190,13,191,34,0],[193,13,194,34,0],[196,13,197,36,0],[199,13,200,35,0],[201,9,201,10,0]]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMappingProfile.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using MyDocAppointment.Application.Commands;
+using MyDocAppointment.Application.Response;
+using MyDocAppointment.Business.Logistics.Internal;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.Application.Mappers
+{
+    public class DrugStockMappingProfile : Profile
+    {
+        public DrugStockMappingProfile()
+        {
+            CreateMap&lt;DrugStock, DrugStockResponse&gt;()
+                .ForMember(dest =&gt; dest.DrugId,
+                opt =&gt; opt.MapFrom(src =&gt; src.Item.Id))
+                .ForMember(dest =&gt; dest.DrugName,
+                opt =&gt; opt.MapFrom(src =&gt; src.Item.Name))
+                .ReverseMap();
+            CreateMap&lt;DrugStock, CreateDrugStockCommand&gt;()
+                 .ForMember(dest =&gt; dest.DrugId,
+                opt =&gt; opt.MapFrom(src =&gt; src.Item.Id))
+                 .ForMember(dest =&gt; dest.DrugName,
+                opt =&gt; opt.MapFrom(src =&gt; src.Item.Name))
+                 .ReverseMap();
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[11,9,11,41,1],[12,9,12,10,1],[13,13,15,24,1],[15,24,15,55,1],[15,55,17,24,1],[17,24,17,57,1],[17,57,18,31,1],[19,13,21,24,1],[21,24,21,55,1],[21,55,23,24,1],[23,24,23,57,1],[23,57,24,32,1],[25,9,25,10,1]]);
+    </script>
+  </body>
+</html>

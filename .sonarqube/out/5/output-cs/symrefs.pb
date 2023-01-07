@@ -1,5 +1,5 @@
-¨
-rC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\AppointmentControllerTests.cs
+›
+eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\AppointmentControllerTests.cs
 
  ,2
  #G MA G5 ;''5 ;
@@ -18,8 +18,8 @@ rC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Integration
 '' (( ))' /
 )) **$ 2
 --% 6 .
-// == !¦
-lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs
+// == !™
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs
 
  %
 
@@ -31,28 +31,32 @@ lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Integration
 
 $ +
 
- %®
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs
+ %í
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs
 
- '2
- #B H= C5 ;''5 ;
+ '<
+ #B H= C5 ;&&5 ;005 ;
 
  B
- J S
-  - 
+ J S
+  - 
 
-  
-  $
+  
+  $
 
- 2
- !! 
+ 2
+    
 
-%% A
-'' (( ))' /
-)) **# 1++$ 2
---  , (
-// << Œ
-lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\DrugsControllerTests.cs
+$$ A
+&& '' ((' /
+(( ))# 1**$ 2
+
+.. =
+00 11 22' /
+22 44$ 2
+AA  , (
+CC PP ÿ
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\DrugsControllerTests.cs
 
  %(
  #@ F5 ;%%5 ;
@@ -69,8 +73,8 @@ lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Integration
 %% && ''' /
 '' (($ 2
 ++ ( $
--- 55 ¯
-oC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\PatientsControllerTests.cs
+-- 55 ¢
+bF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\PatientsControllerTests.cs
 
  (2
  #C I= C5 ;''5 ;
@@ -89,5 +93,5 @@ oC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Integration
 '' (( ))' /
 )) **# 1++& 4
 ..! . *
-00 << `
-^C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.IntegrationTests\Usings.cs
+00 << S
+QF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\Usings.cs

@@ -1,34 +1,43 @@
-ë
-bC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\AppDbContext.cs 8r	
-Ç©
-}C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\AppointmentConfiguration.cs 8r	
-Çê
-rC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\Configuration.cs 8r	
-Ç
-ß
-xC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\DoctorConfiguration.cs 8r	
-Çõ
-vC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\DrugConfiguration.cs 8r	
-Çû
-{C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\DrugStockConfiguration.cs 8r	
-Çß
-yC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\PatientConfiguration.cs 8r	
-Ç§
-yC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Configurations\PaymentConfiguration.cs 8r	
-Ç˙
-~C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Migrations\20221127131857_FirstMigration.cs 8j
-≤rÒ	 !"#$%&'()*+-./0123456789:;=>?@ABCDEFGHIJKMNOPQRSTUVWXYZ[\]^_`bcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÖÜáàâäãåçéèêëíìîïñòôöõùûü†¢£§•ß®©™¨≠ÆØ∞≥¥µ∂∏πªºæø¡¬ƒ≈«»… ÀÇu "#$%&(*-/1234568:=?ABCDEFHJMOQRSTUVXZ[]bdfghijklnpqsvwy|}ÇÖáâäãåéêëìòù¢ß¨µ∏ªæ¡ƒ«Å
-~C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Migrations\20221206132131_AddSomeColumns.cs 8jEr^	
- !"$%&'()+,-./023456789:<=>?@ABCFGHIJLMNPQRTUVXYZ\]^_`abdefghiklmnopqrsÇ$+2<BHLPTX\dk¡
-ÇC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Migrations\20221212205434_AddAppointmentToDB.cs 8j
-NrÜ	!"#$&'()+,-.012356789:;=>?@ABCEFGHIJKLOPQRSUVWYZ[]^_abcefghjklmopqrtuvwyz{|}~ÅÇÉÑÖÜáâäãåçéèêëíÇ#!&+035;=CEKQUY]aejotyÅáâèÛ
-~C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Migrations\20221212213456_AddPaymentToDB.cs 8j
-7rQ	!"#$%&')*+,./01234589:;<>?@BCDFGHIJKLNOPQRSTVWXY[\]^_`abcdÇ!).4:>BFNV[a¥
-yC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Repositories\AppointmentsRepository.cs 8r#	
-!"$%&'()Ç	!&Æ
-tC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Repositories\DoctorsRepository.cs 8r"	
-!"$%&'()Ç	!&¨
-rC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Repositories\DrugsRepository.cs 8r"	
-!"$%&'()Ç	!&Ø
-uC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Infrastructure\Repositories\PatientsRepository.cs 8r"	
- !#$%&'(Ç	 %
+œ
+YF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\AppointmentsService.cs 8rG	
+ !"#$%&()*+,-./023456789:<=>?ABCDEFHJKLNPQRSxÇ "$%*+-/4579>CDFJKLNP|
+bF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Commands\CreateDoctorCommand.cs 8r	
+ò
+kF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Commands\CreateDoctorCommandValidator.cs 8r	
+Ç{
+eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Commands\CreateDrugStockCommand.cs 8r	
+ï
+nF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Commands\CreateDrugStockCommandValidator.cs 8r	
+Çâ
+WF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\ConfigureServices.cs 8r	Ç∆
+SF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\DoctorService.cs 8rE	
+ !"#$%&'(*+,-./01245679:;<=>@BCDEFGHIKMNOPxÇ"#%',-/16;<>BCDEFGHIKMΩ
+RF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\DrugsService.cs 8rA	
+ !"#$%&'(*+,-./01245679:;<=>@BCDEGIJKLxÇ"#%',-/16;<>BCDEGI†
+iF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Handlers\CreateDoctorCommandHandler.cs 8r 	
+ !"xÇ©
+mF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Handlers\CreateDrugStocksCommandHandler.cs 8r#
+ "#$%&xÇ "#â
+ZF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMapper.cs 8r	
+xÇ	
+Ç
+bF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMappingProfile.cs 8r	
+Çå
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMapper.cs 8r	
+xÇ	
+ò
+eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMappingProfile.cs 8r	
+Ç
+≈
+UF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\PatientsService.cs 8rC	
+ !"#$%&')*+,-./01345689:;<=>@ABCDEFHJKLMxÇ!"$&+,.05:;=@ABCDEFHJn
+`F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Queries\GetAllDoctorsQuery.csr	è
+gF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Queries\GetAllDoctorsQueryHandler.cs 8r	
+Çq
+cF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Queries\GetAllDrugStocksQuery.csr	í
+jF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Queries\GetAllDrugStocksQueryHandler.cs 8r	
+Çv
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Response\DoctorResponse.cs 8r	
+s
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Response\DrugSockResponse.cs 8r
+	

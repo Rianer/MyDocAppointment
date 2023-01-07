@@ -1,5 +1,5 @@
-×
-dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\DiscountType.cs
+Ê
+WF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\DiscountType.cs
 	namespace 	
 MyDocAppointment
  
@@ -22,8 +22,8 @@ percentage 
 = 
 $num 
 } 
-} Ñ
-eC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\PaymentMethod.cs
+} Ä
+XF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\PaymentMethod.cs
 	namespace 	
 MyDocAppointment
  
@@ -45,8 +45,8 @@ eC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\He
 = 
 $num 
 } 
-} ”
-dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\PersonGender.cs
+} ‡
+WF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\PersonGender.cs
 	namespace 	
 MyDocAppointment
  
@@ -72,8 +72,8 @@ dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\He
 = 
 $num 
 } 
-}		 ò
-^C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\Result.cs
+}		 å
+QF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\Result.cs
 	namespace 	
 MyDocAppointment
  
@@ -165,8 +165,8 @@ dC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\He
 ; 
 } 	
 } 
-} ’
-fC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\ResultOfEntity.cs
+} …
+YF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\ResultOfEntity.cs
 	namespace 	
 MyDocAppointment
  
@@ -287,8 +287,8 @@ fC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\He
 ; 
 } 	
 } 
-} Þ
-fC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Helpers\Specialization.cs
+} Ñ
+YF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Helpers\Specialization.cs
 	namespace 	
 MyDocAppointment
  
@@ -311,8 +311,8 @@ Cardiology 
 = 
 $num 
 } 
-} Ú
-rC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IAppointmentsRepository.cs
+} Í
+eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IAppointmentsRepository.cs
 	namespace 	
 MyDocAppointment
  
@@ -391,8 +391,8 @@ Interfaces$ .
 )* +
 ;+ ,
 } 
-} ê
-oC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IAppointmentsService.cs
+} Ý
+bF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IAppointmentsService.cs
 	namespace 	
 MyDocAppointment
  
@@ -493,8 +493,8 @@ Interfaces$ .
 )I J
 ;J K
 } 
-} ²
-mC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDoctorsRepository.cs
+} Ô	
+`F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDoctorsRepository.cs
 	namespace 	
 MyDocAppointment
  
@@ -516,53 +516,67 @@ Interfaces$ .
 doctor !
 )! "
 ;" #
-Task		 
-Delete		 
-(		 
-Doctor		 
-doctor		 !
-)		! "
-;		" #
+Task		 
+<		 
+Doctor		 
+>		 
+AddAsync		 
+(		 
+Doctor		 $
+doctor		% +
+)		+ ,
+;		, -
 Task
 
- 
-SaveChanges
+ 
+Delete
 
- 
+ 
 (
 
- 
+ 
+Doctor
+
+ 
+doctor
+
+ !
 )
 
- 
+! "
 ;
 
- 
-Task 
-< 
-IEnumerable 
-< 
-Doctor 
->  
->  !
-GetAll" (
-(( )
-)) *
-;* +
+" #
+Task 
+SaveChanges 
+( 
+) 
+; 
 Task 
-< 
-Doctor 
-? 
-> 
-GetById 
-( 
-Guid "
-id# %
-)% &
-;& '
-} 
-} Ã
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDoctorsService.cs
+< 
+IEnumerable 
+< 
+Doctor 
+>  
+>  !
+GetAll" (
+(( )
+)) *
+;* +
+Task 
+< 
+Doctor 
+? 
+> 
+GetById 
+( 
+Guid "
+id# %
+)% &
+;& '
+} 
+} ¶
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDoctorsService.cs
 	namespace 	
 MyDocAppointment
  
@@ -653,8 +667,8 @@ Interfaces$ .
 )@ A
 ;A B
 } 
-} ¢
-kC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDrugsRepository.cs
+} •
+^F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugsRepository.cs
 	namespace 	
 MyDocAppointment
  
@@ -733,8 +747,8 @@ Interfaces$ .
 )# $
 ;$ %
 } 
-} ¯
-hC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IDrugsService.cs
+} ¢
+[F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugsService.cs
 	namespace 	
 MyDocAppointment
  
@@ -835,8 +849,58 @@ Interfaces$ .
 )8 9
 ;9 :
 } 
-} º
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IPatientsRepository.cs
+} ˆ
+cF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IDrugStocksRepository.cs
+	namespace 	
+MyDocAppointment
+ 
+. 
+Business #
+.# $
+
+Interfaces$ .
+{ 
+public 
+
+	interface !
+IDrugStocksRepository *
+{ 
+Task 
+< 
+	DrugStock 
+> 
+AddAsync  
+(  !
+	DrugStock! *
+doctor+ 1
+)1 2
+;2 3
+Task 
+< 
+IEnumerable 
+< 
+	DrugStock "
+>" #
+># $
+GetAll% +
+(+ ,
+), -
+;- .
+Task		 
+<		 
+Drug		 
+>		 
+GetDrug		 
+(		 
+Guid		 
+drugId		  &
+)		& '
+;		' (
+}
+
+ 
+} ­
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IPatientsRepository.cs
 	namespace 	
 MyDocAppointment
  
@@ -915,8 +979,8 @@ Interfaces$ .
 )& '
 ;' (
 } 
-} Í
-kC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Interfaces\IPatientsService.cs
+} À
+^F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Interfaces\IPatientsService.cs
 	namespace 	
 MyDocAppointment
  
@@ -1007,145 +1071,135 @@ Interfaces$ .
 )D E
 ;E F
 } 
-} ¼
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Appointment.cs
-	namespace 	
-MyDocAppointment
+} ¯
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Appointment.cs
+	namespace 	
+MyDocAppointment
  
-. 
-Business #
-.# $
-	Logistics$ -
-.- .
-External. 6
-{ 
-public 
+. 
+Business #
+.# $
+	Logistics$ -
+.- .
+External. 6
+{ 
+public 
 
-class 
-Appointment 
-{ 
-public 
-Guid 
-Id 
-{ 
-get 
-; 
-set !
-;! "
-}# $
-public		 
-Payment		 
-?		 
-Payment		 
-{		  !
-get		" %
-;		% &
-set		' *
-;		* +
-}		, -
+class 
+Appointment 
+{		 
 public
 
- 
-string
+ 
+Guid
 
- 
-Location
+ 
+Id
 
- 
+ 
 {
 
-  
+ 
 get
 
-! $
+ 
 ;
 
-$ %
+ 
 set
 
-& )
+ !
 ;
 
-) *
+! "
 }
 
-+ ,
-=
-
-- .
-string
-
-/ 5
-.
-
-5 6
-Empty
-
-6 ;
-;
-
-; <
-public 
-Guid 
-	PatientID 
-{ 
-get  #
-;# $
-set% (
-;( )
-}* +
-public 
-Guid 
-DoctorID 
-{ 
-get "
-;" #
-set$ '
-;' (
-}) *
-public 
-Specialization 
-Specialization ,
-{- .
-get/ 2
-;2 3
-set4 7
-;7 8
-}9 :
-public 
-DateTime 
-AppointmentTime '
-{( )
-get* -
-;- .
-set/ 2
-;2 3
-}4 5
-public 
-virtual 
-Doctor 
-? 
-Doctor %
-{& '
-get( +
-;+ ,
-set- 0
-;0 1
-}2 3
-public 
-virtual 
-Patient 
-? 
-Patient  '
+# $
+public 
+Payment 
+? 
+Payment 
+{  !
+get" %
+;% &
+set' *
+;* +
+}, -
+public 
+string 
+Location 
+{  
+get! $
+;$ %
+set& )
+;) *
+}+ ,
+=- .
+string/ 5
+.5 6
+Empty6 ;
+;; <
+public 
+Guid 
+	PatientID 
+{ 
+get  #
+;# $
+set% (
+;( )
+}* +
+public 
+Guid 
+DoctorID 
+{ 
+get "
+;" #
+set$ '
+;' (
+}) *
+public 
+Specialization 
+Specialization ,
+{- .
+get/ 2
+;2 3
+set4 7
+;7 8
+}9 :
+public 
+DateTime 
+AppointmentTime '
 {( )
 get* -
 ;- .
 set/ 2
 ;2 3
-}4 5
-} 
-} ãB
-lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Diagnosis.cs
+}4 5
+public 
+virtual 
+Doctor 
+? 
+Doctor %
+{& '
+get( +
+;+ ,
+set- 0
+;0 1
+}2 3
+public 
+virtual 
+Patient 
+? 
+Patient  '
+{( )
+get* -
+;- .
+set/ 2
+;2 3
+}4 5
+} 
+} ÖB
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Diagnosis.cs
 	namespace 	
 MyDocAppointment
  
@@ -1660,8 +1714,8 @@ timeResult`` 
 ;hh# $
 }ii 	
 }jj 
-}kk ç
-nC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Observation.cs
+}kk Ú
+aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Observation.cs
 	namespace 	
 MyDocAppointment
  
@@ -1840,9 +1894,9 @@ timeResult !
 ;; <
 }   	
 }!! 
-}"" »
+}"" ®
 
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\External\Payment.cs
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Payment.cs
 	namespace 	
 MyDocAppointment
  
@@ -1931,8 +1985,8 @@ jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Lo
 ;0 1
 }2 3
 } 
-} ˜#
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Cabinet.cs
+} ‹#
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Cabinet.cs
 	namespace 	
 MyDocAppointment
  
@@ -2191,112 +2245,154 @@ jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Lo
 ;++. /
 },, 	
 }// 
-}00 Ú
-gC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Drug.cs
-	namespace 	
-MyDocAppointment
+}00 ³
+ZF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Drug.cs
+	namespace 	
+MyDocAppointment
  
-. 
-Business #
-.# $
-	Logistics$ -
-.- .
-Internal. 6
-{ 
-public 
+. 
+Business #
+.# $
+	Logistics$ -
+.- .
+Internal. 6
+{ 
+public 
 
-class 
-Drug 
-{ 
-public 
-Guid 
-Id 
-{ 
-get 
-; 
-set !
-;! "
-}" #
-public 
-string 
-Name 
-{ 
-get  
-;  !
-set" %
-;% &
-}' (
-=) *
-string+ 1
-.1 2
-Empty2 7
-;7 8
-public 
-string 
-Vendor 
-{ 
-get "
-;" #
-set$ '
-;' (
-}) *
-=+ ,
-string- 3
-.3 4
-Empty4 9
-;9 :
-public 
-string 
-Category 
-{  
-get! $
-;$ %
-set& )
-;) *
-}+ ,
-=- .
-string/ 5
-.5 6
-Empty6 ;
-;; <
-public		 
-decimal		 
-Price		 
-{		 
-get		 "
-;		" #
-set		$ '
-;		' (
-}		( )
-public 
-void 
-ChangePrice 
-(  
-decimal  '
-newPrice( 0
-)0 1
-{1 2
-Price 
-= 
-newPrice 
-; 
-} 	
+class 
+Drug 
+{ 
+public 
+Guid 
+Id 
+{ 
+get 
+; 
+set !
+;! "
+}" #
+public		 
+string		 
+Name		 
+{		 
+get		  
+;		  !
+set		" %
+;		% &
+}		' (
+=		) *
+string		+ 1
+.		1 2
+Empty		2 7
+;		7 8
+public
+
+ 
+string
+
+ 
+Vendor
+
+ 
+{
+
+ 
+get
+
+ "
+;
+
+" #
+set
+
+$ '
+;
+
+' (
+}
+
+) *
+=
+
++ ,
+string
+
+- 3
+.
+
+3 4
+Empty
+
+4 9
+;
+
+9 :
+public 
+string 
+Category 
+{  
+get! $
+;$ %
+set& )
+;) *
+}+ ,
+=- .
+string/ 5
+.5 6
+Empty6 ;
+;; <
+public 
+decimal 
+Price 
+{ 
+get "
+;" #
+set$ '
+;' (
+}( )
+public 
+virtual 
+List 
+< 
+	DrugStock %
+>% &
+
+DrugStocks' 1
+{2 3
+get4 7
+;7 8
+set9 <
+;< =
+}> ?
 public 
-void 
-ChangeCategory "
-(" #
-string# )
-newCategory* 5
-)5 6
-{6 7
-Category 
-= 
-newCategory "
-;" #
-} 	
-} 
-} —
-lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\DrugStock.cs
+void 
+ChangePrice 
+(  
+decimal  '
+newPrice( 0
+)0 1
+{1 2
+Price 
+= 
+newPrice 
+; 
+} 	
+public 
+void 
+ChangeCategory "
+(" #
+string# )
+newCategory* 5
+)5 6
+{6 7
+Category 
+= 
+newCategory "
+;" #
+} 	
+} 
+} †
+_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\DrugStock.cs
 	namespace 	
 MyDocAppointment
  
@@ -2314,154 +2410,161 @@ lC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Lo
 { 
 public 
 	DrugStock 
-( 
-Drug 
-item "
-," #
-int$ '
-quantity( 0
-,0 1
-bool2 6
-isRestricted7 C
-)C D
-{ 	
-Id 
-= 
-Guid 
-. 
-NewGuid 
-( 
-) 
-;  
-Item		 
-=		 
-item		 
-;		 
-Quantity
+( 
+) 
+{ 
+} 
+public 
+	DrugStock 
+( 
+Drug 
+item "
+," #
+int$ '
+quantity( 0
+,0 1
+bool2 6
+isRestricted7 C
+)C D
+{ 	
+Id		 
+=		 
+Guid		 
+.		 
+NewGuid		 
+(		 
+)		 
+;		  
+Item
 
- 
+ 
 =
 
- 
-quantity
+ 
+item
 
- 
+ 
 ;
 
-  
-IsRestricted 
-= 
-isRestricted '
-;' (
-} 	
-public 
-Guid 
-Id 
-{ 
-get 
-; 
-set !
-;! "
-}" #
+ 
+Quantity 
+= 
+quantity 
+;  
+IsRestricted 
+= 
+isRestricted '
+;' (
+} 	
 public 
-Drug 
-Item 
-{ 
-get 
-; 
-set  #
-;# $
-}% &
-public 
-int 
-Quantity 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public 
-bool 
-IsRestricted  
-{! "
-get# &
-;& '
-set( +
-;+ ,
-}- .
-public 
-void 
-SwitchRestriction %
-(% &
-)& '
-{' (
-IsRestricted 
-= 
-! 
-IsRestricted (
-;( )
-} 	
-public 
-void 
+Guid 
+Id 
+{ 
+get 
+; 
+set !
+;! "
+}" #
+public 
+virtual 
+Drug 
+Item  
+{! "
+get# &
+;& '
+set( +
+;+ ,
+}- .
+public 
+int 
+Quantity 
+{ 
+get !
+;! "
+set# &
+;& '
+}( )
+public 
+bool 
+IsRestricted  
+{! "
+get# &
+;& '
+set( +
+;+ ,
+}- .
+public 
+void 
+SwitchRestriction %
+(% &
+)& '
+{' (
+IsRestricted 
+= 
+! 
+IsRestricted (
+;( )
+} 	
+public 
+void 
 
-ChangeDrug 
-( 
-Drug #
-newDrug$ +
-)+ ,
-{, -
-Item 
-= 
-newDrug 
-; 
-} 	
-public 
-void 
-ReplenishInventory &
-(& '
-int' *
-quantity+ 3
-)3 4
-{4 5
-Quantity 
-+= 
-quantity  
-;  !
-} 	
-public 
-bool 
-	TakeItems 
-( 
-int !
-quantity" *
-)* +
-{+ ,
-if 
-( 
-! 
-IsRestricted 
-&& 
-Quantity  (
->=) +
-quantity, 4
-)4 5
-{5 6
-Quantity   
--=   
-quantity   $
-;  $ %
-return!! 
-true!! 
-;!! 
-}"" 
-return## 
-false## 
-;## 
-}$$ 	
-}%% 
-}&& Ç
-jC:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Logistics\Internal\Storage.cs
+ChangeDrug 
+( 
+Drug #
+newDrug$ +
+)+ ,
+{, -
+Item 
+= 
+newDrug 
+; 
+} 	
+public 
+void 
+ReplenishInventory &
+(& '
+int' *
+quantity+ 3
+)3 4
+{4 5
+Quantity 
++= 
+quantity  
+;  !
+} 	
+public 
+bool 
+	TakeItems 
+( 
+int !
+quantity" *
+)* +
+{+ ,
+if   
+(   
+!   
+IsRestricted   
+&&   
+Quantity    (
+>=  ) +
+quantity  , 4
+)  4 5
+{  5 6
+Quantity!! 
+-=!! 
+quantity!! $
+;!!$ %
+return"" 
+true"" 
+;"" 
+}## 
+return$$ 
+false$$ 
+;$$ 
+}%% 	
+}&& 
+}'' º
+]F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Storage.cs
 	namespace 	
 MyDocAppointment
  
@@ -2602,33 +2705,317 @@ AddCabinet  
 ;/ 0
 } 	
 } 
-} ë%
-\C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Doctor.cs
-	namespace 	
-MyDocAppointment
+} Þ%
+OF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Doctor.cs
+	namespace 	
+MyDocAppointment
  
-. 
-Business #
-.# $
-Users$ )
-{ 
-public 
+. 
+Business #
+.# $
+Users$ )
+{ 
+public 
 
-class 
-Doctor 
-: 
-Person  
-{ 
-public 
-Specialization 
+class 
+Doctor 
+: 
+Person  
+{ 
+public		 
+Specialization		 
 
-Speciality (
-{) *
-get+ .
-;. /
-set0 3
-;3 4
-}5 6
+Speciality		 (
+{		) *
+get		+ .
+;		. /
+set		0 3
+;		3 4
+}		5 6
+public
+
+ 
+List
+
+ 
+<
+
+ 
+Appointment
+
+ 
+>
+
+  
+?
+
+  !
+Appointments
+
+" .
+{
+
+/ 0
+get
+
+1 4
+;
+
+4 5
+set
+
+6 9
+;
+
+9 :
+}
+
+; <
+public 
+static 
+Result 
+< 
+Doctor #
+># $
+Create% +
+(+ ,
+string, 2
+name3 7
+,7 8
+string9 ?
+surname@ G
+,G H
+intI L
+ageM P
+,P Q
+stringR X
+genderY _
+,_ `
+string 
+emailAddress 
+,  
+string! '
+phoneNumber( 3
+,3 4
+string5 ;
+homeAddress< G
+,G H
+stringI O
+specializationP ^
+)^ _
+{ 	
+PersonGender 
+genderResult %
+;% &
+Specialization  
+specializationResult /
+;/ 0
+if 
+( 
+! 
+Enum 
+. 
+TryParse 
+< 
+PersonGender +
+>+ ,
+(, -
+gender- 3
+,3 4
+out5 8
+genderResult9 E
+)E F
+)F G
+{ 
+return 
+Result 
+< 
+Doctor $
+>$ %
+.% &
+Failure& -
+(- .
+$str. I
++J K
+genderL R
+)R S
+;S T
+} 
+if 
+( 
+! 
+Enum 
+. 
+TryParse 
+< 
+Specialization -
+>- .
+(. /
+specialization/ =
+,= >
+out? B 
+specializationResultC W
+)W X
+)X Y
+{ 
+return 
+Result 
+< 
+Doctor $
+>$ %
+.% &
+Failure& -
+(- .
+$str. Q
++R S
+specializationT b
+)b c
+;c d
+} 
+Doctor 
+doctor 
+= 
+new 
+(  
+)  !
+{ 
+Id 
+= 
+Guid 
+. 
+NewGuid !
+(! "
+)" #
+,# $
+Name 
+= 
+name 
+, 
+Surname   
+=   
+surname   !
+,  ! "
+Age!! 
+=!! 
+age!! 
+,!! 
+Gender"" 
+="" 
+genderResult"" %
+,""% &
+EmailAddress## 
+=## 
+emailAddress## +
+,##+ ,
+PhoneNumber$$ 
+=$$ 
+phoneNumber$$ )
+,$$) *
+HomeAddress%% 
+=%% 
+homeAddress%% )
+,%%) *
+
+Speciality&& 
+=&&  
+specializationResult&& 1
+,&&1 2
+Appointments'' 
+='' 
+new'' "
+List''# '
+<''' (
+Appointment''( 3
+>''3 4
+(''4 5
+)''5 6
+}(( 
+;(( 
+return)) 
+Result)) 
+<)) 
+Doctor))  
+>))  !
+.))! "
+Success))" )
+())) *
+doctor))* 0
+)))0 1
+;))1 2
+}** 	
+public,, 
+Result,, 
+AddAppointment,, $
+(,,$ %
+Appointment,,% 0
+appointment,,1 <
+),,< =
+{-- 	
+if.. 
+(.. 
+appointment.. 
+==.. 
+null.. #
+)..# $
+{// 
+return00 
+Result00 
+.00 
+Failure00 %
+(00% &
+$str00& C
+)00C D
+;00D E
+}11 
+if33 
+(33 
+Appointments33 
+==33 
+null33  $
+)33$ %
+{44 
+return55 
+Result55 
+.55 
+Failure55 %
+(55% &
+$str55& 5
+)555 6
+;556 7
+}66 
+Appointments88 
+.88 
+Add88 
+(88 
+appointment88 (
+)88( )
+;88) *
+return99 
+Result99 
+.99 
+Success99 !
+(99! "
+)99" #
+;99# $
+}:: 	
+};; 
+}<<  )
+PF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Patient.cs
+	namespace 	
+MyDocAppointment
+ 
+. 
+Business #
+.# $
+Users$ )
+{ 
+public 
+
+class 
+Patient 
+: 
+Person !
+{ 
 public		 
 List		 
 <		 
@@ -2638,49 +3025,86 @@ Speciality (
 Appointments		" .
 {		/ 0
 get		1 4
-;		4 5
-set		6 9
-;		9 :
-}		; <
-public 
-static 
-Result 
-< 
-Doctor #
-># $
-Create% +
-(+ ,
-string, 2
-name3 7
-,7 8
-string9 ?
-surname@ G
-,G H
-intI L
-ageM P
-,P Q
-stringR X
-genderY _
-,_ `
-string 
-emailAddress 
-,  
-string! '
-phoneNumber( 3
-,3 4
-string5 ;
-homeAddress< G
-,G H
-stringI O
-specializationP ^
-)^ _
-{ 	
-PersonGender 
-genderResult %
-;% &
-Specialization  
-specializationResult /
-;/ 0
+;		4 5
+private		6 =
+set		> A
+;		A B
+}		C D
+public
+
+ 
+List
+
+ 
+<
+
+ 
+	Diagnosis
+
+ 
+>
+
+ 
+?
+
+ 
+	Diagnosis
+
+  )
+{
+
+* +
+get
+
+, /
+;
+
+/ 0
+private
+
+1 8
+set
+
+9 <
+;
+
+< =
+}
+
+> ?
+public 
+static 
+Result 
+< 
+Patient $
+>$ %
+Create& ,
+(, -
+string- 3
+name4 8
+,8 9
+string: @
+surnameA H
+,H I
+intJ M
+ageN Q
+,Q R
+stringS Y
+genderZ `
+,` a
+string 
+emailAddress 
+,  
+string! '
+phoneNumber( 3
+,3 4
+string5 ;
+homeAddress< G
+)G H
+{ 	
+PersonGender 
+genderResult %
+;% &
 if 
 ( 
 ! 
@@ -2700,131 +3124,121 @@ Speciality (
 { 
 return 
 Result 
-< 
-Doctor $
->$ %
-.% &
-Failure& -
-(- .
-$str. I
-+J K
-genderL R
-)R S
-;S T
-} 
-if 
-( 
-! 
-Enum 
-. 
-TryParse 
-< 
-Specialization -
->- .
-(. /
-specialization/ =
-,= >
-out? B 
-specializationResultC W
-)W X
-)X Y
-{ 
-return 
-Result 
-< 
-Doctor $
->$ %
-.% &
-Failure& -
-(- .
-$str. Q
-+R S
-specializationT b
-)b c
-;c d
-} 
-Doctor 
-doctor 
-= 
-new 
-(  
-)  !
-{ 
-Id 
-= 
-Guid 
-. 
-NewGuid !
-(! "
-)" #
-,# $
-Name 
-= 
-name 
-, 
-Surname 
-= 
-surname !
-,! "
-Age   
-=   
-age   
-,   
-Gender!! 
-=!! 
-genderResult!! %
-,!!% &
-EmailAddress"" 
-="" 
-emailAddress"" +
-,""+ ,
-PhoneNumber## 
-=## 
-phoneNumber## )
-,##) *
-HomeAddress$$ 
-=$$ 
-homeAddress$$ )
-,$$) *
-
-Speciality%% 
-=%%  
-specializationResult%% 1
-,%%1 2
-Appointments&& 
-=&& 
-new&& "
-List&&# '
-<&&' (
-Appointment&&( 3
->&&3 4
-(&&4 5
-)&&5 6
-}'' 
-;'' 
-return(( 
-Result(( 
-<(( 
-Doctor((  
->((  !
-.((! "
-Success((" )
-((() *
-doctor((* 0
-)((0 1
-;((1 2
-})) 	
-public++ 
-Result++ 
-AddAppointment++ $
-(++$ %
-Appointment++% 0
-appointment++1 <
-)++< =
-{,, 	
+< 
+Patient %
+>% &
+.& '
+Failure' .
+(. /
+$str/ J
++K L
+genderM S
+)S T
+;T U
+} 
+Patient 
+patient 
+= 
+new !
+(! "
+)" #
+{ 
+Id 
+= 
+Guid 
+. 
+NewGuid !
+(! "
+)" #
+,# $
+Name 
+= 
+name 
+, 
+Surname 
+= 
+surname !
+,! "
+Age 
+= 
+age 
+, 
+Gender 
+= 
+genderResult %
+,% &
+EmailAddress 
+= 
+emailAddress +
+,+ ,
+PhoneNumber 
+= 
+phoneNumber )
+,) *
+HomeAddress 
+= 
+homeAddress )
+,) *
+Appointments   
+=   
+new   "
+List  # '
+<  ' (
+Appointment  ( 3
+>  3 4
+(  4 5
+)  5 6
+,  6 7
+	Diagnosis!! 
+=!! 
+new!! 
+List!!  $
+<!!$ %
+	Diagnosis!!% .
+>!!. /
+(!!/ 0
+)!!0 1
+}"" 
+;"" 
+return## 
+Result## 
+<## 
+Patient## !
+>##! "
+.##" #
+Success### *
+(##* +
+patient##+ 2
+)##2 3
+;##3 4
+}$$ 	
+public&& 
+Result&& 
+AddAppointment&& $
+(&&$ %
+Appointment&&% 0
+appointment&&1 <
+)&&< =
+{'' 	
+if(( 
+((( 
+appointment(( 
+==(( 
+null(( #
+)((# $
+{)) 
+return** 
+Result** 
+.** 
+Failure** %
+(**% &
+$str**& C
+)**C D
+;**D E
+}++ 
 if-- 
-(-- 
-appointment-- 
+(-- 
+Appointments-- 
 ==-- 
 null-- #
 )--# $
@@ -2834,340 +3248,83 @@ Speciality%% 
 .// 
 Failure// %
 (//% &
-$str//& C
-)//C D
-;//D E
-}00 
-if22 
-(22 
-Appointments22 
-==22 
-null22  $
-)22$ %
-{33 
-return44 
-Result44 
-.44 
-Failure44 %
-(44% &
-$str44& 5
-)445 6
-;446 7
-}55 
-Appointments77 
-.77 
-Add77 
-(77 
-appointment77 (
-)77( )
-;77) *
-return88 
-Result88 
-.88 
-Success88 !
-(88! "
-)88" #
-;88# $
-}99 	
-}:: 
-};; ­)
-]C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Patient.cs
-	namespace 	
-MyDocAppointment
- 
-. 
-Business #
-.# $
-Users$ )
-{ 
-public 
-
-class 
-Patient 
-: 
-Person !
-{ 
-public 
-List 
-< 
-Appointment 
->  
-?  !
-Appointments" .
-{/ 0
-get1 4
-;4 5
-private6 =
-set> A
-;A B
-}C D
-public		 
-List		 
-<		 
-	Diagnosis		 
->		 
-?		 
-	Diagnosis		  )
-{		* +
-get		, /
-;		/ 0
-private		1 8
-set		9 <
-;		< =
-}		> ?
-public 
-static 
-Result 
-< 
-Patient $
->$ %
-Create& ,
-(, -
-string- 3
-name4 8
-,8 9
-string: @
-surnameA H
-,H I
-intJ M
-ageN Q
-,Q R
-stringS Y
-genderZ `
-,` a
-string 
-emailAddress 
-,  
-string! '
-phoneNumber( 3
-,3 4
-string5 ;
-homeAddress< G
-)G H
-{ 	
-PersonGender 
-genderResult %
-;% &
-if 
-( 
-! 
-Enum 
-. 
-TryParse 
-< 
-PersonGender +
->+ ,
-(, -
-gender- 3
-,3 4
-out5 8
-genderResult9 E
-)E F
-)F G
-{ 
-return 
-Result 
-< 
-Patient %
->% &
-.& '
-Failure' .
-(. /
-$str/ J
-+K L
-genderM S
-)S T
-;T U
-} 
-Patient 
-patient 
-= 
-new !
-(! "
-)" #
-{ 
-Id 
-= 
-Guid 
-. 
-NewGuid !
-(! "
-)" #
-,# $
-Name 
-= 
-name 
-, 
-Surname 
-= 
-surname !
-,! "
-Age 
-= 
-age 
-, 
-Gender 
-= 
-genderResult %
-,% &
-EmailAddress 
-= 
-emailAddress +
-,+ ,
-PhoneNumber 
-= 
-phoneNumber )
-,) *
-HomeAddress 
-= 
-homeAddress )
-,) *
-Appointments 
-= 
-new "
-List# '
-<' (
-Appointment( 3
->3 4
-(4 5
-)5 6
-,6 7
-	Diagnosis   
-=   
-new   
-List    $
-<  $ %
-	Diagnosis  % .
->  . /
-(  / 0
-)  0 1
-}!! 
-;!! 
-return"" 
-Result"" 
-<"" 
-Patient"" !
->""! "
-.""" #
-Success""# *
-(""* +
-patient""+ 2
-)""2 3
-;""3 4
-}## 	
-public%% 
-Result%% 
-AddAppointment%% $
-(%%$ %
-Appointment%%% 0
-appointment%%1 <
-)%%< =
-{&& 	
-if'' 
-('' 
-appointment'' 
-=='' 
-null'' #
-)''# $
-{(( 
-return)) 
-Result)) 
-.)) 
-Failure)) %
-())% &
-$str))& C
-)))C D
-;))D E
-}** 
-if,, 
-(,, 
-Appointments,, 
-==,, 
-null,, #
-),,# $
-{-- 
-return.. 
-Result.. 
-... 
-Failure.. %
-(..% &
-$str..& 5
-)..5 6
-;..6 7
-}// 
-Appointments11 
-.11 
-Add11 
-(11 
-appointment11 (
-)11( )
-;11) *
-return22 
-Result22 
-.22 
-Success22 !
-(22! "
-)22" #
-;22# $
-}33 	
-public55 
-Result55 
-AddDiagnosis55 "
-(55" #
-	Diagnosis55# ,
-	diagnosis55- 6
-)556 7
-{66 	
-if77 
-(77 
-	diagnosis77 
-==77 
-null77 !
-)77! "
-{88 
-return99 
-Result99 
-.99 
-Failure99 %
-(99% &
-$str99& A
-)99A B
-;99B C
-}:: 
-if<< 
-(<< 
-	Diagnosis<< 
-==<< 
-null<< !
-)<<! "
-{== 
-return>> 
-Result>> 
-.>> 
-Failure>> %
-(>>% &
-$str>>& 5
-)>>5 6
-;>>6 7
-}?? 
-	DiagnosisAA 
-.AA 
-AddAA 
-(AA 
-	diagnosisAA #
-)AA# $
-;AA$ %
-returnBB 
-ResultBB 
-.BB 
-SuccessBB !
-(BB! "
-)BB" #
-;BB# $
-}CC 	
-}DD 
-}EE Þ
-\C:\Users\Ovidiu\source\repos\MyDocAppointmentRight\MyDocAppointment.Business\Users\Person.cs
+$str//& 5
+)//5 6
+;//6 7
+}00 
+Appointments22 
+.22 
+Add22 
+(22 
+appointment22 (
+)22( )
+;22) *
+return33 
+Result33 
+.33 
+Success33 !
+(33! "
+)33" #
+;33# $
+}44 	
+public66 
+Result66 
+AddDiagnosis66 "
+(66" #
+	Diagnosis66# ,
+	diagnosis66- 6
+)666 7
+{77 	
+if88 
+(88 
+	diagnosis88 
+==88 
+null88 !
+)88! "
+{99 
+return:: 
+Result:: 
+.:: 
+Failure:: %
+(::% &
+$str::& A
+)::A B
+;::B C
+};; 
+if== 
+(== 
+	Diagnosis== 
+==== 
+null== !
+)==! "
+{>> 
+return?? 
+Result?? 
+.?? 
+Failure?? %
+(??% &
+$str??& 5
+)??5 6
+;??6 7
+}@@ 
+	DiagnosisBB 
+.BB 
+AddBB 
+(BB 
+	diagnosisBB #
+)BB# $
+;BB$ %
+returnCC 
+ResultCC 
+.CC 
+SuccessCC !
+(CC! "
+)CC" #
+;CC# $
+}DD 	
+}EE 
+}FF Ñ
+OF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Business\Users\Person.cs
 	namespace 	
 MyDocAppointment
  

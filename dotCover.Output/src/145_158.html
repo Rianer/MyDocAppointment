@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.API\MyDocAppointment.API\ConfigureServices.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using MediatR;
+using System.Reflection;
+using MyDocAppointment.API.Dtos;
+
+public static class ConfigureServices
+{
+    public static IServiceCollection AddControllerServices
+        (this IServiceCollection services)
+    {
+        services.AddScoped&lt;IValidator&lt;CreateAppointmentDto&gt;, CreateAppointmentDtoValidator&gt;();
+        services.AddScoped&lt;IValidator&lt;AppointmentDto&gt;, AppointmentDtoValidator&gt;();
+        services.AddScoped&lt;IValidator&lt;CreatePatientDto&gt;, CreatePatientDtoValidator&gt;();
+        services.AddScoped&lt;IValidator&lt;PatientDto&gt;, PatientDtoValidator&gt;();
+        services.AddScoped&lt;IValidator&lt;CreateDrugDto&gt;, CreateDrugDtoValidator&gt;();
+        services.AddScoped&lt;IValidator&lt;DrugDto&gt;, DrugDtoValidator&gt;();
+
+        services.AddFluentValidationAutoValidation();
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        services.AddMediatR(Assembly.GetExecutingAssembly());
+        return services;
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[11,5,11,6,1],[12,9,12,95,1],[13,9,13,83,1],[14,9,14,87,1],[15,9,15,75,1],[16,9,16,81,1],[17,9,17,69,1],[19,9,19,54,1],[20,9,20,77,1],[21,9,21,65,1],[22,9,22,62,1],[23,9,23,25,1],[24,5,24,6,1]]);
+    </script>
+  </body>
+</html>

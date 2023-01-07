@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Tests\AppointmentControllerShould.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+using MyDocAppointment.API.Controllers;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.External;
+using Xunit;
+using FluentValidation.Results;
+using Azure.Core;
+
+namespace MyDocAppointment.Tests
+{
+    public class AppointmentControllerShould
+    {
+        AppointmentController controller;
+        Guid idOk;
+        Guid idNotFound;
+        public AppointmentControllerShould()
+        {
+            // Arrange
+            idOk = new Guid(&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;);
+            idNotFound = new Guid(&quot;3fa85f64-5717-4562-b3fc-2c963f66afa5&quot;);
+            var appointmentsServiceMock = new Mock&lt;IAppointmentsService&gt;();
+            var mapperMock = new Mock&lt;IMapper&gt;();          
+            mapperMock.Setup(m=&gt; m.Map&lt;Appointment&gt;(It.IsAny&lt;AppointmentDto&gt;())).Returns(GetAppointment());
+            appointmentsServiceMock.Setup(r =&gt; r.GetById(idOk))
+                .ReturnsAsync(GetTestAppointments());
+            appointmentsServiceMock.Setup(r =&gt; r.GetById(idNotFound))
+                .Returns(FailureResult(idNotFound));
+            appointmentsServiceMock.Setup(r =&gt; r.Create(It.IsAny&lt;Appointment&gt;()))
+                .Returns(Task.CompletedTask);
+            appointmentsServiceMock.Setup(r =&gt; r.Delete(idOk))
+                 .Returns(SuccessResult());
+            appointmentsServiceMock.Setup(r =&gt; r.Delete(idNotFound))
+                 .Returns(FailResult(idNotFound));
+            appointmentsServiceMock.Setup(r =&gt; r.Update(It.IsAny&lt;Appointment&gt;(), idOk))
+                 .ReturnsAsync(GetTestAppointment());
+            appointmentsServiceMock.Setup(r =&gt; r.Update(It.IsAny&lt;Appointment&gt;(), idNotFound))
+                 .Returns(FailureResult(idNotFound));
+            controller = new AppointmentController(appointmentsServiceMock.Object, mapperMock.Object);
+        }
+
+        [Fact]
+        public async Task GetById_ReturnsOk_WhenTheAppointmentWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.GetById(idOk);
+
+            // Assert
+            Assert.IsType&lt;OkObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task GetById_ReturnsNotFound_WhenTheAppointmentWithSpecifiedIdIsNotFound()
+        {
+            //Act
+            var response = await controller.GetById(idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Create_ReturnsCreatedResult()
+        {
+            //Act
+            var response = await controller.Create(GetCreateAppointmentDto());
+
+            // Assert
+            Assert.IsType&lt;CreatedResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsOk_WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Delete(idOk);
+
+            // Assert
+            Assert.IsType&lt;OkResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsNotFound__WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Delete(idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsOk_WhenThedrugWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Update(GetAppointmentDto(), idOk);
+
+            // Assert
+            Assert.IsType&lt;OkObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsNotFound_WhenThedrugWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Update(GetAppointmentDto(), idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        private CreateAppointmentDto GetCreateAppointmentDto()
+        {
+
+            var Appointment = new CreateAppointmentDto();
+            return Appointment;
+
+        }
+        private Result&lt;Appointment&gt; GetTestAppointments()
+        {
+            var Appointment = new Appointment();
+            return Result&lt;Appointment&gt;.Success(Appointment);
+        }
+        private async Task&lt;Result&gt; SuccessResult()
+        {
+            return Result.Success();
+        }
+        private async Task&lt;Result&gt; FailResult(Guid id)
+        {
+            return Result.Failure($&quot;Appointment with ID: {id} does not exist.&quot;);
+        }
+        private async Task&lt;Result&lt;Appointment&gt;&gt; FailureResult(Guid id)
+        {
+            return Result&lt;Appointment&gt;.Failure($&quot;Appointment with ID: {id} does not exist.&quot;);
+        }
+
+        private AppointmentDto GetAppointmentDto()
+        {
+            var dto = new AppointmentDto()
+            {
+                Id = idOk.ToString(),
+                Location = &quot;Iasi&quot;,
+                PatientID = &quot;8a1dd56e-3714-47ff-74bb-08dad798785d&quot;,
+                DoctorID = &quot;74a67233-cd3d-4b6a-3af0-08dad791cf86&quot;,
+                Specialization = &quot;Cardiology&quot;,
+                AppointmentTime = &quot;03 March 2016 06:30&quot;,
+                PaymentMethod = &quot;Card&quot;,
+                PaymentDate = DateTime.Now.ToString(),
+                Amount = 400
+            };
+            return dto;
+        }
+
+        private Appointment GetAppointment()
+        {
+            return new Appointment()
+            {
+                Id = idOk,
+                Location = &quot;Iasi&quot;,
+                PatientID = new Guid(&quot;8a1dd56e-3714-47ff-74bb-08dad798785d&quot;),
+                DoctorID = new Guid(&quot;74a67233-cd3d-4b6a-3af0-08dad791cf86&quot;),
+                Specialization = Specialization.Cardiology,
+                AppointmentTime = DateTime.Now,
+                Payment = new Payment()
+                {
+                    Id= idOk,
+                    PaymentMethod = PaymentMethod.Card,
+                    EmissionDate = DateTime.Now,
+                    AcquittedDate = DateTime.Now,
+                    DueDate = DateTime.Now,
+                    Amount = 400
+                }
+            };
+        }
+
+        private Result&lt;Appointment&gt; GetTestAppointment()
+        {
+            var Appointment = GetAppointment();
+            return Result&lt;Appointment&gt;.Success(Appointment);
+        }
+
+        private ValidationResult OkValidationResult()
+        {
+            ValidationResult val = new ValidationResult();
+            return val;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[21,9,21,45,1],[22,9,22,10,1],[24,13,24,69,1],[25,13,25,75,1],[26,13,26,76,1],[27,13,27,50,1],[28,13,28,108,1],[29,13,30,54,1],[31,13,32,53,1],[33,13,34,46,1],[35,13,36,44,1],[37,13,38,51,1],[39,13,40,54,1],[41,13,42,54,1],[43,13,43,103,1],[44,9,44,10,1],[48,9,48,10,1],[50,13,50,59,1],[53,13,53,53,1],[54,9,54,10,1],[58,9,58,10,1],[60,13,60,65,1],[63,13,63,59,1],[64,9,64,10,1],[68,9,68,10,1],[70,13,70,79,1],[73,13,73,52,1],[74,9,74,10,1],[78,9,78,10,1],[80,13,80,58,1],[83,13,83,47,1],[84,9,84,10,1],[88,9,88,10,1],[90,13,90,64,1],[93,13,93,59,1],[94,9,94,10,1],[98,9,98,10,1],[100,13,100,79,1],[103,13,103,53,1],[104,9,104,10,1],[108,9,108,10,1],[110,13,110,85,1],[113,13,113,59,1],[114,9,114,10,1],[117,9,117,10,1],[119,13,119,58,1],[120,13,120,32,1],[122,9,122,10,1],[124,9,124,10,1],[125,13,125,49,1],[126,13,126,61,1],[127,9,127,10,1],[129,9,129,10,1],[130,13,130,37,1],[131,9,131,10,1],[133,9,133,10,1],[134,13,134,81,1],[135,9,135,10,1],[137,9,137,10,1],[138,13,138,94,1],[139,9,139,10,1],[142,9,142,10,1],[143,13,154,15,1],[155,13,155,24,1],[156,9,156,10,1],[159,9,159,10,1],[160,13,177,15,1],[178,9,178,10,1],[181,9,181,10,1],[182,13,182,48,1],[183,13,183,61,1],[184,9,184,10,1],[187,9,187,10,0],[188,13,188,59,0],[189,13,189,24,0],[190,9,190,10,0]]);
+    </script>
+  </body>
+</html>

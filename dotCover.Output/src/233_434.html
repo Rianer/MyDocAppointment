@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Tests\PatientControllerShould.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+using MyDocAppointment.API.Controllers;
+using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.External;
+using MyDocAppointment.Business.Users;
+using Xunit;
+
+namespace MyDocAppointment.Tests
+{
+    public class PatientControllerShould
+    {
+        PatientController controller;
+        Guid idOk;
+        Guid idNotFound;
+        public PatientControllerShould()
+        {
+            // Arrange
+            idOk = new Guid(&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;);
+            idNotFound = new Guid(&quot;3fa85f64-5717-4562-b3fc-2c963f66afa5&quot;);
+            var patientsServiceMock = new Mock&lt;IPatientsService&gt;();
+            var mapperMock = new Mock&lt;IMapper&gt;();
+            mapperMock.Setup(m =&gt; m.Map&lt;Patient&gt;(It.IsAny&lt;CreatePatientDto&gt;())).Returns(GetPatient());
+            mapperMock.Setup(m =&gt; m.Map&lt;Patient&gt;(It.IsAny&lt;PatientDto&gt;())).Returns(GetPatient());
+            patientsServiceMock.Setup(r =&gt; r.GetById(idOk))
+                .ReturnsAsync(GetTestPatients());
+            patientsServiceMock.Setup(r =&gt; r.GetById(idNotFound))
+                .Returns(FailureResult(idNotFound));
+            patientsServiceMock.Setup(r =&gt; r.Create(It.IsAny&lt;Patient&gt;()))
+                .Returns(Task.CompletedTask);
+            patientsServiceMock.Setup(r =&gt; r.Delete(idOk))
+                 .Returns(SuccessResult());
+            patientsServiceMock.Setup(r =&gt; r.Delete(idNotFound))
+                 .Returns(FailResult(idNotFound));
+            patientsServiceMock.Setup(r =&gt; r.Update(It.IsAny&lt;Patient&gt;(), idOk))
+                .ReturnsAsync(GetTestPatient());
+            patientsServiceMock.Setup(r =&gt; r.Update(It.IsAny&lt;Patient&gt;(), idNotFound))
+                 .Returns(FailureResult(idNotFound));
+            controller = new PatientController(patientsServiceMock.Object,mapperMock.Object);
+        }
+
+        [Fact]
+        public async Task GetById_ReturnsOk_WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.GetById(idOk);
+
+            // Assert
+            Assert.IsType&lt;OkObjectResult&gt;(response);
+        }
+        [Fact]
+        public async Task GetById_ReturnsNotFound_WhenThePatientWithSpecifiedIdIsNotFound()
+        {
+            //Act
+            var response = await controller.GetById(idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Create_ReturnsCreatedResult()
+        {
+            //Act
+            var response = await controller.Create(GetCreatePatientDto());
+
+            // Assert
+            Assert.IsType&lt;CreatedResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsOk_WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Delete(idOk);
+
+            // Assert
+            Assert.IsType&lt;OkResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Delete_ReturnsNotFound__WhenThePatientWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Delete(idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsOk_WhenThedrugWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Update(GetPatientDto(), idOk);
+
+            // Assert
+            Assert.IsType&lt;OkObjectResult&gt;(response);
+        }
+
+        [Fact]
+        public async Task Update_ReturnsNotFound_WhenThedrugWithSpecifiedIdIsFound()
+        {
+            //Act
+            var response = await controller.Update(GetPatientDto(), idNotFound);
+
+            // Assert
+            Assert.IsType&lt;NotFoundObjectResult&gt;(response);
+        }
+
+        private CreatePatientDto GetCreatePatientDto()
+        {
+
+            var dto = new CreatePatientDto()
+            {
+                Name = &quot;Mark&quot;,
+                Surname = &quot;Mark&quot;,
+                Age = 30,
+                Gender = &quot;Other&quot;,
+                EmailAddress = &quot;mark@gmail.com&quot;,
+                PhoneNumber = &quot;0777666655&quot;,
+                HomeAddress = &quot;Iasi&quot;,
+            };
+            return dto;
+        }
+        private Result&lt;Patient&gt; GetTestPatients()
+        {
+            var patient = new Patient();
+            return Result&lt;Patient&gt;.Success(patient);
+        }
+        private async Task&lt;Result&gt; SuccessResult()
+        {
+            return Result.Success();
+        }
+
+        private async Task&lt;Result&gt; FailResult(Guid id)
+        {
+            return Result.Failure($&quot;Patient with ID: {id} does not exist.&quot;);
+        }
+
+        private async Task&lt;Result&lt;Patient&gt;&gt; FailureResult(Guid id)
+        {
+            return Result&lt;Patient&gt;.Failure($&quot;Patient with ID: {id} does not exist.&quot;);
+        }
+
+        private PatientDto GetPatientDto()
+        {
+            var dto = new PatientDto()
+            {
+                Id = idOk,
+                Name = &quot;Mark&quot;,
+                Surname = &quot;Mark&quot;,
+                Age = 30,
+                Gender = &quot;Other&quot;,
+                EmailAddress = &quot;mark@gmail.com&quot;,
+                PhoneNumber = &quot;0777666655&quot;,
+                HomeAddress = &quot;Iasi&quot;,
+            };
+            return dto;
+        }
+
+        private Patient GetPatient()
+        {
+            return new Patient()
+            {
+                Id = idOk,
+                Name = &quot;Mark&quot;,
+                Surname = &quot;Mark&quot;,
+                Age = 30,
+                Gender = PersonGender.Other,
+                EmailAddress = &quot;mark@gmail.com&quot;,
+                PhoneNumber = &quot;0777666655&quot;,
+                HomeAddress = &quot;Iasi&quot;,
+            };
+        }
+
+        private Result&lt;Patient&gt; GetTestPatient()
+        {
+            var patient = GetPatient();
+            return Result&lt;Patient&gt;.Success(patient);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[21,9,21,41,1],[22,9,22,10,1],[24,13,24,69,1],[25,13,25,75,1],[26,13,26,68,1],[27,13,27,50,1],[28,13,28,103,1],[29,13,29,97,1],[30,13,31,50,1],[32,13,33,53,1],[34,13,35,46,1],[36,13,37,44,1],[38,13,39,51,1],[40,13,41,49,1],[42,13,43,54,1],[44,13,44,94,1],[45,9,45,10,1],[49,9,49,10,1],[51,13,51,59,1],[54,13,54,53,1],[55,9,55,10,1],[58,9,58,10,1],[60,13,60,65,1],[63,13,63,59,1],[64,9,64,10,1],[68,9,68,10,1],[70,13,70,75,1],[73,13,73,52,1],[74,9,74,10,1],[78,9,78,10,1],[80,13,80,58,1],[83,13,83,47,1],[84,9,84,10,1],[88,9,88,10,1],[90,13,90,64,1],[93,13,93,59,1],[94,9,94,10,1],[98,9,98,10,1],[100,13,100,75,1],[103,13,103,53,1],[104,9,104,10,1],[108,9,108,10,1],[110,13,110,81,1],[113,13,113,59,1],[114,9,114,10,1],[117,9,117,10,1],[119,13,128,15,1],[129,13,129,24,1],[130,9,130,10,1],[132,9,132,10,1],[133,13,133,41,1],[134,13,134,53,1],[135,9,135,10,1],[137,9,137,10,1],[138,13,138,37,1],[139,9,139,10,1],[142,9,142,10,1],[143,13,143,77,1],[144,9,144,10,1],[147,9,147,10,1],[148,13,148,86,1],[149,9,149,10,1],[152,9,152,10,1],[153,13,163,15,1],[164,13,164,24,1],[165,9,165,10,1],[168,9,168,10,1],[169,13,179,15,1],[180,9,180,10,1],[183,9,183,10,1],[184,13,184,40,1],[185,13,185,53,1],[186,9,186,10,1]]);
+    </script>
+  </body>
+</html>

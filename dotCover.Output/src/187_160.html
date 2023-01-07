@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Handlers\CreateDrugStocksCommandHandler.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using MediatR;
+using MyDocAppointment.Application.Commands;
+using MyDocAppointment.Application.Mappers;
+using MyDocAppointment.Application.Response;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Logistics.Internal;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.API.Handlers
+{
+    public class CreateDrugStocksCommandHandler :
+        IRequestHandler&lt;CreateDrugStockCommand,
+            DrugStockResponse&gt;
+    {
+        private readonly IDrugStocksRepository _repository;
+
+        public CreateDrugStocksCommandHandler(IDrugStocksRepository repository)
+        {
+            _repository = repository;
+        }
+        public async Task&lt;DrugStockResponse&gt;
+            Handle(CreateDrugStockCommand request,
+            CancellationToken cancellationToken)
+        {
+            var drugStockEntity = DrugStockMapper.Mapper.Map&lt;DrugStock&gt;(request);
+            if (drugStockEntity == null)
+            {
+                throw new ApplicationException(&quot;Issue with the mapper&quot;);
+            }
+            var drugItem = await _repository.GetDrug(drugStockEntity.Item.Id);
+            drugStockEntity.Item= drugItem;
+
+            var newDrugStock = await _repository.AddAsync(drugStockEntity);
+            return DrugStockMapper.Mapper.Map&lt;DrugStockResponse&gt;(newDrugStock);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[18,9,18,80,0],[19,9,19,10,0],[20,13,20,38,0],[21,9,21,10,0],[25,9,25,10,0],[26,13,26,82,0],[27,13,27,41,0],[28,13,28,14,0],[29,17,29,73,0],[31,13,31,79,0],[32,13,32,44,0],[34,13,34,76,0],[35,13,35,80,0],[36,9,36,10,0]]);
+    </script>
+  </body>
+</html>

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using MyDocAppointment.Business.Logistics.Internal;
 using MyDocAppointment.Business.Logistics.External;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyDocAppointment.Business.Helpers;

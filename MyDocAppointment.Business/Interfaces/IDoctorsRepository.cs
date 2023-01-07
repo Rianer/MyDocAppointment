@@ -1,5 +1,4 @@
-﻿using MyDocAppointment.Business.Helpers;
-using MyDocAppointment.Business.Users;
+﻿using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.Business.Interfaces
 {

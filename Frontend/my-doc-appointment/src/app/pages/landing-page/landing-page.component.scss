@@ -1,0 +1,129 @@
+@import '../../../utilities/variables';
+
+.landing{
+  padding: 1.5rem;
+}
+
+.info-grid {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 400px;
+}
+
+.content-box{
+  color: $accentColor;
+  background-color: $backgroundColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transitionSpeed;
+}
+
+.content-box:hover{
+  background-color: $secondaryColor;
+}
+
+.content-text {
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.image-card{
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: $transitionSpeed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $accentColor;
+}
+
+.image-card>.content-text{
+  opacity: 0;
+  transition: opacity $transitionSpeed;
+  padding: 0.8rem;
+  background-color: $secondaryColor;
+}
+
+.image-card:hover>.content-text{
+  opacity: 1;
+}
+
+.img-gloves{
+  background-image: url('./img/gloves.jpg');
+}
+
+.img-doctor{
+  background-image: url('./img/doctor1.jpg');
+}
+
+.division-line{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-top: 2px solid $backgroundColor;
+}
+
+// About Us
+.about{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: $secondaryColor;
+}
+
+.title{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $mainColor;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid $mainColor;
+}
+
+.description{
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0 4rem 0 4rem;
+  text-align: center;
+}
+
+// Contact Us
+.contact{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  display: block;
+  color: $secondaryColor;
+}
+
+.contact>.title{
+  width: 13rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: $contrastColor;
+  border-bottom: 3px solid $contrastColor;
+
+}
+
+// Medium Screens
+@media screen and (min-width: 1300px) {
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
+}
+
+// Large Screens
+@media screen and (min-width: 1600px) {
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}

@@ -1,11 +1,7 @@
 ﻿using FluentValidation;
-using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using MyDocAppointment.Business.Interfaces;
-using MyDocAppointment.Business.Logistics.External;
-using MyDocAppointment.Business.Logistics.Internal;
-using MyDocAppointment.Business.Users;
 using System.Reflection;
 
 namespace MyDocAppointment.Application

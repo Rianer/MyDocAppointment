@@ -1,7 +1,6 @@
 ﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.Internal;
-using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.Application
 {

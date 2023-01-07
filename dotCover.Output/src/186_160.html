@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\Handlers\CreateDoctorCommandHandler.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using AutoMapper;
+using MediatR;
+using MyDocAppointment.Application.Commands;
+using MyDocAppointment.Application.Mappers;
+using MyDocAppointment.Application.Response;
+using MyDocAppointment.Business.Interfaces;
+using MyDocAppointment.Business.Users;
+
+namespace MyDocAppointment.API.Handlers
+{
+    public class CreateDoctorCommandHandler :
+        IRequestHandler&lt;CreateDoctorCommand,
+            DoctorResponse&gt;
+    {
+        private readonly IDoctorsRepository repository;
+
+        public CreateDoctorCommandHandler(IDoctorsRepository repository)
+        {
+            this.repository = repository;
+        }
+        public async Task&lt;DoctorResponse&gt;
+            Handle(CreateDoctorCommand request,
+            CancellationToken cancellationToken)
+        {
+            var doctorEntity = DoctorMapper.Mapper.Map&lt;Doctor&gt;(request);
+            if (doctorEntity == null)
+            {
+                throw new ApplicationException(&quot;Issue with the mapper&quot;);
+            }
+            var newDoctor = await repository.AddAsync(doctorEntity);
+            return DoctorMapper.Mapper.Map&lt;DoctorResponse&gt;(newDoctor);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[17,9,17,73,1],[18,9,18,10,1],[19,13,19,42,1],[20,9,20,10,1],[24,9,24,10,1],[25,13,25,73,1],[26,13,26,38,1],[27,13,27,14,0],[28,17,28,73,0],[30,13,30,69,1],[31,13,31,71,0],[32,9,32,10,0]]);
+    </script>
+  </body>
+</html>

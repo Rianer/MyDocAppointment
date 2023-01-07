@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.API\MyDocAppointment.API\Controllers\DrugStockController.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using MyDocAppointment.Application.Commands;
+using MyDocAppointment.Application.Queries;
+using MyDocAppointment.Application.Response;
+
+namespace MyDocAppointment.API.Controllers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class DrugStockController : ControllerBase
+    {
+        private readonly IMediator _mediator;
+        public DrugStockController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+        [HttpPost]
+        public async Task&lt;IActionResult&gt;
+           Create([FromBody] CreateDrugStockCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task&lt;List&lt;DrugStockResponse&gt;&gt; Get()
+        {
+            return await _mediator.Send(new GetAllDrugStocksQuery());
+        }
+
+        /*[HttpGet(&quot;{drugStockId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; GetById(Guid drugStockId)
+        {
+            var response = await _drugStockService.GetById(drugStockId);
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map&lt;drugStockDto&gt;(response.Entity);
+            return Ok(model);
+        }
+
+        [HttpDelete(&quot;{drugStockId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; Delete(Guid drugStockId)
+        {
+            var response = await _drugStockService.Delete(drugStockId);
+            if (response.IsSuccess)
+            {
+                return Ok();
+            }
+
+            return NotFound(response.Error);
+        }
+
+        [HttpPut(&quot;{drugStockId:guid}&quot;)]
+        public async Task&lt;IActionResult&gt; Update([FromBody] drugStockDto dto, Guid drugStockId)
+        {
+            var drugStock = _mapper.Map&lt;drugStock&gt;(dto);
+
+            var response = await _drugStockService.Update(drugStock, drugStockId);
+
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map&lt;drugStockDto&gt;(response.Entity);
+            return Ok(model);
+        }*/
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[14,9,14,55,0],[15,9,15,10,0],[16,13,16,34,0],[17,9,17,10,0],[22,9,22,10,0],[23,13,23,56,0],[24,13,24,31,0],[25,9,25,10,0],[29,9,29,10,0],[30,13,30,70,0],[31,9,31,10,0]]);
+    </script>
+  </body>
+</html>
