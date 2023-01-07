@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.External;
-using MyDocAppointment.Business.Users;
 namespace MyDocAppointment.Infrastructure.Repositories
 {
     public class AppointmentsRepository : IAppointmentsRepository

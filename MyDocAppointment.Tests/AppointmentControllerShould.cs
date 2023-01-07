@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using MyDocAppointment.API.Controllers;
@@ -9,7 +8,6 @@ using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.External;
 using Xunit;
 using FluentValidation.Results;
-using Azure.Core;
 
 namespace MyDocAppointment.Tests
 {

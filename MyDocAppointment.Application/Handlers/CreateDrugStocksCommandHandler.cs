@@ -1,11 +1,8 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
 using MyDocAppointment.Application.Commands;
 using MyDocAppointment.Application.Mappers;
 using MyDocAppointment.Application.Response;
 using MyDocAppointment.Business.Interfaces;
-using MyDocAppointment.Business.Logistics.Internal;
-using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.API.Handlers
 {

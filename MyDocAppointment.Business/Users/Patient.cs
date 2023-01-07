@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using MyDocAppointment.Business.Helpers;
+﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Logistics.External;
 
 namespace MyDocAppointment.Business.Users

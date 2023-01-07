@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using MyDocAppointment.API.Controllers;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
-using MyDocAppointment.Business.Logistics.External;
 using MyDocAppointment.Business.Users;
 using Xunit;
 
