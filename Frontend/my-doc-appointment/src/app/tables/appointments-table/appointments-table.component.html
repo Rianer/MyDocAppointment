@@ -15,7 +15,7 @@
                     <i *ngIf="appointment.paymentMethod !== 'Card'" class="fas fa-money-bill-alt"></i>
                 </td>
                 <td>{{appointment.doctorName}}</td>
-                <td>cell</td>
+                <td>{{appointment.patientName}}</td>
                 <td>{{appointment.appointmentTime}}</td>
                 <td>{{appointment.amount}}</td>
                 <td [ngClass]="{'enabled' : editModeActive}"><i class="fas fa-times-circle"></i></td>
