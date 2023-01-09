@@ -18,6 +18,13 @@ namespace MyDocAppointment.Infrastructure.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
+        public async Task<Doctor> AddAsync(Doctor doctor)
+        {
+            _appDbContext.Doctors.Add(doctor);
+            await _appDbContext.SaveChangesAsync();
+            return doctor;
+        }
+
         public async Task Delete(Doctor doctor)
         {
             _appDbContext.Doctors.Remove(doctor);
@@ -26,10 +33,10 @@ namespace MyDocAppointment.Infrastructure.Repositories
 
         public async Task<IEnumerable<Doctor>> GetAll() => await _appDbContext.Doctors.ToListAsync();
 
-        public async Task<Doctor> GetById(Guid id)
+        public async Task<Doctor?> GetById(Guid id)
         {
             var doctor = await _appDbContext.Doctors.FirstOrDefaultAsync(d => d.Id == id);
-
+            
             return doctor;
         }
 

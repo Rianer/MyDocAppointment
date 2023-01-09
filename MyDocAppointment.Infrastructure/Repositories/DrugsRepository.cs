@@ -26,7 +26,7 @@ namespace MyDocAppointment.Infrastructure.Repositories
 
         public async Task<IEnumerable<Drug>> GetAll() => await _appDbContext.Drugs.ToListAsync();
        
-        public async Task<Drug> GetById(Guid id)
+        public async Task<Drug?> GetById(Guid id)
         {
             var drug = await _appDbContext.Drugs.FirstOrDefaultAsync(d => d.Id == id);
 

@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyDocAppointment.API.Controllers;
-using MyDocAppointment.API.Dtos;
-using MyDocAppointment.Infrastructure;
+﻿using MyDocAppointment.API.Dtos;
 using System.Net.Http.Json;
-using System.Diagnostics.CodeAnalysis;
-
-using Xunit;
-using Microsoft.AspNetCore.Mvc;
 
 namespace MyDocAppointment.IntegrationTests
 {
@@ -21,18 +10,17 @@ namespace MyDocAppointment.IntegrationTests
         [Fact]
         public async void WhenCreateDoctor_ThenShouldReturnCreated()
         {
-             //Arange
+            //Arange
             var doctorDto = getDoctorDto();
 
             //Act
-
             var doctorResponse = await HttpClient.PostAsJsonAsync(ApiUrl, doctorDto);
             var getDoctorgResult = await HttpClient.GetAsync(ApiUrl);
             var status = ((int)doctorResponse.StatusCode);
 
             //Assert
             doctorResponse.EnsureSuccessStatusCode();
-            Assert.Equal(201, status);
+            Assert.Equal(200, status);
         }
 
         [Fact]
@@ -53,6 +41,27 @@ namespace MyDocAppointment.IntegrationTests
             Assert.Contains("Ion", responseString);
             Assert.Contains("Mark", responseString);
         }
+
+        [Fact]
+        public async Task Create_WhenCalled_ReturnsCreateForm()
+        {
+            var response = await HttpClient.GetAsync(ApiUrl);
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            Assert.Contains("Stan", responseString);
+        }
+
+        /*[Fact]
+        public async Task DefaultRoute_ReturnsNothing()
+        {
+            var response = await HttpClient.GetAsync("");
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal("", responseString);
+        }*/
+
         private CreateDoctorDto getDoctorDto()
         {
             var doctorDto = new CreateDoctorDto

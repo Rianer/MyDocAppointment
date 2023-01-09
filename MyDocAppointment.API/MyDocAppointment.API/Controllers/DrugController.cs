@@ -1,15 +1,14 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using MyDocAppointment.API.Dtos;
-using MyDocAppointment.Application;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Logistics.Internal;
-using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class DrugController : ControllerBase
     {
         private readonly IDrugsService _drugService;
@@ -20,7 +19,7 @@ namespace MyDocAppointment.API.Controllers
             _drugService = drugService;
             _mapper = mapper;
         }
-
+        [MapToApiVersion("1.0")]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -34,15 +33,18 @@ namespace MyDocAppointment.API.Controllers
             return Ok(models);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateDrugDto dto)
         {
             var drug = _mapper.Map<Drug>(dto);
+
             await _drugService.Create(drug);
 
             return Created(nameof(Get), dto);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpGet("{drugId:guid}")]
         public async Task<IActionResult> GetById(Guid drugId)
         {
@@ -56,6 +58,7 @@ namespace MyDocAppointment.API.Controllers
             return Ok(model);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpDelete("{drugId:guid}")]
         public async Task<IActionResult> Delete(Guid drugId)
         {
@@ -68,10 +71,12 @@ namespace MyDocAppointment.API.Controllers
             return NotFound(response.Error);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpPut("{drugId:guid}")]
         public async Task<IActionResult> Update([FromBody] DrugDto dto, Guid drugId)
         {
             var drug = _mapper.Map<Drug>(dto);
+
             var response = await _drugService.Update(drug, drugId);
 
             if (!response.IsSuccess)
