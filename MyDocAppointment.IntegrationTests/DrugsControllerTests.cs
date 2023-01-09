@@ -5,7 +5,7 @@ namespace MyDocAppointment.IntegrationTests
 {
     public class DrugsControllerTests : BaseIntegrationTests
     {
-        private const string ApiUrl = "api/drug";
+        private const string ApiUrl = "api/v1/drug";
 
         [Fact]
         public async void WhenCreatedrug_ThenShouldReturnCreated()
