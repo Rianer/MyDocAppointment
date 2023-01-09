@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Appointment } from 'src/app/models/appointment.model';
+import { NewAppointment } from 'src/app/models/appointment.model';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { Appointment } from 'src/app/models/appointment.model';
 })
 export class AppointmentPageComponent implements OnInit {
 
-  appointmentHistory : Appointment[];
+  appointmentHistory : NewAppointment[];
 
   ngOnInit(): void {
     // this.appointmentHistory = [

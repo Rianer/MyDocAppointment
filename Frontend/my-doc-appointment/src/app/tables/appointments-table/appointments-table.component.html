@@ -1,18 +1,23 @@
 <div class="table-container">
     <table>
         <thead>
+            <th>Payment</th>
             <th>Doctor</th>
             <th>Patient</th>
             <th>Date</th>
-            <th>Payment</th>
+            <th>Price</th>
             <th>Edit <input type="checkbox" (change)="toggleEditMode()"></th>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let appointment of appointmentList">
+                <td>
+                    <i *ngIf="appointment.paymentMethod === 'Card'" class="fas fa-money-check-alt"></i>
+                    <i *ngIf="appointment.paymentMethod !== 'Card'" class="fas fa-money-bill-alt"></i>
+                </td>
+                <td>{{appointment.doctorName}}</td>
                 <td>cell</td>
-                <td>cell</td>
-                <td>cell</td>
-                <td>cell</td>
+                <td>{{appointment.appointmentTime}}</td>
+                <td>{{appointment.amount}}</td>
                 <td [ngClass]="{'enabled' : editModeActive}"><i class="fas fa-times-circle"></i></td>
             </tr>
         </tbody>
