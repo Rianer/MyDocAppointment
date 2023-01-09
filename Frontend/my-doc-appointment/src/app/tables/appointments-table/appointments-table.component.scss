@@ -1,0 +1,114 @@
+@import "../../../utilities/variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.table-container{
+    width: 100%;
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        background: $lightGradientBackground;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 2px;
+        border: 1px solid rgba(255,255,255,0.18);
+        box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+        text-align: left;
+        overflow: hidden;
+
+        thead{
+            box-shadow: 0 5px 10px $shadowLightGrey;
+        }
+
+        th{
+            padding: 1rem 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-size: 1rem;
+            font-weight: 900;
+            text-align: center;
+            background-color: white;
+            cursor: default;
+        }
+
+        .add-instance{
+            color: $contrastColor;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: 100ms;
+        }
+
+        .add-instance:hover{
+            color: $mainColor;
+        }
+
+        td{
+            padding: 0.6rem 2rem;
+            text-align: center;
+            transition: 150ms;
+
+            .img-container{
+                height: 60px;
+                padding: 0;
+                img{
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+
+        tr{
+            transition: 100ms;
+            height: 80px;
+
+            .edit{
+                cursor: pointer;
+                font-size: 1.2rem;
+            }
+    
+            .edit:hover{
+                color:$contrastColor;
+            }
+        }
+
+        tr:hover{
+            td{
+                color: $mainColor;
+
+                i{
+                    color: $darkGrey;
+                }
+            }
+
+            .enabled{
+                i:hover{
+                    cursor: pointer;
+                    color: $redError;
+                }
+            }
+        }
+
+        tr:hover{
+            box-shadow: 0px 3px 5px $shadowDarkGrey;
+        }
+
+        tr:nth-child(even) {
+            background: $darkGradientBackground;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        i{
+            color: $darkGrey;
+            font-size: 1.3rem;
+            transition: 150ms;
+        }
+
+    }
+}

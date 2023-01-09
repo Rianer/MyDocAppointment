@@ -1,0 +1,20 @@
+<div class="table-container">
+    <table>
+        <thead>
+            <th>Doctor</th>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Payment</th>
+            <th>Edit <input type="checkbox" (change)="toggleEditMode()"></th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>cell</td>
+                <td>cell</td>
+                <td>cell</td>
+                <td>cell</td>
+                <td [ngClass]="{'enabled' : editModeActive}"><i class="fas fa-times-circle"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

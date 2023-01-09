@@ -8,7 +8,7 @@
             </div>
             <ul *ngIf="showImageMenu" >
                 <li>Edit</li>
-                <li>Log Out</li>
+                <li (click)="logOut()">Log Out</li>
             </ul>
         </div>
         <div class="details-toggle" (click)="toggleDetails()">
@@ -27,15 +27,15 @@
             </div>
             <div class="container values">
                 <div class="row">
-                    <input type="text" placeholder="Placeholder">
+                    <input type="text" placeholder="Grayson">
                     <i class="far fa-edit"></i>
                 </div>
                 <div class="row">
-                    <input type="text" placeholder="Placeholder">
+                    <input type="text" placeholder="Tom">
                     <i class="far fa-edit"></i>
                 </div>
                 <div class="row">
-                    <input type="number" placeholder="22">
+                    <input type="number" placeholder="43">
                     <i class="far fa-edit"></i>
                 </div>
             </div>
@@ -48,15 +48,15 @@
             </div>
             <div class="container values">
                 <div class="row">
-                    <input type="text" placeholder="Placeholder">
+                    <input type="text" placeholder="t.grayson@mail.med">
                     <i class="far fa-edit"></i>
                 </div>
                 <div class="row">
-                    <input type="text" placeholder="Placeholder">
+                    <input type="text" placeholder="North Carolina, Charlote">
                     <i class="far fa-edit"></i>
                 </div>
                 <div class="row">
-                    <input type="text" placeholder="Placeholder">
+                    <input type="text" placeholder="Administrator">
                     <i class="far fa-edit"></i>
                 </div>
             </div>
@@ -75,12 +75,14 @@
 <section class="dash">
     <div class="content">
         <div class="tabs">
-            <div class="tab active">Doctors</div>
-            <div class="tab">Drugs</div>
-            <div class="tab">Appointments</div>
+            <div class="tab" [ngClass]="{active : displayingTableTab === 0}" (click)="changeTableTab(0)">Doctors</div>
+            <div class="tab" [ngClass]="{active : displayingTableTab === 1}" (click)="changeTableTab(1)">Drugs</div>
+            <div class="tab" [ngClass]="{active : displayingTableTab === 2}" (click)="changeTableTab(2)">Appointments</div>
         </div>
         <div class="tables">
-            <doctors-table [isAdminPage]="true"></doctors-table>
+            <doctors-table *ngIf="displayingTableTab === 0" [isAdminPage]="true"></doctors-table>
+            <drugs-table *ngIf="displayingTableTab === 1"></drugs-table>
+            <appointments-table *ngIf="displayingTableTab === 2"></appointments-table>
         </div>
     </div>
 </section>

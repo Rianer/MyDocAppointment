@@ -16,6 +16,8 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { DetailsOverlayComponent } from './details-overlay/details-overlay.component';
 import { CreateOverlayComponent } from './create-overlay/create-overlay.component';
 import { DoctorsTableComponent } from './tables/doctors-table/doctors-table.component';
+import { AppointmentsTableComponent } from './tables/appointments-table/appointments-table.component';
+import { DrugsTableComponent } from './tables/drugs-table/drugs-table.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { DoctorsTableComponent } from './tables/doctors-table/doctors-table.comp
     DetailsOverlayComponent,
     CreateOverlayComponent,
     DoctorsTableComponent,
+    AppointmentsTableComponent,
+    DrugsTableComponent,
   ],
   imports: [
     BrowserModule,

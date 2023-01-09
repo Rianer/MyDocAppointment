@@ -1,7 +1,8 @@
 export class Appointment{
+    id : string;
     status: string;
-    doctor: string;
-    date: string;
-    result: string;
-    price: string;
+    doctorID: string;
+    patientID: string;
+    specialization: string;
+    appointmentTime: string;
 }

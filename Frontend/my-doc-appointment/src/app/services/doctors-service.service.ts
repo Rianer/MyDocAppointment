@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class DoctorsServiceService {
 
-  private ROOT_URL = 'https://localhost:7288/api/Doctor';
+  private ROOT_URL = 'https://localhost:7288/api/v2/Doctor';
 
   constructor(private http: HttpClient) {}
 

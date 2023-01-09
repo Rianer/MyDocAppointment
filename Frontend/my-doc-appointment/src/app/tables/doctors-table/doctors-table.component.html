@@ -19,7 +19,7 @@
                 <td>{{doctor.speciality}}</td>
                 <td>{{doctor.emailAddress}}</td>
                 <td>{{doctor.phoneNumber}}</td>
-                <td *ngIf="isAdminPage" class="edit"><i class="fas fa-user-edit" (click)="openSidebarDetails(doctor)"></i></td>
+                <td *ngIf="isAdminPage" class="edit" (click)="openSidebarDetails(doctor)"><i class="fas fa-user-edit"></i></td>
             </tr>
         </tbody>
     </table>

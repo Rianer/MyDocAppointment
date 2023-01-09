@@ -5,7 +5,7 @@
     </div>
     <div class="history">
 
-      <div class="appointment" *ngFor="let appointment of appointmentHistory">
+      <!-- <div class="appointment" *ngFor="let appointment of appointmentHistory">
         <div class="status element" 
               [ngClass]="{
                 'pending' : appointment.status === 'pending', 
@@ -26,7 +26,7 @@
           <i *ngIf="appointment.status === 'pending'" class="fas fa-times-circle"></i>
           <i *ngIf="appointment.status !== 'pending'" class="fas fa-chevron-down"></i>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

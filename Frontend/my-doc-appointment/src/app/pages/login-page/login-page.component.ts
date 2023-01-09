@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/user-logging/login.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -20,7 +22,7 @@ export class LoginPageComponent implements OnInit {
     success : false
   }
 
-  constructor (private fg : FormBuilder){
+  constructor (private fg : FormBuilder, private router : Router, private loginService : LoginService){
   }
 
   ngOnInit(){
@@ -44,9 +46,21 @@ export class LoginPageComponent implements OnInit {
 
   signInSubmit(){
     console.log(this.signInForm.value);
+    this.logIn();
   }
 
   signUpSubmit(){
     console.log(this.signUpForm.value);
+  }
+
+  logIn(){
+    if(this.signInForm.value.email == 'admin@admin.admin' && this.signInForm.value.password == 'admin'){
+      this.loginService.publishState(2);
+      this.router.navigate(['/admin']);
+    }
+    else if(this.signInForm.value.email === 'client@client.client' && this.signInForm.value.password === 'client'){
+      this.loginService.publishState(1);
+      this.router.navigate(['/doctors']);
+    }
   }
 }
