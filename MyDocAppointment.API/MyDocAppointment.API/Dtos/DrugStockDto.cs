@@ -1,6 +1,6 @@
 ﻿namespace MyDocAppointment.API.Dtos
 {
-    public class DrugStockDto
+    public class DrugEntryDto
     {
         public string DrugName { get; set; } = string.Empty;
         public Guid DrugId { get; set; }

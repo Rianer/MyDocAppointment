@@ -1,24 +1,25 @@
 ﻿using AutoMapper;
 using MyDocAppointment.Application.Commands;
 using MyDocAppointment.Application.Response;
+using MyDocAppointment.Business.Logistics.Internal;
 
 namespace MyDocAppointment.Application.Mappers
 {
-    public class DrugStockMappingProfile : Profile
+    public class DrugEntryMappingProfile : Profile
     {
-        public DrugStockMappingProfile()
+        public DrugEntryMappingProfile()
         {
-            CreateMap<DrugStock, DrugStockResponse>()
+            CreateMap<DrugEntry, DrugEntryResponse>()
                 .ForMember(dest => dest.DrugId,
-                opt => opt.MapFrom(src => src.Item.Id))
+                opt => opt.MapFrom(src => src.Drug.Id))
                 .ForMember(dest => dest.DrugName,
-                opt => opt.MapFrom(src => src.Item.Name))
+                opt => opt.MapFrom(src => src.Drug.Name))
                 .ReverseMap();
-            CreateMap<DrugStock, CreateDrugStockCommand>()
+            CreateMap<DrugEntry, CreateDrugEntryCommand>()
                  .ForMember(dest => dest.DrugId,
-                opt => opt.MapFrom(src => src.Item.Id))
+                opt => opt.MapFrom(src => src.Drug.Id))
                  .ForMember(dest => dest.DrugName,
-                opt => opt.MapFrom(src => src.Item.Name))
+                opt => opt.MapFrom(src => src.Drug.Name))
                  .ReverseMap();
         }
     }

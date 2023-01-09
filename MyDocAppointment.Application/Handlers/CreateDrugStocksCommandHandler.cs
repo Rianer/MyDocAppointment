@@ -7,30 +7,30 @@ using MyDocAppointment.Business.Logistics.Internal;
 
 namespace MyDocAppointment.API.Handlers
 {
-    public class CreateDrugStocksCommandHandler :
-        IRequestHandler<CreateDrugStockCommand,
-            DrugStockResponse>
+    public class CreateDrugEntrysCommandHandler :
+        IRequestHandler<CreateDrugEntryCommand,
+            DrugEntryResponse>
     {
-        private readonly IDrugStocksRepository _repository;
+        private readonly IDrugEntrysRepository _repository;
 
-        public CreateDrugStocksCommandHandler(IDrugStocksRepository repository)
+        public CreateDrugEntrysCommandHandler(IDrugEntrysRepository repository)
         {
             _repository = repository;
         }
-        public async Task<DrugStockResponse>
-            Handle(CreateDrugStockCommand request,
+        public async Task<DrugEntryResponse>
+            Handle(CreateDrugEntryCommand request,
             CancellationToken cancellationToken)
         {
-            var drugStockEntity = DrugStockMapper.Mapper.Map<DrugStock>(request);
+            var drugStockEntity = DrugEntryMapper.Mapper.Map<DrugEntry>(request);
             if (drugStockEntity == null)
             {
                 throw new ApplicationException("Issue with the mapper");
             }
-            var drugItem = await _repository.GetDrug(drugStockEntity.Item.Id);
-            drugStockEntity.Item= drugItem;
+            var drugItem = await _repository.GetDrug(drugStockEntity.Drug.Id);
+            drugStockEntity = drugItem;
 
-            var newDrugStock = await _repository.AddAsync(drugStockEntity);
-            return DrugStockMapper.Mapper.Map<DrugStockResponse>(newDrugStock);
+            var newDrugEntry = await _repository.AddAsync(drugStockEntity);
+            return DrugEntryMapper.Mapper.Map<DrugEntryResponse>(newDrugEntry);
         }
     }
 }

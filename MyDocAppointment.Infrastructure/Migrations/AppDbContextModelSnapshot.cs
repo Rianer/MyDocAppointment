@@ -161,7 +161,7 @@ namespace MyDocAppointment.Infrastructure.Migrations
                     b.ToTable("Drugs");
                 });
 
-            modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.DrugStock", b =>
+            modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.DrugEntry", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -180,7 +180,7 @@ namespace MyDocAppointment.Infrastructure.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("DrugStocks");
+                    b.ToTable("DrugEntrys");
                 });
 
             modelBuilder.Entity("MyDocAppointment.Business.Users.Doctor", b =>
@@ -304,10 +304,10 @@ namespace MyDocAppointment.Infrastructure.Migrations
                         .HasForeignKey("DiagnosisId");
                 });
 
-            modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.DrugStock", b =>
+            modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.DrugEntry", b =>
                 {
                     b.HasOne("MyDocAppointment.Business.Logistics.Internal.Drug", "Item")
-                        .WithMany("DrugStocks")
+                        .WithMany("DrugEntrys")
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -322,7 +322,7 @@ namespace MyDocAppointment.Infrastructure.Migrations
 
             modelBuilder.Entity("MyDocAppointment.Business.Logistics.Internal.Drug", b =>
                 {
-                    b.Navigation("DrugStocks");
+                    b.Navigation("DrugEntrys");
                 });
 
             modelBuilder.Entity("MyDocAppointment.Business.Users.Doctor", b =>

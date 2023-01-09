@@ -3,7 +3,7 @@ using MyDocAppointment.Application.Response;
 
 namespace MyDocAppointment.Application.Queries
 {
-    public class GetAllDrugStocksQuery : IRequest<List<DrugStockResponse>>
+    public class GetAllDrugEntrysQuery : IRequest<List<DrugEntryResponse>>
     {
     }
 }

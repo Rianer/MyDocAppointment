@@ -5,7 +5,7 @@
 namespace MyDocAppointment.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class AddDrugStocksTable : Migration
+    public partial class AddDrugEntrysTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,7 +23,7 @@ namespace MyDocAppointment.Infrastructure.Migrations
                 oldType: "uniqueidentifier");
 
             migrationBuilder.CreateTable(
-                name: "DrugStocks",
+                name: "DrugEntrys",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -33,9 +33,9 @@ namespace MyDocAppointment.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DrugStocks", x => x.Id);
+                    table.PrimaryKey("PK_DrugEntrys", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DrugStocks_Drugs_ItemId",
+                        name: "FK_DrugEntrys_Drugs_ItemId",
                         column: x => x.ItemId,
                         principalTable: "Drugs",
                         principalColumn: "Id",
@@ -43,8 +43,8 @@ namespace MyDocAppointment.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_DrugStocks_ItemId",
-                table: "DrugStocks",
+                name: "IX_DrugEntrys_ItemId",
+                table: "DrugEntrys",
                 column: "ItemId");
 
             migrationBuilder.AddForeignKey(
@@ -63,7 +63,7 @@ namespace MyDocAppointment.Infrastructure.Migrations
                 table: "Appointments");
 
             migrationBuilder.DropTable(
-                name: "DrugStocks");
+                name: "DrugEntrys");
 
             migrationBuilder.AlterColumn<Guid>(
                 name: "PaymentId",

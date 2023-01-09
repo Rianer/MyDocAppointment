@@ -3,7 +3,7 @@ using MyDocAppointment.Application.Response;
 
 namespace MyDocAppointment.Application.Commands
 {
-    public class CreateDrugStockCommand : IRequest<DrugStockResponse>
+    public class CreateDrugEntryCommand : IRequest<DrugEntryResponse>
     {
         public Guid DrugId { get; set; }
         public string? DrugName { get; set; }

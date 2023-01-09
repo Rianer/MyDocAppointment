@@ -2,7 +2,7 @@
 
 namespace MyDocAppointment.Application.Mappers
 {
-    public class DrugStockMapper
+    public class DrugEntryMapper
     {
         private static Lazy<IMapper> Lazy =
            new Lazy<IMapper>(() =>
@@ -12,7 +12,7 @@ namespace MyDocAppointment.Application.Mappers
                    cfg.ShouldMapProperty = p =>
                    p.GetMethod.IsPublic ||
                    p.GetMethod.IsAssembly;
-                   cfg.AddProfile<DrugStockMappingProfile>();
+                   cfg.AddProfile<DrugEntryMappingProfile>();
                });
                var mapper = config.CreateMapper();
                return mapper;

@@ -2,10 +2,10 @@
 
 namespace MyDocAppointment.Business.Interfaces
 {
-    public interface IDrugStocksRepository
+    public interface IDrugEntrysRepository
     {
-        Task<DrugStock> AddAsync(DrugStock doctor);
-        Task<IEnumerable<DrugStock>> GetAll();
-        Task<Drug> GetDrug(Guid drugId);
+        Task<DrugEntry> AddAsync(DrugEntry drugStock);
+        Task<IEnumerable<DrugEntry>> GetAll();
+        Task<DrugEntry> GetDrug(Guid drugId);
     }
 }

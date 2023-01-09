@@ -5,17 +5,17 @@ using MyDocAppointment.Business.Interfaces;
 
 namespace MyDocAppointment.Application.Queries
 {
-    public class GetAllDrugStocksQueryHandler : IRequestHandler<GetAllDrugStocksQuery, List<DrugStockResponse>>
+    public class GetAllDrugEntrysQueryHandler : IRequestHandler<GetAllDrugEntrysQuery, List<DrugEntryResponse>>
     {
-        private readonly IDrugStocksRepository _repository;
+        private readonly IDrugEntrysRepository _repository;
 
-        public GetAllDrugStocksQueryHandler(IDrugStocksRepository repository)
+        public GetAllDrugEntrysQueryHandler(IDrugEntrysRepository repository)
         {
             _repository = repository;
         }
-        public async Task<List<DrugStockResponse>> Handle(GetAllDrugStocksQuery request, CancellationToken cancellationToken)
+        public async Task<List<DrugEntryResponse>> Handle(GetAllDrugEntrysQuery request, CancellationToken cancellationToken)
         {
-            var result = DrugStockMapper.Mapper.Map<List<DrugStockResponse>>
+            var result = DrugEntryMapper.Mapper.Map<List<DrugEntryResponse>>
                 (await _repository.GetAll());
             return result;
         }

@@ -10,7 +10,7 @@ namespace MyDocAppointment.API.Mapping
         {
             CreateMap<Drug, DrugDto>().ReverseMap();
             CreateMap<CreateDrugDto, Drug>();
-            CreateMap<DrugStock, DrugStockDto>().ReverseMap();
+            CreateMap<DrugEntry, DrugEntryDto>().ReverseMap();
         }
     }
 }

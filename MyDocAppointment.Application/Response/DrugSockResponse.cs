@@ -1,6 +1,6 @@
 ﻿namespace MyDocAppointment.Application.Response
 {
-    public class DrugStockResponse
+    public class DrugEntryResponse
     {
         public string? DrugName { get; set; }
         public Guid DrugId { get; set; }

@@ -64,7 +64,7 @@ namespace MyDocAppointment.Application
 
             currentDrug.Name = drug.Name;
             currentDrug.Vendor = drug.Vendor;
-            currentDrug.Category = drug.Category;
+            currentDrug.Description = drug.Description;
             currentDrug.Price = drug.Price;
 
             await _drugsRepository.SaveChanges();

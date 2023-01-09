@@ -9,7 +9,7 @@ namespace MyDocAppointment.API.Dtos
             RuleFor(x => x.Name).Length(1, 30);
             RuleFor(x => x.Vendor).Length(1, 30);
             RuleFor(x => x.Price).NotEmpty();
-            RuleFor(x => x.Category).Length(1, 20);
+            RuleFor(x => x.Description).Length(1, 20);
         }
     }
 }

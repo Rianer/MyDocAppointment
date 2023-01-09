@@ -2,9 +2,9 @@
 
 namespace MyDocAppointment.Application.Commands
 {
-    public class CreateDrugStockCommandValidator : AbstractValidator<CreateDrugStockCommand>
+    public class CreateDrugEntryCommandValidator : AbstractValidator<CreateDrugEntryCommand>
     {
-        public CreateDrugStockCommandValidator()
+        public CreateDrugEntryCommandValidator()
         {
             RuleFor(x => x.DrugId).NotNull();
             RuleFor(x => x.DrugName).Length(0, 30);

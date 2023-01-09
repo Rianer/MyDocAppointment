@@ -11,9 +11,8 @@ namespace MyDocAppointment.Infrastructure.Configurations
             builder.HasKey(d => d.Id);
             builder.Property(d => d.Name);
             builder.Property(d => d.Vendor);
-            builder.Property(d => d.Category);
+            builder.Property(d => d.Description);
             builder.Property(d => d.Price);
-            builder.HasMany(d => d.DrugStocks).WithOne(ds => ds.Item);
         }
     }
 }
