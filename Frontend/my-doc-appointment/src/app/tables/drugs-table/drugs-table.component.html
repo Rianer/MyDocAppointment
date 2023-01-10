@@ -6,21 +6,117 @@
             <th>Vendor</th>
             <th>Category</th>
             <th>Price</th>
-            <th class="add-instance"><i class="fas fa-plus"></i></th>
+            <th class="add-instance" (click)="openCreateMenu()"><i class="fas fa-plus"></i></th>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let drug of drugList">
                 <td>
                     <div class="img-container">
                         <img src="../../../assets/img/drug-icon.png">
                     </div>
                 </td>
-                <td>Paracetamol</td>
-                <td>PharmCorp</td>
-                <td>Pills</td>
-                <td>20</td>
-                <td class="edit"><i class="fas fa-times-circle"></i></td>
+                <td>{{drug.name}}</td>
+                <td>{{drug.vendor}}</td>
+                <td>{{drug.category}}</td>
+                <td>{{drug.price}}</td>
+                <td class="edit" (click)="openEditMenu(drug)"><i class="fas fa-edit"></i></td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<section class="sidebar-menu" *ngIf="showEditMenu" (click)="clickedWhiteSpace($event)">
+    <div class="info">
+        <div class="title">
+            <div>
+                <h2>{{currentDrug.name}}</h2>
+                <p>{{currentDrug.category}}</p>
+            </div>
+            <div>
+                <img src="../../../assets/img/drug-icon.png">
+            </div>
+        </div>
+        <div class="controls">
+            <button class="update" (click)="updateDrug()">Update</button>
+            <button class="delete" (click)="deleteDrug()">Delete</button>
+        </div>
+
+        <div class="form">
+            <div class="row">
+                <label>Name:</label>
+            </div>
+            <div class="row">
+                <input type="text" [placeholder]="currentDrug.name" [(ngModel)]="updatedDrug.name">
+            </div>
+            <div class="row">
+                <label>Vendor:</label>
+            </div>
+            <div class="row">
+                <input type="text" [placeholder]="currentDrug.vendor" [(ngModel)]="updatedDrug.vendor">
+            </div>
+            <div class="row">
+                <label>Category:</label>
+            </div>
+            <div class="row">
+                <input type="text" [placeholder]="currentDrug.category" [(ngModel)]="updatedDrug.category">
+            </div>
+            <div class="row">
+                <label>Price:</label>
+            </div>
+            <div class="row">
+                <input type="number" [(ngModel)]="updatedDrug.price">
+            </div>
+        </div>
+
+        <div class="close">
+            <button (click)="closeEditMenu()">Close</button>
+        </div>
+    </div>
+</section>
+
+<section class="sidebar-menu" *ngIf="showCreateMenu" (click)="clickedWhiteSpace($event)">
+    <div class="info">
+        <div class="title">
+            <div>
+                <h2>New Drug</h2>
+            </div>
+            <div>
+                <img src="../../../assets/img/drug-icon.png">
+            </div>
+        </div>
+        <div class="create">
+            <button [ngClass]="{'disabled' : !this.newDrug.isComplete()}" (click)="createDrug()">Create</button>
+        </div>
+
+        <div class="form">
+            <div class="row">
+                <label>Name:</label>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Type..." [(ngModel)]="newDrug.name">
+            </div>
+            <div class="row">
+                <label>Vendor:</label>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Type..." [(ngModel)]="newDrug.vendor">
+            </div>
+            <div class="row">
+                <label>Category:</label>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Type..." [(ngModel)]="newDrug.category">
+            </div>
+            <div class="row">
+                <label>Price:</label>
+            </div>
+            <div class="row">
+                <input type="number" placeholder="Type..." [(ngModel)]="newDrug.price">
+            </div>
+        </div>
+
+        <div class="close">
+            <button (click)="closeCreateMenu()">Close</button>
+        </div>
+    </div>
+</section>

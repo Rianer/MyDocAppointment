@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   }
   ngOnInit(): void {
     if(this.status.loggedStatus === 0){
-      this.router.navigate(['']);
+      this.router.navigate(['admin']);
     }
   }
   title = 'my-doc-appointment';
