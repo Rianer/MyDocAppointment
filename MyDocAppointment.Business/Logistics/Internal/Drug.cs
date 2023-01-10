@@ -8,9 +8,9 @@ namespace MyDocAppointment.Business.Logistics.Internal
         public string Name { get; set; } = string.Empty;
         public string Vendor { get; set; } = string.Empty;
         public decimal Price { get; set;}
-        public string Description { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
 
-        public static Result<Drug> Create(string name, string vendor, decimal price, string description)
+        public static Result<Drug> Create(string name, string vendor, decimal price, string category)
         {
             if(price < 0)
             {
@@ -23,7 +23,7 @@ namespace MyDocAppointment.Business.Logistics.Internal
                 Name = name,
                 Vendor = vendor,
                 Price = price,
-                Description = description
+                Category = category
             };
 
             return Result<Drug>.Success(drug);

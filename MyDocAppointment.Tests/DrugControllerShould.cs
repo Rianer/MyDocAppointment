@@ -141,7 +141,7 @@ namespace MyDocAppointment.Tests
 
         private Drug GetDrug()
         {
-            var entity = Drug.Create("Name", "Vendor", (decimal)12.4, "Description").Entity;
+            var entity = Drug.Create("Name", "Vendor", (decimal)12.4, "Category").Entity;
             entity.Id = idOk;
             return entity;
         }
@@ -153,7 +153,7 @@ namespace MyDocAppointment.Tests
                 Id = idOk,
                 Name = "Name",
                 Vendor = "vendor",
-                Description = "Description",
+                Category = "Category",
                 Price = (decimal)12.4
             };
         }
