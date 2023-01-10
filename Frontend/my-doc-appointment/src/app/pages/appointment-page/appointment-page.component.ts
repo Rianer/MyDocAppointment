@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NewAppointment } from 'src/app/models/appointment.model';
-
+import { MatDialog } from '@angular/material/dialog';
+import { AddAppointmentComponent } from 'src/app/components/add-appointment/add-appointment.component';
+import { Appointment } from 'src/app/models/appointment.model';
 
 @Component({
   selector: 'app-appointment-page',
@@ -9,6 +11,8 @@ import { NewAppointment } from 'src/app/models/appointment.model';
   styleUrls: ['./appointment-page.component.scss']
 })
 export class AppointmentPageComponent implements OnInit {
+  constructor(
+    public dialog: MatDialog  ) {}
 
   appointmentHistory : NewAppointment[];
 
@@ -37,6 +41,8 @@ export class AppointmentPageComponent implements OnInit {
     //   },
     // ]
   }
-
-
+  
+  openDialog() {
+    this.dialog.open(AddAppointmentComponent).afterClosed();
+  }
 }

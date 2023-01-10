@@ -1,8 +1,9 @@
 <section class="appointment-container">
   <div class="content-container">
     <div class="control-field">
-      <p><i class="fas fa-calendar-plus"></i>New Appointment</p>
+      <p (click)="openDialog()"><i class="fas fa-calendar-plus"></i>New Appointment</p>
     </div>
+    
     <div class="history">
 
       <!-- <div class="appointment" *ngFor="let appointment of appointmentHistory">

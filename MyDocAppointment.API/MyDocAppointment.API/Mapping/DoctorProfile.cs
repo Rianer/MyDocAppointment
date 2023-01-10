@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MyDocAppointment.API.Dtos;
+using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.API.Mapping

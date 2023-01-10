@@ -1,4 +1,5 @@
-﻿using MyDocAppointment.Business.Users;
+﻿using MyDocAppointment.Business.Helpers;
+using MyDocAppointment.Business.Users;
 
 namespace MyDocAppointment.Business.Interfaces
 {
@@ -10,5 +11,6 @@ namespace MyDocAppointment.Business.Interfaces
         Task SaveChanges();
         Task<IEnumerable<Doctor>> GetAll();
         Task<Doctor?> GetById(Guid id);
+        Task<IEnumerable<Doctor>> GetBySpectialization(Specialization specialization);
     }
 }

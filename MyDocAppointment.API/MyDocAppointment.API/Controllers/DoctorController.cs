@@ -5,6 +5,7 @@ using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Application.Commands;
 using MyDocAppointment.Application.Queries;
 using MyDocAppointment.Application.Response;
+using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Users;
 
@@ -51,6 +52,21 @@ namespace MyDocAppointment.API.Controllers
             }
 
             var model = _mapper.Map<DoctorDto>(response.Entity);
+            return Ok(model);
+        }
+
+        [MapToApiVersion("1.0")]
+        [HttpGet("{specialization}")]
+        public async Task<IActionResult> GetBySpectialization(String specialization)
+        {
+            var speciality = _mapper.Map<Specialization>(specialization);
+            var response = await _doctorService.GetBySpectialization(speciality);
+            if (!response.IsSuccess)
+            {
+                return NotFound(response.Error);
+            }
+
+            var model = _mapper.Map<IEnumerable<DoctorDto>>(response.Entity);
             return Ok(model);
         }
 

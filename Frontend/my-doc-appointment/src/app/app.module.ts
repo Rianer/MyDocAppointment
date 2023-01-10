@@ -16,6 +16,14 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { DetailsOverlayComponent } from './details-overlay/details-overlay.component';
 import { CreateOverlayComponent } from './create-overlay/create-overlay.component';
 import { DoctorsTableComponent } from './tables/doctors-table/doctors-table.component';
+import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { NgIconsModule } from '@ng-icons/core';
+import { DatePipe } from '@angular/common'
+import { heroUsers } from '@ng-icons/heroicons/outline';
 import { AppointmentsTableComponent } from './tables/appointments-table/appointments-table.component';
 import { DrugsTableComponent } from './tables/drugs-table/drugs-table.component';
 
@@ -35,15 +43,24 @@ import { DrugsTableComponent } from './tables/drugs-table/drugs-table.component'
     DoctorsTableComponent,
     AppointmentsTableComponent,
     DrugsTableComponent,
+    AddAppointmentComponent,
   ],
   imports: [
+    MatIconModule,
+    MatInputModule,
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    NgIconsModule.withIcons({ heroUsers }),
   ],
-  providers: [],
+  exports:[
+    AppointmentPageComponent],
+  providers: [AppointmentPageComponent, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

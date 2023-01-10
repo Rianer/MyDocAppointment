@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Users;
 
@@ -32,6 +33,13 @@ namespace MyDocAppointment.Infrastructure.Repositories
         }
 
         public async Task<IEnumerable<Doctor>> GetAll() => await _appDbContext.Doctors.ToListAsync();
+
+        public async Task<IEnumerable<Doctor>> GetBySpectialization(Specialization specialization) {
+            var doctors = await _appDbContext.Doctors.Where(d => d.Speciality == specialization).ToListAsync();
+
+            return doctors;
+        }
+
 
         public async Task<Doctor?> GetById(Guid id)
         {
