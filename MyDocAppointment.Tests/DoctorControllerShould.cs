@@ -15,7 +15,7 @@ namespace MyDocAppointment.Tests
     public class DoctorControllerShould
     {
         DoctorController controller;
-        Guid idOk;  
+        static Guid idOk;  
         Guid idNotFound;
         public DoctorControllerShould()
         {
@@ -112,32 +112,32 @@ namespace MyDocAppointment.Tests
             Assert.IsType<NotFoundObjectResult>(response);
         }
 
-        private CreateDoctorCommand GetCreateDoctorDto()
+        private static CreateDoctorCommand GetCreateDoctorDto()
         {
 
             var doctor = new CreateDoctorCommand();
             return doctor;
 
         }
-        private Result<Doctor> GetTestDoctors()
+        private static Result<Doctor> GetTestDoctors()
         {
             var doctor = new Doctor();
             return Result<Doctor>.Success(doctor);
         }
-        private async Task<Result> SuccessResult()
+        private static async Task<Result> SuccessResult()
         {
             return Result.Success();
         }
-        private async Task<Result> FailResult(Guid id)
+        private static async Task<Result> FailResult(Guid id)
         {
             return Result.Failure($"Doctor with ID: {id} does not exist.");
         }
-        private async Task<Result<Doctor>> FailureResult(Guid id)
+        private static async Task<Result<Doctor>> FailureResult(Guid id)
         {
             return Result<Doctor>.Failure($"Patient with ID: {id} does not exist.");
         }
 
-        private DoctorDto GetDoctorDto()
+        private static DoctorDto GetDoctorDto()
         {
             var dto = new DoctorDto()
             {
@@ -154,7 +154,7 @@ namespace MyDocAppointment.Tests
             return dto;
         }
 
-        private Doctor GetDoctor()
+        private static Doctor GetDoctor()
         {
             return new Doctor()
             {
@@ -170,7 +170,7 @@ namespace MyDocAppointment.Tests
             };
         }
 
-        private Result<Doctor> GetTestDoctor()
+        private static Result<Doctor> GetTestDoctor()
         {
             var doctor = GetDoctor();
             return Result<Doctor>.Success(doctor);

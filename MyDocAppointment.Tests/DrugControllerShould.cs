@@ -13,7 +13,7 @@ namespace MyDocAppointment.Tests
     public class DrugControllerShould
     {
         DrugController controller;
-        Guid idOk;
+        static Guid idOk;
         Guid idNotFound;
         public DrugControllerShould()
         {
@@ -108,45 +108,48 @@ namespace MyDocAppointment.Tests
             Assert.IsType<NotFoundObjectResult>(response);
         }
 
-        private CreateDrugDto GetCreateDrugDto()
+        private static CreateDrugDto GetCreateDrugDto()
         {
 
             var drug = new CreateDrugDto();
             return drug;
 
         }
-        private Result<Drug> GetTestDrugs()
+        private static Result<Drug> GetTestDrugs()
         {
             var drug = new Drug();
             return Result<Drug>.Success(drug);
         }
 
-        private Result<Drug> GetTestDrug()
+        private static Result<Drug> GetTestDrug()
         {
             var drug = GetDrug();
             return Result<Drug>.Success(drug);
         }
-        private async Task<Result> SuccessResult()
+        private static async Task<Result> SuccessResult()
         {
             return Result.Success();
         }
-        private async Task<Result> FailResult(Guid id)
+        private static async Task<Result> FailResult(Guid id)
         {
             return Result.Failure($"Patient with ID: {id} does not exist.");
         }
-        private async Task<Result<Drug>> FailureResult(Guid id)
+        private static async Task<Result<Drug>>? FailureResult(Guid id)
         {
             return Result<Drug>.Failure($"Drug with ID: {id} does not exist.");
         }
 
-        private Drug GetDrug()
+        private static Drug? GetDrug()
         {
             var entity = Drug.Create("Name", "Vendor", (decimal)12.4, "Category").Entity;
-            entity.Id = idOk;
+            if(entity != null )
+            {
+                entity.Id = idOk;
+            }
             return entity;
         }
 
-        private DrugDto GetDrugDto()
+        private static DrugDto GetDrugDto()
         {
             return new DrugDto()
             {

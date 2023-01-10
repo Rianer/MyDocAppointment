@@ -261,6 +261,27 @@
           "locations": [
             {
               "resultFile": {
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Infrastructure/Migrations/20221219221533_AddDrugStocksTable.cs",
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 31,
+                  "endLine": 73,
+                  "endColumn": 79
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4581",
+          "level": "warning",
+          "message": "Use 'Guid.NewGuid()' or 'Guid.Empty' or add arguments to this GUID instantiation.",
+          "locations": [
+            {
+              "resultFile": {
                 "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Infrastructure/Migrations/20221206132131_AddSomeColumns.cs",
                 "region": {
                   "startLine": 104,
@@ -287,27 +308,6 @@
                   "startLine": 54,
                   "startColumn": 31,
                   "endLine": 54,
-                  "endColumn": 79
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S4581",
-          "level": "warning",
-          "message": "Use 'Guid.NewGuid()' or 'Guid.Empty' or add arguments to this GUID instantiation.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Infrastructure/Migrations/20221219221533_AddDrugStocksTable.cs",
-                "region": {
-                  "startLine": 73,
-                  "startColumn": 31,
-                  "endLine": 73,
                   "endColumn": 79
                 }
               }

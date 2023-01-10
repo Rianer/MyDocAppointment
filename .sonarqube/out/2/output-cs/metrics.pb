@@ -20,15 +20,17 @@ FE:\repo2\MyDocAppointment\MyDocAppointment.Application\DrugsService.cs 8r
 ]E:\repo2\MyDocAppointment\MyDocAppointment.Application\Handlers\CreateDoctorCommandHandler.cs 8r	
  !x‚›
 aE:\repo2\MyDocAppointment\MyDocAppointment.Application\Handlers\CreateDrugStocksCommandHandler.cs 8r!	
- !"#$x‚ !}
-NE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMapper.cs 8r	
-x‚	
-v
+ !"#$x‚ !€
+NE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMapper.cs 8r	
+x‚
+
+v
 VE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMappingProfile.cs 8r	
-‚€
-QE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMapper.cs 8r	
-x‚	
-‹
+‚ƒ
+QE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMapper.cs 8r	
+x‚
+
+‹
 YE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMappingProfile.cs 8r	
 ‚
 ¹

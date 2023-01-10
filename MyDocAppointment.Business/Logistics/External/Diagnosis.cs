@@ -39,13 +39,27 @@ namespace MyDocAppointment.Business.Logistics.External
 
         public Result AddObservation(string date, string description)
         {
-            Observations.Add(Observation.Create(date, description).Entity);
+            if(Observations == null)
+            {
+                return Result.Failure("Null list!");
+            }
+
+            Observation? entity = Observation.Create(date, description).Entity;
+            if(entity == null)
+            {
+                return Result.Failure("Entity error!");
+            }
+            Observations.Add(entity);
             return Result.Success();
         }
 
         public Result DeleteObservation(int id)
         {
-            if( Observations.Count > id)
+            if (Observations == null)
+            {
+                return Result.Failure("Null list!");
+            }
+            if ( Observations.Count > id)
             {
                  Observations.RemoveAt(id);
                 return Result.Success();
@@ -55,9 +69,20 @@ namespace MyDocAppointment.Business.Logistics.External
 
         public Result ModifyObservation(int id, string date, string description)
         {
+            if (Observations == null)
+            {
+                return Result.Failure("Null list!");
+            }
+
+
             if ( Observations.Count > id)
             {
-                 Observations[id] = Observation.Create(date, description).Entity;
+                Observation? entity = Observation.Create(date, description).Entity;
+                if(entity == null)
+                {
+                    return Result.Failure("ID not found!");
+                }
+                Observations[id] = entity;
                 return Result.Success();
             }
             return Result.Failure("Observation doesn't exist in diagnosis!");

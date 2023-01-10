@@ -12,27 +12,6 @@
       },
       "results": [
         {
-          "ruleId": "S3267",
-          "level": "warning",
-          "message": "Loop should be simplified by calling Select(description => description.GroupName))",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.API/MyDocAppointment.API/Program.cs",
-                "region": {
-                  "startLine": 70,
-                  "startColumn": 37,
-                  "endLine": 70,
-                  "endColumn": 89
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "S5122",
           "level": "warning",
           "message": "Make sure this permissive CORS policy is safe here.",
@@ -55,22 +34,6 @@
         }
       ],
       "rules": {
-        "S3267": {
-          "id": "S3267",
-          "shortDescription": "Loops should be simplified with \"LINQ\" expressions",
-          "fullDescription": "When a loop is filtering, selecting or aggregating, those functions can be handled with a clearer, more concise LINQ expression instead.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3267",
-          "properties": {
-            "category": "Minor Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "SonarWay"
-            ]
-          }
-        },
         "S5122": {
           "id": "S5122",
           "shortDescription": "Having a permissive Cross-Origin Resource Sharing policy is security-sensitive",

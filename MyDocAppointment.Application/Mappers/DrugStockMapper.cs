@@ -9,9 +9,11 @@ namespace MyDocAppointment.Application.Mappers
            {
                var config = new MapperConfiguration(cfg =>
                {
-                   cfg.ShouldMapProperty = p =>
-                   p.GetMethod.IsPublic ||
-                   p.GetMethod.IsAssembly;
+                   cfg.ShouldMapProperty = p => {
+                       System.Reflection.MethodInfo? getMethod = p.GetMethod;
+                       return getMethod.IsPublic ||
+                                          p.GetMethod.IsAssembly;
+                   };
                    cfg.AddProfile<DrugEntryMappingProfile>();
                });
                var mapper = config.CreateMapper();

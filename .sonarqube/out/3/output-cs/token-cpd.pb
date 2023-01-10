@@ -6352,7 +6352,7 @@ ReverseMap- 7
 ;2 3
 } 	
 } 
-} ±/
+} “0
 NE:\repo2\MyDocAppointment\MyDocAppointment.API\MyDocAppointment.API\Program.cs
 var 
 builder 
@@ -6627,7 +6627,18 @@ UseSwaggerCC 
 apiVersionDescriptionProviderFF$ A
 .FFA B"
 ApiVersionDescriptionsFFB X
-)FFX Y
+.FFX Y
+SelectFFY _
+(FF_ `
+descriptionFF` k
+=>FFl n
+descriptionFFo z
+.FFz {
+	GroupName	FF{ „
+)
+FF„ …
+)
+FF… †
 {GG 	
 optionsHH 
 .HH 
@@ -6637,21 +6648,17 @@ UseSwaggerCC 
 $strHH& /
 {HH/ 0
 descriptionHH0 ;
-.HH; <
-	GroupNameHH< E
-}HHE F
-$strHHF S
-"HHS T
-,HHT U
+}HH; <
+$strHH< I
+"HHI J
+,HHJ K
 descriptionII 
-.II 
-	GroupNameII %
-.II% &
-ToUpperInvariantII& 6
-(II6 7
-)II7 8
-)II8 9
-;II9 :
+.II 
+ToUpperInvariantII ,
+(II, -
+)II- .
+)II. /
+;II/ 0
 }JJ 	
 }KK 
 )KK 

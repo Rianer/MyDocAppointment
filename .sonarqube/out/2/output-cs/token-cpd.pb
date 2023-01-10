@@ -1951,7 +1951,7 @@ repository" ,
 ;E F
 } 	
 }   
-}!! œ
+}!! ¢
 aE:\repo2\MyDocAppointment\MyDocAppointment.Application\Handlers\CreateDrugStocksCommandHandler.cs
 	namespace 	
 MyDocAppointment
@@ -2044,22 +2044,22 @@ repository $
 $str/ F
 )F G
 ;G H
-} 
-var 
-drugItem 
-= 
-await  
-_repository! ,
-., -
-GetDrug- 4
-(4 5
-drugStockEntity5 D
-.D E
-DrugE I
-.I J
-IdJ L
-)L M
-;M N
+} 
+	DrugEntry 
+drugItem 
+=  
+await! &
+_repository' 2
+.2 3
+GetDrug3 :
+(: ;
+drugStockEntity; J
+.J K
+DrugK O
+.O P
+IdP R
+)R S
+;S T
 drugStockEntity 
 = 
 drugItem &
@@ -2090,7 +2090,7 @@ repository $
 ;!!N O
 }"" 	
 }## 
-}$$ ì
+}$$ ê
 NE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMapper.cs
 	namespace 	
 MyDocAppointment
@@ -2155,58 +2155,74 @@ NE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMapper.cs
 =) *
 p+ ,
 =>- /
-p 
-. 
-	GetMethod 
-. 
-IsPublic '
-||( *
-p 
-. 
-	GetMethod 
-. 
+{0 1
+System 
+. 
 
-IsAssembly )
-;) *
-cfg 
-. 
+Reflection (
+.( )
 
-AddProfile !
-<! " 
-DoctorMappingProfile" 6
->6 7
-(7 8
-)8 9
-;9 :
-} 
-) 
-; 
-var 
-mapper 
-= 
-config "
-." #
-CreateMapper# /
-(/ 0
-)0 1
-;1 2
-return 
-mapper 
-; 
-} 
-) 
-; 
-public 
-static 
-IMapper 
-Mapper $
-=>% '
-Lazy( ,
-., -
-Value- 2
-;2 3
-} 
-} ¿
+MethodInfo) 3
+?3 4
+	getMethod5 >
+=? @
+pA B
+.B C
+	GetMethodC L
+;L M
+return 
+	getMethod '
+.' (
+IsPublic( 0
+||1 3
+p* +
+.+ ,
+	GetMethod, 5
+.5 6
+
+IsAssembly6 @
+;@ A
+} 
+; 
+cfg 
+. 
+
+AddProfile !
+<! " 
+DoctorMappingProfile" 6
+>6 7
+(7 8
+)8 9
+;9 :
+} 
+) 
+; 
+var 
+mapper 
+= 
+config "
+." #
+CreateMapper# /
+(/ 0
+)0 1
+;1 2
+return 
+mapper 
+; 
+} 
+) 
+; 
+public 
+static 
+IMapper 
+Mapper $
+=>% '
+Lazy( ,
+., -
+Value- 2
+;2 3
+} 
+} ¿
 VE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DoctorMappingProfile.cs
 	namespace 	
 MyDocAppointment
@@ -2266,7 +2282,7 @@ ReverseMap5 ?
 ;A B
 } 	
 } 
-} õ
+} ó
 QE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMapper.cs
 	namespace 	
 MyDocAppointment
@@ -2331,58 +2347,74 @@ QE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMapper.
 =) *
 p+ ,
 =>- /
-p 
-. 
-	GetMethod 
-. 
-IsPublic '
-||( *
-p 
-. 
-	GetMethod 
-. 
+{0 1
+System 
+. 
 
-IsAssembly )
-;) *
-cfg 
-. 
+Reflection (
+.( )
 
-AddProfile !
-<! "#
-DrugEntryMappingProfile" 9
->9 :
-(: ;
-); <
-;< =
-} 
-) 
-; 
-var 
-mapper 
-= 
-config "
-." #
-CreateMapper# /
-(/ 0
-)0 1
-;1 2
-return 
-mapper 
-; 
-} 
-) 
-; 
-public 
-static 
-IMapper 
-Mapper $
-=>% '
-Lazy( ,
-., -
-Value- 2
-;2 3
-} 
-} œ
+MethodInfo) 3
+?3 4
+	getMethod5 >
+=? @
+pA B
+.B C
+	GetMethodC L
+;L M
+return 
+	getMethod '
+.' (
+IsPublic( 0
+||1 3
+p* +
+.+ ,
+	GetMethod, 5
+.5 6
+
+IsAssembly6 @
+;@ A
+} 
+; 
+cfg 
+. 
+
+AddProfile !
+<! "#
+DrugEntryMappingProfile" 9
+>9 :
+(: ;
+); <
+;< =
+} 
+) 
+; 
+var 
+mapper 
+= 
+config "
+." #
+CreateMapper# /
+(/ 0
+)0 1
+;1 2
+return 
+mapper 
+; 
+} 
+) 
+; 
+public 
+static 
+IMapper 
+Mapper $
+=>% '
+Lazy( ,
+., -
+Value- 2
+;2 3
+} 
+} œ
 YE:\repo2\MyDocAppointment\MyDocAppointment.Application\Mappers\DrugStockMappingProfile.cs
 	namespace 	
 MyDocAppointment

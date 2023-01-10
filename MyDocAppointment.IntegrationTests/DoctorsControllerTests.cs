@@ -62,7 +62,7 @@ namespace MyDocAppointment.IntegrationTests
             Assert.Equal("", responseString);
         }*/
 
-        private CreateDoctorDto getDoctorDto()
+        private static CreateDoctorDto getDoctorDto()
         {
             var doctorDto = new CreateDoctorDto
             {

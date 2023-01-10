@@ -6,6 +6,6 @@ namespace MyDocAppointment.Business.Interfaces
     {
         Task<DrugEntry> AddAsync(DrugEntry drugStock);
         Task<IEnumerable<DrugEntry>> GetAll();
-        Task<DrugEntry> GetDrug(Guid drugId);
+        Task<DrugEntry>? GetDrug(Guid drugId);
     }
 }

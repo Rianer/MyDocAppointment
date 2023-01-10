@@ -5,7 +5,7 @@ namespace MyDocAppointment.Business.Logistics.Internal
     public class DrugEntry
     {
         public Guid Id { get; private set; }
-        public Drug Drug { get; private set;}
+        public Drug Drug { get; private set; } = new Drug();
         public int Quantity { get; private set; }
         public DateTime ExpirationDate { get; private set; }
 

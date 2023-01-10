@@ -30,10 +30,10 @@ RE:\repo2\MyDocAppointment\MyDocAppointment.Business\Interfaces\IPatientsService
 t
 UE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Appointment.cs 8r	
 Ç
-ﬂ
-SE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Diagnosis.cs 8jr[	
- !"#$&()*+,./012345689:;<=>?@BCDEFGIJKLNOPQRSUVWXZ[\^_`abcdefhijkx	Ç
-$*+0235:<=?DFIJKPRUWZ`dhà
+Ü
+SE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Diagnosis.cs+ 8jru	
+ !"#$&()*+,-/012345689:;<=>?@ABCDFGHIJKNOPQRSTUVWXY[\]^_`bcdeghijklnopqstuwxyz{|}~ÅÇÉÑxÇ*
+$*,/0245:<>@ACHJNPQSUVX]_bcdiknpsy}Åà
 UE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Observation.cs 8r	
  !"xÇ
 h
@@ -42,9 +42,9 @@ QE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\External\Payment.
 NE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Drug.cs 8r$	
  !"#$&'()*xÇ	!#&'¢
 SE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\DrugEntry.cs 8r0	
- !"#%&')*+,-.01235789:xÇ "%&+-0257ë
-QE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Storage.cs 8	r#
- "#$%'()*+xÇ "$'(ì
+ !"#%&')*+,-.01235789:xÇ "%&+-0257û
+QE:\repo2\MyDocAppointment\MyDocAppointment.Business\Logistics\Internal\Storage.cs 8r,
+ !"$%&'()*,-./12345xÇ !&(*,.12ì
 CE:\repo2\MyDocAppointment\MyDocAppointment.Business\Users\Doctor.cs 8
 r3	 !"#$%&'()+,-./02345789:;xÇ(-/2478†
 DE:\repo2\MyDocAppointment\MyDocAppointment.Business\Users\Patient.cs 8r;	 !"#%&'()*,-./12356789:<=>?ABCDExÇ"'),.1279<>ABd

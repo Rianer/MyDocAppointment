@@ -39,11 +39,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
                 "region": {
-                  "startLine": 27,
+                  "startLine": 28,
                   "startColumn": 27,
-                  "endLine": 27,
+                  "endLine": 28,
                   "endColumn": 51
                 }
               }
@@ -60,75 +60,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
-                "region": {
-                  "startLine": 28,
-                  "startColumn": 27,
-                  "endLine": 28,
-                  "endColumn": 51
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1822",
-          "level": "note",
-          "message": "Member 'GetPatientDto' does not access instance data and can be marked as static",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
-                "region": {
-                  "startLine": 46,
-                  "startColumn": 34,
-                  "endLine": 46,
-                  "endColumn": 47
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1822",
-          "level": "note",
-          "message": "Member 'GetAppointmentDto' does not access instance data and can be marked as static",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
-                "region": {
-                  "startLine": 45,
-                  "startColumn": 38,
-                  "endLine": 45,
-                  "endColumn": 55
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1822",
-          "level": "note",
-          "message": "Member 'getDoctorDto' does not access instance data and can be marked as static",
-          "locations": [
-            {
-              "resultFile": {
                 "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
                 "region": {
-                  "startLine": 65,
-                  "startColumn": 33,
-                  "endLine": 65,
-                  "endColumn": 45
+                  "startLine": 27,
+                  "startColumn": 27,
+                  "endLine": 27,
+                  "endColumn": 51
                 }
               }
             }
@@ -139,22 +76,6 @@
         }
       ],
       "rules": {
-        "CA1822": {
-          "id": "CA1822",
-          "shortDescription": "Mark members as static",
-          "fullDescription": "Members that do not access instance data or call instance methods can be marked as static. After you mark the methods as static, the compiler will emit nonvirtual call sites to these members. This can give you a measurable performance gain for performance-sensitive code.",
-          "defaultLevel": "note",
-          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
-          "properties": {
-            "category": "Performance",
-            "isEnabledByDefault": true,
-            "tags": [
-              "PortedFromFxCop",
-              "Telemetry",
-              "EnabledRuleInAggressiveMode"
-            ]
-          }
-        },
         "S2699": {
           "id": "S2699",
           "shortDescription": "Tests should include assertions",

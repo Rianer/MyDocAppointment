@@ -17,7 +17,7 @@ YE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\AppointmentControll
 %% A
 '' (( ))' /
 )) **$ 2
---% 6 .
+--, = .
 // == !ç
 SE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs
 
@@ -54,7 +54,7 @@ UE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\DoctorsControllerTe
 .. =
 00 11 22' /
 22 44$ 2
-AA  , (
+AA' 3 (
 CC PP å
 VE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\PatientsControllerTests.cs
 
@@ -74,6 +74,6 @@ VE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\PatientsControllerT
 %% A
 '' (( ))' /
 )) ++& 4
-..! . *
+..( 5 *
 00 << G
 EE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\Usings.cs

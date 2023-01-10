@@ -26,7 +26,7 @@ namespace MyDocAppointment.API.Handlers
             {
                 throw new ApplicationException("Issue with the mapper");
             }
-            var drugItem = await _repository.GetDrug(drugStockEntity.Drug.Id);
+            DrugEntry drugItem = await _repository.GetDrug(drugStockEntity.Drug.Id);
             drugStockEntity = drugItem;
 
             var newDrugEntry = await _repository.AddAsync(drugStockEntity);

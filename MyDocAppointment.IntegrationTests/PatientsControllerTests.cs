@@ -43,7 +43,7 @@ namespace MyDocAppointment.IntegrationTests
             Assert.Contains("Evelin", responseString);
         }
 
-        private CreatePatientDto GetPatientDto()
+        private static CreatePatientDto GetPatientDto()
         {
             var patientDto = new CreatePatientDto
             {

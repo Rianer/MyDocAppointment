@@ -14,7 +14,7 @@ namespace MyDocAppointment.Tests
     public class AppointmentControllerShould
     {
         AppointmentController controller;
-        Guid idOk;
+        static Guid idOk;
         Guid idNotFound;
         public AppointmentControllerShould()
         {
@@ -111,32 +111,32 @@ namespace MyDocAppointment.Tests
             Assert.IsType<NotFoundObjectResult>(response);
         }
 
-        private CreateAppointmentDto GetCreateAppointmentDto()
+        private static CreateAppointmentDto GetCreateAppointmentDto()
         {
 
             var Appointment = new CreateAppointmentDto();
             return Appointment;
 
         }
-        private Result<Appointment> GetTestAppointments()
+        private static Result<Appointment> GetTestAppointments()
         {
             var Appointment = new Appointment();
             return Result<Appointment>.Success(Appointment);
         }
-        private async Task<Result> SuccessResult()
+        private static async Task<Result> SuccessResult()
         {
             return Result.Success();
         }
-        private async Task<Result> FailResult(Guid id)
+        private static Task<Result> FailResult(Guid id)
         {
-            return Result.Failure($"Appointment with ID: {id} does not exist.");
+            return Task.FromResult(Result.Failure($"Appointment with ID: {id} does not exist."));
         }
-        private async Task<Result<Appointment>> FailureResult(Guid id)
+        private static async Task<Result<Appointment>> FailureResult(Guid id)
         {
             return Result<Appointment>.Failure($"Appointment with ID: {id} does not exist.");
         }
 
-        private AppointmentDto GetAppointmentDto()
+        private static AppointmentDto GetAppointmentDto()
         {
             var dto = new AppointmentDto()
             {
@@ -153,7 +153,7 @@ namespace MyDocAppointment.Tests
             return dto;
         }
 
-        private Appointment GetAppointment()
+        private static Appointment GetAppointment()
         {
             return new Appointment()
             {
@@ -175,13 +175,13 @@ namespace MyDocAppointment.Tests
             };
         }
 
-        private Result<Appointment> GetTestAppointment()
+        private static Result<Appointment> GetTestAppointment()
         {
             var Appointment = GetAppointment();
             return Result<Appointment>.Success(Appointment);
         }
 
-        private ValidationResult OkValidationResult()
+        private static ValidationResult OkValidationResult()
         {
             ValidationResult val = new ValidationResult();
             return val;

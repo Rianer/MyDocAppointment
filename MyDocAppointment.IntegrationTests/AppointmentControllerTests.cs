@@ -42,7 +42,7 @@ namespace MyDocAppointment.IntegrationTests
             Assert.Contains("Iasi", responseString);
         }
 
-        private CreateAppointmentDto GetAppointmentDto()
+        private static CreateAppointmentDto GetAppointmentDto()
         {
             var AppointmentDto = new CreateAppointmentDto
             {

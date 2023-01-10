@@ -19,6 +19,11 @@ namespace MyDocAppointment.Business.Logistics.Internal
         }
 
         public Result RemoveEntry(Guid drugId){
+            if(Inventory == null)
+            {
+                return Result.Failure("Null list!");
+            }
+
             int index = Inventory.FindIndex(i => i.Drug.Id == drugId);
             if(index == -1){
                 return Result.Failure("Drug not found in storage!");
@@ -28,10 +33,15 @@ namespace MyDocAppointment.Business.Logistics.Internal
             return Result.Success();
         }
 
-        public Result AddEntry(Drug drug, int quantity, DateTime expirationDate){
+        public Result AddEntry(Drug drug, int quantity, DateTime expirationDate)
+        {
+            if (Inventory == null)
+            {
+                return Result.Failure("Null list!");
+            }
             var result = DrugEntry.Create(drug, quantity, expirationDate);
 
-            if(result.IsFailure == true)
+            if(result.Entity == null)
             {
                 return Result.Failure(result.Error);
             }

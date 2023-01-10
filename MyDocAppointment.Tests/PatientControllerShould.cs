@@ -13,7 +13,7 @@ namespace MyDocAppointment.Tests
     public class PatientControllerShould
     {
         PatientController controller;
-        Guid idOk;
+        static Guid idOk;
         Guid idNotFound;
         public PatientControllerShould()
         {
@@ -110,7 +110,7 @@ namespace MyDocAppointment.Tests
             Assert.IsType<NotFoundObjectResult>(response);
         }
 
-        private CreatePatientDto GetCreatePatientDto()
+        private static CreatePatientDto GetCreatePatientDto()
         {
 
             var dto = new CreatePatientDto()
@@ -125,27 +125,27 @@ namespace MyDocAppointment.Tests
             };
             return dto;
         }
-        private Result<Patient> GetTestPatients()
+        private static Result<Patient> GetTestPatients()
         {
             var patient = new Patient();
             return Result<Patient>.Success(patient);
         }
-        private async Task<Result> SuccessResult()
+        private static async Task<Result> SuccessResult()
         {
             return Result.Success();
         }
 
-        private async Task<Result> FailResult(Guid id)
+        private static async Task<Result> FailResult(Guid id)
         {
             return Result.Failure($"Patient with ID: {id} does not exist.");
         }
 
-        private async Task<Result<Patient>> FailureResult(Guid id)
+        private static async Task<Result<Patient>> FailureResult(Guid id)
         {
             return Result<Patient>.Failure($"Patient with ID: {id} does not exist.");
         }
 
-        private PatientDto GetPatientDto()
+        private static PatientDto GetPatientDto()
         {
             var dto = new PatientDto()
             {
@@ -161,7 +161,7 @@ namespace MyDocAppointment.Tests
             return dto;
         }
 
-        private Patient GetPatient()
+        private static Patient GetPatient()
         {
             return new Patient()
             {
@@ -176,7 +176,7 @@ namespace MyDocAppointment.Tests
             };
         }
 
-        private Result<Patient> GetTestPatient()
+        private static Result<Patient> GetTestPatient()
         {
             var patient = GetPatient();
             return Result<Patient>.Success(patient);
