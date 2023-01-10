@@ -125,7 +125,7 @@ import { DatePipe } from '@angular/common'
     });
   }
   getDoctorsBySpec(): Observable<Doctor[]>{    
-      return this.http.get<Doctor[]>(`https://localhost:7288/api/v1/Doctor/${this.newAppointmentForm.value.service.name}`);
+      return this.http.get<Doctor[]>(`https://localhost:7288/api/v1/Doctor`);
   }
 
   selectDoctor(name: string, surname: string, spec: string){
@@ -142,7 +142,7 @@ import { DatePipe } from '@angular/common'
 
   async setPatient(){
     this.http.get<Patient[]>('https://localhost:7288/api/v1/Patient').subscribe(response => {
-      this.patient = response[1];
+      this.patient = response[0];
       this.newAppointmentForm.value.name=this.patient.name;
     });
   }
@@ -181,6 +181,7 @@ import { DatePipe } from '@angular/common'
     this.dialogRef.close();
   }
   create(appointment: CreateAppointment): Observable<HttpResponse<CreateAppointment>> {
+    console.log(appointment);
     return this.http.post<CreateAppointment>('https://localhost:7288/api/v1/Appointment', appointment, {
       observe: 'response',
     });

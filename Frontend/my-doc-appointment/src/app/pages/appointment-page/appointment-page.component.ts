@@ -4,6 +4,11 @@ import { NewAppointment } from 'src/app/models/appointment.model';
 import { MatDialog } from '@angular/material/dialog';
 import { AddAppointmentComponent } from 'src/app/components/add-appointment/add-appointment.component';
 import { Appointment } from 'src/app/models/appointment.model';
+import { AppointmentsService } from 'src/app/services/appointments/appointments.service';
+import { LoginService } from 'src/app/services/user-logging/login.service';
+import { DoctorsServiceService } from 'src/app/services/doctors-service.service';
+import { Router } from '@angular/router';
+import { Doctor } from 'src/app/models/doctor.model';
 
 @Component({
   selector: 'app-appointment-page',
@@ -12,37 +17,54 @@ import { Appointment } from 'src/app/models/appointment.model';
 })
 export class AppointmentPageComponent implements OnInit {
   constructor(
-    public dialog: MatDialog  ) {}
+    public dialog: MatDialog,
+    private appointmentService : AppointmentsService,
+    private doctorService : DoctorsServiceService,
+    private loginService: LoginService,
+    private router : Router
+    ) {}
 
-  appointmentHistory : NewAppointment[];
+  appointmentHistory : Appointment[] = [];
+  doctors : Doctor[];
+  // lastDoctorName : string;
 
   ngOnInit(): void {
-    // this.appointmentHistory = [
-    //   {
-    //     status : 'pending',
-    //     doctor : 'Steven Strange',
-    //     date : '21/01/2023',
-    //     result : '',
-    //     price : ''
-    //   },
-    //   {
-    //     status : 'canceled',
-    //     doctor : 'Steven Strange',
-    //     date : '03/01/2023',
-    //     result : '',
-    //     price : ''
-    //   },
-    //   {
-    //     status : 'complete',
-    //     doctor : 'Steven Strange',
-    //     date : '14/12/2022',
-    //     result : 'Further investigation required',
-    //     price : '120'
-    //   },
-    // ]
+    this.loginService.getLoggedUser().subscribe((response) => {
+      const user = response[0];
+      this.loginService.userId = user.id;
+      this.appointmentService.getAll().subscribe((response) => {
+        this.doctorService.getAllDoctors().subscribe((doctors) => {
+          this.doctors = doctors;
+          response.forEach((element) => {
+            if(element.patientID === this.loginService.userId){
+              this.appointmentHistory.push(element);
+              this.doctors.forEach((doctor) => {
+                if(doctor.id === element.doctorID){
+                  const lastDoctorName = doctor.surname + ' ' + doctor.name;
+                  element.doctorName = lastDoctorName;
+                }
+              });
+            }
+          });
+        })
+      });
+    })
+    
   }
   
   openDialog() {
     this.dialog.open(AddAppointmentComponent).afterClosed();
+  }
+
+  showDoctor(){
+    this.router.navigate(['doctors']);
+  }
+  showImageMenu : boolean;
+  toggleImageMenu() : void{
+    this.showImageMenu = !this.showImageMenu;
+  }
+  logOut(){
+    this.loginService.publishState(0);
+    this.router.navigate(['']);
   }
 }

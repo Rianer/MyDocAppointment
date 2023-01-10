@@ -60,7 +60,7 @@ export class LoginPageComponent implements OnInit {
     }
     else if(this.signInForm.value.email === 'client@client.client' && this.signInForm.value.password === 'client'){
       this.loginService.publishState(1);
-      this.router.navigate(['/doctors']);
+      this.router.navigate(['/appointment']);
     }
   }
 }

@@ -53,6 +53,42 @@
       flex-direction: column;
       align-items: center;
 
+      .title{
+        width: 100%;
+        display: flex;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: $backgroundColor;
+
+        .element{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $plainColor;
+          font-size: 1.1rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
+        }
+
+        .payment{
+          width: 20%;
+        }
+
+        .doctor{
+          width: 30%;
+        }
+
+        .time{
+          width: 30%;
+          letter-spacing: 0.1rem;
+        }
+
+        .spec{
+          width: 20%;
+        }
+      }
+
       .appointment{
         width: 100%;
         display: flex;
@@ -61,7 +97,9 @@
         transition: 200ms;
 
         .element{
-          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           font-size: 1.2rem;
           font-weight: 400;
         }
@@ -72,25 +110,23 @@
         }
 
         .status{
-          width: 15%;
+          width: 20%;
           font-size: 1.4rem;
         }
 
         .date{
-          width: 35%;
+          width: 30%;
           letter-spacing: 0.1rem;
         }
 
         .doctor{
           cursor: pointer;
-          width: 35%;
+          width: 30%;
         }
 
-        .cancel{
+        .spec{
           color: $darkGrey;
-          cursor: pointer;
-          width: 15%;
-          font-size: 1.4rem;
+          width: 20%;
         }
 
         .cancel:hover{
@@ -133,5 +169,78 @@
         }
       }
     }
+  }
+}
+
+
+.personal-info{
+  padding: 1rem 1rem 0 0;
+
+  .account-controls{
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      width: 100%;
+
+      .details-toggle{
+          font-size: 1.2rem;
+          color: $mainColor;
+          font-weight: bold;
+          margin-right: 2rem;
+          transition: color 300ms;
+          cursor: pointer;
+      }
+      .details-toggle:hover{
+          color: $contrastColor;
+      }
+      .account-img{
+          .img-container{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 3.8rem;
+              width: 3.8rem;
+          }
+          img{
+              height: 3.5rem;
+              width: 3.5rem;
+              border-radius: 15px;
+              cursor: pointer;
+              transition: 300ms;
+          }
+          .clicked{
+              height: 3.8rem;
+              width: 3.8rem;
+              border-radius: 0;
+          }
+          img:hover{
+              height: 3.8rem;
+              width: 3.8rem;
+              border-radius: 0;
+          }
+          ul{
+              position: absolute;
+              z-index: 10;
+              right:2rem;
+              list-style-type: none;
+              padding: 0;
+              margin-top: 0;
+              width: 80px;
+              text-align: right;
+              background-color: $mainColor;
+              padding: 1rem;
+              li{
+                  font-size: 1.2rem;
+                  margin-bottom: 4px;
+                  color: $plainColor;
+                  transition: 300ms;
+                  cursor: pointer;
+              }
+              li:hover{
+                  margin-right: 3px;
+                  color: $contrastColor;
+              }
+          }
+      }
   }
 }
