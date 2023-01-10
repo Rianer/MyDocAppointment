@@ -9,10 +9,10 @@ namespace MyDocAppointment.API.Controllers.v2
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("2.0")]
-    public class DrugStockController : ControllerBase
+    public class DrugEntryController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public DrugStockController(IMediator mediator)
+        public DrugEntryController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -20,7 +20,7 @@ namespace MyDocAppointment.API.Controllers.v2
         [MapToApiVersion("2.0")]
         [HttpPost]
         public async Task<IActionResult>
-           Create([FromBody] CreateDrugStockCommand command)
+           Create([FromBody] CreateDrugEntryCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
@@ -28,9 +28,9 @@ namespace MyDocAppointment.API.Controllers.v2
 
         [MapToApiVersion("2.0")]
         [HttpGet]
-        public async Task<List<DrugStockResponse>> Get()
+        public async Task<List<DrugEntryResponse>> Get()
         {
-            return await _mediator.Send(new GetAllDrugStocksQuery());
+            return await _mediator.Send(new GetAllDrugEntrysQuery());
         }
 
         /*[HttpGet("{drugStockId:guid}")]

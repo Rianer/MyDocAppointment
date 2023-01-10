@@ -16,7 +16,7 @@ namespace MyDocAppointment.Infrastructure
             services.AddScoped<IDoctorsRepository, DoctorsRepository>();
             services.AddScoped<IPatientsRepository, PatientsRepository>();
             services.AddScoped<IAppointmentsRepository, AppointmentsRepository>();
-            //services.AddScoped<IDrugStocksRepository, DrugStocksRepository>();
+            services.AddScoped<IDrugEntrysRepository, DrugEntrysRepository>();
             services.
                 AddDbContext<AppDbContext>
                 (m => m.UseSqlServer(

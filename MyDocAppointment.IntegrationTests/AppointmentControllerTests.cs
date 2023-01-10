@@ -5,7 +5,7 @@ namespace MyDocAppointment.IntegrationTests
 {
     public class AppointmentsControllerTests : BaseIntegrationTests
     {
-        private const string ApiUrl = "api/appointment";
+        private const string ApiUrl = "api/v1/appointment";
 
         [Fact]
         public async void WhenCreateAppointment_ThenShouldReturnCreated()
@@ -47,8 +47,8 @@ namespace MyDocAppointment.IntegrationTests
             var AppointmentDto = new CreateAppointmentDto
             {
                 Location = "Iasi",
-                PatientID = "8a1dd56e-3714-47ff-74bb-08dad798785d",
-                DoctorID = "b0d5bf1a-828d-4950-19cd-08dad7987905",
+                PatientID = "a252b780-9f6b-4cc6-21a8-08daf262db96",
+                DoctorID = "b35abc1d-007f-4f7b-5aeb-08daf262ea7b",
                 Specialization = "Cardiology",
                 AppointmentTime = "03 March 2016 06:30",
                 Payment = new CreatePaymentDto()

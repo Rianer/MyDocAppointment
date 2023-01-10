@@ -1,25 +1,26 @@
-﻿//using AutoMapper;
-//using MyDocAppointment.Application.Commands;
-//using MyDocAppointment.Application.Response;
+﻿using AutoMapper;
+using MyDocAppointment.Application.Commands;
+using MyDocAppointment.Application.Response;
+using MyDocAppointment.Business.Logistics.Internal;
 
-//namespace MyDocAppointment.Application.Mappers
-//{
-//    public class DrugStockMappingProfile : Profile
-//    {
-//        public DrugStockMappingProfile()
-//        {
-//            CreateMap<DrugStock, DrugStockResponse>()
-//                .ForMember(dest => dest.DrugId,
-//                opt => opt.MapFrom(src => src.Item.Id))
-//                .ForMember(dest => dest.DrugName,
-//                opt => opt.MapFrom(src => src.Item.Name))
-//                .ReverseMap();
-//            CreateMap<DrugStock, CreateDrugStockCommand>()
-//                 .ForMember(dest => dest.DrugId,
-//                opt => opt.MapFrom(src => src.Item.Id))
-//                 .ForMember(dest => dest.DrugName,
-//                opt => opt.MapFrom(src => src.Item.Name))
-//                 .ReverseMap();
-//        }
-//    }
-//}
+namespace MyDocAppointment.Application.Mappers
+{
+    public class DrugEntryMappingProfile : Profile
+    {
+        public DrugEntryMappingProfile()
+        {
+            CreateMap<DrugEntry, DrugEntryResponse>()
+                .ForMember(dest => dest.DrugId,
+                opt => opt.MapFrom(src => src.Drug.Id))
+                .ForMember(dest => dest.DrugName,
+                opt => opt.MapFrom(src => src.Drug.Name))
+                .ReverseMap();
+            CreateMap<DrugEntry, CreateDrugEntryCommand>()
+                 .ForMember(dest => dest.DrugId,
+                opt => opt.MapFrom(src => src.Drug.Id))
+                 .ForMember(dest => dest.DrugName,
+                opt => opt.MapFrom(src => src.Drug.Name))
+                 .ReverseMap();
+        }
+    }
+}

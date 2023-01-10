@@ -14,16 +14,16 @@ namespace MyDocAppointment.Infrastructure
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Payment> Payments { get; set; }
-        //public DbSet<DrugStock> DrugStocks { get; set; }
+        public DbSet<DrugEntry> DrugEntrys { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new DoctorConfiguration());
             modelBuilder.ApplyConfiguration(new PatientConfiguration());
-            //modelBuilder.ApplyConfiguration(new DrugConfiguration());
+            modelBuilder.ApplyConfiguration(new DrugConfiguration());
             modelBuilder.ApplyConfiguration(new AppointmentConfiguration());
             modelBuilder.ApplyConfiguration(new PaymentConfiguration());
-            //modelBuilder.ApplyConfiguration(new DrugStockConfiguration());
+            modelBuilder.ApplyConfiguration(new DrugEntryConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

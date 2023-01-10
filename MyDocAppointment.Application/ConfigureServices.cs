@@ -14,7 +14,7 @@ namespace MyDocAppointment.Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddScoped<IDoctorsService, DoctorsService>();
             services.AddScoped<IPatientsService, PatientsService>();
-            //services.AddScoped<IDrugsService, DrugsService>();
+            services.AddScoped<IDrugsService, DrugsService>();
             services.AddScoped<IAppointmentsService, AppointmentsService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());

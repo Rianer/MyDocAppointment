@@ -1,11 +1,11 @@
-﻿//using MyDocAppointment.Business.Logistics.Internal;
+﻿using MyDocAppointment.Business.Logistics.Internal;
 
-//namespace MyDocAppointment.Business.Interfaces
-//{
-//    public interface IDrugStocksRepository
-//    {
-//        Task<DrugStock> AddAsync(DrugStock doctor);
-//        Task<IEnumerable<DrugStock>> GetAll();
-//        Task<Drug> GetDrug(Guid drugId);
-//    }
-//}
+namespace MyDocAppointment.Business.Interfaces
+{
+    public interface IDrugEntrysRepository
+    {
+        Task<DrugEntry> AddAsync(DrugEntry drugStock);
+        Task<IEnumerable<DrugEntry>> GetAll();
+        Task<DrugEntry> GetDrug(Guid drugId);
+    }
+}

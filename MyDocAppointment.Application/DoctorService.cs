@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using MyDocAppointment.Business.Helpers;
+﻿using MyDocAppointment.Business.Helpers;
 using MyDocAppointment.Business.Interfaces;
 using MyDocAppointment.Business.Users;
-using System.Collections.Generic;
 
 namespace MyDocAppointment.Application
 {
@@ -49,17 +47,6 @@ namespace MyDocAppointment.Application
             }
             return Result<Doctor>.Success(doctor);
         }
-
-        public async Task<Result<IEnumerable<Doctor>>> GetBySpectialization(Specialization specialization)
-        {
-            var doctors = await _doctorsRepository.GetBySpectialization(specialization);
-            if (!doctors.Any())
-            {
-                return Result<IEnumerable<Doctor>>.Failure($"Doctor with spec: {specialization} does not exist.");
-            }
-            return Result<IEnumerable<Doctor>>.Success(doctors);
-        }
-
 
         public async Task SaveChanges()
         {
