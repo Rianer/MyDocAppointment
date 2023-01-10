@@ -26,7 +26,7 @@ namespace MyDocAppointment.Application
 
         public async Task<Result> Delete(Guid id)
         {
-            Appointment appointment = await _appointmentsRepository.GetById(id);
+            Appointment? appointment = await _appointmentsRepository.GetById(id);
             if(appointment == null)
             {
                 return Result.Failure($"appointment with id {id} not found.");

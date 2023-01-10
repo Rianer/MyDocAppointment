@@ -1,6 +1,4 @@
-﻿using MyDocAppointment.Business.Helpers;
-
-namespace MyDocAppointment.API.Dtos
+﻿namespace MyDocAppointment.API.Dtos
 {
     public class CreatePaymentDto
     {

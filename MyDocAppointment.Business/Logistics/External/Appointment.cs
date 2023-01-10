@@ -6,7 +6,7 @@ namespace MyDocAppointment.Business.Logistics.External
     public class Appointment
     {
         public Guid Id { get; set; }
-        public Payment? Payment { get; set; }
+        public Payment Payment { get; set; } = new Payment();
         public string Location { get; set; } = string.Empty;
         public Guid PatientID { get; set; }
         public Guid DoctorID { get; set; }

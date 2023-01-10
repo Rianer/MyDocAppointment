@@ -1,5 +1,5 @@
-“
-UF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\AppDbContext.cs
+∆
+IE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\AppDbContext.cs
 	namespace 	
 MyDocAppointment
  
@@ -94,10 +94,10 @@ UF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\AppDbCont
 public 
 DbSet 
 < 
-	DrugStock 
+	DrugEntry 
 > 
 
-DrugStocks  *
+DrugEntrys  *
 {+ ,
 get- 0
 ;0 1
@@ -168,7 +168,7 @@ DrugStocks  *
 ApplyConfiguration +
 (+ ,
 new, /"
-DrugStockConfiguration0 F
+DrugEntryConfiguration0 F
 (F G
 )G H
 )H I
@@ -182,8 +182,8 @@ DrugStocks  *
 ;. /
 } 	
 } 
-} °
-pF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\AppointmentConfiguration.cs
+} ï
+dE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\AppointmentConfiguration.cs
 	namespace 	
 MyDocAppointment
  
@@ -333,8 +333,8 @@ pF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 ;- .
 } 	
 } 
-} †
-eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\Configuration.cs
+} î
+YE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\Configuration.cs
 	namespace 	
 MyDocAppointment
  
@@ -418,8 +418,8 @@ eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 ; 
 } 	
 } 
-} º
-kF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DoctorConfiguration.cs
+} ∞
+_E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DoctorConfiguration.cs
 	namespace 	
 MyDocAppointment
  
@@ -572,8 +572,8 @@ Speciality# -
 ;K L
 } 	
 } 
-} ï
-iF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugConfiguration.cs
+} ª
+]E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugConfiguration.cs
 	namespace 	
 MyDocAppointment
  
@@ -658,32 +658,11 @@ iF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 .# $
 Price$ )
 )) *
-;* +
-builder 
-. 
-HasMany 
-( 
-d 
-=>  
-d! "
-." #
-
-DrugStocks# -
-)- .
-.. /
-WithOne/ 6
-(6 7
-ds7 9
-=>: <
-ds= ?
-.? @
-Item@ D
-)D E
-;E F
-} 	
-} 
-} ¿
-nF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugStockConfiguration.cs
+;* +
+} 	
+} 
+} û
+bE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugStockConfiguration.cs
 	namespace 	
 MyDocAppointment
  
@@ -694,11 +673,11 @@ nF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 { 
 internal 
 class "
-DrugStockConfiguration )
+DrugEntryConfiguration )
 :* +$
 IEntityTypeConfiguration, D
 <D E
-	DrugStockE N
+	DrugEntryE N
 >N O
 { 
 public		 
@@ -707,7 +686,7 @@ nF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 (		 
 EntityTypeBuilder		 /
 <		/ 0
-	DrugStock		0 9
+	DrugEntry		0 9
 >		9 :
 builder		; B
 )		B C
@@ -733,19 +712,9 @@ nF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 => 
 d  !
 .! "
-Item" &
+Drug" &
 )& '
-.' (
-WithMany( 0
-(0 1
-d1 2
-=>3 5
-d6 7
-.7 8
-
-DrugStocks8 B
-)B C
-;C D
+;' (
 builder 
 . 
 Property 
@@ -764,14 +733,14 @@ DrugStocks8 B
 d 
 => !
 d" #
-.# $
-IsRestricted$ 0
-)0 1
-;1 2
+.# $
+ExpirationDate$ 2
+)2 3
+;3 4
 } 	
 } 
-} Î
-lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\PatientConfiguration.cs
+} ﬂ
+`E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\PatientConfiguration.cs
 	namespace 	
 MyDocAppointment
  
@@ -912,63 +881,60 @@ lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 ;- .
 } 	
 } 
-} Ù
-lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\PaymentConfiguration.cs
-	namespace 	
-MyDocAppointment
+} Ë
+`E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\PaymentConfiguration.cs
+	namespace 	
+MyDocAppointment
  
-. 
-Infrastructure )
-.) *
-Configurations* 8
-{		 
-internal
+. 
+Infrastructure )
+.) *
+Configurations* 8
+{ 
+internal		 
+class		  
+PaymentConfiguration		 '
+:		( )$
+IEntityTypeConfiguration		* B
+<		B C
+Payment		C J
+>		J K
+{
 
- 
-class
-
-  
-PaymentConfiguration
-
- '
-:
-
-( )$
-IEntityTypeConfiguration
-
-* B
-<
-
-B C
-Payment
-
-C J
->
-
-J K
-{ 
-public 
-void 
-	Configure 
-( 
-EntityTypeBuilder /
-</ 0
-Payment0 7
->7 8
-builder9 @
-)@ A
-{ 	
+ 
+public 
+void 
+	Configure 
+( 
+EntityTypeBuilder /
+</ 0
+Payment0 7
+>7 8
+builder9 @
+)@ A
+{ 	
+builder 
+. 
+HasKey 
+( 
+d 
+=> 
+d  !
+.! "
+Id" $
+)$ %
+;% &
 builder 
-. 
-HasKey 
-( 
-d 
-=> 
-d  !
-.! "
-Id" $
-)$ %
-;% &
+. 
+Property 
+( 
+d 
+=> !
+d" #
+.# $
+Amount$ *
+)* +
+;+ ,
 builder 
 . 
 Property 
@@ -976,32 +942,32 @@ lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 d 
 => !
 d" #
-.# $
-Amount$ *
-)* +
-;+ ,
-builder 
-. 
-Property 
-( 
-d 
-=> !
-d" #
-.# $
-PaymentMethod$ 1
-)1 2
-. 
-HasConversion 
-( 
-new "!
-EnumToStringConverter# 8
-<8 9
-PaymentMethod9 F
->F G
-(G H
-)H I
-)I J
-;J K
+.# $
+PaymentMethod$ 1
+)1 2
+. 
+HasConversion 
+( 
+new "!
+EnumToStringConverter# 8
+<8 9
+PaymentMethod9 F
+>F G
+(G H
+)H I
+)I J
+;J K
+builder 
+. 
+Property 
+( 
+d 
+=> !
+d" #
+.# $
+DueDate$ +
+)+ ,
+;, -
 builder 
 . 
 Property 
@@ -1009,10 +975,10 @@ lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 d 
 => !
 d" #
-.# $
-DueDate$ +
-)+ ,
-;, -
+.# $
+EmissionDate$ 0
+)0 1
+;1 2
 builder 
 . 
 Property 
@@ -1020,25 +986,14 @@ lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 d 
 => !
 d" #
-.# $
-EmissionDate$ 0
-)0 1
-;1 2
-builder 
-. 
-Property 
-( 
-d 
-=> !
-d" #
-.# $
-AcquittedDate$ 1
-)1 2
-;2 3
-} 	
-} 
-} Ø
-ZF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\ConfigureServices.cs
+.# $
+AcquittedDate$ 1
+)1 2
+;2 3
+} 	
+} 
+} £
+NE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\ConfigureServices.cs
 	namespace 	
 MyDocAppointment
  
@@ -1125,9 +1080,9 @@ ZF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configure
 . 
 	AddScoped 
 < !
-IDrugStocksRepository 4
+IDrugEntrysRepository 4
 ,4 5 
-DrugStocksRepository6 J
+DrugEntrysRepository6 J
 >J K
 (K L
 )L M
@@ -1163,8 +1118,8 @@ ZF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configure
 ; 
 } 	
 } 
-} Ñ∏
-qF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221127131857_FirstMigration.cs
+} ¯∑
+eE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221127131857_FirstMigration.cs
 	namespace 	
 MyDocAppointment
  
@@ -2808,430 +2763,428 @@ ForeignKey
 …… 	
 }
    
-}ÀÀ ï:
-qF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221206132131_AddSomeColumns.cs
-	namespace 	
-MyDocAppointment
+}ÀÀ â:
+eE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221206132131_AddSomeColumns.cs
+	namespace 	
+MyDocAppointment
  
-. 
-Infrastructure )
-.) *
+. 
+Infrastructure )
+.) *
 
-Migrations* 4
-{ 
-public		 
+Migrations* 4
+{ 
+public 
 
-partial		 
-class		 
-AddSomeColumns		 '
-:		( )
-	Migration		* 3
-{
-
- 
-	protected 
-override 
-void 
-Up  "
-(" #
-MigrationBuilder# 3
-migrationBuilder4 D
-)D E
-{ 	
-migrationBuilder 
-. 
-DropForeignKey +
-(+ ,
-name 
-: 
-$str 7
-,7 8
-table 
-: 
-$str "
-)" #
-;# $
-migrationBuilder 
-. 
+partial 
+class 
+AddSomeColumns '
+:( )
+	Migration* 3
+{		 
+	protected 
+override 
+void 
+Up  "
+(" #
+MigrationBuilder# 3
+migrationBuilder4 D
+)D E
+{ 	
+migrationBuilder 
+. 
+DropForeignKey +
+(+ ,
+name 
+: 
+$str 7
+,7 8
+table 
+: 
+$str "
+)" #
+;# $
+migrationBuilder 
+. 
 
-DropColumn '
-(' (
-name 
-: 
-$str 
-, 
-table 
-: 
-$str "
-)" #
-;# $
-migrationBuilder 
-. 
-	AddColumn &
-<& '
-string' -
->- .
-(. /
-name 
-: 
-$str #
-,# $
-table 
-: 
-$str !
-,! "
-type 
-: 
-$str %
-,% &
-nullable 
-: 
-false 
-,  
-defaultValue 
-: 
-$str  
-)  !
-;! "
-migrationBuilder 
-. 
-	AddColumn &
-<& '
-string' -
->- .
-(. /
-name 
-: 
-$str #
-,# $
-table 
-: 
-$str !
-,! "
-type   
-:   
-$str   %
-,  % &
-nullable!! 
-:!! 
-false!! 
-,!!  
-defaultValue"" 
-:"" 
-$str""  
-)""  !
-;""! "
-migrationBuilder$$ 
-.$$ 
-	AddColumn$$ &
-<$$& '
-string$$' -
->$$- .
-($$. /
-name%% 
-:%% 
-$str%% #
-,%%# $
-table&& 
-:&& 
-$str&&  
-,&&  !
-type'' 
-:'' 
-$str'' %
-,''% &
-nullable(( 
-:(( 
-false(( 
-,((  
-defaultValue)) 
-:)) 
-$str))  
-)))  !
-;))! "
-migrationBuilder++ 
-.++ 
-	AddColumn++ &
-<++& '
-string++' -
->++- .
-(++. /
-name,, 
-:,, 
-$str,, #
-,,,# $
-table-- 
-:-- 
-$str--  
-,--  !
-type.. 
-:.. 
-$str.. %
-,..% &
-nullable// 
-:// 
-false// 
-,//  
-defaultValue00 
-:00 
-$str00  
-)00  !
-;00! "
-migrationBuilder22 
-.22 
-AlterColumn22 (
-<22( )
-Guid22) -
->22- .
-(22. /
-name33 
-:33 
-$str33 !
-,33! "
-table44 
-:44 
-$str44 "
-,44" #
-type55 
-:55 
-$str55 (
-,55( )
-nullable66 
-:66 
-false66 
-,66  
-defaultValue77 
-:77 
-new77 !
-Guid77" &
-(77& '
-$str77' M
-)77M N
-,77N O
+DropColumn '
+(' (
+name 
+: 
+$str 
+, 
+table 
+: 
+$str "
+)" #
+;# $
+migrationBuilder 
+. 
+	AddColumn &
+<& '
+string' -
+>- .
+(. /
+name 
+: 
+$str #
+,# $
+table 
+: 
+$str !
+,! "
+type 
+: 
+$str %
+,% &
+nullable 
+: 
+false 
+,  
+defaultValue 
+: 
+$str  
+)  !
+;! "
+migrationBuilder 
+. 
+	AddColumn &
+<& '
+string' -
+>- .
+(. /
+name 
+: 
+$str #
+,# $
+table 
+: 
+$str !
+,! "
+type 
+: 
+$str %
+,% &
+nullable   
+:   
+false   
+,    
+defaultValue!! 
+:!! 
+$str!!  
+)!!  !
+;!!! "
+migrationBuilder## 
+.## 
+	AddColumn## &
+<##& '
+string##' -
+>##- .
+(##. /
+name$$ 
+:$$ 
+$str$$ #
+,$$# $
+table%% 
+:%% 
+$str%%  
+,%%  !
+type&& 
+:&& 
+$str&& %
+,&&% &
+nullable'' 
+:'' 
+false'' 
+,''  
+defaultValue(( 
+:(( 
+$str((  
+)((  !
+;((! "
+migrationBuilder** 
+.** 
+	AddColumn** &
+<**& '
+string**' -
+>**- .
+(**. /
+name++ 
+:++ 
+$str++ #
+,++# $
+table,, 
+:,, 
+$str,,  
+,,,  !
+type-- 
+:-- 
+$str-- %
+,--% &
+nullable.. 
+:.. 
+false.. 
+,..  
+defaultValue// 
+:// 
+$str//  
+)//  !
+;//! "
+migrationBuilder11 
+.11 
+AlterColumn11 (
+<11( )
+Guid11) -
+>11- .
+(11. /
+name22 
+:22 
+$str22 !
+,22! "
+table33 
+:33 
+$str33 "
+,33" #
+type44 
+:44 
+$str44 (
+,44( )
+nullable55 
+:55 
+false55 
+,55  
+defaultValue66 
+:66 
+new66 !
+Guid66" &
+(66& '
+$str66' M
+)66M N
+,66N O
 
-oldClrType88 
-:88 
-typeof88 "
-(88" #
-Guid88# '
-)88' (
-,88( )
-oldType99 
-:99 
-$str99 +
-,99+ ,
-oldNullable:: 
-::: 
-true:: !
-)::! "
-;::" #
-migrationBuilder<< 
-.<< 
-AddForeignKey<< *
-(<<* +
-name== 
-:== 
-$str== 7
-,==7 8
-table>> 
-:>> 
-$str>> "
-,>>" #
-column?? 
-:?? 
-$str?? #
-,??# $
-principalTable@@ 
-:@@ 
-$str@@  *
-,@@* +
-principalColumnAA 
-:AA  
-$strAA! %
-,AA% &
-onDeleteBB 
-:BB 
-ReferentialActionBB +
-.BB+ ,
-CascadeBB, 3
-)BB3 4
-;BB4 5
-}CC 	
-	protectedFF 
-overrideFF 
-voidFF 
-DownFF  $
-(FF$ %
-MigrationBuilderFF% 5
-migrationBuilderFF6 F
-)FFF G
-{GG 	
-migrationBuilderHH 
-.HH 
-DropForeignKeyHH +
-(HH+ ,
-nameII 
-:II 
-$strII 7
-,II7 8
-tableJJ 
-:JJ 
-$strJJ "
-)JJ" #
-;JJ# $
-migrationBuilderLL 
-.LL 
+oldClrType77 
+:77 
+typeof77 "
+(77" #
+Guid77# '
+)77' (
+,77( )
+oldType88 
+:88 
+$str88 +
+,88+ ,
+oldNullable99 
+:99 
+true99 !
+)99! "
+;99" #
+migrationBuilder;; 
+.;; 
+AddForeignKey;; *
+(;;* +
+name<< 
+:<< 
+$str<< 7
+,<<7 8
+table== 
+:== 
+$str== "
+,==" #
+column>> 
+:>> 
+$str>> #
+,>># $
+principalTable?? 
+:?? 
+$str??  *
+,??* +
+principalColumn@@ 
+:@@  
+$str@@! %
+,@@% &
+onDeleteAA 
+:AA 
+ReferentialActionAA +
+.AA+ ,
+CascadeAA, 3
+)AA3 4
+;AA4 5
+}BB 	
+	protectedEE 
+overrideEE 
+voidEE 
+DownEE  $
+(EE$ %
+MigrationBuilderEE% 5
+migrationBuilderEE6 F
+)EEF G
+{FF 	
+migrationBuilderGG 
+.GG 
+DropForeignKeyGG +
+(GG+ ,
+nameHH 
+:HH 
+$strHH 7
+,HH7 8
+tableII 
+:II 
+$strII "
+)II" #
+;II# $
+migrationBuilderKK 
+.KK 
 
-DropColumnLL '
-(LL' (
-nameMM 
-:MM 
-$strMM #
-,MM# $
-tableNN 
-:NN 
-$strNN !
-)NN! "
-;NN" #
-migrationBuilderPP 
-.PP 
+DropColumnKK '
+(KK' (
+nameLL 
+:LL 
+$strLL #
+,LL# $
+tableMM 
+:MM 
+$strMM !
+)MM! "
+;MM" #
+migrationBuilderOO 
+.OO 
 
-DropColumnPP '
-(PP' (
-nameQQ 
-:QQ 
-$strQQ #
-,QQ# $
-tableRR 
-:RR 
-$strRR !
-)RR! "
-;RR" #
-migrationBuilderTT 
-.TT 
+DropColumnOO '
+(OO' (
+namePP 
+:PP 
+$strPP #
+,PP# $
+tableQQ 
+:QQ 
+$strQQ !
+)QQ! "
+;QQ" #
+migrationBuilderSS 
+.SS 
 
-DropColumnTT '
-(TT' (
-nameUU 
-:UU 
-$strUU #
-,UU# $
-tableVV 
-:VV 
-$strVV  
-)VV  !
-;VV! "
-migrationBuilderXX 
-.XX 
+DropColumnSS '
+(SS' (
+nameTT 
+:TT 
+$strTT #
+,TT# $
+tableUU 
+:UU 
+$strUU  
+)UU  !
+;UU! "
+migrationBuilderWW 
+.WW 
 
-DropColumnXX '
-(XX' (
-nameYY 
-:YY 
-$strYY #
-,YY# $
-tableZZ 
-:ZZ 
-$strZZ  
-)ZZ  !
-;ZZ! "
-migrationBuilder\\ 
-.\\ 
-AlterColumn\\ (
-<\\( )
-Guid\\) -
->\\- .
-(\\. /
-name]] 
-:]] 
-$str]] !
-,]]! "
-table^^ 
-:^^ 
-$str^^ "
-,^^" #
-type__ 
-:__ 
-$str__ (
-,__( )
-nullable`` 
-:`` 
-true`` 
-,`` 
+DropColumnWW '
+(WW' (
+nameXX 
+:XX 
+$strXX #
+,XX# $
+tableYY 
+:YY 
+$strYY  
+)YY  !
+;YY! "
+migrationBuilder[[ 
+.[[ 
+AlterColumn[[ (
+<[[( )
+Guid[[) -
+>[[- .
+([[. /
+name\\ 
+:\\ 
+$str\\ !
+,\\! "
+table]] 
+:]] 
+$str]] "
+,]]" #
+type^^ 
+:^^ 
+$str^^ (
+,^^( )
+nullable__ 
+:__ 
+true__ 
+,__ 
 
-oldClrTypeaa 
-:aa 
-typeofaa "
-(aa" #
-Guidaa# '
-)aa' (
-,aa( )
-oldTypebb 
-:bb 
-$strbb +
-)bb+ ,
-;bb, -
-migrationBuilderdd 
-.dd 
-	AddColumndd &
-<dd& '
-Guiddd' +
->dd+ ,
-(dd, -
-nameee 
-:ee 
-$stree 
-,ee 
-tableff 
-:ff 
-$strff "
-,ff" #
-typegg 
-:gg 
-$strgg (
-,gg( )
-nullablehh 
-:hh 
-falsehh 
-,hh  
-defaultValueii 
-:ii 
-newii !
-Guidii" &
-(ii& '
-$strii' M
-)iiM N
-)iiN O
-;iiO P
-migrationBuilderkk 
-.kk 
-AddForeignKeykk *
-(kk* +
-namell 
-:ll 
-$strll 7
-,ll7 8
-tablemm 
-:mm 
-$strmm "
-,mm" #
-columnnn 
-:nn 
-$strnn #
-,nn# $
-principalTableoo 
-:oo 
-$stroo  *
-,oo* +
-principalColumnpp 
-:pp  
-$strpp! %
-)pp% &
-;pp& '
-}qq 	
-}rr 
-}ss ˙H
-uF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212205434_AddAppointmentToDB.cs
+oldClrType`` 
+:`` 
+typeof`` "
+(``" #
+Guid``# '
+)``' (
+,``( )
+oldTypeaa 
+:aa 
+$straa +
+)aa+ ,
+;aa, -
+migrationBuildercc 
+.cc 
+	AddColumncc &
+<cc& '
+Guidcc' +
+>cc+ ,
+(cc, -
+namedd 
+:dd 
+$strdd 
+,dd 
+tableee 
+:ee 
+$stree "
+,ee" #
+typeff 
+:ff 
+$strff (
+,ff( )
+nullablegg 
+:gg 
+falsegg 
+,gg  
+defaultValuehh 
+:hh 
+newhh !
+Guidhh" &
+(hh& '
+$strhh' M
+)hhM N
+)hhN O
+;hhO P
+migrationBuilderjj 
+.jj 
+AddForeignKeyjj *
+(jj* +
+namekk 
+:kk 
+$strkk 7
+,kk7 8
+tablell 
+:ll 
+$strll "
+,ll" #
+columnmm 
+:mm 
+$strmm #
+,mm# $
+principalTablenn 
+:nn 
+$strnn  *
+,nn* +
+principalColumnoo 
+:oo  
+$stroo! %
+)oo% &
+;oo& '
+}pp 	
+}qq 
+}rr ÓH
+iE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212205434_AddAppointmentToDB.cs
 	namespace 	
 MyDocAppointment
  
@@ -3795,8 +3748,8 @@ Migrations* 4
 êê 	
 }
 ëë 
-}íí ®2
-qF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212213456_AddPaymentToDB.cs
+}íí ú2
+eE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212213456_AddPaymentToDB.cs
 	namespace 	
 MyDocAppointment
  
@@ -4153,505 +4106,502 @@ oldClrTypeSS 
 ;aa4 5
 }bb 	
 }cc 
-}dd ‰3
-uF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221219221533_AddDrugStocksTable.cs
-	namespace 	
-MyDocAppointment
- 
-. 
-Infrastructure )
-.) *
-
-Migrations* 4
-{ 
-public		 
-
-partial		 
-class		 
-AddDrugStocksTable		 +
-:		, -
-	Migration		. 7
-{
-
- 
-	protected 
-override 
-void 
-Up  "
-(" #
-MigrationBuilder# 3
-migrationBuilder4 D
-)D E
-{ 	
-migrationBuilder 
-. 
-DropForeignKey +
-(+ ,
-name 
-: 
-$str :
-,: ;
-table 
-: 
-$str %
-)% &
-;& '
-migrationBuilder 
-. 
-AlterColumn (
-<( )
-Guid) -
->- .
-(. /
-name 
-: 
-$str !
-,! "
-table 
-: 
-$str %
-,% &
-type 
-: 
-$str (
-,( )
-nullable 
-: 
-true 
-, 
-
-oldClrType 
-: 
-typeof "
-(" #
-Guid# '
-)' (
-,( )
-oldType 
-: 
-$str +
-)+ ,
-;, -
-migrationBuilder 
-. 
-CreateTable (
-(( )
-name 
-: 
-$str "
-," #
-columns 
-: 
-table 
-=> !
-new" %
-{ 
-Id 
-= 
-table 
-. 
-Column %
-<% &
-Guid& *
->* +
-(+ ,
-type, 0
-:0 1
-$str2 D
-,D E
-nullableF N
-:N O
-falseP U
-)U V
-,V W
-ItemId 
-= 
-table "
-." #
-Column# )
-<) *
-Guid* .
->. /
-(/ 0
-type0 4
-:4 5
-$str6 H
-,H I
-nullableJ R
-:R S
-falseT Y
-)Y Z
-,Z [
-Quantity   
-=   
-table   $
-.  $ %
-Column  % +
-<  + ,
-int  , /
->  / 0
-(  0 1
-type  1 5
-:  5 6
-$str  7 <
-,  < =
-nullable  > F
-:  F G
-false  H M
-)  M N
-,  N O
-IsRestricted!!  
-=!!! "
-table!!# (
-.!!( )
-Column!!) /
-<!!/ 0
-bool!!0 4
->!!4 5
-(!!5 6
-type!!6 :
-:!!: ;
-$str!!< A
-,!!A B
-nullable!!C K
-:!!K L
-false!!M R
-)!!R S
-}"" 
-,"" 
-constraints## 
-:## 
-table## "
-=>### %
-{$$ 
-table%% 
-.%% 
-
-PrimaryKey%% $
-(%%$ %
-$str%%% 4
-,%%4 5
-x%%6 7
-=>%%8 :
-x%%; <
-.%%< =
-Id%%= ?
-)%%? @
-;%%@ A
-table&& 
-.&& 
-
-ForeignKey&& $
-(&&$ %
-name'' 
-:'' 
-$str'' :
-,'': ;
-column(( 
-:(( 
-x((  !
-=>((" $
-x((% &
-.((& '
-ItemId((' -
-,((- .
-principalTable)) &
-:))& '
-$str))( /
-,))/ 0
-principalColumn** '
-:**' (
-$str**) -
-,**- .
-onDelete++  
-:++  !
-ReferentialAction++" 3
-.++3 4
-Cascade++4 ;
-)++; <
-;++< =
-},, 
-),, 
-;,, 
-migrationBuilder.. 
-... 
-CreateIndex.. (
-(..( )
-name// 
-:// 
-$str// ,
-,//, -
-table00 
-:00 
-$str00 #
-,00# $
-column11 
-:11 
-$str11  
-)11  !
-;11! "
-migrationBuilder33 
-.33 
-AddForeignKey33 *
-(33* +
-name44 
-:44 
-$str44 :
-,44: ;
-table55 
-:55 
-$str55 %
-,55% &
-column66 
-:66 
-$str66 #
-,66# $
-principalTable77 
-:77 
-$str77  *
-,77* +
-principalColumn88 
-:88  
-$str88! %
-)88% &
-;88& '
-}99 	
-	protected<< 
-override<< 
-void<< 
-Down<<  $
-(<<$ %
-MigrationBuilder<<% 5
-migrationBuilder<<6 F
-)<<F G
-{== 	
-migrationBuilder>> 
-.>> 
-DropForeignKey>> +
-(>>+ ,
-name?? 
-:?? 
-$str?? :
-,??: ;
-table@@ 
-:@@ 
-$str@@ %
-)@@% &
-;@@& '
-migrationBuilderBB 
-.BB 
-	DropTableBB &
-(BB& '
-nameCC 
-:CC 
-$strCC "
-)CC" #
-;CC# $
-migrationBuilderEE 
-.EE 
-AlterColumnEE (
-<EE( )
-GuidEE) -
->EE- .
-(EE. /
-nameFF 
-:FF 
-$strFF !
-,FF! "
-tableGG 
-:GG 
-$strGG %
-,GG% &
-typeHH 
-:HH 
-$strHH (
-,HH( )
-nullableII 
-:II 
-falseII 
-,II  
-defaultValueJJ 
-:JJ 
-newJJ !
-GuidJJ" &
-(JJ& '
-$strJJ' M
-)JJM N
-,JJN O
-
-oldClrTypeKK 
-:KK 
-typeofKK "
-(KK" #
-GuidKK# '
-)KK' (
-,KK( )
-oldTypeLL 
-:LL 
-$strLL +
-,LL+ ,
-oldNullableMM 
-:MM 
-trueMM !
-)MM! "
-;MM" #
-migrationBuilderOO 
-.OO 
-AddForeignKeyOO *
-(OO* +
-namePP 
-:PP 
-$strPP :
-,PP: ;
-tableQQ 
-:QQ 
-$strQQ %
-,QQ% &
-columnRR 
-:RR 
-$strRR #
-,RR# $
-principalTableSS 
-:SS 
-$strSS  *
-,SS* +
-principalColumnTT 
-:TT  
-$strTT! %
-,TT% &
-onDeleteUU 
-:UU 
-ReferentialActionUU +
-.UU+ ,
-CascadeUU, 3
-)UU3 4
-;UU4 5
-}VV 	
-}WW 
-}XX ú
-lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\AppointmentsRepository.cs
+}dd ÿ3
+iE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221219221533_AddDrugStocksTable.cs
 	namespace 	
 MyDocAppointment
  
 . 
 Infrastructure )
-.) *
-Repositories* 6
+.) *
+
+Migrations* 4
 { 
-public 
+public 
+
+partial 
+class 
+AddDrugEntrysTable +
+:, -
+	Migration. 7
+{		 
+	protected 
+override 
+void 
+Up  "
+(" #
+MigrationBuilder# 3
+migrationBuilder4 D
+)D E
+{ 	
+migrationBuilder 
+. 
+DropForeignKey +
+(+ ,
+name 
+: 
+$str :
+,: ;
+table 
+: 
+$str %
+)% &
+;& '
+migrationBuilder 
+. 
+AlterColumn (
+<( )
+Guid) -
+>- .
+(. /
+name 
+: 
+$str !
+,! "
+table 
+: 
+$str %
+,% &
+type 
+: 
+$str (
+,( )
+nullable 
+: 
+true 
+, 
+
+oldClrType 
+: 
+typeof "
+(" #
+Guid# '
+)' (
+,( )
+oldType 
+: 
+$str +
+)+ ,
+;, -
+migrationBuilder 
+. 
+CreateTable (
+(( )
+name 
+: 
+$str "
+," #
+columns 
+: 
+table 
+=> !
+new" %
+{ 
+Id 
+= 
+table 
+. 
+Column %
+<% &
+Guid& *
+>* +
+(+ ,
+type, 0
+:0 1
+$str2 D
+,D E
+nullableF N
+:N O
+falseP U
+)U V
+,V W
+ItemId 
+= 
+table "
+." #
+Column# )
+<) *
+Guid* .
+>. /
+(/ 0
+type0 4
+:4 5
+$str6 H
+,H I
+nullableJ R
+:R S
+falseT Y
+)Y Z
+,Z [
+Quantity 
+= 
+table $
+.$ %
+Column% +
+<+ ,
+int, /
+>/ 0
+(0 1
+type1 5
+:5 6
+$str7 <
+,< =
+nullable> F
+:F G
+falseH M
+)M N
+,N O
+IsRestricted    
+=  ! "
+table  # (
+.  ( )
+Column  ) /
+<  / 0
+bool  0 4
+>  4 5
+(  5 6
+type  6 :
+:  : ;
+$str  < A
+,  A B
+nullable  C K
+:  K L
+false  M R
+)  R S
+}!! 
+,!! 
+constraints"" 
+:"" 
+table"" "
+=>""# %
+{## 
+table$$ 
+.$$ 
+
+PrimaryKey$$ $
+($$$ %
+$str$$% 4
+,$$4 5
+x$$6 7
+=>$$8 :
+x$$; <
+.$$< =
+Id$$= ?
+)$$? @
+;$$@ A
+table%% 
+.%% 
+
+ForeignKey%% $
+(%%$ %
+name&& 
+:&& 
+$str&& :
+,&&: ;
+column'' 
+:'' 
+x''  !
+=>''" $
+x''% &
+.''& '
+ItemId''' -
+,''- .
+principalTable(( &
+:((& '
+$str((( /
+,((/ 0
+principalColumn)) '
+:))' (
+$str))) -
+,))- .
+onDelete**  
+:**  !
+ReferentialAction**" 3
+.**3 4
+Cascade**4 ;
+)**; <
+;**< =
+}++ 
+)++ 
+;++ 
+migrationBuilder-- 
+.-- 
+CreateIndex-- (
+(--( )
+name.. 
+:.. 
+$str.. ,
+,.., -
+table// 
+:// 
+$str// #
+,//# $
+column00 
+:00 
+$str00  
+)00  !
+;00! "
+migrationBuilder22 
+.22 
+AddForeignKey22 *
+(22* +
+name33 
+:33 
+$str33 :
+,33: ;
+table44 
+:44 
+$str44 %
+,44% &
+column55 
+:55 
+$str55 #
+,55# $
+principalTable66 
+:66 
+$str66  *
+,66* +
+principalColumn77 
+:77  
+$str77! %
+)77% &
+;77& '
+}88 	
+	protected;; 
+override;; 
+void;; 
+Down;;  $
+(;;$ %
+MigrationBuilder;;% 5
+migrationBuilder;;6 F
+);;F G
+{<< 	
+migrationBuilder== 
+.== 
+DropForeignKey== +
+(==+ ,
+name>> 
+:>> 
+$str>> :
+,>>: ;
+table?? 
+:?? 
+$str?? %
+)??% &
+;??& '
+migrationBuilderAA 
+.AA 
+	DropTableAA &
+(AA& '
+nameBB 
+:BB 
+$strBB "
+)BB" #
+;BB# $
+migrationBuilderDD 
+.DD 
+AlterColumnDD (
+<DD( )
+GuidDD) -
+>DD- .
+(DD. /
+nameEE 
+:EE 
+$strEE !
+,EE! "
+tableFF 
+:FF 
+$strFF %
+,FF% &
+typeGG 
+:GG 
+$strGG (
+,GG( )
+nullableHH 
+:HH 
+falseHH 
+,HH  
+defaultValueII 
+:II 
+newII !
+GuidII" &
+(II& '
+$strII' M
+)IIM N
+,IIN O
+
+oldClrTypeJJ 
+:JJ 
+typeofJJ "
+(JJ" #
+GuidJJ# '
+)JJ' (
+,JJ( )
+oldTypeKK 
+:KK 
+$strKK +
+,KK+ ,
+oldNullableLL 
+:LL 
+trueLL !
+)LL! "
+;LL" #
+migrationBuilderNN 
+.NN 
+AddForeignKeyNN *
+(NN* +
+nameOO 
+:OO 
+$strOO :
+,OO: ;
+tablePP 
+:PP 
+$strPP %
+,PP% &
+columnQQ 
+:QQ 
+$strQQ #
+,QQ# $
+principalTableRR 
+:RR 
+$strRR  *
+,RR* +
+principalColumnSS 
+:SS  
+$strSS! %
+,SS% &
+onDeleteTT 
+:TT 
+ReferentialActionTT +
+.TT+ ,
+CascadeTT, 3
+)TT3 4
+;TT4 5
+}UU 	
+}VV 
+}WW ê
+`E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\AppointmentsRepository.cs
+	namespace 	
+MyDocAppointment
+ 
+. 
+Infrastructure )
+.) *
+Repositories* 6
+{ 
+public 
 
-class "
-AppointmentsRepository '
-:( )#
-IAppointmentsRepository* A
-{ 
-private		 
-readonly		 
-AppDbContext		 %
-_appDbContext		& 3
-;		3 4
-public
+class "
+AppointmentsRepository '
+:( )#
+IAppointmentsRepository* A
+{ 
+private 
+readonly 
+AppDbContext %
+_appDbContext& 3
+;3 4
+public		 "
+AppointmentsRepository		 %
+(		% &
+AppDbContext		& 2
+appDbContext		3 ?
+)		? @
+{
 
- "
-AppointmentsRepository
-
- %
-(
-
-% &
-AppDbContext
-
-& 2
-appDbContext
-
-3 ?
-)
-
-? @
-{ 	
-_appDbContext 
-= 
-appDbContext (
-;( )
-} 	
-public 
-async 
-Task 
-Create  
-(  !
-Appointment! ,
-appointment- 8
-)8 9
-{ 	
-_appDbContext 
-. 
-Appointments &
-.& '
-Add' *
-(* +
-appointment+ 6
-)6 7
-;7 8
-await 
-_appDbContext 
-.  
-SaveChangesAsync  0
-(0 1
-)1 2
-;2 3
-} 	
-public 
-async 
-Task 
-Delete  
-(  !
-Appointment! ,
-appointment- 8
-)8 9
-{ 	
-_appDbContext 
-. 
-Appointments &
-.& '
-Remove' -
-(- .
-appointment. 9
-)9 :
-;: ;
-await 
-_appDbContext 
-.  
-SaveChangesAsync  0
-(0 1
-)1 2
-;2 3
-} 	
-public 
-async 
-Task 
-< 
-IEnumerable %
-<% &
-Appointment& 1
->1 2
->2 3
-GetAll4 :
-(: ;
-); <
-=>= ?
-await@ E
-_appDbContextF S
-.S T
-AppointmentsT `
+ 	
+_appDbContext 
+= 
+appDbContext (
+;( )
+} 	
+public 
+async 
+Task 
+Create  
+(  !
+Appointment! ,
+appointment- 8
+)8 9
+{ 	
+_appDbContext 
+. 
+Appointments &
+.& '
+Add' *
+(* +
+appointment+ 6
+)6 7
+;7 8
+await 
+_appDbContext 
+.  
+SaveChangesAsync  0
+(0 1
+)1 2
+;2 3
+} 	
+public 
+async 
+Task 
+Delete  
+(  !
+Appointment! ,
+appointment- 8
+)8 9
+{ 	
+_appDbContext 
+. 
+Appointments &
+.& '
+Remove' -
+(- .
+appointment. 9
+)9 :
+;: ;
+await 
+_appDbContext 
+.  
+SaveChangesAsync  0
+(0 1
+)1 2
+;2 3
+} 	
+public 
+async 
+Task 
+< 
+IEnumerable %
+<% &
+Appointment& 1
+>1 2
+>2 3
+GetAll4 :
+(: ;
+); <
+=>= ?
+await@ E
+_appDbContextF S
+.S T
+AppointmentsT `
+.4 5
+Include5 <
+(< =
+a= >
+=>? A
+aB C
+.C D
+DoctorD J
+)J K
 .4 5
 Include5 <
 (< =
 a= >
 =>? A
 aB C
-.C D
-DoctorD J
-)J K
+.C D
+PatientD K
+)K L
 .4 5
 Include5 <
 (< =
@@ -4659,51 +4609,51 @@ lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositor
 =>? A
 aB C
 .C D
-PatientD K
+PaymentD K
 )K L
-.4 5
-Include5 <
-(< =
-a= >
-=>? A
-aB C
-.C D
-PaymentD K
-)K L
-.4 5
-ToListAsync5 @
-(@ A
-)A B
-;B C
-public!! 
-async!! 
-Task!! 
-<!! 
-Appointment!! %
-?!!% &
->!!& '
-GetById!!( /
-(!!/ 0
-Guid!!0 4
-id!!5 7
-)!!7 8
-{"" 	
-var## 
-appointment## 
-=## 
-await## #
-_appDbContext##$ 1
-.##1 2
-Appointments##2 >
+.4 5
+ToListAsync5 @
+(@ A
+)A B
+;B C
+public   
+async   
+Task   
+<   
+Appointment   %
+?  % &
+>  & '
+GetById  ( /
+(  / 0
+Guid  0 4
+id  5 7
+)  7 8
+{!! 	
+var"" 
+appointment"" 
+="" 
+await"" #
+_appDbContext""$ 1
+.""1 2
+Appointments""2 >
+.## 
+Include## 
+(## 
+a## 
+=>## 
+a## 
+.##  
+Doctor##  &
+)##& '
 .$$ 
 Include$$ 
 ($$ 
 a$$ 
 =>$$ 
 a$$ 
-.$$  
-Doctor$$  &
-)$$& '
+.$$  
+Patient$$  '
+)$$' (
 .%% 
 Include%% 
 (%% 
@@ -4711,51 +4661,42 @@ lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositor
 =>%% 
 a%% 
 .%%  
-Patient%%  '
+Payment%%  '
 )%%' (
-.&& 
-Include&& 
-(&& 
-a&& 
-=>&& 
-a&& 
-.&&  
-Payment&&  '
-)&&' (
-.'' 
-FirstOrDefaultAsync'' $
-(''$ %
-d''% &
-=>''' )
-d''* +
-.''+ ,
-Id'', .
-==''/ 1
-id''2 4
-)''4 5
-;''5 6
-return)) 
-appointment)) 
-;)) 
-}** 	
-public,, 
-async,, 
-Task,, 
-SaveChanges,, %
-(,,% &
-),,& '
-{-- 	
-await.. 
-_appDbContext.. 
-...  
-SaveChangesAsync..  0
-(..0 1
-)..1 2
-;..2 3
-}// 	
-}00 
-}11 ê
-gF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DoctorsRepository.cs
+.&& 
+FirstOrDefaultAsync&& $
+(&&$ %
+d&&% &
+=>&&' )
+d&&* +
+.&&+ ,
+Id&&, .
+==&&/ 1
+id&&2 4
+)&&4 5
+;&&5 6
+return(( 
+appointment(( 
+;(( 
+})) 	
+public++ 
+async++ 
+Task++ 
+SaveChanges++ %
+(++% &
+)++& '
+{,, 	
+await-- 
+_appDbContext-- 
+.--  
+SaveChangesAsync--  0
+(--0 1
+)--1 2
+;--2 3
+}.. 	
+}// 
+}00 Ñ
+[E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DoctorsRepository.cs
 	namespace 	
 MyDocAppointment
  
@@ -4958,8 +4899,147 @@ gF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositor
 ;--2 3
 }.. 	
 }// 
-}00 ®
-eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugsRepository.cs
+}00 ◊
+]E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugEntryRepository.cs
+	namespace 	
+MyDocAppointment
+ 
+. 
+Infrastructure )
+.) *
+Repositories* 6
+{ 
+public 
+
+class  
+DrugEntrysRepository %
+:& '!
+IDrugEntrysRepository( =
+{ 
+private		 
+readonly		 
+AppDbContext		 %
+_appDbContext		& 3
+;		3 4
+public
+
+  
+DrugEntrysRepository
+
+ #
+(
+
+# $
+AppDbContext
+
+$ 0
+appDbContext
+
+1 =
+)
+
+= >
+{ 	
+_appDbContext 
+= 
+appDbContext (
+;( )
+} 	
+public 
+async 
+Task 
+< 
+	DrugEntry #
+># $
+GetDrug% ,
+(, -
+Guid- 1
+drugId2 8
+)8 9
+{ 	
+var 
+drug 
+= 
+await 
+_appDbContext *
+.* +
+
+DrugEntrys+ 5
+.5 6
+FirstOrDefaultAsync6 I
+(I J
+dJ K
+=>L N
+dO P
+.P Q
+IdQ S
+==T V
+drugIdW ]
+)] ^
+;^ _
+return 
+drug 
+; 
+} 	
+public 
+async 
+Task 
+< 
+	DrugEntry #
+># $
+AddAsync% -
+(- .
+	DrugEntry. 7
+	drugStock8 A
+)A B
+{ 	
+_appDbContext 
+. 
+
+DrugEntrys $
+.$ %
+Add% (
+(( )
+	drugStock) 2
+)2 3
+;3 4
+await 
+_appDbContext 
+.  
+SaveChangesAsync  0
+(0 1
+)1 2
+;2 3
+return 
+	drugStock 
+; 
+} 	
+public 
+async 
+Task 
+< 
+IEnumerable %
+<% &
+	DrugEntry& /
+>/ 0
+>0 1
+GetAll2 8
+(8 9
+)9 :
+=>; =
+await> C
+_appDbContextD Q
+.Q R
+
+DrugEntrysR \
+.\ ]
+ToListAsync] h
+(h i
+)i j
+;j k
+} 
+} ú
+YE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugsRepository.cs
 	namespace 	
 MyDocAppointment
  
@@ -5130,155 +5210,8 @@ eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositor
 ;&&2 3
 }'' 	
 }(( 
-})) Ú
-jF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugStocksRepository.cs
-	namespace 	
-MyDocAppointment
- 
-. 
-Infrastructure )
-.) *
-Repositories* 6
-{ 
-public 
-
-class  
-DrugStocksRepository %
-:& '!
-IDrugStocksRepository( =
-{		 
-private
-
- 
-readonly
-
- 
-AppDbContext
-
- %
-_appDbContext
-
-& 3
-;
-
-3 4
-public  
-DrugStocksRepository #
-(# $
-AppDbContext$ 0
-appDbContext1 =
-)= >
-{ 	
-_appDbContext 
-= 
-appDbContext (
-;( )
-} 	
-public 
-async 
-Task 
-< 
-Drug 
-> 
-GetDrug  '
-(' (
-Guid( ,
-drugId- 3
-)3 4
-{ 	
-var 
-drug 
-= 
-await 
-_appDbContext *
-.* +
-Drugs+ 0
-.0 1
-FirstOrDefaultAsync1 D
-(D E
-dE F
-=>G I
-dJ K
-.K L
-IdL N
-==O Q
-drugIdR X
-)X Y
-;Y Z
-return 
-drug 
-; 
-} 	
-public 
-async 
-Task 
-< 
-	DrugStock #
-># $
-AddAsync% -
-(- .
-	DrugStock. 7
-	drugStock8 A
-)A B
-{ 	
-_appDbContext 
-. 
-
-DrugStocks $
-.$ %
-Add% (
-(( )
-	drugStock) 2
-)2 3
-;3 4
-await 
-_appDbContext 
-.  
-SaveChangesAsync  0
-(0 1
-)1 2
-;2 3
-return 
-	drugStock 
-; 
-} 	
-public 
-async 
-Task 
-< 
-IEnumerable %
-<% &
-	DrugStock& /
->/ 0
->0 1
-GetAll2 8
-(8 9
-)9 :
-=>; =
-await> C
-_appDbContextD Q
-.Q R
-
-DrugStocksR \
-.\ ]
-Include] d
-(d e
-dse g
-=>h j
-dsk m
-.m n
-Itemn r
-)r s
-.s t
-ToListAsynct 
-(	 Ä
-)
-Ä Å
-;
-Å Ç
-} 
-} ﬁ
-hF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\PatientsRepository.cs
+})) “
+\E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\PatientsRepository.cs
 	namespace 	
 MyDocAppointment
  

@@ -19,7 +19,7 @@ namespace MyDocAppointment.Application
 
         public async Task<Result> Delete(Guid id)
         {
-            Doctor doctor = await _doctorsRepository.GetById(id);
+            Doctor? doctor = await _doctorsRepository.GetById(id);
             if(doctor == null)
             {
                 return Result.Failure($"Doctor with id {id} not found.");

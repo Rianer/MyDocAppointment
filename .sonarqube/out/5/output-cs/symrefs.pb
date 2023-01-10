@@ -1,5 +1,5 @@
-õ
-eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\AppointmentControllerTests.cs
+è
+YE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\AppointmentControllerTests.cs
 
  ,2
  #G MA G5 ;''5 ;
@@ -18,8 +18,8 @@ eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\Appoint
 '' (( ))' /
 )) **$ 2
 --% 6 .
-// == !ô
-_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs
+// == !ç
+SE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs
 
  %
 
@@ -31,8 +31,8 @@ _F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\BaseInt
 
 $ +
 
- %Ì
-aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs
+ %◊
+UE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs
 
  '<
  #B H= C5 ;&&5 ;005 ;
@@ -48,33 +48,15 @@ aF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\Doctors
     
 
 $$ A
-&& '' ((' /
-(( ))# 1**$ 2
+&& '' ((' /
+(( **$ 2
 
 .. =
 00 11 22' /
 22 44$ 2
 AA  , (
-CC PP ˇ
-_F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\DrugsControllerTests.cs
-
- %(
- #@ F5 ;%%5 ;
-
- @
- H O
-  + 
-  $
-
- 2
-  
-
-## A
-%% && ''' /
-'' (($ 2
-++ ( $
--- 55 ¢
-bF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\PatientsControllerTests.cs
+CC PP å
+VE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\PatientsControllerTests.cs
 
  (2
  #C I= C5 ;''5 ;
@@ -90,8 +72,8 @@ bF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\Patient
  !! 
 
 %% A
-'' (( ))' /
-)) **# 1++& 4
+'' (( ))' /
+)) ++& 4
 ..! . *
-00 << S
-QF:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\Usings.cs
+00 << G
+EE:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\Usings.cs

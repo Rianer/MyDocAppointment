@@ -1,9 +1,8 @@
-﻿F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\AppointmentControllerTests.cs
-F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs
-F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs
-F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\DrugsControllerTests.cs
-F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\PatientsControllerTests.cs
-F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\Usings.cs
+﻿E:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\AppointmentControllerTests.cs
+E:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\BaseIntegrationTests.cs
+E:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs
+E:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\PatientsControllerTests.cs
+E:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\Usings.cs
 C:\Users\Asfalt\.nuget\packages\microsoft.net.test.sdk\17.4.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs
 C:\Users\Asfalt\.nuget\packages\microsoft.testplatform.testhost\17.4.0\build\netcoreapp3.1\x64\testhost.exe
 C:\Users\Asfalt\.nuget\packages\microsoft.testplatform.testhost\17.4.0\build\netcoreapp3.1\x64\testhost.dll

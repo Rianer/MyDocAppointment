@@ -1,6 +1,4 @@
-﻿using MyDocAppointment.Business.Logistics.External;
-
-namespace MyDocAppointment.API.Dtos
+﻿namespace MyDocAppointment.API.Dtos
 {
     public class CreateAppointmentDto
     {

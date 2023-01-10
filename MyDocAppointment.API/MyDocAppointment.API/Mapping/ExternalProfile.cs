@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.VisualBasic;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Business.Logistics.External;
 

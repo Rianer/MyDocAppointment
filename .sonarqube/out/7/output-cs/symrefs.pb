@@ -1,5 +1,5 @@
-©
-UF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\AppDbContext.cs
+ù
+IE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\AppDbContext.cs
 		 - 9
 ; BK R
 
@@ -16,8 +16,8 @@ UF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\AppDbCont
   *
 
   /P
-= I      ! -∂
-pF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\AppointmentConfiguration.cs
+= I      ! -™
+dE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\AppointmentConfiguration.cs
 
 		 +
 
@@ -31,8 +31,8 @@ pF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
  " #
  " #
    !
- " #À
-eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\Configuration.cs
+ " #ø
+YE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\Configuration.cs
 
  %
 
@@ -47,8 +47,8 @@ eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 
 0 7
 
-; Bß
-kF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DoctorConfiguration.cs
+; Bõ
+_E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DoctorConfiguration.cs
 
 		 &
 
@@ -62,21 +62,19 @@ kF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
  " #
  ! "
 9 :> ?
- ! "Â
-iF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugConfiguration.cs
+ ! "£
+]E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugConfiguration.cs
 
  $
 
-		 F
-		6 =      
+		 <
+		6 =     
    !
  " #
  " #
  " #
- " #
- ! "
-7 9= ?™
-nF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugStockConfiguration.cs
+ " #à
+bE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\DrugStockConfiguration.cs
 
  )
 
@@ -84,10 +82,9 @@ nF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
 		; B    
    !
    !
-1 26 7
  " #
- " #®
-lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\PatientConfiguration.cs
+ " #ú
+`E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\PatientConfiguration.cs
 
 		 '
 
@@ -101,31 +98,29 @@ lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configura
  " #
  ! "
 9 :> ?
- ! "“
-lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\PaymentConfiguration.cs
+ ! "∆
+`E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Configurations\PaymentConfiguration.cs
 
-
-
- '
+		 '
 
- F
-9 @      
-   !
+ F
+9 @      
+   !
+ " #
  " #
- " #
+ " #
  " #
- " #
- " #¸
-ZF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\ConfigureServices.cs
+ " #
+NE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\ConfigureServices.cs
 
 		 )
 
 ) AZ
 % -        
 > K !
-  Ê
+  ⁄
 
-qF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221127131857_FirstMigration.cs
+eE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221127131857_FirstMigration.cs
 
  '
 
@@ -185,17 +180,17 @@ qF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migration
 ææ 
 ¡¡ 
 ƒƒ 
-«« œ
-qF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221206132131_AddSomeColumns.cs
+«« √
+eE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221206132131_AddSomeColumns.cs
 
-		 '
+ '
 
-  "Z
-4 D    $$ ++ 22 << 
+  "Z
+4 D    ## ** 11 ;; 
 
-FF  $Z
-FF6 FHH LL PP TT XX \\ dd kk ©
-uF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212205434_AddAppointmentToDB.cs
+EE  $Z
+EE6 FGG KK OO SS WW [[ cc jj ù
+iE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212205434_AddAppointmentToDB.cs
 
  +
 
@@ -205,8 +200,8 @@ uF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migration
 OO  $Ü
 OO6 FQQ UU YY ]] aa ee jj oo tt yy 
 ÅÅ 
-ââ ª
-qF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212213456_AddPaymentToDB.cs
+ââ Ø
+eE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221212213456_AddPaymentToDB.cs
 
  '
 
@@ -214,49 +209,47 @@ qF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migration
 4 D    !! )) .. 
 
 88  $P
-886 F:: >> BB FF NN VV [[ ç
-uF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221219221533_AddDrugStocksTable.cs
+886 F:: >> BB FF NN VV [[ Å
+iE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Migrations\20221219221533_AddDrugStocksTable.cs
 
-		 +
+ +
 
-  "<
-4 D   .. 33 2
-   "   $!!# (
-## "%% && 
-%%6 7%%; <
-((  !((% &
+  "<
+4 D   -- 22 2
+   " $  # (
+"" "$$ %% 
+$$6 7$$; <
+''  !''% &
 
-<<  $2
-<<6 F>> BB EE OO ö
-lF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\AppointmentsRepository.cs
+;;  $2
+;;6 F== AA DD NN é
+`E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\AppointmentsRepository.cs
 
- 'Z
-		& 3     F S##$ 1.. 
-
-
-3 ? (
+ 'Z
+& 3     F S""$ 1-- 
+		3 ? (
 
-  
-- 8+ 6
+  
+- 8+ 6
 
-  
-- 8. 9
+  
+- 8. 9
 
-4 :
+4 :
+= >B C
 = >B C
-= >B C
-= >B C
+= >B C
 
-!!( /
-!!5 7''2 4
-## )) 
+  ( /
+  5 7&&2 4
+"" (( 
+## ## 
 $$ $$ 
 %% %% 
-&& && 
-''% &''* +
+&&% &&&* +
 
-,, %—
-gF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DoctorsRepository.cs
+++ %≈
+[E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DoctorsRepository.cs
 
  "n
 		& 3       ""A N&& ,-- 
@@ -280,8 +273,25 @@ gF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositor
 && (( 
 &&I J&&N O
 
-++ %è
-eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugsRepository.cs
+++ %≈
+]E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugEntryRepository.cs
+
+ %<
+		& 3  *  D Q
+
+
+1 = (
+
+% ,
+2 8W ]
+  
+J KO P
+
+% -
+8 A) 2 
+
+2 8É
+YE:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugsRepository.cs
 
   Z
 		& 3     ? L *&& 
@@ -302,26 +312,8 @@ eF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositor
  !! 
 E FJ K
 
-$$ %Ë
-jF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\DrugStocksRepository.cs
-
- %<
-
-
-& 3  *  D Q
-1 = (
-
-  '
-- 3R X
-  
-E FJ K
-
-% -
-8 A) 2 
-
-2 8
-e gk mí
-hF:\Documents\faculta\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\PatientsRepository.cs
+$$ %Ü
+\E:\repo2\MyDocAppointment\MyDocAppointment.Infrastructure\Repositories\PatientsRepository.cs
 
  #Z
 & 3     B O  -%% 

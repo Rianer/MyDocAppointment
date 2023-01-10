@@ -1,1 +1,1 @@
-F:\Documents\faculta\MyDocAppointment\.sonarqube\out\6
+E:\repo2\MyDocAppointment\.sonarqube\out\6

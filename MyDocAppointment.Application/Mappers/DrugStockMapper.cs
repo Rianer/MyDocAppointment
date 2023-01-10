@@ -2,7 +2,7 @@
 
 namespace MyDocAppointment.Application.Mappers
 {
-    public class DrugEntryMapper
+    public static class DrugEntryMapper
     {
         private static Lazy<IMapper> Lazy =
            new Lazy<IMapper>(() =>

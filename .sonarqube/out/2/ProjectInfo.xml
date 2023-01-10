@@ -4,14 +4,14 @@
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
   <ProjectGuid>5819b9e6-15bc-40e6-873a-1b29ba53cfef</ProjectGuid>
-  <FullPath>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.Application\MyDocAppointment.Application.csproj</FullPath>
+  <FullPath>E:\repo2\MyDocAppointment\MyDocAppointment.Application\MyDocAppointment.Application.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
-    <AnalysisResult Id="FilesToAnalyze" Location="F:\Documents\faculta\MyDocAppointment\.sonarqube\conf\2\FilesToAnalyze.txt" />
+    <AnalysisResult Id="FilesToAnalyze" Location="E:\repo2\MyDocAppointment\.sonarqube\conf\2\FilesToAnalyze.txt" />
   </AnalysisResults>
   <AnalysisSettings>
-    <Property Name="sonar.cs.roslyn.reportFilePaths">F:\Documents\faculta\MyDocAppointment\.sonarqube\out\2\Issues.json</Property>
-    <Property Name="sonar.cs.analyzer.projectOutPaths">F:\Documents\faculta\MyDocAppointment\.sonarqube\out\2</Property>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">E:\repo2\MyDocAppointment\.sonarqube\out\2\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">E:\repo2\MyDocAppointment\.sonarqube\out\2</Property>
   </AnalysisSettings>
   <Configuration>Debug</Configuration>
   <Platform>AnyCPU</Platform>

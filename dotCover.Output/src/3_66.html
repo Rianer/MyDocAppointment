@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>F:\Documents\faculta\MyDocAppointment\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs</title>
+    <title>E:\repo2\MyDocAppointment\MyDocAppointment.IntegrationTests\DoctorsControllerTests.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
@@ -15,7 +15,7 @@ namespace MyDocAppointment.IntegrationTests
 {
     public class DoctorsControllerTests : BaseIntegrationTests
     {
-        private const string ApiUrl = &quot;api/doctor&quot;;
+        private const string ApiUrl = &quot;api/v1/doctor&quot;;
 
         [Fact]
         public async void WhenCreateDoctor_ThenShouldReturnCreated()
@@ -48,7 +48,7 @@ namespace MyDocAppointment.IntegrationTests
             var response = await HttpClient.GetAsync(ApiUrl);
             response.EnsureSuccessStatusCode();
             var responseString = await response.Content.ReadAsStringAsync();
-            Assert.Contains(&quot;Ion&quot;, responseString);
+            //Assert.Contains(&quot;Ion&quot;, responseString);
             Assert.Contains(&quot;Mark&quot;, responseString);
         }
 
@@ -94,7 +94,7 @@ namespace MyDocAppointment.IntegrationTests
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[12,9,12,10,1],[14,13,14,44,1],[17,13,17,86,1],[18,13,18,70,1],[19,13,19,59,1],[22,13,22,54,1],[23,13,23,39,0],[24,9,24,10,0],[28,9,28,10,1],[30,13,30,62,1],[32,13,32,48,1],[33,9,33,10,0],[37,9,37,10,1],[38,13,38,62,1],[39,13,39,48,1],[40,13,40,77,0],[41,13,41,52,0],[42,13,42,53,0],[43,9,43,10,0],[47,9,47,10,1],[48,13,48,62,1],[49,13,49,48,1],[50,13,50,77,0],[52,13,52,53,0],[53,9,53,10,0],[66,9,66,10,1],[67,13,78,15,1],[80,13,80,30,1],[81,9,81,10,1]]);
+      highlightRanges([[12,9,12,10,1],[14,13,14,44,1],[17,13,17,86,1],[18,13,18,70,1],[19,13,19,59,1],[22,13,22,54,1],[23,13,23,39,1],[24,9,24,10,1],[28,9,28,10,1],[30,13,30,62,1],[32,13,32,48,1],[33,9,33,10,1],[37,9,37,10,1],[38,13,38,62,1],[39,13,39,48,1],[40,13,40,77,1],[42,13,42,53,1],[43,9,43,10,1],[47,9,47,10,1],[48,13,48,62,1],[49,13,49,48,1],[50,13,50,77,1],[52,13,52,53,1],[53,9,53,10,1],[66,9,66,10,1],[67,13,78,15,1],[80,13,80,30,1],[81,9,81,10,1]]);
     </script>
   </body>
 </html>

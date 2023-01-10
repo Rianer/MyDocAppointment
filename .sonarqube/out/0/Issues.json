@@ -14,49 +14,15 @@
         {
           "ruleId": "CS8618",
           "level": "warning",
-          "message": "Non-nullable field 'inventory' must contain a non-null value when exiting constructor. Consider declaring the field as nullable.",
+          "message": "Non-nullable property 'Drug' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/DrugEntry.cs",
                 "region": {
-                  "startLine": 6,
-                  "startColumn": 16,
-                  "endLine": 6,
-                  "endColumn": 23
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 33,
-                  "endLine": 16,
-                  "endColumn": 42
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
-          "message": "Non-nullable property 'Item' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/DrugStock.cs",
-                "region": {
-                  "startLine": 6,
-                  "startColumn": 16,
-                  "endLine": 6,
+                  "startLine": 8,
+                  "startColumn": 21,
+                  "endLine": 8,
                   "endColumn": 25
                 }
               }
@@ -65,46 +31,12 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/DrugStock.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/DrugEntry.cs",
                 "region": {
-                  "startLine": 15,
-                  "startColumn": 29,
-                  "endLine": 15,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
-          "message": "Non-nullable property 'DrugStocks' must contain a non-null value when exiting constructor. Consider declaring the property as nullable.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Drug.cs",
-                "region": {
-                  "startLine": 13,
-                  "startColumn": 40,
-                  "endLine": 13,
-                  "endColumn": 50
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Drug.cs",
-                "region": {
-                  "startLine": 13,
-                  "startColumn": 40,
-                  "endLine": 13,
-                  "endColumn": 50
+                  "startLine": 8,
+                  "startColumn": 21,
+                  "endLine": 8,
+                  "endColumn": 25
                 }
               }
             }
@@ -120,7 +52,70 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Storage.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 25,
+                  "endLine": 22,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Storage.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 13,
+                  "endLine": 39,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8604",
+          "level": "warning",
+          "message": "Possible null reference argument for parameter 'item' in 'void List<DrugEntry>.Add(DrugEntry item)'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Storage.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 27,
+                  "endLine": 39,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 42,
                   "startColumn": 13,
@@ -141,7 +136,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 42,
                   "startColumn": 30,
@@ -162,7 +157,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 48,
                   "startColumn": 17,
@@ -183,7 +178,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 58,
                   "startColumn": 18,
@@ -204,7 +199,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/External/Diagnosis.cs",
                 "region": {
                   "startLine": 60,
                   "startColumn": 37,
@@ -219,60 +214,18 @@
           }
         },
         {
-          "ruleId": "S2292",
+          "ruleId": "S1125",
           "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
+          "message": "Remove the unnecessary Boolean literal(s).",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Storage.cs",
                 "region": {
-                  "startLine": 19,
-                  "startColumn": 21,
-                  "endLine": 19,
-                  "endColumn": 23
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 32,
-                  "endLine": 20,
-                  "endColumn": 41
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Logistics/Internal/Cabinet.cs",
-                "region": {
-                  "startLine": 21,
-                  "startColumn": 20,
-                  "endLine": 21,
-                  "endColumn": 32
+                  "startLine": 34,
+                  "startColumn": 33,
+                  "endLine": 34,
+                  "endColumn": 40
                 }
               }
             }
@@ -288,11 +241,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.Business/Users/Doctor.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.Business/Users/Doctor.cs",
                 "region": {
-                  "startLine": 12,
+                  "startLine": 11,
                   "startColumn": 44,
-                  "endLine": 13,
+                  "endLine": 12,
                   "endColumn": 96
                 }
               }
@@ -377,12 +330,12 @@
             ]
           }
         },
-        "S2292": {
-          "id": "S2292",
-          "shortDescription": "Trivial properties should be auto-implemented",
-          "fullDescription": "Trivial properties, which include no logic but setting and getting a backing field should be converted to auto-implemented properties, yielding cleaner and more readable code.",
+        "S1125": {
+          "id": "S1125",
+          "shortDescription": "Boolean literals should not be redundant",
+          "fullDescription": "Redundant Boolean literals should be removed from expressions to improve readability.",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2292",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1125",
           "properties": {
             "category": "Minor Code Smell",
             "isEnabledByDefault": true,

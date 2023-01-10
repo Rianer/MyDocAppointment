@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.IdentityModel.Tokens;
+using MyDocAppointment.API;
 using MyDocAppointment.API.Dtos;
 using MyDocAppointment.Application;
 using MyDocAppointment.Business.Interfaces;

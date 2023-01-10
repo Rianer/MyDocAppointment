@@ -18,7 +18,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
                 "region": {
                   "startLine": 28,
                   "startColumn": 27,
@@ -39,7 +39,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
                 "region": {
                   "startLine": 27,
                   "startColumn": 27,
@@ -60,28 +60,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
-                "region": {
-                  "startLine": 26,
-                  "startColumn": 27,
-                  "endLine": 26,
-                  "endColumn": 51
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2699",
-          "level": "warning",
-          "message": "Add at least one assertion to this test case.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
                 "region": {
                   "startLine": 28,
                   "startColumn": 27,
@@ -98,32 +77,11 @@
         {
           "ruleId": "CA1822",
           "level": "note",
-          "message": "Member 'GetDrugDto' does not access instance data and can be marked as static",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/DrugsControllerTests.cs",
-                "region": {
-                  "startLine": 43,
-                  "startColumn": 31,
-                  "endLine": 43,
-                  "endColumn": 41
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1822",
-          "level": "note",
           "message": "Member 'GetPatientDto' does not access instance data and can be marked as static",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/PatientsControllerTests.cs",
                 "region": {
                   "startLine": 46,
                   "startColumn": 34,
@@ -140,16 +98,16 @@
         {
           "ruleId": "CA1822",
           "level": "note",
-          "message": "Member 'getDoctorDto' does not access instance data and can be marked as static",
+          "message": "Member 'GetAppointmentDto' does not access instance data and can be marked as static",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
                 "region": {
-                  "startLine": 65,
-                  "startColumn": 33,
-                  "endLine": 65,
-                  "endColumn": 45
+                  "startLine": 45,
+                  "startColumn": 38,
+                  "endLine": 45,
+                  "endColumn": 55
                 }
               }
             }
@@ -161,16 +119,16 @@
         {
           "ruleId": "CA1822",
           "level": "note",
-          "message": "Member 'GetAppointmentDto' does not access instance data and can be marked as static",
+          "message": "Member 'getDoctorDto' does not access instance data and can be marked as static",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///F:/Documents/faculta/MyDocAppointment/MyDocAppointment.IntegrationTests/AppointmentControllerTests.cs",
+                "uri": "file:///E:/repo2/MyDocAppointment/MyDocAppointment.IntegrationTests/DoctorsControllerTests.cs",
                 "region": {
-                  "startLine": 45,
-                  "startColumn": 38,
-                  "endLine": 45,
-                  "endColumn": 55
+                  "startLine": 65,
+                  "startColumn": 33,
+                  "endLine": 65,
+                  "endColumn": 45
                 }
               }
             }
